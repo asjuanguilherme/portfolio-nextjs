@@ -73,25 +73,25 @@ const Nav = () => {
       <NavStyled>
          <NavList>
             <li className="active">
-               <a href="">
+               <a href="https://www.google.com.br">
                   <FaHome/>
                   <span>Inicio</span>
                </a>
             </li>
             <li className="">
-               <a href="">
+               <a href="https://www.google.com.br">
                   <FaUser/>
                   <span>Sobre</span>
                </a>
             </li>
             <li className="">
-               <a href="">
+               <a href="https://www.google.com.br">
                   <FaPager/>
                   <span>Portfólio</span>
                </a>
             </li>
             <li className="">
-               <a href="">
+               <a href="https://www.google.com.br">
                   <FaEnvelope/>
                   <span>Contato</span>
                </a>

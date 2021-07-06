@@ -5,12 +5,13 @@ const MainStyled = Styled.main `
    max-width: calc(100vw - 360px);
    width: 100%;
    margin-left: auto;
-   background-color: blue;
+   padding-top: 2em;
 
    @media screen and (max-width: 750px) {
       max-width: 100%;
       margin-left: initial;
-      padding-top: 75px;
+      padding: 0;
+      padding-top: 5em;
    }
 `
 

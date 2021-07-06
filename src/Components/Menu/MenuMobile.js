@@ -22,7 +22,6 @@ const Menu = Styled.div`
       display: none;
    }
 `
-
 const Container = Styled.div`
    margin-left: 26%;
    padding: 3% 0;

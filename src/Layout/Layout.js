@@ -13,11 +13,11 @@ const LayoutStyled = Styled.div`
    min-height: 100vh;
    max-height: max-content;
    display: flex;
-   background-color: red;
-   transition: .5s ease-in-out;
-   transition-property: transform, border-radius;
+   background-color: white;
    position: relative;
    z-index: 2;
+   transition: .5s ease-in-out;
+   transition-property: transform, border-radius;
 
    @media screen and (max-width: 750px) {
       &.menu-active {
