@@ -2,6 +2,7 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const SkillLabel = Styled.div`
+   user-select: none;
    display: flex;
    width: max-content;
    height: 40px;
@@ -11,7 +12,8 @@ const SkillLabel = Styled.div`
    color: #686868;
    cursor: default;
    &:hover {
-      color: ${ props => props.color }
+      color: ${ props => props.color };
+      transform: scale(1.2);
    }
 
    svg {

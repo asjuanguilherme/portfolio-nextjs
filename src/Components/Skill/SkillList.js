@@ -11,73 +11,73 @@ const SkillList = filter => {
       {
          name: 'HTML5',
          icon: <SiHtml5 />,
-         color: '#C76855',
+         color: '#e34c26',
          sizeMultiplier: 1
       },
       {
          name: 'CSS3',
          icon: <SiCss3 />,
-         color: '#C76855',
+         color: '#3A94F6',
          sizeMultiplier: 1
       },
       {
          name: 'Javascript',
          icon: <SiJavascript />,
-         color: '#C76855',
+         color: '#f7df1e',
          sizeMultiplier: 1
       },
       {
          name: 'Typescript',
          icon: <SiTypescript />,
-         color: '#C76855',
+         color: '#007acc',
          sizeMultiplier: 1
       },
       {
          name: 'React.js',
          icon: <SiReact />,
-         color: '#C76855',
+         color: '#61dbfb',
          sizeMultiplier: 1
       },
       {
          name: 'Node.js',
          icon: <SiNodeDotJs />,
-         color: '#C76855',
+         color: '#6CC24A',
          sizeMultiplier: 1
       },
       {
          name: 'Git',
          icon: <SiGit />,
-         color: '#C76855',
+         color: '#f14e32',
          sizeMultiplier: 1
       },
       {
          name: 'Webpack',
          icon: <SiWebpack />,
-         color: '#C76855',
+         color: '#465e69',
          sizeMultiplier: 1
       },
       {
          name: 'Gulp.js',
          icon: <SiGulp />,
-         color: '#C76855',
+         color: '#db4446',
          sizeMultiplier: 1
       },
       {
          name: 'PHP',
          icon: <SiPhp />,
-         color: '#C76855',
+         color: '#474a8a',
          sizeMultiplier: 1
       },
       {
          name: 'UX e UI Design',
          icon: <RiLayout2Fill />,
-         color: '#C76855',
+         color: '#e63271',
          sizeMultiplier: 1
       },
       {
          name: 'SEO',
          icon: <FaSearch />,
-         color: '#C76855',
+         color: '#41a09b',
          sizeMultiplier: 1
       },
    ]

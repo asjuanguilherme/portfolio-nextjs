@@ -18,7 +18,7 @@ const LayoutStyled = Styled.div`
    position: relative;
    z-index: 2;
    transition: .5s ease-in-out;
-   /* transition-property: max-height, transform, border-radius; */
+   transition-property: transform, border-radius;
 
    @media screen and (max-width: 750px) {
       &.menu-active {

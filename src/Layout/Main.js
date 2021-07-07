@@ -2,7 +2,7 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const MainStyled = Styled.main `
-   max-width: calc(100vw - 360px);
+   max-width: calc(100% - 360px);
    width: 100%;
    margin-left: auto;
    padding-top: 2em;

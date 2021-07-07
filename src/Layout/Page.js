@@ -6,6 +6,16 @@ import Text from './Text'
 
 const Page = Styled.div`
    width: 100%;
+   animation: show .5s;
+
+   @keyframes show {
+      from {
+         transform: translateX(-2em);
+      }
+      to {
+         transform: initial;
+      }
+   }
 
    @media screen and (max-width: 900px) {
       font-size: 0.9rem;
@@ -26,7 +36,7 @@ const PageHeader = Styled.div`
    padding: 2em 2.5em;
    
    @media screen and (max-width: 768px) {
-      padding: 2em 1.5em;
+      padding: 2em 2em;
    }
 `
 
@@ -80,7 +90,7 @@ const PageDescription = Styled.div`
    margin-top: -1em;
       
    @media screen and (max-width: 768px) {
-      padding: 0 1.5em;
+      padding: 0 1.8em;
    }
 `
 

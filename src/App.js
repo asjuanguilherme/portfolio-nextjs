@@ -7,6 +7,7 @@ import MenuMobile from './Components/Menu/MenuMobile'
 //Pages
 import Home from './Pages/Home'
 import About from './Pages/About'
+import Portfolio from './Pages/Portfolio'
 
 const App = () => {
    const [menuStatus, setMenuStatus] = React.useState(false)
@@ -16,7 +17,8 @@ const App = () => {
          <MenuMobile menuStatus={ menuStatus } menuController={ setMenuStatus } />
          <Layout menuStatus={ menuStatus } menuController={ setMenuStatus }>
             {/* <Home /> */}
-            <About />
+            {/* <About /> */}
+            <Portfolio />
          </Layout>
       </>
    )

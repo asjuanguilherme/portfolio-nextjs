@@ -30,7 +30,7 @@ const SectionHeader = Styled.div`
    max-width: 1200px;
 
    @media screen and (max-width: 768px) {
-      padding: 2em 1.5em;
+      padding: 2em 2em;
    }
 `
 const TitleContainer = Styled.div`
@@ -59,7 +59,7 @@ const SectionFooter = Styled.div`
    max-width: 1200px;
 
    @media screen and (max-width: 768px) {
-      padding: 2em 1.5em;
+      padding: 2em 2em;
    }
 `
 
@@ -69,7 +69,7 @@ const SectionButtonFooter = Styled.div`
    @media screen and (max-width: 1200px) {
       display: flex;
       justify-content: center;
-      padding: 1.5em;
+      padding: 1.8em;
    }
 `
 
