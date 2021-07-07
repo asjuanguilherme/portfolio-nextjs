@@ -3,7 +3,6 @@ import Styled from 'styled-components'
 
 const TextContainer = Styled.div`
    width: 100%;
-   max-width: 1200px;
    color: #686868;
    font-size: 1.3em;
    line-height: 1.6em;

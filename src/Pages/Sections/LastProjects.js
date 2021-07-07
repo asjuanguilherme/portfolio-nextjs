@@ -9,7 +9,7 @@ import Section from '../../Layout/Section/Section'
 const Container = Styled.div`
    @media screen and (min-width: 1200px) {
       max-width: 1200px;
-         padding: 0 2.5em;
+      padding: 0 2.5em;
    }
 `
 

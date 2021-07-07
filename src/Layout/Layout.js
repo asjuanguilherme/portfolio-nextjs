@@ -10,14 +10,15 @@ import Header from './Header'
 
 const LayoutStyled = Styled.div`
    width: 100vw;
-   min-height: 100vh;
-   max-height: max-content;
+   height: 100vh;
+   max-height: 100vh;
+   overflow: scroll;
    display: flex;
    background-color: white;
    position: relative;
    z-index: 2;
    transition: .5s ease-in-out;
-   transition-property: transform, border-radius;
+   /* transition-property: max-height, transform, border-radius; */
 
    @media screen and (max-width: 750px) {
       &.menu-active {
