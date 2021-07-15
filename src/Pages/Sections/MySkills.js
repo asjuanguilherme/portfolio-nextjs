@@ -5,6 +5,7 @@ import Section from '../../Layout/Section/Section'
 import Container from '../../Layout/Container'
 import Text from '../../Layout/Text'
 import SkillList from '../../Components/Skill/SkillList'
+import authorSkills from '../../Data/authorSkills'
 
 const SkillsGrid = Styled.div`
    max-width: 600px;
@@ -30,7 +31,7 @@ const MySkills = () => {
          </Container>
          <Container>
             <SkillsGrid>
-               <SkillList filter={1} />
+               <SkillList skillsList={ authorSkills } />
             </SkillsGrid>
          </Container>
       </Section>

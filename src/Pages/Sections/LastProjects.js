@@ -6,6 +6,9 @@ import 'swiper/swiper.min.css'
 import ProjectCard from '../../Components/Cards/ProjectCard'
 import Section from '../../Layout/Section/Section'
 
+//data
+import { lastProjects } from '../../Data/projects'
+
 const Container = Styled.div`
    @media screen and (min-width: 1200px) {
       max-width: 1200px;
@@ -14,13 +17,32 @@ const Container = Styled.div`
 `
 
 const LastProjects = () => {
+
+   const renderProjects = () => {
+
+      const renderedProjects = lastProjects.map( ({ name, tecnologies, url, img, navLink }) => {
+         return (
+            <SwiperSlide>
+               <ProjectCard
+                  name={ name }
+                  tecnologies={ tecnologies }
+                  url={ url }
+                  href={ navLink }
+                  img={ img }
+               />
+            </SwiperSlide>
+         )
+      })
+      
+      return renderedProjects
+   }
+
    return (
       <Section
          title="Últimos Projetos"
          button={{
-            link: 'https://www.google.com.br',
+            link: '/portfolio',
             label: 'Todos os projetos',
-            blank: true,
             icon: true
          }}
       >
@@ -57,30 +79,7 @@ const LastProjects = () => {
                   },
                }}
             >
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
-               <SwiperSlide>
-                  <ProjectCard/>
-               </SwiperSlide>
+            { renderProjects() }
             </Swiper>
          </Container>
       </Section>

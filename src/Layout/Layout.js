@@ -12,9 +12,9 @@ const LayoutStyled = Styled.div`
    width: 100vw;
    height: 100vh;
    max-height: 100vh;
-   overflow: scroll;
+   overflow-y: auto;
    display: flex;
-   background-color: white;
+   background-color: ${ props => props.theme.colors.background };
    position: relative;
    z-index: 2;
    transition: .5s ease-in-out;

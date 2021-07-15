@@ -1,6 +1,9 @@
 import React from 'react'
 import Styled from 'styled-components'
 
+import { connect } from 'react-redux'
+import { changeThemeState } from '../../Store/Actions/theme'
+
 const ThemeToggleContainer = Styled.div`
    display: flex;
    align-items: center;
@@ -27,14 +30,18 @@ const Toggle = Styled.span`
 
       position: absolute;
       left: 7%;
-      transition: .3s;
+      transition: left .3s;
+      transition-property: left, background;
    }
 
-   // &::after {
-   //    left: initial;
-   //    right: 7%;
-   //    background-color: blue;
-   // }
+   ${ props  => { 
+      if( props.theme.name === 'dark') return `
+      &::after {
+         left: 65%;
+         background-color: white;
+      }
+      `
+   }}
 `
 
 const ThemeLabel = Styled.span`
@@ -42,13 +49,42 @@ const ThemeLabel = Styled.span`
    margin-right: 1rem;
 `
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ currentTheme, themeController }) => {
+   
+   const handleClick = () => {
+      themeController( currentTheme === 'light' ? 'dark' : 'light' )
+      console.log(currentTheme)
+   }
+
+   const returnThemeName = () => {
+      if( currentTheme === 'light' ) return 'Tema Claro'
+      if( currentTheme === 'dark' ) return 'Tema Escuro'
+   }
+
    return (
       <ThemeToggleContainer>
-         <ThemeLabel>Tema Claro</ThemeLabel>
-         <Toggle></Toggle>
+         <ThemeLabel>{ returnThemeName() }</ThemeLabel>
+         <Toggle onClick={ handleClick } />
       </ThemeToggleContainer>
    )
 }
 
-export default ThemeToggle
+const mapStateToProps = state => {
+   return {
+      currentTheme: state.currentTheme
+   }
+}
+
+const mapActionCreatorsToProps = dispatch => {
+   return {
+      themeController(newState) {
+         const action = changeThemeState(newState)
+         dispatch(action)
+      }
+   }
+}
+
+export default connect(
+   mapStateToProps,
+   mapActionCreatorsToProps
+)(ThemeToggle)

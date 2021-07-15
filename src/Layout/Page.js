@@ -10,10 +10,12 @@ const Page = Styled.div`
 
    @keyframes show {
       from {
-         transform: translateX(-2em);
+         opacity: 0;
+         transform: translateX(-3em);
       }
       to {
          transform: initial;
+         opacity: initial;
       }
    }
 
@@ -50,7 +52,7 @@ const ReturnButton = Styled.a`
    align-items: center;
    justify-content: center;
 
-   background-color: #6556DF;
+   background-color: ${ props => props.theme.colors.primary };
    color: white;
 
    svg {
@@ -72,7 +74,7 @@ const TitleContainer = Styled.div`
 
 const Title = Styled.h1`
    font-size: 2em;
-   color: #6556DF;
+   color: ${ props => props.theme.colors.primary };
    font-weight: bold;
 `
 
@@ -80,7 +82,7 @@ const SubTitle = Styled.h2`
    font-size: 1.5em;
    margin-top: .2em;
    font-weight: 400;
-   color: #686868;
+   color: ${ props => props.theme.colors.text };
 `
 
 const PageDescription = Styled.div`

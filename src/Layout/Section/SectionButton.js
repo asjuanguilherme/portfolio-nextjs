@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Styled from 'styled-components'
 import { FaChevronRight } from 'react-icons/fa'
 
-const Button = Styled.a`
+const Button = Styled(Link)`
    display: flex;
    align-items: center;
    text-decoration: none;
    text-transform: uppercase;
    font-weight: 500;
-   color: #6556DF;
+   color: ${ props => props.theme.colors.primary };
 
    svg {
       margin-left: .5em;
@@ -28,7 +29,8 @@ const Button = Styled.a`
 const SectionButton = ({ settings }) => {
    return (
       <Button
-         href={ settings.link }
+         to={ settings.link }
+         href={ settings.href }
          target={ settings.blank ? '_blank' : '' }
          >
          { settings.label }

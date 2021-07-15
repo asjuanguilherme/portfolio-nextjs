@@ -1,13 +1,20 @@
 import { createStore, combineReducers } from 'redux'
 
 const reducers = combineReducers({
-   darkTheme: (state, action) => false,
+   currentTheme: (state, action) => {
+      switch(action.type) {
+         case 'CHANGE_THEME_STATE':
+            return action.payload
+         default:
+            return state || 'light'
+      }
+   },
    menuActive:  (state, action) => {
       switch(action.type) {
          case 'CHANGE_MENU_STATE':
             return action.payload
          default:
-            return false
+            return state || false
       }
    }
 })

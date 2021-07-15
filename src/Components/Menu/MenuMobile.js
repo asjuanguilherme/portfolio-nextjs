@@ -13,10 +13,14 @@ const Menu = Styled.div`
    top: 0;
    z-index: 1;
 
-   background: -moz-linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
-   background: -webkit-linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
    background: linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7070ff",endColorstr="#6846b9",GradientType=1);
+
+   ${ props => {
+      if(props.theme.name === 'dark') return `
+         background: linear-gradient(195deg, #1f0c47 0%, #222274 50%, #1e1e74 100%);
+      `
+      }
+   }
 
    @media screen and (min-width: 751px) {
       display: none;

@@ -1,6 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 import { FaHome, FaUser, FaEnvelope, FaPager } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 const NavStyled = Styled.nav`
    padding: 0 1.5rem;
@@ -41,12 +42,32 @@ const NavList = Styled.ul`
          }
       }
 
-      &.active {
-         a {
+      & {
+         a.selected {
             background-color: rgba(112,112,255,.1);
             color: #7070FF;
          }
       }
+
+      ${ props => {
+         if( props.theme.name === 'dark') return `
+            a {
+               background-color: rgba(255,255,255,.15);
+               color: white;
+
+               &:hover {
+                  background-color: rgba(255,255,255,.05);
+               }
+            }
+
+            & {
+               a.selected {
+                  background-color: rgba(0,0,0,.1);
+                  color: white;
+               }
+            }
+         `
+      }}
 
       @media screen and (max-width: 750px) {
          a {
@@ -58,8 +79,8 @@ const NavList = Styled.ul`
             }
          }
 
-         &.active {
-            a {
+         & {
+            a.selected {
                background-color: rgba(0,0,0,.1);
                color: white;
             }
@@ -72,29 +93,29 @@ const Nav = () => {
    return (
       <NavStyled>
          <NavList>
-            <li className="active">
-               <a href="https://www.google.com.br">
+            <li>
+               <NavLink activeClassName="selected" exact to="/">
                   <FaHome/>
                   <span>Inicio</span>
-               </a>
+               </NavLink>
             </li>
-            <li className="">
-               <a href="https://www.google.com.br">
+            <li>
+               <NavLink activeClassName="selected" to="/sobre">
                   <FaUser/>
                   <span>Sobre</span>
-               </a>
+               </NavLink>
             </li>
-            <li className="">
-               <a href="https://www.google.com.br">
+            <li>
+               <NavLink activeClassName="selected" to="/portfolio">
                   <FaPager/>
                   <span>Portfólio</span>
-               </a>
+               </NavLink>
             </li>
-            <li className="">
-               <a href="https://www.google.com.br">
+            <li>
+               <NavLink activeClassName="selected" to="/contato">
                   <FaEnvelope/>
                   <span>Contato</span>
-               </a>
+               </NavLink>
             </li>
          </NavList>
       </NavStyled>

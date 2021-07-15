@@ -1,11 +1,14 @@
 import React from 'react'
 
+import Head from '../Layout/Head'
 import Page from '../Layout/Page'
 
 import MySkills from './Sections/MySkills'
 
 const About = () => {
    return (
+      <>
+      <Head title="Sobre" />
       <Page
          title="Sobre mim"
          description="
@@ -14,8 +17,8 @@ const About = () => {
       >
 
       <MySkills/>
-
       </Page>
+      </>
    )
 }
 

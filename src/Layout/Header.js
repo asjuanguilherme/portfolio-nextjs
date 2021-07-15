@@ -14,8 +14,7 @@ const HeaderStyled = Styled.header`
       z-index: 100;
       border-radius: 0 0 18px 18px;
       box-shadow: 5px 0 26px rgb(0 0 0 / 10%);
-      background-color: white;
-
+      background-color: ${ props => props.theme.colors.headerBackground };
       display: flex;
       align-items: center;
       user-select: none;

@@ -54,7 +54,7 @@ const Img = Styled.div`
    background-position: center;
    border-radius: 1em;
    z-index: -1;
-   background-color: #ececec;
+   background-color: ${ props => props.theme.colors.empty };
 `
 
 const HoverCardHeader = Styled.div`

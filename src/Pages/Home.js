@@ -1,11 +1,14 @@
 import React from 'react'
 
+import Head from '../Layout/Head'
 import Page from '../Layout/Page'
 
 import LastProjects from './Sections/LastProjects'
 
 const Home = () => {
    return (
+      <>
+      <Head title="Home" />
       <Page
          title="Página Inicial"
          description="
@@ -15,6 +18,7 @@ const Home = () => {
          <LastProjects />
 
       </Page>
+      </>
    )
 }
 

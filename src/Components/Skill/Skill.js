@@ -9,7 +9,7 @@ const SkillLabel = Styled.div`
    align-items: center;
    transition: .3s;
    font-size: 1.2em;
-   color: #686868;
+   color: ${ props => props.theme.colors.text };
    cursor: default;
    &:hover {
       color: ${ props => props.color };

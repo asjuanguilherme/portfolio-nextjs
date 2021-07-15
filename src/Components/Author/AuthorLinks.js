@@ -13,7 +13,7 @@ const Container = Styled.div`
 const IconLink = Styled.a`
    font-size: 1.6em;
    margin: 0 0.8rem;
-   color: #7070FF;
+   color: ${ props => props.theme.colors.primary };
 
    transition: color .2s;
 
