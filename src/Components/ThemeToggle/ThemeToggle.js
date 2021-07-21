@@ -17,6 +17,13 @@ const Toggle = Styled.span`
    border-radius: 1.7em;
    background-color: rgba(255,255,255,.15);
 
+   ${ props => {
+      if( props.aside && props.theme.name === 'light') return `
+         background-color: #f6f6f6;
+      `
+   }}
+
+
    cursor: pointer;
 
    position: relative;
@@ -37,7 +44,7 @@ const Toggle = Styled.span`
    ${ props  => { 
       if( props.theme.name === 'dark') return `
       &::after {
-         left: 65%;
+         left: 61%;
          background-color: white;
       }
       `
@@ -49,7 +56,7 @@ const ThemeLabel = Styled.span`
    margin-right: 1rem;
 `
 
-const ThemeToggle = ({ currentTheme, themeController }) => {
+const ThemeToggle = ({ currentTheme, themeController , noLabel, aside}) => {
    
    const handleClick = () => {
       themeController( currentTheme === 'light' ? 'dark' : 'light' )
@@ -57,14 +64,16 @@ const ThemeToggle = ({ currentTheme, themeController }) => {
    }
 
    const returnThemeName = () => {
-      if( currentTheme === 'light' ) return 'Tema Claro'
-      if( currentTheme === 'dark' ) return 'Tema Escuro'
+      if( !noLabel ) {
+         if( currentTheme === 'light' ) return 'Tema Claro'
+         if( currentTheme === 'dark' ) return 'Tema Escuro'
+      }
    }
 
    return (
       <ThemeToggleContainer>
          <ThemeLabel>{ returnThemeName() }</ThemeLabel>
-         <Toggle onClick={ handleClick } />
+         <Toggle aside={ aside } onClick={ handleClick } />
       </ThemeToggleContainer>
    )
 }

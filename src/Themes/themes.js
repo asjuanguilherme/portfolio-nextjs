@@ -18,7 +18,6 @@ export const dark = {
       primary: '#FFFFFF',
       secondary: '#FFFFFF',
       background: '#0E093B',
-      // asideBackground: '#231A75',
       asideBackground: 'linear-gradient(195deg, #1f0c47 0%, #222274 50%, #1e1e74 100%)',
       headerBackground: '#231A75',
       gradientBackground: 'linear-gradient(195deg, #1f0c47 0%, #222274 50%, #1e1e74 100%)',

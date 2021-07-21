@@ -4,7 +4,8 @@ import Styled from 'styled-components'
 const StyledInput = Styled.input`
    padding: .7em 1.2em;
    width: 100%;
-   background-color: #eee;
+   color: ${ props => props.theme.colors.text };
+   background-color: ${ props => props.theme.colors.empty };
    border: .15em solid transparent;
    border-radius: 1em;
    font-size: 1.1em;
@@ -12,9 +13,13 @@ const StyledInput = Styled.input`
 
    height: ${ ({ height }) => height };
    width: ${ ({ width }) => width };
+   
+   &::placeholder {
+      color: ${ props => props.theme.colors.text };
+   }
 
    &:focus {
-      background-color: #f6f6f6;
+      background-color: ${ props => props.theme.colors.empty };
       border-color: #7070FF;
    }
 `
@@ -24,7 +29,8 @@ const StyledTextarea = Styled.textarea`
 
    padding: .7em 1.2em;
    width: 100%;
-   background-color: #eee;
+   color: ${ props => props.theme.colors.text };
+   background-color: ${ props => props.theme.colors.empty };
    border: .15em solid transparent;
    border-radius: 1em;
    font-size: 1.1em;
@@ -34,8 +40,12 @@ const StyledTextarea = Styled.textarea`
    height: ${ ({ height }) => height ? height : '10em' };
    width: ${ ({ width }) => width ? width : '100%'};
 
+   &::placeholder {
+      color: ${ props => props.theme.colors.text };
+   }
+
    &:focus {
-      background-color: #f6f6f6;
+      background-color: ${ props => props.theme.colors.empty };
       border-color: #7070FF;
    }
 `

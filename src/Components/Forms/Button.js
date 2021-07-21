@@ -12,7 +12,7 @@ const StyledButton = Styled.button`
    
    border-radius: 2em;
    
-   background: linear-gradient(20deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
+   background: ${ props => props.theme.colors.gradientBackground };
    border: 0;
 
    font-size: 1em;

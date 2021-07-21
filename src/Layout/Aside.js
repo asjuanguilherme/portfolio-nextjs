@@ -4,6 +4,8 @@ import Styled from 'styled-components'
 import Author from '../Components/Author/Author'
 import Nav from '../Components/Nav/Nav'
 
+import ThemeToggle from '../Components/ThemeToggle/ThemeToggle'
+
 const AsideStyled = Styled.aside`
    user-select: none;
    width: 360px;
@@ -21,10 +23,17 @@ const AsideStyled = Styled.aside`
    }
 `
 
+const ThemeToggleContainer = Styled.div`
+   margin-top: 1em;
+`
+
 const Aside = () => {
 
    return (
       <AsideStyled>
+         <ThemeToggleContainer>
+            <ThemeToggle noLabel={true} aside={true} />
+         </ThemeToggleContainer>
          <Author />
          <Nav />
       </AsideStyled>

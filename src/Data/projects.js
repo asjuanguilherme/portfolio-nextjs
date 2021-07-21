@@ -52,4 +52,4 @@ export const allProjects = [
    },
 ]
 
-export const lastProjects = allProjects.slice(0,2)
+export const lastProjects = allProjects.slice(0,3)
