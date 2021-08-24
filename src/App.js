@@ -15,6 +15,7 @@ import Portfolio from './Pages/Portfolio'
 import PortfolioSingle from './Pages/PortfolioSingle'
 import Contact from './Pages/Contact'
 import { dark, light } from './Themes/themes'
+import Error from './Components/UiElements/Error'
 
 const App = ({ currentTheme }) => {
    const [menuStatus, setMenuStatus] = React.useState(false)
@@ -32,9 +33,10 @@ const App = ({ currentTheme }) => {
             <Switch>
                <Route path="/" exact component={ Home } />
                <Route path="/sobre" component={ About } />
-               <Route path="/portfolio" component={ Portfolio } />
+               <Route path="/portfolio" exact component={ Portfolio }/> 
+               <Route path="/portfolio/:slug" component={ PortfolioSingle }/> 
                <Route path="/contato" component={ Contact } />
-               <Route path="/portfoliosingle" component={ PortfolioSingle } />
+               <Route path="*" component={ Error } />
             </Switch>
             </Layout>
          </Router>

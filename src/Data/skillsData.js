@@ -1,4 +1,4 @@
-import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack } from 'react-icons/si'
+import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack, SiBootstrap, SiNextDotJs } from 'react-icons/si'
 import { RiLayout2Fill } from 'react-icons/ri'
 import { FaSearch } from 'react-icons/fa'
 
@@ -39,6 +39,13 @@ const skillsTemplate = [
       sizeMultiplier: 1
    },
    {
+      name: 'Next.js',
+      slug: 'next',
+      icon: <SiNextDotJs />,
+      color: '#000000',
+      sizeMultiplier: 1
+   },
+   {
       name: 'Node.js',
       slug: 'node',
       icon: <SiNodeDotJs />,
@@ -75,7 +82,7 @@ const skillsTemplate = [
    },
    {
       name: 'UX e UI Design',
-      slug: 'uxui',
+      slug: 'ux_ui',
       icon: <RiLayout2Fill />,
       color: '#e63271',
       sizeMultiplier: 1
@@ -85,6 +92,13 @@ const skillsTemplate = [
       slug: 'seo',
       icon: <FaSearch />,
       color: '#41a09b',
+      sizeMultiplier: 1
+   },
+   {
+      name: 'Bootstrap',
+      slug: 'bootstrap',
+      icon: <SiBootstrap />,
+      color: '#6610f2',
       sizeMultiplier: 1
    },
 ]

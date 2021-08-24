@@ -1,23 +1,24 @@
 import React from 'react'
-import Styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import Styled, { keyframes } from 'styled-components'
 
 import { FaChevronLeft } from 'react-icons/fa'
 import Text from './Text'
 
+const show = keyframes`
+   from {
+      opacity: 0;
+      transform: translateX(-3em);
+   }
+   to {
+      transform: initial;
+      opacity: initial;
+   }
+`
+
 const Page = Styled.div`
    width: 100%;
-   animation: show .5s;
-
-   @keyframes show {
-      from {
-         opacity: 0;
-         transform: translateX(-3em);
-      }
-      to {
-         transform: initial;
-         opacity: initial;
-      }
-   }
+   animation: ${show} .5s;
 
    @media screen and (max-width: 900px) {
       font-size: 0.9rem;
@@ -42,29 +43,31 @@ const PageHeader = Styled.div`
    }
 `
 
-const ReturnButton = Styled.a`
-   margin-right: 1.3em;
-   flex-shrink: 0;
-   width: 2.3em;
-   height: 2.3em;
-   border-radius: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+const ReturnButton = Styled.div`
+   a {
+      margin-right: 1.3em;
+      flex-shrink: 0;
+      width: 2.3em;
+      height: 2.3em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-   background-color: ${ props => props.theme.colors.primary };
-   color: white;
-
-   svg {
-      transition: .3s ease-in-out;
-      height: 1.2em;
-   }
-
-   &:hover {
-      cursor: pointer;
+      background-color: ${ props => props.theme.colors.primary };
+      color: ${ props => props.theme.name === 'dark'? props.theme.colors.background : 'white' };
 
       svg {
-         transform: translateX(-3px);
+         transition: .3s ease-in-out;
+         height: 1.2em;
+      }
+
+      &:hover {
+         cursor: pointer;
+
+         svg {
+            transform: translateX(-3px);
+         }
       }
    }
 `
@@ -106,7 +109,9 @@ const PageTemplate = ({ title, subTitle, children, returnTo, description }) => {
          <PageHeader>
             { returnTo &&
             <ReturnButton>
-               <FaChevronLeft />
+               <Link to={ returnTo }>
+                  <FaChevronLeft />
+               </Link>
             </ReturnButton>
             }
             
@@ -126,7 +131,6 @@ const PageTemplate = ({ title, subTitle, children, returnTo, description }) => {
                </Text>
             </PageDescription>
          }
-
          <PageContent>
             { children }
          </PageContent>

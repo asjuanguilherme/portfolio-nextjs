@@ -15,10 +15,15 @@ const PhotoWrapper = Styled.div`
    border-radius: 50%;
    overflow: hidden;
 
-   background: -moz-linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
-   background: -webkit-linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
-   background: linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7070ff",endColorstr="#6846b9",GradientType=1);
+   background: white;
+
+   ${ props => {
+      if (props.theme.name === 'light') return `
+      background: -moz-linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
+      background: -webkit-linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
+      background: linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7070ff",endColorstr="#6846b9",GradientType=1);`
+   }}
 `
 
 const Photo = Styled.div`

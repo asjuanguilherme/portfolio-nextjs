@@ -2,7 +2,6 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const SkillLabel = Styled.div`
-   user-select: none;
    display: flex;
    width: max-content;
    height: 40px;
@@ -13,7 +12,10 @@ const SkillLabel = Styled.div`
    cursor: default;
    &:hover {
       color: ${ props => props.color };
-      transform: scale(1.2);
+
+      ${ props => props.scaleEffect ? (
+         'transform: scale(1.2);') : ''
+      }
    }
 
    svg {
@@ -26,9 +28,9 @@ const Name = Styled.div`
    
 `
 
-const Skill = ({ name, color, icon, sizeMultiplier }) => {
+const Skill = ({ name, color, icon, sizeMultiplier, scaleEffect }) => {
    return (
-      <SkillLabel color={ color } sizeMultiplier={ sizeMultiplier } >
+      <SkillLabel color={ color } sizeMultiplier={ sizeMultiplier } scaleEffect={ scaleEffect }>
          { icon }
          <Name>
             { name }

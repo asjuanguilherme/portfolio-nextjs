@@ -13,7 +13,7 @@ const Menu = Styled.div`
    top: 0;
    z-index: 1;
 
-   background: linear-gradient(195deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
+   background: ${ props => props.theme.colors.gradientBackground };
 
    ${ props => {
       if(props.theme.name === 'dark') return `

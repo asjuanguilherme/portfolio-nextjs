@@ -4,19 +4,23 @@ import Styled from 'styled-components'
 import Section from '../../Layout/Section/Section'
 import Container from '../../Layout/Container'
 import Text from '../../Layout/Text'
-import SkillList from '../../Components/Skill/SkillList'
+import SkillList from './SkillList'
 import authorSkills from '../../Data/authorSkills'
 
 const SkillsGrid = Styled.div`
-   max-width: 600px;
+   /* max-width: 600px; */
    display: grid;
    row-gap: 1em;
    column-gap: 3em;
    margin-top: 2em;
    grid-template-columns: 1fr 1fr;
 
-   @media screen and (min-width: 1200px) {
+   @media screen and (min-width: 990px) {
       grid-template-columns: 1fr 1fr 1fr;
+   }
+
+   @media screen and (min-width: 1200px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
    }
 `
 
@@ -31,7 +35,7 @@ const MySkills = () => {
          </Container>
          <Container>
             <SkillsGrid>
-               <SkillList skillsList={ authorSkills } />
+               <SkillList skillsList={ authorSkills } scaleEffect={ true }/>
             </SkillsGrid>
          </Container>
       </Section>

@@ -1,15 +1,12 @@
 import React from 'react'
-import Styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+import Styled, { keyframes } from 'styled-components'
 
 import { FaChevronRight } from 'react-icons/fa'
-
-import DefaultImg from './default-image.jpg'
 
 const HoverCard = Styled.div`
    display: flex;
    flex-direction: column;
-
-   user-select: none;
 
    color: white;
 
@@ -20,7 +17,7 @@ const HoverCard = Styled.div`
    width: 100%;
    border-radius: 1em;
    z-index: 1;
-   background: linear-gradient(20deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%);
+   background: ${ props => props.theme.colors.gradientBackground };
 
    transform: translateX(-105%) scale(0.6) rotateX(25deg);
    transition: .3s ease-in-out;
@@ -31,6 +28,7 @@ const Card = Styled.div`
    position: relative;
    border-radius: 1em;
    overflow: hidden;
+   border: 1px solid ${ props => props.theme.colors.empty };
 
    &:hover {
       ${HoverCard} {
@@ -43,6 +41,27 @@ const Card = Styled.div`
       }
    }
 `
+
+const PreloaderCardAnimation = keyframes`
+   0% {
+      opacity: .3;
+   }
+   50% {
+      opacity: .1;
+   }
+   100% {
+      opacity: .3;
+   }
+`
+
+const PreloaderCard = Styled.div`
+   padding-top: 75%;
+   border-radius: 1em;
+   overflow: hidden;
+   background-color: #000;
+   animation: ${ PreloaderCardAnimation } infinite 2s;
+`
+
 const Img = Styled.div`
    position: absolute;
    left: 0;
@@ -94,7 +113,7 @@ const NavLinkContainer = Styled.div`
    padding: .8em;
 `
 
-const Button = Styled.a`
+const Button = Styled(NavLink)`
    display: flex;
    align-items: center;
    justify-content: center;
@@ -103,6 +122,12 @@ const Button = Styled.a`
 
    background-color: rgba(0,0,0,.10);
    transition: background .3s;
+   text-decoration: none;
+   
+   &, * {
+      color: white;
+      text-decoration: none;
+   }
 
    svg {
       position: relative;
@@ -126,10 +151,11 @@ const Button = Styled.a`
 `
 
 const ButtonLabel = Styled.span`
-
 `
 
-const ProjectCard = ({ name, description, url, img }) => {
+const ProjectCard = ({ name, description, slug, img, preloader = false }) => {
+
+   if( preloader ) return <PreloaderCard/>
 
    return (
       <Card>
@@ -139,12 +165,11 @@ const ProjectCard = ({ name, description, url, img }) => {
             </HoverCardHeader>
             <HoverCardText>
                { description }
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ex et alias optio consectetur voluptatibus
             </HoverCardText>
             <NavLinkContainer>
-               <Button>
-                  <ButtonLabel>Acessar Projeto</ButtonLabel>
-                  <FaChevronRight>Acessar Projeto</FaChevronRight>
+               <Button to={ `portfolio/${slug}` }>
+                  <ButtonLabel>Saber mais</ButtonLabel>
+                  <FaChevronRight />
                </Button>
             </NavLinkContainer>
          </HoverCard>

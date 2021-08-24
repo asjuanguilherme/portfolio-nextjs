@@ -15,6 +15,7 @@ import AuthorLinks from '../Components/Author/AuthorLinks'
 const FormGrid = Styled.form`
    display: grid;
    gap: 1.2em;
+   padding-bottom: 1.5em;
 `
 
 const ButtonContainer = Styled.div`
@@ -45,6 +46,11 @@ const Contact = () => {
       message: '',
    })
 
+   const [ status, setStatus ] = React.useState({
+      loading: false,
+      error: null
+   })
+
    const nameController = e => {
       setForm( state => ({
          ...state,
@@ -64,6 +70,12 @@ const Contact = () => {
          ...state,
          message: e.target.value
       }))
+   }
+
+   const sendMessage = e => {
+      e.preventDefault()
+
+      console.log('Mensagem enviada')
    }
 
    return (
@@ -87,12 +99,14 @@ const Contact = () => {
                placeholder="Seu nome ex: Steve Jobs"
                value={ form.name }
                controller={ nameController }
+               validated='error'
             />
             <Input
                type="text"
                placeholder="Seu email ex: stevejobs@apple.com"
                value={ form.email }
                controller={ emailController }
+               validated='success'
             />
             <Input
                type="textarea"
@@ -106,7 +120,7 @@ const Contact = () => {
                   type="submit"
                   label="Enviar Mensagem"
                   icon={ <FaEnvelope /> }
-                  onClick={ () => console.log('olá mundo') }
+                  onClick={ sendMessage }
                />
             </ButtonContainer>
          </FormGrid>

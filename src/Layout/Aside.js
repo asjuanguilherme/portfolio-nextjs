@@ -7,7 +7,6 @@ import Nav from '../Components/Nav/Nav'
 import ThemeToggle from '../Components/ThemeToggle/ThemeToggle'
 
 const AsideStyled = Styled.aside`
-   user-select: none;
    width: 360px;
    position: fixed;
    left: 0;

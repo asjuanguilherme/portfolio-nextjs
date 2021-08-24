@@ -1,10 +1,8 @@
 import React from 'react'
-
 import Skill from './Skill'
-
 import skillsData from '../../Data/skillsData'
 
-const SkillList = ({ skillsList }) => {
+const SkillList = ({ skillsList = [], scaleEffect = false }) => {
 
    const filteredList = skillsList.length === 0 ? skillsData : []
 
@@ -16,13 +14,14 @@ const SkillList = ({ skillsList }) => {
       )
    })
 
-   const renderedSkills = () =>  filteredList.map(({name, color, icon, sizeMultiplier}) => (
+   const renderedSkills = () =>  filteredList.map(({name, color, icon, sizeMultiplier }) => (
       <Skill
          key={name}
          name={name}
          color={color}
          icon={icon}
          sizeMultiplier={sizeMultiplier}
+         scaleEffect={scaleEffect}
       />)
    )
 

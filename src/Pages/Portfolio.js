@@ -6,21 +6,9 @@ import Head from '../Layout/Head'
 import Container from '../Layout/Container'
 import Section from '../Layout/Section/Section'
 import Page from '../Layout/Page'
-import ProjectsList from './Sections/ProjectsList'
 
-const ProjectsGrid = Styled.div`
-   display: grid;
-   grid-template-columns: 1fr;
-   gap: 2em;
-   
-   @media screen and (min-width: 1100px) {
-      grid-template-columns: 1fr 1fr;
-   }
-
-   @media screen and (min-width: 1440px) {
-      grid-template-columns: 1fr 1fr 1fr;
-   }
-`
+//Sections
+import ProjectsGrid from '../Components/Projects/ProjectsGrid'
 
 const ListContainer = Styled.div`
    margin-top: -2em;
@@ -50,7 +38,6 @@ const ProjectListController = Styled.div`
 `
 
 const ListOption = Styled.span`
-   user-select: none;
    padding: .8em 1.8em;
    border-radius: 3em;
    color: #686868;
@@ -78,82 +65,18 @@ const ListOption = Styled.span`
 
 const Portfolio = () => {
 
-   const options = [
-      {
-         name: 'Todos',
-         slug: 'all',
-         active: true,
-      },
-      {
-         name: 'React.js',
-         slug: 'react',
-         active: false,
-      },
-      {
-         name: 'Wordpress',
-         slug: 'wordpress',
-         active: false,
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-      {
-         name: 'Node.js',
-         slug: 'node',
-         active: false
-      },
-   ]
+   const [options, setOptions] = React.useState(null)
 
    const renderOptions = () => {
-      const optionsList = options.map( ({ name, slug, active }) => (
-         <ListOption key={ slug } slug={ slug } active={ active } >
-            { name }
-         </ListOption>
-      ))
-
-      return optionsList
+      if( options ) {
+         const optionsList = options.map( ({ name, slug, active }) => (
+            <ListOption key={ slug } slug={ slug } active={ active } >
+               { name }
+            </ListOption>
+         ))
+   
+         return optionsList
+      }
    }
 
    return (
@@ -165,15 +88,13 @@ const Portfolio = () => {
       >
       
       <Section>
-         <ListContainer>
+         {/* <ListContainer>
             <ProjectListController>
                { renderOptions() }
             </ProjectListController>
-         </ListContainer>
+         </ListContainer> */}
          <Container>
-            <ProjectsGrid>
-               <ProjectsList />
-            </ProjectsGrid>     
+            <ProjectsGrid /> 
          </Container>
       </Section>
       </Page>

@@ -5,7 +5,6 @@ import SectionButton from './SectionButton'
 
 const Section = Styled.section`
    width: 100%;
-   padding: 1em 0;
    padding-bottom: 2em;
 
    @media screen and (max-width: 900px) {
@@ -22,11 +21,11 @@ const Section = Styled.section`
    }
 ` 
 const SectionHeader = Styled.div`
-   user-select: none;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 2em 2.5em;
+   padding: 0 2.5em;
+   padding-bottom: 1em;
    max-width: 1200px;
 
    @media screen and (max-width: 768px) {
@@ -44,9 +43,10 @@ const SubTitle = Styled.h2`
    font-size: 1.5em;
    margin-top: .2em;
    font-weight: 500;
-   color: ${ props => props.theme.colors.secondary };
+   color: ${ props => props.theme.colors.primary };
+   opacity: .75;
 `
-const SectionButtonHeader = Styled.div`
+const SectionButtonHeader = Styled.a`
    @media screen and (max-width: 1200px) {
       display: none;
    }
@@ -63,7 +63,7 @@ const SectionFooter = Styled.div`
    }
 `
 
-const SectionButtonFooter = Styled.div`
+const SectionButtonFooter = Styled.a`
    display: none;
 
    @media screen and (max-width: 1200px) {
@@ -77,6 +77,7 @@ const SectionTemplate = ({ title, subTitle, children, button }) => {
 
    return (
       <Section>
+         { ( title || subTitle || button ) &&
          <SectionHeader>
             { (title || subTitle) &&
                <TitleContainer>
@@ -93,7 +94,7 @@ const SectionTemplate = ({ title, subTitle, children, button }) => {
                   <SectionButton settings={ button } />
                </SectionButtonHeader>
             }
-         </SectionHeader>
+         </SectionHeader> }
 
          <SectionContent>
             { children }

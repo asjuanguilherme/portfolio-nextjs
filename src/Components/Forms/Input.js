@@ -1,13 +1,17 @@
 import React from 'react'
 import Styled from 'styled-components'
 
+const StyledInputContainer = Styled.div`
+   position: relative;
+`
+
 const StyledInput = Styled.input`
    padding: .7em 1.2em;
    width: 100%;
    color: ${ props => props.theme.colors.text };
    background-color: ${ props => props.theme.colors.empty };
    border: .15em solid transparent;
-   border-radius: 1em;
+   border-radius: 1.5em;
    font-size: 1.1em;
    transition: border .2s;
 
@@ -50,7 +54,7 @@ const StyledTextarea = Styled.textarea`
    }
 `
 
-const Input = ({ type, value, controller, name, placeholder, width, height }) => {
+const Input = ({ type, value, controller, name, placeholder, width, height, validated }) => {
    
    if(type === 'textarea') return (
       <StyledTextarea
@@ -64,14 +68,17 @@ const Input = ({ type, value, controller, name, placeholder, width, height }) =>
    )
 
    return (
-      <StyledInput
-         type={ type }
-         onChange={ controller }
-         value={ value }
-         placeholder={ placeholder }
-         name={ name }
-         width={ width }
-      />
+      <StyledInputContainer>
+         <StyledInput
+            type={ type }
+            onChange={ controller }
+            value={ value }
+            placeholder={ placeholder }
+            name={ name }
+            width={ width }
+            validated={ validated }
+         />
+      </StyledInputContainer>
    )
 }
 

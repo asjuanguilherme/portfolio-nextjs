@@ -17,7 +17,6 @@ const HeaderStyled = Styled.header`
       background-color: ${ props => props.theme.colors.headerBackground };
       display: flex;
       align-items: center;
-      user-select: none;
       touch-action: pan-y;
    }
 `

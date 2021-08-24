@@ -25,16 +25,16 @@ const IconLink = Styled.a`
 const AuthorLinks = () => {
    return (
       <Container>
-         <IconLink href="https://www.google.com.br">
+         <IconLink href="https://instagram.com.br/asjuanguilherme" target="_blank">
             <FaInstagram/>
          </IconLink>
-         <IconLink href="https://www.google.com.br">
+         <IconLink href="https://www.linkedin.com/in/juan-guilherme-504471160/" target="_blank">
             <FaLinkedinIn/>
          </IconLink>
-         <IconLink href="https://www.google.com.br">
+         <IconLink href="https://github.com.br/asjuanguilherme" target="_blank">
             <FaGithub/>
          </IconLink>
-         <IconLink href="https://www.google.com.br">
+         <IconLink href="mailto:asjuanguilherme@gmail.com" target="_blank">
             <FaEnvelope/>
          </IconLink>
       </Container>

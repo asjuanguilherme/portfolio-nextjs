@@ -3,7 +3,7 @@ import React from 'react'
 import Head from '../Layout/Head'
 import Page from '../Layout/Page'
 
-import MySkills from './Sections/MySkills'
+import MySkills from '../Components/Skill/MySkills'
 
 const About = () => {
    return (

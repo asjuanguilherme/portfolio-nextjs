@@ -6,7 +6,7 @@ const reducers = combineReducers({
          case 'CHANGE_THEME_STATE':
             return action.payload
          default:
-            return state || 'light'
+            return localStorage.getItem('THEME') || 'light'
       }
    },
    menuActive:  (state, action) => {
@@ -16,7 +16,7 @@ const reducers = combineReducers({
          default:
             return state || false
       }
-   }
+   },
 })
 
 const storeConfig = () => {

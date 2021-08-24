@@ -2,6 +2,8 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const StyledButton = Styled.button`
+   user-select: none;
+
    height: 3em;
    padding: 0 3em;
    width: ${ ({ width }) => width? width : 'max-content' };
@@ -12,7 +14,8 @@ const StyledButton = Styled.button`
    
    border-radius: 2em;
    
-   background: ${ props => props.theme.colors.gradientBackground };
+   background: ${ props => props.theme.colors.gradientBackground
+    };
    border: 0;
 
    font-size: 1em;
@@ -25,14 +28,26 @@ const StyledButton = Styled.button`
    @media screen and (max-width: 768px) {
       width: 100%;
    }
+
+   transition: .3s;
+
+   &[disabled] {
+      opacity: .4;
+      filter: grayscale(1);
+
+      &:hover {
+         cursor: default;
+      }
+   }
 `
 
-const Button = ({ type, label, onClick, width }) => {
+const Button = ({ type, label, onClick, width, disabled }) => {
    return (
       <StyledButton
          type={ type }
-         onClick={ onClick }
+         onClick={ disabled ? false : onClick }
          width={ width }
+         disabled={ disabled }
       >
          { label }
       </StyledButton>
