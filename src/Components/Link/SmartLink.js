@@ -1,6 +1,9 @@
 import React from 'react'
 import Styled from 'styled-components'
-import { FiExternalLink } from 'react-icons/fi'
+import {
+   FiExternalLink,
+   FiDownload
+} from 'react-icons/fi'
 
 const Link = Styled.a`
    display: flex;
@@ -24,13 +27,18 @@ const Label = Styled.span`
 const Icon = Styled.span`
 `
 
-const SmartLink = ({ href, target, label,  icon = true, size = 1}) => {
+const SmartLink = ({ href, target, label,  icon = 'external-link', size = 1}) => {
    return (
       <Link href={ href } target={ target } size={ size }>
          
          { icon &&
             <Icon>
+               { icon === 'external-link' &&
                <FiExternalLink />
+               }
+               { icon === 'download' &&
+               <FiDownload />
+               }
             </Icon>
          }
 

@@ -18,6 +18,17 @@ const FormGrid = Styled.form`
    padding-bottom: 1.5em;
 `
 
+const FormInputGrid = Styled.div`
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 2em;
+
+   @media screen and (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      gap: 1.2em;
+   }
+`
+
 const ButtonContainer = Styled.div`
    display: flex;
    justify-content: flex-end;
@@ -94,26 +105,28 @@ const Contact = () => {
 
       <Container>
          <FormGrid>
+            <FormInputGrid>
+               <Input
+                  label="Nome"
+                  type="text"
+                  value={ form.name }
+                  controller={ nameController }
+                  validated='error'
+               />
+               <Input
+                  label="Email"
+                  type="text"
+                  value={ form.email }
+                  controller={ emailController }
+                  validated='success'
+               />
+            </FormInputGrid>
             <Input
-               type="text"
-               placeholder="Seu nome ex: Steve Jobs"
-               value={ form.name }
-               controller={ nameController }
-               validated='error'
-            />
-            <Input
-               type="text"
-               placeholder="Seu email ex: stevejobs@apple.com"
-               value={ form.email }
-               controller={ emailController }
-               validated='success'
-            />
-            <Input
+               label="Mensagem"
                type="textarea"
-               placeholder="Escreva sua mensagem aqui..."
                value={ form.message }
                controller={ messageController }
-               height={ '15em' }
+               height={ '10em' }
             />
             <ButtonContainer>
                <Button

@@ -4,6 +4,9 @@ import Head from '../Layout/Head'
 import Page from '../Layout/Page'
 
 import MySkills from '../Components/Skill/MySkills'
+import SmartLink from '../Components/Link/SmartLink'
+import Container from '../Layout/Container'
+import Text from '../Layout/Text'
 
 const About = () => {
    return (
@@ -11,10 +14,13 @@ const About = () => {
       <Head title="Sobre" />
       <Page
          title="Sobre mim"
-         description="
-         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere reprehenderit ut consequatur, dolorum necessitatibus doloremque minima expedita ipsum nostrum eaque, sit iure veniam asperiores, ad quod voluptatum ratione accusantium? Dolorum necessitatibus doloremque minima expedita ipsum nostrum eaque, sit iure veniam asperiores, ad quod voluptatum ratione accusantium?
-         "
       >
+      <Container>
+         <Text>
+            Me chamo Juan Guilherme, sou natural de Natal/RN e sou um desenvolvedor web, atualmente mais voltado para projetos front-end. Atualmente curso bacharelado em tecnologia da informação e pretendo seguir carreira como Engenheiro de Software. <br/><br/>
+            Sou altamente curioso e motivado a conhecer cada vez mais sobre novas técnicas e tecnologias, além também de me preocupar com experiência e interface do usuário.<br/><br/><br/>
+         </Text>
+      </Container>
 
       <MySkills/>
       </Page>

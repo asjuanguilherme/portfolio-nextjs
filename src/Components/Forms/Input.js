@@ -5,6 +5,14 @@ const StyledInputContainer = Styled.div`
    position: relative;
 `
 
+const StyledInputLabel = Styled.label`
+   display: block;
+   padding-left: 1em;
+   padding-bottom: .5em;
+   color: ${ props => props.theme.colors.primary };
+   opacity: .875;
+`
+
 const StyledInput = Styled.input`
    padding: .7em 1.2em;
    width: 100%;
@@ -54,21 +62,29 @@ const StyledTextarea = Styled.textarea`
    }
 `
 
-const Input = ({ type, value, controller, name, placeholder, width, height, validated }) => {
+const Input = ({ type, value, controller, name, placeholder, width, height, validated, label }) => {
    
    if(type === 'textarea') return (
-      <StyledTextarea
-         onChange={ controller }
-         value={ value }
-         placeholder={ placeholder }
-         name={ name }
-         height={ height }
-         width={ width }
-   />
+      <StyledInputContainer>
+         <StyledInputLabel>
+            { label }
+         </StyledInputLabel>
+         <StyledTextarea
+            onChange={ controller }
+            value={ value }
+            placeholder={ placeholder }
+            name={ name }
+            height={ height }
+            width={ width }
+      />
+      </StyledInputContainer>
    )
 
    return (
       <StyledInputContainer>
+         <StyledInputLabel>
+            { label }
+         </StyledInputLabel>
          <StyledInput
             type={ type }
             onChange={ controller }

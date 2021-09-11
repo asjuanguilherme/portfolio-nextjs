@@ -31,7 +31,9 @@ const MySkills = () => {
          title="Minhas Habilidades"
       >
          <Container>
-            <Text>Tenho um sólido conhecimento nas principais tecnologias da web como HTML e CSS e também no ecossistema Javascript.</Text>
+            <Text>
+               Tenho um solido conhecimento nas principais tecnologias de desenvolvimento front, como HTML, CSS e Javascript. Tendo mais afinidade com o Javascript, considero minhas principais ferramentas de trabalhos, frameworks javascript voltados para front-end, tais como React.js e Next.js. Abaixo uma listagem das tecnologias que conheço e já tive a experiência de trabalhar com elas.
+            </Text>
          </Container>
          <Container>
             <SkillsGrid>

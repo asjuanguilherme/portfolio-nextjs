@@ -14,8 +14,8 @@ const StyledButton = Styled.button`
    
    border-radius: 2em;
    
-   background: ${ props => props.theme.colors.gradientBackground
-    };
+   background: ${ props => props.theme.name === 'light' ? props.theme.colors.primary : '#231A75'};
+   
    border: 0;
 
    font-size: 1em;
@@ -23,6 +23,7 @@ const StyledButton = Styled.button`
 
    &:hover {
       cursor: pointer;
+      filter: brightness(130%);
    }
 
    @media screen and (max-width: 768px) {
