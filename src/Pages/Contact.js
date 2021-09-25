@@ -4,7 +4,6 @@ import Styled from 'styled-components'
 import Head from '../Layout/Head'
 import Container from '../Layout/Container'
 import Page from '../Layout/Page'
-import Section from '../Layout/Section/Section'
 
 import Input from '../Components/Forms/Input'
 import Button from '../Components/Forms/Button'

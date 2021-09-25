@@ -4,9 +4,6 @@ import Styled from 'styled-components'
 //CONTENT
 import ProjectsCardsList from './ProjectsCardsList'
 
-//UI
-import Loading from '../UiElements/Loading'
-
 const StyledProjectsGrid = Styled.div`
    display: grid;
    grid-template-columns: 1fr;

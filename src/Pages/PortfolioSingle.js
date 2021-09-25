@@ -77,7 +77,7 @@ const Home = () => {
             .then( data => setContentFetchData(data))
             .catch( () => setContentFetchError('Houve um erro ao carregar esse conteúdo...') )
             .finally( () => setContentFetchLoading(false) )
-   }, [])
+   }, [ params.slug ])
 
    if( contentFetch.error ) return <Error type={ 404 } >{ contentFetch.error }</Error>
 

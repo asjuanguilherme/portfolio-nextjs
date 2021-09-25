@@ -4,7 +4,6 @@ import Head from '../Layout/Head'
 import Page from '../Layout/Page'
 
 import MySkills from '../Components/Skill/MySkills'
-import SmartLink from '../Components/Link/SmartLink'
 import Container from '../Layout/Container'
 import Text from '../Layout/Text'
 
