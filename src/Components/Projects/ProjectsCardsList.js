@@ -42,7 +42,7 @@ const ProjectsCardsList = ({ limit = 9999, preloaderLimit = 3 }) => {
    
    React.useEffect(
       () => {
-         fetch('http://localhost/wp-json/api/projects')
+         fetch('https://diana-teste.000webhostapp.com/cms/wp-json/api/projects')
             .then( response => response.json() )
             .then( response => response.filter( a => a.active === true ) )
             .then( data => setProjectsFetchData(data))

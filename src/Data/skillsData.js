@@ -45,13 +45,13 @@ const skillsTemplate = [
       color: '#000000',
       sizeMultiplier: 1
    },
-   {
-      name: 'Node.js',
-      slug: 'node',
-      icon: <SiNodeDotJs />,
-      color: '#6CC24A',
-      sizeMultiplier: 1
-   },
+   // {
+   //    name: 'Node.js',
+   //    slug: 'node',
+   //    icon: <SiNodeDotJs />,
+   //    color: '#6CC24A',
+   //    sizeMultiplier: 1
+   // },
    {
       name: 'Git',
       slug: 'git',
@@ -59,13 +59,13 @@ const skillsTemplate = [
       color: '#f14e32',
       sizeMultiplier: 1
    },
-   {
-      name: 'Webpack',
-      slug: 'webpack',
-      icon: <SiWebpack />,
-      color: '#465e69',
-      sizeMultiplier: 1
-   },
+   // {
+   //    name: 'Webpack',
+   //    slug: 'webpack',
+   //    icon: <SiWebpack />,
+   //    color: '#465e69',
+   //    sizeMultiplier: 1
+   // },
    {
       name: 'Gulp.js',
       slug: 'gulp',

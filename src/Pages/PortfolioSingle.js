@@ -72,7 +72,7 @@ const Home = () => {
 
    React.useEffect(
       () => {
-         fetch(`http://localhost/wp-json/api/project/${params.slug}`)
+         fetch(`https://diana-teste.000webhostapp.com/cms/wp-json/api/project/${params.slug}`)
             .then( response => response.json() )
             .then( data => setContentFetchData(data))
             .catch( () => setContentFetchError('Houve um erro ao carregar esse conteúdo...') )
