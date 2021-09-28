@@ -1,4 +1,4 @@
-import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack, SiBootstrap, SiNextDotJs, SiTailwindcss, SiStyledComponents} from 'react-icons/si'
+import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack, SiBootstrap, SiNextDotJs, SiTailwindcss, SiStyledComponents, SiWordpress} from 'react-icons/si'
 import { RiLayout2Fill } from 'react-icons/ri'
 import { FaSearch } from 'react-icons/fa'
 
@@ -78,6 +78,13 @@ const skillsTemplate = [
       slug: 'php',
       icon: <SiPhp />,
       color: '#474a8a',
+      sizeMultiplier: 1
+   },
+   {
+      name: 'Wordpress',
+      slug: 'wordpress',
+      icon: <SiWordpress />,
+      color: '#21759b',
       sizeMultiplier: 1
    },
    {
