@@ -1,4 +1,4 @@
-import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack, SiBootstrap, SiNextDotJs } from 'react-icons/si'
+import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack, SiBootstrap, SiNextDotJs, SiTailwindcss, SiStyledComponents} from 'react-icons/si'
 import { RiLayout2Fill } from 'react-icons/ri'
 import { FaSearch } from 'react-icons/fa'
 
@@ -100,6 +100,20 @@ const skillsTemplate = [
       icon: <SiBootstrap />,
       color: '#6610f2',
       sizeMultiplier: 1
+   },
+   {
+      name: 'Tailwind CSS',
+      slug: 'tailwind',
+      icon: <SiTailwindcss />,
+      color: '#1EC9ED',
+      sizeMultiplier: 1
+   },
+   {
+      name: 'Styled Components',
+      slug: 'styled_components',
+      icon: <SiStyledComponents />,
+      color: '#DB7093',
+      sizeMultiplier: 1.5
    },
 ]
 

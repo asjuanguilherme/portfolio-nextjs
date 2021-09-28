@@ -32,7 +32,7 @@ const MySkills = () => {
       >
          <Container>
             <Text>
-               Tenho um solido conhecimento nas principais tecnologias de desenvolvimento front, como HTML, CSS e Javascript. Tendo mais afinidade com o Javascript, considero minhas principais ferramentas de trabalhos, frameworks javascript voltados para front-end, tais como React.js e Next.js. Abaixo uma listagem das tecnologias que conheço e já tive a experiência de trabalhar com elas.
+               Tenho um solido conhecimento nas principais tecnologias de desenvolvimento front, como HTML, CSS e Javascript. Tendo mais afinidade com o Javascript, considero minhas principais ferramentas de trabalho frameworks javascript voltados para front-end, tais como React.js e Next.js. Abaixo as ferramentas que tenho experiência de trabalho e habilidades adquiridas.
             </Text>
          </Container>
          <Container>
