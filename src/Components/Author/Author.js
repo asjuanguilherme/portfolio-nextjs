@@ -1,42 +1,27 @@
 import React from 'react'
-import Styled from 'styled-components'
+import * as S from './styles'
 
-import AuthorPhoto from './AuthorPhoto'
-import AuthorInformations from './AuthorInformations'
-import AuthorLinks from './AuthorLinks'
-
-const AuthorContainer = Styled.div`
-   padding: 0 1.5rem;
-   margin: 3rem 0;
-`
-const PhotoContainer = Styled.div`
-   max-width: 50%;
-   width: 100%;
-   margin: auto;
-`
-const InformationsContainer = Styled.div`
-   margin-top: 1rem;
-   text-align: center;
-`
-const LinksContainer = Styled.div`
-   margin-top: 1.5rem;
-`
+import AuthorPhoto from './AuthorPhoto/AuthorPhoto'
+import AuthorInformations from './AuthorInformations/AuthorInformations'
+import AuthorLinks from './AuthorLinks/AuthorLinks'
 
 const Author = () => {
    return (
-      <AuthorContainer>
-         <PhotoContainer>
+      <S.AuthorWrapper>
+
+         <S.PhotoWrapper>
             <AuthorPhoto />
-         </PhotoContainer>
+         </S.PhotoWrapper>
 
-         <InformationsContainer>
+         <S.InformationsWrapper>
             <AuthorInformations />
-         </InformationsContainer>
+         </S.InformationsWrapper>
 
-         <LinksContainer>
+         <S.LinksWrapper>
             <AuthorLinks />
-         </LinksContainer>
-      </AuthorContainer> 
+         </S.LinksWrapper>
+
+      </S.AuthorWrapper> 
    )
 }
 
