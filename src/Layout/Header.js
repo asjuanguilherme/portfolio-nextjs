@@ -2,7 +2,7 @@ import React from 'react'
 import Styled from 'styled-components'
 
 import AuthorMinified from '../Components/Author/AuthorMinified'
-import MenuButton from '../Components/Menu/MenuButton'
+import MenuToggle from '../Components/Menu/MenuToggle/MenuToggle'
 
 const HeaderStyled = Styled.header`
    @media screen and (max-width: 750px) {
@@ -25,7 +25,7 @@ const Header = () => {
    return (
       <HeaderStyled>
          <AuthorMinified />
-         <MenuButton />
+         <MenuToggle />
       </HeaderStyled>
    )
 }

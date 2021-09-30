@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCard from './ProjectCard'
+import ProjectCard from './Card/Card'
 
 const ProjectsCardsList = ({ limit = 9999, preloaderLimit = 3 }) => {
 

@@ -9,12 +9,14 @@ import Container from '../Layout/Container'
 import Page from '../Layout/Page'
 import Section from '../Layout/Section/Section'
 import Text from '../Layout/Text'
-import Error from '../Components/UiElements/Error'
+import Error from '../Components/States/Error/Error'
+
+import Button from '../Components/Forms/Buttons/Button'
 
 //Section Components
 import Slider from '../Components/Slider/Slider'
-import SmartLink from '../Components/Link/SmartLink'
-import Loading from '../Components/UiElements/Loading'
+// import SmartLink from '../Components/SmartLink/SmartLink'
+import Loading from '../Components/States/Loading/Loading'
 
 const SkillsListContainer = Styled.div`
    max-width: 600px;
@@ -96,7 +98,7 @@ const Home = () => {
 
             { contentFetch.data.url &&
                <SmartLinkContainer>
-                  <SmartLink href={ contentFetch.data.url } target="_blank" label="Acessar projeto" size={ 1.3 } />
+                  <Button href={ contentFetch.data.url } target="_blank" label="Acessar projeto" size={ 1.3 } />
                </SmartLinkContainer>
             }
 
@@ -112,9 +114,9 @@ const Home = () => {
       </Section>
       
       { contentFetch.data.images &&
-      <Section subTitle="Fotos">
-         <Slider slidesUrlArray={ contentFetch.data.images } />
-      </Section>
+         <Section subTitle="Fotos">
+            <Slider slidesUrlArray={ contentFetch.data.images } />
+         </Section>
       }
 
       </Page>

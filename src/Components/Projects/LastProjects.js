@@ -5,7 +5,7 @@ import 'swiper/swiper.min.css'
 
 import Section from '../../Layout/Section/Section'
 
-import ProjectCard from './ProjectCard'
+import ProjectCard from './Card/Card'
 
 const Container = Styled.div`
    @media screen and (min-width: 1200px) {
@@ -38,7 +38,7 @@ const LastProjects = ({ limit, preloaderLimit }) => {
          loading: loadingStatus
       }))
    }
-   
+
    const setProjectsFetchData = ( data ) => {
       setProjectsFetch( previousState => ({
          ...previousState,

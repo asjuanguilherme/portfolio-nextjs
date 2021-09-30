@@ -1,60 +1,10 @@
 import React from 'react'
 import Styled from 'styled-components'
 
+import * as S from './styles'
+
 import { connect } from 'react-redux'
 import { changeThemeState } from '../../Store/Actions/theme'
-
-const ThemeToggleContainer = Styled.div`
-   display: flex;
-   align-items: center;
-`
-
-const Toggle = Styled.span`
-   display: flex;
-   align-items: center;
-   width: 4em;
-   height: 1.6em;
-   border-radius: 1.7em;
-   background-color: rgba(255,255,255,.15);
-
-   ${ props => {
-      if( props.aside && props.theme.name === 'light') return `
-         background-color: #f6f6f6;
-      `
-   }}
-
-
-   cursor: pointer;
-
-   position: relative;
-
-   &::after {
-      content: '';
-      height: 1.2em;
-      width: 1.2em;
-      background-color: #FCC455;
-      border-radius: 50%;
-
-      position: absolute;
-      left: 7%;
-      transition: left .3s;
-      transition-property: left, background;
-   }
-
-   ${ props  => { 
-      if( props.theme.name === 'dark') return `
-      &::after {
-         left: 61%;
-         background-color: white;
-      }
-      `
-   }}
-`
-
-const ThemeLabel = Styled.span`
-   color: white;
-   margin-right: 1rem;
-`
 
 const ThemeToggle = ({ currentTheme, themeController , noLabel, aside}) => {
    
@@ -71,10 +21,10 @@ const ThemeToggle = ({ currentTheme, themeController , noLabel, aside}) => {
    }
 
    return (
-      <ThemeToggleContainer>
-         <ThemeLabel>{ returnThemeName() }</ThemeLabel>
-         <Toggle aside={ aside } onClick={ handleClick } />
-      </ThemeToggleContainer>
+      <S.Wrapper>
+         <S.Label>{ returnThemeName() }</S.Label>
+         <S.Toggle aside={ aside } onClick={ handleClick } />
+      </S.Wrapper>
    )
 }
 

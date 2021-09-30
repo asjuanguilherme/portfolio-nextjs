@@ -5,8 +5,8 @@ import Head from '../Layout/Head'
 import Container from '../Layout/Container'
 import Page from '../Layout/Page'
 
-import Input from '../Components/Forms/Input'
-import Button from '../Components/Forms/Button'
+import Input from '../Components/Forms/Input/Input'
+import Button from '../Components/Forms/Buttons/Button'
 import { FaEnvelope } from 'react-icons/fa'
 
 import AuthorLinks from '../Components/Author/AuthorLinks'
@@ -85,7 +85,22 @@ const Contact = () => {
    const sendMessage = e => {
       e.preventDefault()
 
-      console.log('Mensagem enviada')
+      const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
+
+      const settings = {
+         method: 'post',
+         body: {
+            'your-name': form.name,
+            'your-email': form.email,
+            'your-message': form.message
+         }
+      }
+
+      console.log(settings.body)
+
+      fetch(url, settings)
+         .then( response => response)
+         .then( response => console.log(response))
    }
 
    return (
@@ -111,6 +126,7 @@ const Contact = () => {
                   value={ form.name }
                   controller={ nameController }
                   validated='error'
+                  required
                />
                <Input
                   label="Email"
@@ -118,6 +134,7 @@ const Contact = () => {
                   value={ form.email }
                   controller={ emailController }
                   validated='success'
+                  required
                />
             </FormInputGrid>
             <Input
@@ -126,6 +143,7 @@ const Contact = () => {
                value={ form.message }
                controller={ messageController }
                height={ '10em' }
+               required
             />
             <ButtonContainer>
                <Button

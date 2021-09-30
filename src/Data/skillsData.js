@@ -1,4 +1,21 @@
-import { SiCss3, SiGit, SiGulp, SiHtml5, SiJavascript, SiNodeDotJs, SiPhp, SiReact, SiTypescript, SiWebpack, SiBootstrap, SiNextDotJs, SiTailwindcss, SiStyledComponents, SiWordpress} from 'react-icons/si'
+import { SiCss3,
+   SiGit,
+   SiGulp,
+   SiHtml5,
+   SiJavascript,
+   SiNodeDotJs,
+   SiPhp,
+   SiReact,
+   SiTypescript,
+   SiWebpack,
+   SiBootstrap,
+   SiNextDotJs,
+   SiTailwindcss,
+   SiStyledComponents,
+   SiWordpress,
+   SiRedux,
+   SiSass
+} from 'react-icons/si'
 import { RiLayout2Fill } from 'react-icons/ri'
 import { FaSearch } from 'react-icons/fa'
 
@@ -36,6 +53,13 @@ const skillsTemplate = [
       slug: 'react',
       icon: <SiReact />,
       color: '#61dbfb',
+      sizeMultiplier: 1
+   },
+   {
+      name: 'Redux',
+      slug: 'redux',
+      icon: <SiRedux />,
+      color: '#764abc',
       sizeMultiplier: 1
    },
    {
@@ -114,6 +138,13 @@ const skillsTemplate = [
       icon: <SiTailwindcss />,
       color: '#1EC9ED',
       sizeMultiplier: 1
+   },
+   {
+      name: 'Sass',
+      slug: 'sass',
+      icon: <SiSass />,
+      color: '#f8a5c2',
+      sizeMultiplier: 1.1
    },
    {
       name: 'Styled Components',

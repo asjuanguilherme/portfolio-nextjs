@@ -1,11 +1,10 @@
-import React from 'react'
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
-const StyledInputContainer = Styled.div`
+export const Wrapper = styled.div`
    position: relative;
 `
 
-const StyledInputLabel = Styled.label`
+export const Label = styled.label`
    display: block;
    padding-left: 1em;
    padding-bottom: .5em;
@@ -13,7 +12,7 @@ const StyledInputLabel = Styled.label`
    opacity: .875;
 `
 
-const StyledInput = Styled.input`
+export const Input = styled.input`
    padding: .7em 1.2em;
    width: 100%;
    color: ${ props => props.theme.colors.text };
@@ -36,7 +35,7 @@ const StyledInput = Styled.input`
    }
 `
 
-const StyledTextarea = Styled.textarea`
+export const Textarea = styled.textarea`
    resize: none;
 
    padding: .7em 1.2em;
@@ -61,41 +60,3 @@ const StyledTextarea = Styled.textarea`
       border-color: #7070FF;
    }
 `
-
-const Input = ({ type, value, controller, name, placeholder, width, height, validated, label }) => {
-   
-   if(type === 'textarea') return (
-      <StyledInputContainer>
-         <StyledInputLabel>
-            { label }
-         </StyledInputLabel>
-         <StyledTextarea
-            onChange={ controller }
-            value={ value }
-            placeholder={ placeholder }
-            name={ name }
-            height={ height }
-            width={ width }
-      />
-      </StyledInputContainer>
-   )
-
-   return (
-      <StyledInputContainer>
-         <StyledInputLabel>
-            { label }
-         </StyledInputLabel>
-         <StyledInput
-            type={ type }
-            onChange={ controller }
-            value={ value }
-            placeholder={ placeholder }
-            name={ name }
-            width={ width }
-            validated={ validated }
-         />
-      </StyledInputContainer>
-   )
-}
-
-export default Input

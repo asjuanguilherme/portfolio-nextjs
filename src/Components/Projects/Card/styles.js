@@ -1,10 +1,8 @@
-import React from 'react'
+import styled, { keyframes } from 'styled-components'
+
 import { NavLink } from 'react-router-dom'
-import Styled, { keyframes } from 'styled-components'
 
-import { FaChevronRight } from 'react-icons/fa'
-
-const HoverCard = Styled.div`
+export const HoverCard = styled.div`
    display: flex;
    flex-direction: column;
 
@@ -23,7 +21,7 @@ const HoverCard = Styled.div`
    transition: .3s ease-in-out;
 `
 
-const Card = Styled.div`
+export const Card = styled.div`
    padding-top: 75%;
    position: relative;
    border-radius: 1em;
@@ -42,7 +40,7 @@ const Card = Styled.div`
    }
 `
 
-const PreloaderCardAnimation = keyframes`
+export const PreloaderCardAnimation = keyframes`
    0% {
       opacity: .3;
    }
@@ -54,7 +52,7 @@ const PreloaderCardAnimation = keyframes`
    }
 `
 
-const PreloaderCard = Styled.div`
+export const PreloaderCard = styled.div`
    padding-top: 75%;
    border-radius: 1em;
    overflow: hidden;
@@ -62,7 +60,7 @@ const PreloaderCard = Styled.div`
    animation: ${ PreloaderCardAnimation } infinite 2s;
 `
 
-const Img = Styled.div`
+export const Img = styled.div`
    position: absolute;
    left: 0;
    top: 0;
@@ -76,7 +74,7 @@ const Img = Styled.div`
    background-color: ${ props => props.theme.colors.empty };
 `
 
-const HoverCardHeader = Styled.div`
+export const HoverCardHeader = styled.div`
    padding: 1.5em 2em;
    position: relative;
    flex-shrink: 0;
@@ -95,7 +93,7 @@ const HoverCardHeader = Styled.div`
    }
 `
 
-const HoverCardText = Styled.div`
+export const HoverCardText = styled.div`
    flex: 1;
    padding: 1em 2em;
    font-size: 1em;
@@ -103,17 +101,17 @@ const HoverCardText = Styled.div`
    font-weight: 400;
 `
 
-const Title = Styled.h1`
+export const Title = styled.h1`
    margin: 0;
    padding: 0;
    font-size: 1.3em;
 `
 
-const NavLinkContainer = Styled.div`
+export const NavLinkContainer = styled.div`
    padding: .8em;
 `
 
-const Button = Styled(NavLink)`
+export const Button = styled(NavLink)`
    display: flex;
    align-items: center;
    justify-content: center;
@@ -150,32 +148,5 @@ const Button = Styled(NavLink)`
 
 `
 
-const ButtonLabel = Styled.span`
+export const ButtonLabel = styled.span`
 `
-
-const ProjectCard = ({ name, description, slug, img, preloader = false }) => {
-
-   if( preloader ) return <PreloaderCard/>
-
-   return (
-      <Card>
-         <HoverCard>
-            <HoverCardHeader>
-               <Title>{ name }</Title>
-            </HoverCardHeader>
-            <HoverCardText>
-               { description }
-            </HoverCardText>
-            <NavLinkContainer>
-               <Button to={ `portfolio/${slug}` }>
-                  <ButtonLabel>Saber mais</ButtonLabel>
-                  <FaChevronRight />
-               </Button>
-            </NavLinkContainer>
-         </HoverCard>
-         <Img imgSrc={ img } />
-      </Card>
-   )
-}
-
-export default ProjectCard

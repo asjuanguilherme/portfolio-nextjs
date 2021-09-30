@@ -19,6 +19,7 @@ const show = keyframes`
 const Page = Styled.div`
    width: 100%;
    animation: ${show} .5s;
+   padding-bottom: 2em;
 
    @media screen and (max-width: 900px) {
       font-size: 0.9rem;
@@ -106,24 +107,26 @@ const PageTemplate = ({ title, subTitle, children, returnTo, description }) => {
 
    return (
       <Page>
-         <PageHeader>
-            { returnTo &&
-            <ReturnButton>
-               <Link to={ returnTo }>
-                  <FaChevronLeft />
-               </Link>
-            </ReturnButton>
-            }
-            
-            <TitleContainer>
-               { title &&
-                  <Title>{ title }</Title>
+         { ( returnTo || title || subTitle ) &&
+            <PageHeader>
+               { returnTo &&
+               <ReturnButton>
+                  <Link to={ returnTo }>
+                     <FaChevronLeft />
+                  </Link>
+               </ReturnButton>
                }
-               { subTitle &&
-                  <SubTitle>{ subTitle }</SubTitle>
-               }
-            </TitleContainer>
-         </PageHeader>
+               
+               <TitleContainer>
+                  { title &&
+                     <Title>{ title }</Title>
+                  }
+                  { subTitle &&
+                     <SubTitle>{ subTitle }</SubTitle>
+                  }
+               </TitleContainer>
+            </PageHeader>
+         }
          { description &&
             <PageDescription>
                <Text>

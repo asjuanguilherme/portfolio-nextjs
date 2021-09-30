@@ -4,7 +4,7 @@ import Styled from 'styled-components'
 import Section from '../../Layout/Section/Section'
 import Container from '../../Layout/Container'
 import Text from '../../Layout/Text'
-import SkillList from './SkillList'
+import SkillList from '../../Components/Skill/SkillList'
 import authorSkills from '../../Data/authorSkills'
 
 const SkillsGrid = Styled.div`

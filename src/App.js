@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import { connect } from 'react-redux'
 
 import Layout from './Layout/Layout'
-import MenuMobile from './Components/Menu/MenuMobile'
+import MenuMobile from './Components/Menu/MenuMobile/MenuMobile'
 
 //Pages
 import Home from './Pages/Home'
@@ -15,7 +15,7 @@ import Portfolio from './Pages/Portfolio'
 import PortfolioSingle from './Pages/PortfolioSingle'
 import Contact from './Pages/Contact'
 import { dark, light } from './Themes/themes'
-import Error from './Components/UiElements/Error'
+import Error from './Components/States/Error/Error'
 
 const App = ({ currentTheme }) => {
    const [menuStatus, setMenuStatus] = React.useState(false)

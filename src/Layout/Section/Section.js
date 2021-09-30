@@ -5,11 +5,11 @@ import SectionButton from './SectionButton'
 
 const Section = Styled.section`
    width: 100%;
-   padding-bottom: 2em;
+   padding-top: 2em;
 
    @media screen and (max-width: 900px) {
       font-size: 0.9rem;
-      padding-bottom: 1em;
+      padding-top: 1em;
    }
 
    @media screen and (max-width: 768px) {
@@ -99,13 +99,13 @@ const SectionTemplate = ({ title, subTitle, children, button }) => {
          <SectionContent>
             { children }
          </SectionContent>
-         <SectionFooter>
-            { button &&
-               <SectionButtonFooter>
-                  <SectionButton settings={ button } />
-               </SectionButtonFooter>
-            }
-         </SectionFooter>
+         { button &&
+            <SectionFooter>
+                  <SectionButtonFooter>
+                     <SectionButton settings={ button } />
+                  </SectionButtonFooter>
+            </SectionFooter>
+         }
       </Section>
    )
 }
