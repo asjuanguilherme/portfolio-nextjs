@@ -64,25 +64,31 @@ export const Img = styled.div`
    position: absolute;
    left: 0;
    top: 0;
+
    height: 100%;
    width: 100%;
+
+   border-radius: 1em;
+
    background-image: url(${({imgSrc}) => imgSrc});
    background-size: cover;
    background-position: center;
-   border-radius: 1em;
-   z-index: -1;
    background-color: ${ props => props.theme.colors.empty };
+   z-index: -1;
 `
 
 export const HoverCardHeader = styled.div`
-   padding: 1.5em 2em;
+   padding: 0 1.5rem;
+   padding-top: 1rem;
+   padding-bottom: .5rem;
+
    position: relative;
    flex-shrink: 0;
 
    &::after {
       content: '';
-      width: calc(100% - 4em);
-      height: .2em;
+      width: calc(100% - 3em);
+      height: .05em;
       border-radius: .1em;
       background-color: white;
 
@@ -95,7 +101,11 @@ export const HoverCardHeader = styled.div`
 
 export const HoverCardText = styled.div`
    flex: 1;
-   padding: 1em 2em;
+   overflow-y: auto;
+
+   padding: 0 1.5rem;
+   padding-top: 1rem;
+
    font-size: 1em;
    line-height: 1.4em;
    font-weight: 400;
@@ -104,7 +114,7 @@ export const HoverCardText = styled.div`
 export const Title = styled.h1`
    margin: 0;
    padding: 0;
-   font-size: 1.3em;
+   font-size: 1.2em;
 `
 
 export const NavLinkContainer = styled.div`

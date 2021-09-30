@@ -20,12 +20,10 @@ const ProjectCard = ({ name, description, slug, img, preloader = false }) => {
                { description }
             </S.HoverCardText>
 
-            <S.NavLinkContainer>
-               <S.Button to={ `portfolio/${slug}` }>
-                  <S.ButtonLabel>Saber mais</S.ButtonLabel>
-                  <FaChevronRight />
-               </S.Button>
-            </S.NavLinkContainer>
+            <S.Button to={ `portfolio/${slug}` }>
+               <S.ButtonLabel>Saber mais</S.ButtonLabel>
+               <FaChevronRight />
+            </S.Button>
             
          </S.HoverCard>
          

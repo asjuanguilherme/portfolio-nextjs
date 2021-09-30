@@ -85,7 +85,7 @@ const LastProjects = ({ limit, preloaderLimit }) => {
       >
          <S.Wrapper>
             <Swiper
-               spaceBetween={24}
+               spaceBetween={12}
                slidesPerView={1.5}
                slidesOffsetBefore={22}
                slidesOffsetAfter={22}
@@ -108,8 +108,14 @@ const LastProjects = ({ limit, preloaderLimit }) => {
                      slidesOffsetAfter: 42,
                      allowTouchMove: true,
                   },
-                  1200: {
+                  1360: {
                      slidesPerView: 3,
+                     slidesOffsetBefore: 0,
+                     slidesOffsetAfter: 0,
+                     allowTouchMove: false,
+                  },
+                  1440: {
+                     slidesPerView: 4,
                      slidesOffsetBefore: 0,
                      slidesOffsetAfter: 0,
                      allowTouchMove: false,

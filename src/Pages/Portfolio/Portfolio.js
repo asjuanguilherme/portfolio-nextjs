@@ -7,6 +7,7 @@ import Head from '../../Layout/Head/Head'
 import Container from '../../Layout/Container/Container'
 import Section from '../../Layout/Section/Section'
 import Page from '../../Layout/Page/Page'
+import Text from '../../Layout/Text/Text'
 
 //Partials
 import ProjectsGrid from '../../Components/Projects/ProjectsGrid/ProjectsGrid'
@@ -30,21 +31,20 @@ const Portfolio = () => {
    return (
       <>
       <Head title="Portfólio" />
-      <Page
-         title="Portfólio"
-         description="Projetos realizados por mim ou com participação minha."
+
+      <Page title="Portfólio"
+         description="Aqui você encontrará projetos publicados em que participei em sua construção além de projetos de estudo."
       >
-      
-      <Section>
-         {/* <ListContainer>
-            <ProjectListController>
-               { renderOptions() }
-            </ProjectListController>
-         </ListContainer> */}
-         <Container>
-            <ProjectsGrid /> 
-         </Container>
-      </Section>
+         <Section title="Projetos Publicados">
+            {/* <ListContainer>
+               <ProjectListController>
+                  { renderOptions() }
+               </ProjectListController>
+            </ListContainer> */}
+            <Container>
+               <ProjectsGrid /> 
+            </Container>
+         </Section>
       </Page>
       </>
    )

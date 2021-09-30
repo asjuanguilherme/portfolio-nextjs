@@ -14,7 +14,7 @@ const Home = () => {
          // Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere reprehenderit ut consequatur, dolorum necessitatibus doloremque minima expedita ipsum nostrum eaque, sit iure veniam asperiores, ad quod voluptatum ratione accusantium?
          // "
       >
-         <LastProjects limit={ 3 } preloaderLimit={ 3 }/>
+         <LastProjects limit={ 4 } preloaderLimit={ 4 }/>
 
       </Page>
       </>
