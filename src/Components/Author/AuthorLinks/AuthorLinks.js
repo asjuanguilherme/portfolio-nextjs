@@ -17,7 +17,7 @@ const AuthorLinks = () => {
          </S.IconLink>
 
          <S.IconLink
-            href="https://linkedin.com/in/juan-guilherme-504471160/"
+            href="https://linkedin.com/in/asjuanguilherme"
             target="_blank"
          >
             <FaLinkedinIn/>
