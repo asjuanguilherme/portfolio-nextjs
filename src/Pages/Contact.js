@@ -9,7 +9,7 @@ import Input from '../Components/Forms/Input/Input'
 import Button from '../Components/Forms/Buttons/Button'
 import { FaEnvelope } from 'react-icons/fa'
 
-import AuthorLinks from '../Components/Author/AuthorLinks'
+import AuthorLinks from '../Components/Author/AuthorLinks/AuthorLinks'
 
 const FormGrid = Styled.form`
    display: grid;

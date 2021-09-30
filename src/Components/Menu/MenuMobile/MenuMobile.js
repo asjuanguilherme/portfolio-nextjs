@@ -2,7 +2,7 @@ import React from 'react'
 
 import * as S from './styles'
 
-import AuthorMobile from '../../Author/AuthorMobile'
+import AuthorMobile from '../../Author/AuthorMobile/AuthorMobile'
 import Nav from '../../Nav/Nav'
 import ThemeToggle from '../../ThemeToggle/ThemeToggle'
 

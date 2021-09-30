@@ -2,9 +2,9 @@ import React from 'react'
 import * as S from './styles'
 
 import AuthorPhoto from '../AuthorPhoto/AuthorPhoto'
-import AuthorInformations from './AuthorInformations'
+import AuthorInformations from '../AuthorInformations/AuthorInformations'
 import AuthorMinified from '../AuthorMinified/AuthorMinified'
-import AuthorLinks from './AuthorLinks'
+import AuthorLinks from '../AuthorLinks/AuthorLinks'
 
 const Author = () => {
    return (

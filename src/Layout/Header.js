@@ -1,7 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 
-import AuthorMinified from '../Components/Author/AuthorMinified'
+import AuthorMinified from '../Components/Author/AuthorMinified/AuthorMinified'
 import MenuToggle from '../Components/Menu/MenuToggle/MenuToggle'
 
 const HeaderStyled = Styled.header`

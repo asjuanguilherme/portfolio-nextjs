@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './styles'
 
 import AuthorPhoto from '../AuthorPhoto/AuthorPhoto'
-import AuthorInformations from './AuthorInformations'
+import AuthorInformations from '../AuthorInformations/AuthorInformations'
 
 const AuthorMinified = () => {
    return (
