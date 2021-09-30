@@ -1,112 +1,43 @@
 import React from 'react'
-import Styled from 'styled-components'
+
+import * as S from './styles'
 
 import SectionButton from './SectionButton'
-
-const Section = Styled.section`
-   width: 100%;
-   padding-top: 2em;
-
-   @media screen and (max-width: 900px) {
-      font-size: 0.9rem;
-      padding-top: 1em;
-   }
-
-   @media screen and (max-width: 768px) {
-      font-size: 0.8rem;
-   }
-
-   @media screen and (max-width: 350px) {
-      font-size: 0.7rem;
-   }
-` 
-const SectionHeader = Styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 0 2.5em;
-   padding-bottom: 1em;
-   max-width: 1200px;
-
-   @media screen and (max-width: 768px) {
-      padding: 2em 2em;
-   }
-`
-const TitleContainer = Styled.div`
-`
-const Title = Styled.h1`
-   font-size: 2em;
-   color: ${ props => props.theme.colors.primary };
-   font-weight: bold;
-`
-const SubTitle = Styled.h2`
-   font-size: 1.5em;
-   margin-top: .2em;
-   font-weight: 500;
-   color: ${ props => props.theme.colors.primary };
-   opacity: .75;
-`
-const SectionButtonHeader = Styled.a`
-   @media screen and (max-width: 1200px) {
-      display: none;
-   }
-`
-
-const SectionContent = Styled.div`
-`
-
-const SectionFooter = Styled.div`
-   max-width: 1200px;
-
-   @media screen and (max-width: 768px) {
-      padding: 2em 2em;
-   }
-`
-
-const SectionButtonFooter = Styled.a`
-   display: none;
-
-   @media screen and (max-width: 1200px) {
-      display: flex;
-      justify-content: center;
-      padding: 1.8em;
-   }
-`
 
 const SectionTemplate = ({ title, subTitle, children, button }) => {
 
    return (
-      <Section>
+      <S.Section>
          { ( title || subTitle || button ) &&
-         <SectionHeader>
+         <S.Header>
             { (title || subTitle) &&
-               <TitleContainer>
+               <S.TitleWrapper>
                   { title &&
-                     <Title>{ title }</Title>
+                     <S.Title>{ title }</S.Title>
                   }
                   { subTitle &&
-                     <SubTitle>{ subTitle }</SubTitle>
+                     <S.SubTitle>{ subTitle }</S.SubTitle>
                   }
-               </TitleContainer>
+               </S.TitleWrapper>
             }
             { button &&
-               <SectionButtonHeader>
+               <S.ButtonHeader>
                   <SectionButton settings={ button } />
-               </SectionButtonHeader>
+               </S.ButtonHeader>
             }
-         </SectionHeader> }
+         </S.Header> }
 
-         <SectionContent>
+         <S.Content>
             { children }
-         </SectionContent>
+         </S.Content>
          { button &&
-            <SectionFooter>
-                  <SectionButtonFooter>
+            <S.Footer>
+                  <S.ButtonFooter>
                      <SectionButton settings={ button } />
-                  </SectionButtonFooter>
-            </SectionFooter>
+                  </S.ButtonFooter>
+            </S.Footer>
          }
-      </Section>
+      </S.Section>
    )
 }
 

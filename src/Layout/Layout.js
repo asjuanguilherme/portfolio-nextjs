@@ -1,33 +1,13 @@
 import React from 'react'
-import Styled from 'styled-components'
-import { connect } from 'react-redux'
 
+import * as S from './styles'
+
+import { connect } from 'react-redux'
 import { changeMenuState } from '../Store/Actions/menu'
 
-import Aside from './Aside'
-import Main from './Main'
-import Header from './Header'
-
-const LayoutStyled = Styled.div`
-   width: 100vw;
-   height: 100vh;
-   max-height: 100vh;
-   overflow-y: auto;
-   display: flex;
-   background-color: ${ props => props.theme.colors.background };
-   position: relative;
-   z-index: 2;
-   transition: .5s ease-in-out;
-   transition-property: transform, border-radius;
-
-   @media screen and (max-width: 750px) {
-      &.menu-active {
-         overflow: hidden;
-         transform: scale(0.75) translateX(-80%);
-         border-radius: 1.5rem;
-      }
-   }
-`
+import Aside from './Aside/Aside'
+import Main from './Main/Main'
+import Header from './Header/Header'
 
 const Layout = props => {
 
@@ -40,16 +20,20 @@ const Layout = props => {
    }
 
    return (
-      <LayoutStyled 
-            className={ props.menuActive ? 'menu-active' : '' }
+      <S.Layout 
+            menuActive={ props.menuActive }
             onClick={closeMenu}
          >
+            
          <Header />
+
          <Aside />
+
          <Main>
             { props.children }
          </Main>
-      </LayoutStyled>
+
+      </S.Layout>
    )
 }
 

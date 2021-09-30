@@ -1,7 +1,6 @@
-import React from 'react'
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
-const MainStyled = Styled.main `
+export const Main = styled.main `
    max-width: calc(100% - 360px);
    width: 100%;
    margin-left: auto;
@@ -14,13 +13,3 @@ const MainStyled = Styled.main `
       padding-top: 5em;
    }
 `
-
-const Main = props => {
-   return (
-      <MainStyled>
-         { props.children }
-      </MainStyled>
-   )
-}
-
-export default Main
