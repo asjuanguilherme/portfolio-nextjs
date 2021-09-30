@@ -1,7 +1,9 @@
 import React from 'react'
 
+import * as S from './styles'
+
 import { FaChevronLeft } from 'react-icons/fa'
-import Text from '../Text'
+import Text from '../Text/Text'
 
 const PageTemplate = ({ title, subTitle, children, returnTo, description }) => {
 

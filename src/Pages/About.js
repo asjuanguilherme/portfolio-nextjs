@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Head from '../Layout/Head'
-import Page from '../Layout/Page'
+import Head from '../Layout/Head/Head'
+import Page from '../Layout/Page/Page'
 import MySkills from './Partials/MySkills'
 import AboutMe from './Partials/AboutMe'
 

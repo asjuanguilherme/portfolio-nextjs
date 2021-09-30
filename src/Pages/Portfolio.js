@@ -2,10 +2,10 @@ import React from 'react'
 import Styled from 'styled-components'
 
 //Layout
-import Head from '../Layout/Head'
-import Container from '../Layout/Container'
+import Head from '../Layout/Head/Head'
+import Container from '../Layout/Container/Container'
 import Section from '../Layout/Section/Section'
-import Page from '../Layout/Page'
+import Page from '../Layout/Page/Page'
 
 //Sections
 import ProjectsGrid from '../Components/Projects/ProjectsGrid'

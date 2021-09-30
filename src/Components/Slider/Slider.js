@@ -8,7 +8,7 @@ import 'swiper/swiper-bundle.css'
 import "swiper/components/effect-fade/effect-fade.min.css"
 
 
-import Container from '../../Layout/Container'
+import Container from '../../Layout/Container/Container'
 import Section from '../../Layout/Section/Section'
 
 SwiperCore.use([Keyboard, Navigation, Thumbs, EffectFade])

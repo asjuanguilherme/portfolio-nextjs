@@ -4,11 +4,11 @@ import Styled from 'styled-components'
 import parse from 'html-react-parser'
 
 import SkillList from '../Components/Skill/SkillList'
-import Container from '../Layout/Container'
+import Container from '../Layout/Container/Container'
 
-import Page from '../Layout/Page'
+import Page from '../Layout/Page/Page'
 import Section from '../Layout/Section/Section'
-import Text from '../Layout/Text'
+import Text from '../Layout/Text/Text'
 import Error from '../Components/States/Error/Error'
 
 import Button from '../Components/Forms/Buttons/Button'

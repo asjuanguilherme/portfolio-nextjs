@@ -1,9 +1,9 @@
 import React from 'react'
 import Styled from 'styled-components'
 
-import Head from '../Layout/Head'
-import Container from '../Layout/Container'
-import Page from '../Layout/Page'
+import Head from '../Layout/Head/Head'
+import Container from '../Layout/Container/Container'
+import Page from '../Layout/Page/Page'
 
 import Input from '../Components/Forms/Input/Input'
 import Button from '../Components/Forms/Buttons/Button'
