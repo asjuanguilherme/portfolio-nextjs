@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Section from '../../Layout/Section/Section'
-import Container from '../../Layout/Container/Container'
-import Text from '../../Layout/Text/Text'
+import Section from '../../../Layout/Section/Section'
+import Container from '../../../Layout/Container/Container'
+import Text from '../../../Layout/Text/Text'
 
 const AboutMe = () => {
    return (

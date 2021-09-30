@@ -1,18 +1,13 @@
 import React from 'react'
-import Styled from 'styled-components'
+
+import * as S from './styles'
+
 import { Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/swiper.min.css'
 
-import Section from '../../Layout/Section/Section'
+import Section from '../../../Layout/Section/Section'
 
-import ProjectCard from './Card/Card'
-
-const Container = Styled.div`
-   @media screen and (min-width: 1200px) {
-      max-width: 1200px;
-      padding: 0 2.5em;
-   }
-`
+import ProjectCard from '../Card/Card'
 
 const LastProjects = ({ limit, preloaderLimit }) => {
 
@@ -88,7 +83,7 @@ const LastProjects = ({ limit, preloaderLimit }) => {
             icon: true
          }}
       >
-         <Container>
+         <S.Wrapper>
             <Swiper
                spaceBetween={24}
                slidesPerView={1.5}
@@ -123,7 +118,7 @@ const LastProjects = ({ limit, preloaderLimit }) => {
             >
                { renderSwiperSlides() }
             </Swiper>
-         </Container>
+         </S.Wrapper>
       </Section>
    )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import Styled from 'styled-components'
 
-import Section from '../../Layout/Section/Section'
-import Container from '../../Layout/Container/Container'
-import Text from '../../Layout/Text/Text'
-import SkillList from '../../Components/Skill/SkillList'
-import authorSkills from '../../Data/authorSkills'
+import Section from '../../../Layout/Section/Section'
+import Container from '../../../Layout/Container/Container'
+import Text from '../../../Layout/Text/Text'
+
+import SkillList from '../../../Components/Skill/SkillList'
+import authorSkills from '../../../Data/authorSkills'
 
 const SkillsGrid = Styled.div`
    /* max-width: 600px; */

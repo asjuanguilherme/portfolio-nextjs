@@ -1,52 +1,16 @@
 import React from 'react'
-import Styled from 'styled-components'
 
-import Head from '../Layout/Head/Head'
-import Container from '../Layout/Container/Container'
-import Page from '../Layout/Page/Page'
+import * as S from './styles'
 
-import Input from '../Components/Forms/Input/Input'
-import Button from '../Components/Forms/Buttons/Button'
+import Head from '../../Layout/Head/Head'
+import Container from '../../Layout/Container/Container'
+import Page from '../../Layout/Page/Page'
+
+import Input from '../../Components/Forms/Input/Input'
+import Button from '../../Components/Forms/Buttons/Button'
 import { FaEnvelope } from 'react-icons/fa'
 
-import AuthorLinks from '../Components/Author/AuthorLinks/AuthorLinks'
-
-const FormGrid = Styled.form`
-   display: grid;
-   gap: 1.2em;
-   padding-bottom: 1.5em;
-`
-
-const FormInputGrid = Styled.div`
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 2em;
-
-   @media screen and (max-width: 1200px) {
-      grid-template-columns: 1fr;
-      gap: 1.2em;
-   }
-`
-
-const ButtonContainer = Styled.div`
-   display: flex;
-   justify-content: flex-end;
-`
-
-const AuthorLinksContainer = Styled.div`
-   display: none;
-
-   & a {
-      margin: 0;
-      margin-right: 1.2em;
-   }
-
-   @media screen and (max-width: 768px) {
-      display: flex;
-      padding: 2em 0;
-      font-size: 1.2em;
-   }
-`
+import AuthorLinks from '../../Components/Author/AuthorLinks/AuthorLinks'
 
 const Contact = () => {
 
@@ -112,14 +76,14 @@ const Contact = () => {
       >
 
       <Container>
-         <AuthorLinksContainer>
+         <S.AuthorLinksWrapper>
             <AuthorLinks />
-         </AuthorLinksContainer>
+         </S.AuthorLinksWrapper>
       </Container>
 
       <Container>
-         <FormGrid>
-            <FormInputGrid>
+         <S.FormGrid>
+            <S.FormInputGrid>
                <Input
                   label="Nome"
                   type="text"
@@ -136,7 +100,7 @@ const Contact = () => {
                   validated='success'
                   required
                />
-            </FormInputGrid>
+            </S.FormInputGrid>
             <Input
                label="Mensagem"
                type="textarea"
@@ -145,15 +109,15 @@ const Contact = () => {
                height={ '10em' }
                required
             />
-            <ButtonContainer>
+            <S.ButtonWrapper>
                <Button
                   type="submit"
                   label="Enviar Mensagem"
                   icon={ <FaEnvelope /> }
                   onClick={ sendMessage }
                />
-            </ButtonContainer>
-         </FormGrid>
+            </S.ButtonWrapper>
+         </S.FormGrid>
       </Container>
 
       </Page>

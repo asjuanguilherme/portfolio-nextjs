@@ -1,8 +1,8 @@
 import React from 'react'
-import Head from '../Layout/Head/Head'
-import Page from '../Layout/Page/Page'
+import Head from '../../Layout/Head/Head'
+import Page from '../../Layout/Page/Page'
 
-import LastProjects from '../Components/Projects/LastProjects'
+import LastProjects from '../../Components/Projects/LastProjects/LastProjects'
 
 const Home = () => {
    return (

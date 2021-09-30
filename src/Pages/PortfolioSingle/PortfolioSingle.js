@@ -1,43 +1,24 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import Styled from 'styled-components'
+
+import * as S from './styles'
+
 import parse from 'html-react-parser'
 
-import SkillList from '../Components/Skill/SkillList'
-import Container from '../Layout/Container/Container'
+import SkillList from '../../Components/Skill/SkillList'
+import Container from '../../Layout/Container/Container'
 
-import Page from '../Layout/Page/Page'
-import Section from '../Layout/Section/Section'
-import Text from '../Layout/Text/Text'
-import Error from '../Components/States/Error/Error'
+import Page from '../../Layout/Page/Page'
+import Section from '../../Layout/Section/Section'
+import Text from '../../Layout/Text/Text'
+import Error from '../../Components/States/Error/Error'
 
-import Button from '../Components/Forms/Buttons/Button'
+import Button from '../../Components/Forms/Buttons/Button'
 
 //Section Components
-import Slider from '../Components/Slider/Slider'
+import Slider from '../../Components/Slider/Slider'
 // import SmartLink from '../Components/SmartLink/SmartLink'
-import Loading from '../Components/States/Loading/Loading'
-
-const SkillsListContainer = Styled.div`
-   max-width: 600px;
-   display: grid;
-   row-gap: 1em;
-   column-gap: 3em;
-   padding-left: 2.5em;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-
-   @media screen and (min-width: 1200px) {
-      grid-template-columns: 1fr 1fr 1fr;
-   }
-
-   @media screen and ( max-width: 768px ) {
-      grid-template-columns: 1fr 1fr;
-   }
-`
-
-const SmartLinkContainer = Styled.div`
-   margin: 1.5rem 0;
-`
+import Loading from '../../Components/States/Loading/Loading'
 
 const Home = () => {
 
@@ -97,9 +78,9 @@ const Home = () => {
             </Text>
 
             { contentFetch.data.url &&
-               <SmartLinkContainer>
+               <S.SmartLinkWrapper>
                   <Button href={ contentFetch.data.url } target="_blank" label="Acessar projeto" size={ 1.3 } />
-               </SmartLinkContainer>
+               </S.SmartLinkWrapper>
             }
 
          </Container>
@@ -108,9 +89,9 @@ const Home = () => {
       <Section
          subTitle="Habilidades Envolvidas"
       >
-         <SkillsListContainer>
+         <S.SkillsListWrapper>
             <SkillList skillsList={ contentFetch.data.skills } />
-         </SkillsListContainer>
+         </S.SkillsListWrapper>
       </Section>
       
       { contentFetch.data.images &&

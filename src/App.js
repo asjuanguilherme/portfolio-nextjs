@@ -8,14 +8,15 @@ import { connect } from 'react-redux'
 import Layout from './Layout/Layout'
 import MenuMobile from './Components/Menu/MenuMobile/MenuMobile'
 
-//Pages
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Portfolio from './Pages/Portfolio'
-import PortfolioSingle from './Pages/PortfolioSingle'
-import Contact from './Pages/Contact'
 import { dark, light } from './Themes/themes'
 import Error from './Components/States/Error/Error'
+
+//Pages
+import Home from './Pages/Home/Home'
+import About from './Pages/About/About'
+import Portfolio from './Pages/Portfolio/Portfolio'
+import PortfolioSingle from './Pages/PortfolioSingle/PortfolioSingle'
+import Contact from './Pages/Contact/Contact'
 
 const App = ({ currentTheme }) => {
    const [menuStatus, setMenuStatus] = React.useState(false)
