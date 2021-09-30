@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { SiCss3,
    SiGit,
    SiGulp,

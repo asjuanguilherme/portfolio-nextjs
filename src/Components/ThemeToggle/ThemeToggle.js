@@ -1,5 +1,4 @@
 import React from 'react'
-import Styled from 'styled-components'
 
 import * as S from './styles'
 
