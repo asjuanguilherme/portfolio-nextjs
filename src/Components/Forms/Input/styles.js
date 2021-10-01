@@ -57,6 +57,6 @@ export const Textarea = styled.textarea`
 
    &:focus {
       background-color: ${ props => props.theme.colors.empty };
-      border-color: #7070FF;
+      border-color: ${ props => props.theme.colors.primary };
    }
 `

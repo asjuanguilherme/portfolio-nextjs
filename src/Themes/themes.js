@@ -7,7 +7,7 @@ export const light = {
       background: '#FFFFFF',
       secondaryBackground: '#FFFFFF',
 
-      gradient: 'linear-gradient(20deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%)',
+      gradient: 'linear-gradient(20deg, hsl(240, 100%, 71.96078431372548%) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%)',
       
       text: '#686868',
       empty: '#EEEEEE',
@@ -26,6 +26,10 @@ export const light = {
             background: '#6556DF',
          }
       },
+
+      projectCard: {
+         background: 'linear-gradient(20deg, rgba(112,112,255,1) 0%, rgba(99,99,255,1) 50%, rgba(104,70,185,1) 100%)'
+      }
    }
 }
 
@@ -56,5 +60,9 @@ export const dark = {
             background: '#FFFFFF',
          }
       },
+
+      projectCard: {
+         background: '#28293d'
+      }
    }
 }

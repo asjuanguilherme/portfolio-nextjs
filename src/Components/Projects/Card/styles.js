@@ -1,6 +1,11 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 import { NavLink } from 'react-router-dom'
+
+const GlassHoverCard = css`
+   background: rgba(0,0,0,.2);
+   backdrop-filter: blur(8px);
+`
 
 export const HoverCard = styled.div`
    display: flex;
@@ -15,11 +20,11 @@ export const HoverCard = styled.div`
    width: 100%;
 
    color: white;
-   background: ${ props => props.theme.colors.gradient };
+   background: ${ props => props.theme.colors.projectCard.background };
 
    border-radius: 1em;
 
-   transform: translateX(-105%) scale(0.6) rotateX(25deg);
+   transform: translateX(-105%) scale(0.6);
    transition: .3s ease-in-out;
 `
 
@@ -30,11 +35,12 @@ export const Card = styled.div`
    position: relative;
    border-radius: 1em;
    overflow: hidden;
-   /* border: 1px solid ${ props => props.theme.colors.secondaryBackground }; */
+   border: 1px solid ${ props => props.theme.colors.secondaryBackground };
 
    &:hover {
       ${HoverCard} {
          transform: initial;
+         ${ props => props.transparent? GlassHoverCard : '' }
 
          *{
             transform: initial;

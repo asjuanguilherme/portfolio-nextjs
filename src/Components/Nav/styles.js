@@ -25,7 +25,7 @@ export const Link = styled(NavLink)`
    align-items: center;
    
    padding-left: 1.5em;
-   border-radius: 0.7em;
+   border-radius: .7em;
    
    color: ${ props => props.theme.colors.nav.neutral.color };
    background-color: ${ props => props.theme.colors.nav.neutral.background };
