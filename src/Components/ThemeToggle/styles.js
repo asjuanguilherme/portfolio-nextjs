@@ -9,8 +9,6 @@ export const Toggle = styled.button`
    height: 2.5rem;
    padding: 0 .5rem;
 
-   margin-left: 1rem;
-
    border-radius: 10rem;
    padding-left: .5rem;
    padding-right: .8rem;
@@ -18,17 +16,13 @@ export const Toggle = styled.button`
    display: flex;
    align-items: center;
    
-   background-color: transparent;
    border: none;
    outline: none;
    
    color: ${ props => props.theme.colors.primary };
    background-color: ${ props => props.theme.colors.empty };
    
-   @media screen and (max-width: 751px) { 
-      background-color: rgba(255,255,255,.15);
-      color: white;
-   } 
+   ${ props => props.theme.name === 'light' ? LightTheme : '' }
 
    max-width: 2.5rem;
    overflow: hidden;
@@ -46,7 +40,10 @@ export const Toggle = styled.button`
       display: block;
    }
 
-   ${ props => props.theme.name === 'light' ? LightTheme : '' }
+   @media screen and (max-width: 751px) { 
+      background-color: rgba(255,255,255,.15);
+      color: white;
+   } 
 
 `
 

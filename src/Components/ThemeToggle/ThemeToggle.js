@@ -19,12 +19,9 @@ export const ThemeIcon = withTheme( props => {
    )
 })
 
-const ThemeToggle = ({ currentTheme, themeController , noLabel, aside}) => {
+const ThemeToggle = ({ currentTheme, themeController }) => {
    
-   const handleClick = () => {
-      themeController( currentTheme === 'light' ? 'dark' : 'light' )
-      console.log(currentTheme)
-   }
+   const handleClick = () => themeController( currentTheme === 'light' ? 'dark' : 'light' )
 
    return (
       <S.Toggle onClick={ handleClick }>

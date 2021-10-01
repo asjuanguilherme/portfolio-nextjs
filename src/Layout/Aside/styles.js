@@ -18,4 +18,5 @@ export const Aside = styled.aside`
 
 export const ThemeToggleWrapper = styled.div`
    margin-top: 1em;
+   margin-left: 1rem;
 `
