@@ -12,6 +12,7 @@ const AuthorLinks = () => {
          <S.IconLink
             href="https://instagram.com/asjuanguilherme"
             target="_blank"
+            rel="noopener"
          >
             <FaInstagram/>
          </S.IconLink>
@@ -19,6 +20,7 @@ const AuthorLinks = () => {
          <S.IconLink
             href="https://linkedin.com/in/asjuanguilherme"
             target="_blank"
+            rel="noopener"
          >
             <FaLinkedinIn/>
          </S.IconLink>
@@ -26,6 +28,7 @@ const AuthorLinks = () => {
          <S.IconLink
             href="https://github.com/asjuanguilherme"
             target="_blank"
+            rel="noopener"
          >
             <FaGithub/>
          </S.IconLink>
@@ -33,6 +36,7 @@ const AuthorLinks = () => {
          <S.IconLink
             href="mailto:asjuanguilherme@gmail.com"
             target="_blank"
+            rel="noopener"
          >
             <FaEnvelope/>
          </S.IconLink>
