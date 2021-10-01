@@ -1,53 +1,65 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
-   display: flex;
-   align-items: center;
+const LightTheme = css`
+   background-color: white;
+   box-shadow: 0 0 0 1px ${ props => props.theme.colors.empty };
 `
 
-export const Toggle = styled.span`
+export const Toggle = styled.button`
+   height: 2.5rem;
+   padding: 0 .5rem;
+
+   margin-left: 1rem;
+
+   border-radius: 10rem;
+   padding-left: .5rem;
+   padding-right: .8rem;
+   
    display: flex;
    align-items: center;
-   width: 4em;
-   height: 1.6em;
-   border-radius: 1.7em;
-   background-color: rgba(255,255,255,.15);
+   
+   background-color: transparent;
+   border: none;
+   outline: none;
+   
+   color: ${ props => props.theme.colors.primary };
+   background-color: ${ props => props.theme.colors.empty };
+   
+   @media screen and (max-width: 751px) { 
+      background-color: rgba(255,255,255,.15);
+      color: white;
+   } 
 
-   ${ props => {
-      if( props.aside && props.theme.name === 'light') return `
-         background-color: #f6f6f6;
-      `
-   }}
+   max-width: 2.5rem;
+   overflow: hidden;
 
+   transition: .3s;
+   transition-property: all;
 
-   cursor: pointer;
-
-   position: relative;
-
-   &::after {
-      content: '';
-      height: 1.2em;
-      width: 1.2em;
-      background-color: #FCC455;
-      border-radius: 50%;
-
-      position: absolute;
-      left: 7%;
-      transition: left .3s;
-      transition-property: left, background;
+   &:hover {
+      cursor: pointer;
+      max-width: 180px;
    }
 
-   ${ props  => { 
-      if( props.theme.name === 'dark') return `
-      &::after {
-         left: 61%;
-         background-color: white;
-      }
-      `
-   }}
+   &::after {
+      content: ${ props => props.theme.title };
+      display: block;
+   }
+
+   ${ props => props.theme.name === 'light' ? LightTheme : '' }
+
+`
+
+export const Icon = styled.span`
+   font-size: 1.5rem;
+   padding-right: .5rem;
+   svg {
+      vertical-align: middle;
+      padding-bottom: 3px;
+   }
 `
 
 export const Label = styled.span`
-   color: white;
-   margin-right: 1rem;
+   white-space: nowrap;
+   font-size: 1.05rem;
 `

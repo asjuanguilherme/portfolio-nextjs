@@ -2,8 +2,22 @@ import React from 'react'
 
 import * as S from './styles'
 
+import { withTheme } from 'styled-components'
 import { connect } from 'react-redux'
 import { changeThemeState } from '../../Store/Actions/theme'
+
+export const ThemeIcon = withTheme( props => {
+   return(
+      <>
+         <S.Icon>
+            { props.theme.icon }
+         </S.Icon>
+         <S.Label>
+         { props.theme.title }
+         </S.Label>
+      </>
+   )
+})
 
 const ThemeToggle = ({ currentTheme, themeController , noLabel, aside}) => {
    
@@ -12,18 +26,10 @@ const ThemeToggle = ({ currentTheme, themeController , noLabel, aside}) => {
       console.log(currentTheme)
    }
 
-   const returnThemeName = () => {
-      if( !noLabel ) {
-         if( currentTheme === 'light' ) return 'Tema Claro'
-         if( currentTheme === 'dark' ) return 'Tema Escuro'
-      }
-   }
-
    return (
-      <S.Wrapper>
-         <S.Label>{ returnThemeName() }</S.Label>
-         <S.Toggle aside={ aside } onClick={ handleClick } />
-      </S.Wrapper>
+      <S.Toggle onClick={ handleClick }>
+         <ThemeIcon />
+      </S.Toggle>
    )
 }
 

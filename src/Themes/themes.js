@@ -1,5 +1,9 @@
+import { RiSunFill, RiMoonClearFill } from 'react-icons/ri'
+
 export const light = {
    name: 'light',
+   title: 'Tema Claro',
+   icon: <RiSunFill/>,
    
    colors: {
       primary: '#6556DF',
@@ -35,6 +39,8 @@ export const light = {
 
 export const dark = {
    name: 'dark',
+   title: 'Tema Escuro',
+   icon: <RiMoonClearFill />,
    
    colors: {
       primary: '#FFFFFF',
