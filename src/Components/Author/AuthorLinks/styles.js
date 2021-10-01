@@ -11,9 +11,9 @@ export const IconLink = styled.a`
    margin: 0 0.8rem;
    color: ${ props => props.theme.colors.primary };
 
-   transition: color .2s;
+   transition: .2s;
 
    &:hover {
-      color: #6556DF;
+      opacity: .5;
    }
 `

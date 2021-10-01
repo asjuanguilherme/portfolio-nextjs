@@ -2,9 +2,9 @@ import React from 'react'
 
 import * as S from './styles'
 
-const Skill = ({ name, color, icon, sizeMultiplier, scaleEffect }) => {
+const Skill = ({ name, color, icon, iconSize, scaleEffect }) => {
    return (
-      <S.Wrapper color={ color } sizeMultiplier={ sizeMultiplier } scaleEffect={ scaleEffect }>
+      <S.Wrapper color={ color } iconSize={ iconSize } scaleEffect={ scaleEffect }>
          { icon }
          <S.Label>
             { name }

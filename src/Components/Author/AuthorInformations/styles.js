@@ -14,5 +14,5 @@ export const Role = styled.h2`
    font-size: 1.2em;
    font-weight: 300;
    color: #919191;
-   color: ${ props => props.theme.colors.secondary };
+   color: ${ props => props.theme.colors.text };
 `

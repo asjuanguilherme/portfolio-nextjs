@@ -13,7 +13,7 @@ import Section from '../../Layout/Section/Section'
 import Text from '../../Layout/Text/Text'
 import Error from '../../Components/States/Error/Error'
 
-import Button from '../../Components/Forms/Buttons/Button'
+import Button from '../../Components/Buttons/Button'
 
 //Section Components
 import Slider from '../../Components/Slider/Slider'

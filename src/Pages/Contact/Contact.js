@@ -7,7 +7,7 @@ import Container from '../../Layout/Container/Container'
 import Page from '../../Layout/Page/Page'
 
 import Input from '../../Components/Forms/Input/Input'
-import Button from '../../Components/Forms/Buttons/Button'
+import Button from '../../Components/Buttons/Button'
 import { FaEnvelope } from 'react-icons/fa'
 
 import AuthorLinks from '../../Components/Author/AuthorLinks/AuthorLinks'

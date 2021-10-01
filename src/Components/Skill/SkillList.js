@@ -14,13 +14,13 @@ const SkillList = ({ skillsList = [], scaleEffect = false }) => {
       )
    })
 
-   const renderedSkills = () =>  filteredList.map(({name, color, icon, sizeMultiplier }) => (
+   const renderedSkills = () =>  filteredList.map(({name, color, icon, iconSize }) => (
       <Skill
          key={name}
          name={name}
          color={color}
          icon={icon}
-         sizeMultiplier={sizeMultiplier}
+         iconSize={iconSize}
          scaleEffect={scaleEffect}
       />)
    )

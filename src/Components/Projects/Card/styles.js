@@ -5,28 +5,32 @@ import { NavLink } from 'react-router-dom'
 export const HoverCard = styled.div`
    display: flex;
    flex-direction: column;
-
-   color: white;
-
+   
    position: absolute;
    left: 0;
    top: 0;
+   z-index: 1;
+
    height: 100%;
    width: 100%;
+
+   color: white;
+   background: ${ props => props.theme.colors.gradient };
+
    border-radius: 1em;
-   z-index: 1;
-   background: ${ props => props.theme.colors.gradientBackground };
 
    transform: translateX(-105%) scale(0.6) rotateX(25deg);
    transition: .3s ease-in-out;
 `
 
 export const Card = styled.div`
+   user-select: none;
+
    padding-top: 75%;
    position: relative;
    border-radius: 1em;
    overflow: hidden;
-   border: 1px solid ${ props => props.theme.colors.empty };
+   /* border: 1px solid ${ props => props.theme.colors.secondaryBackground }; */
 
    &:hover {
       ${HoverCard} {
@@ -128,7 +132,10 @@ export const Button = styled(NavLink)`
    height: 3em;
    border-radius: .5em;
 
-   background-color: rgba(0,0,0,.10);
+   background-color: rgba(0,0,0, .1);
+
+   ${ props => props.theme.name === 'dark' ? 'background-color: transparent;' : ''}
+
    transition: background .3s;
    text-decoration: none;
    
@@ -145,7 +152,7 @@ export const Button = styled(NavLink)`
 
    &:hover {
       cursor: pointer;
-      background-color: rgba(255,255,255,.1);
+      background-color: rgba(255,255,255,.2);
       svg {
          position: relative;
          left: .6em;

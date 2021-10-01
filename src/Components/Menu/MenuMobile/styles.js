@@ -1,8 +1,4 @@
-import styled, { css } from 'styled-components'
-
-const DarkMenu = css`
-   background: linear-gradient(195deg, #1f0c47 0%, #222274 50%, #1e1e74 100%);
-`
+import styled from 'styled-components'
 
 export const Menu = styled.div`
    width: 100vw;
@@ -12,9 +8,7 @@ export const Menu = styled.div`
    top: 0;
    z-index: 1;
 
-   background: ${ props => props.theme.colors.gradientBackground };
-
-   ${ props => props.theme.name === 'dark' ? DarkMenu : '' }
+   background: ${ props => props.theme.colors.gradient };
 
    @media screen and (min-width: 751px) {
       display: none;

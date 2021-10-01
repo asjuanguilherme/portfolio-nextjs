@@ -9,7 +9,7 @@ export const Aside = styled.aside`
    z-index: 100;
    box-shadow: 5px 0 26px rgb(0 0 0 / 10%);
    border-radius: 0 18px 18px 0;
-   background: ${ props => props.theme.colors.asideBackground };
+   background: ${ props => props.theme.colors.secondaryBackground };
 
    @media screen and (max-width: 750px) {
       display: none;

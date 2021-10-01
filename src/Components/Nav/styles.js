@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const Nav = styled.nav`
@@ -19,20 +19,6 @@ export const List = styled.ul`
 
 export const ListItem = styled.li``
 
-const DarkLink = css`
-   background-color: rgba(255,255,255,.15);
-   color: white;
-
-   .selected {
-      background-color: rgba(0,0,0,.1);
-      color: white;
-   }
-
-   &:hover {
-      background-color: rgba(255,255,255,.05);
-   }
-`
-
 export const Link = styled(NavLink)`
    display: flex;
    height: 2.5em;
@@ -41,24 +27,29 @@ export const Link = styled(NavLink)`
    padding-left: 1.5em;
    border-radius: 0.7em;
    
-   background-color: white;
-
-   color: #686868;
+   color: ${ props => props.theme.colors.nav.neutral.color };
+   background-color: ${ props => props.theme.colors.nav.neutral.background };
 
    text-decoration: none;
    cursor: pointer;
-
-   &:hover {
-      background-color: rgba(112,112,255,.05);
-   }
+   transition: .2s;
 
    span {
       margin-left: 0.5rem;
    }
 
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+
+   &:hover {
+      color: ${ props => props.theme.colors.nav.hover.color };
+      background-color: ${ props => props.theme.colors.nav.hover.background };
+   }
+
    &.selected {
-      background-color: rgba(112,112,255,.1);
-      color: #7070FF;
+      color: ${ props => props.theme.colors.nav.selected.color };
+      background-color: ${ props => props.theme.colors.nav.selected.background };
    }
 
    @media screen and (max-width: 750px) {
@@ -74,6 +65,4 @@ export const Link = styled(NavLink)`
          color: white;
       }
    }
-
-   ${ props => props.theme.name === 'dark' ? DarkLink : '' }
 `
