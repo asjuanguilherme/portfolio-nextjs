@@ -2,37 +2,42 @@ import React from 'react'
 
 import * as S from './styles'
 
-const Input = ({ type, value, controller, name, placeholder, width, height, validated, label }) => {
+import InputMask from 'react-input-mask'
+import { FaExclamationCircle } from 'react-icons/fa'
+
+const Input = ({ type, label, id, error, setValue, onChange, onBlur, value, ...props }) => {
    
-   if(type === 'textarea') return (
-      <S.Wrapper>
-         <S.Label> { label } </S.Label>
-
-         <S.Textarea
-            onChange={ controller }
-            value={ value }
-            placeholder={ placeholder }
-            name={ name }
-            height={ height }
-            width={ width }
-         />
-
-      </S.Wrapper>
-   )
-
    return (
       <S.Wrapper>
-         <S.Label> { label } </S.Label>
+         { label &&
+            <S.Label htmlFor={ id } > { label } </S.Label>
+         }
+
+         { (type === 'textarea') &&
+            <S.Textarea
+               id={ id }
+               value={ value }
+               onChange={ onChange }
+               onBlur={ onBlur }
+               error={ error }
+               { ...props }
+            >{ value }</S.Textarea>
+         }
          
-         <S.Input
-            type={ type }
-            onChange={ controller }
-            value={ value }
-            placeholder={ placeholder }
-            name={ name }
-            width={ width }
-            validated={ validated }
-         />
+         { !(type === 'textarea') &&
+            <InputMask id={ id } value={ value } onChange={ onChange } onBlur={ onBlur } { ...props }>
+               { (inputProps) => (
+                  <S.Input type={ type } value={ value } onChange={ onChange } error={ error } { ...inputProps } disableUnderscore/>
+               )}
+            </InputMask>
+         }
+
+         { error &&
+            <S.Error>
+               <FaExclamationCircle />
+               { error }
+            </S.Error>
+         }
       </S.Wrapper>
    )
 }

@@ -12,59 +12,40 @@ import { FaEnvelope } from 'react-icons/fa'
 
 import AuthorLinks from '../../Components/Author/AuthorLinks/AuthorLinks'
 
+import useForm from '../../Hooks/useForm'
+
+import MaskedInput from 'react-input-mask'
+
 const Contact = () => {
-
-   const [form, setForm] = React.useState({
-      name: '',
-      email: '',
-      message: '',
-   })
-
    const [ status, setStatus ] = React.useState({
       loading: false,
       error: null
    })
 
-   const nameController = e => {
-      setForm( state => ({
-         ...state,
-         name: e.target.value
-      }))
-   }
-
-   const emailController = e => {
-      setForm( state => ({
-         ...state,
-         email: e.target.value
-      }))
-   }
-
-   const messageController = e => {
-      setForm( state => ({
-         ...state,
-         message: e.target.value
-      }))
-   }
+   const name = useForm('name')
+   const tel = useForm('tel')
+   const email = useForm('email')
+   const message = useForm('message')
 
    const sendMessage = e => {
       e.preventDefault()
 
-      const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
+      // const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
 
-      const settings = {
-         method: 'post',
-         body: {
-            'your-name': form.name,
-            'your-email': form.email,
-            'your-message': form.message
-         }
-      }
+      // const settings = {
+      //    method: 'post',
+      //    body: {
+      //       'your-name': form.name,
+      //       'your-email': form.email,
+      //       'your-message': form.message
+      //    }
+      // }
 
-      console.log(settings.body)
+      // console.log(settings.body)
 
-      fetch(url, settings)
-         .then( response => response)
-         .then( response => console.log(response))
+      // fetch(url, settings)
+      //    .then( response => response)
+      //    .then( response => console.log(response))
    }
 
    return (
@@ -87,26 +68,32 @@ const Contact = () => {
                <Input
                   label="Nome"
                   type="text"
-                  value={ form.name }
-                  controller={ nameController }
-                  validated='error'
+                  placeholder="Nome e Sobrenome"
+                  { ...name }
+                  required
+               />
+               <Input
+                  label="Telefone"
+                  mask="(99) 99999-9999"
+                  placeholder="(84) 99999-9999"
+                  type="text"
+                  { ...tel }
                   required
                />
                <Input
                   label="Email"
-                  type="text"
-                  value={ form.email }
-                  controller={ emailController }
-                  validated='success'
+                  placeholder="formulario@mail.com"
+                  type="email"
                   required
+                  { ...email }
                />
             </S.FormInputGrid>
             <Input
                label="Mensagem"
                type="textarea"
-               value={ form.message }
-               controller={ messageController }
-               height={ '10em' }
+               resize="none"
+               rows='6'
+               { ...message }
                required
             />
             <S.ButtonWrapper>

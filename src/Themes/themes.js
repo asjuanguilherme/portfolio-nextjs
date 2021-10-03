@@ -8,6 +8,10 @@ export const light = {
    colors: {
       primary: '#6556DF',
 
+      status: {
+         error: '#ff6c6c'
+      },
+
       background: '#FFFFFF',
       secondaryBackground: '#FFFFFF',
 
@@ -44,6 +48,10 @@ export const dark = {
    
    colors: {
       primary: '#FFFFFF',
+
+      status: {
+         error: '#ff6c6c'
+      },
 
       background: '#1B1C27',
       secondaryBackground: '#28293D',
