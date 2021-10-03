@@ -8,7 +8,7 @@ export const FormGrid = styled.form`
 
 export const FormInputGrid = styled.div`
    display: grid;
-   grid-template-columns: 1fr .7fr .7fr;
+   grid-template-columns: .8fr .6fr .8fr;
    gap: 2em;
 
    @media screen and (max-width: 1200px) {

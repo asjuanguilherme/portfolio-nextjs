@@ -30,22 +30,23 @@ const Contact = () => {
    const sendMessage = e => {
       e.preventDefault()
 
-      // const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
+      const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
 
-      // const settings = {
-      //    method: 'post',
-      //    body: {
-      //       'your-name': form.name,
-      //       'your-email': form.email,
-      //       'your-message': form.message
-      //    }
-      // }
+      const settings = {
+         method: 'post',
+         body: {
+            'your-name': name.value,
+            'your-email': email.value,
+            'your-message': message.value,
+            'your-telephone': tel.value
+         }
+      }
 
-      // console.log(settings.body)
+      console.log(settings.body)
 
-      // fetch(url, settings)
-      //    .then( response => response)
-      //    .then( response => console.log(response))
+      fetch(url, settings)
+         .then( response => response)
+         .then( response => console.log(response))
    }
 
    return (

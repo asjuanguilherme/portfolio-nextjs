@@ -1,7 +1,22 @@
 import styled from 'styled-components'
 
+
+export const LinkButton = styled.a`
+   display: block;
+
+   position: absolute;
+   left: 0;
+   top: 0;
+   z-index: 2;
+
+   width: 100%;
+   height: 100%;
+`
+
 export const Button = styled.button`
    user-select: none;
+   position: relative;
+   z-index: 1;
 
    height: 3em;
    width: ${ props => props.width? props.width : 'max-content' };

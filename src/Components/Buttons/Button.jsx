@@ -2,15 +2,14 @@ import React from 'react'
 
 import * as S from './styles'
 
-const Button = ({ type, label, onClick, width, disabled }) => {
+const Button = ({ label, href, target, ...props }) => {
    return (
-      <S.Button
-         type={ type }
-         onClick={ disabled ? false : onClick }
-         width={ width }
-         disabled={ disabled }
-      >
+      <S.Button { ...props } >
          { label }
+         
+         { href &&
+            <S.LinkButton href={ href } target={ target } />
+         }
       </S.Button>
    )
 }
