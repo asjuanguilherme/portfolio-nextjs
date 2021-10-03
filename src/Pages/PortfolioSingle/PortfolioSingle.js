@@ -14,10 +14,10 @@ import Text from '../../Layout/Text/Text'
 import Error from '../../Components/States/Error/Error'
 
 import Button from '../../Components/Buttons/Button'
+import { BsLink45Deg } from 'react-icons/bs'
 
 //Section Components
 import Slider from '../../Components/Slider/Slider'
-// import SmartLink from '../Components/SmartLink/SmartLink'
 import Loading from '../../Components/States/Loading/Loading'
 
 const Home = () => {
@@ -79,7 +79,7 @@ const Home = () => {
 
             { contentFetch.data.url &&
                <S.SmartLinkWrapper>
-                  <Button href={ contentFetch.data.url } target="_blank" label="Acessar projeto" size={ 1.3 } />
+                  <Button href={ contentFetch.data.url } target="_blank" label="Acessar projeto" prefix={ <BsLink45Deg /> } />
                </S.SmartLinkWrapper>
             }
 

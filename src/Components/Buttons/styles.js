@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 
 export const LinkButton = styled.a`
@@ -11,6 +11,44 @@ export const LinkButton = styled.a`
 
    width: 100%;
    height: 100%;
+`
+
+const PrefixStyle = css`
+   right: .2em;
+`
+
+const SufixStyle = css`
+   right: -.2em;
+`
+
+const LoadingAnimation = keyframes`
+   to {
+      transform: rotate(360deg);
+   }
+`
+
+const LoadingStyle = css`
+   svg {
+      display: none;
+   }
+
+   &::after {
+      content: '';
+      display: inline-block;
+
+      height: .75rem;
+      width: .75rem;
+      border-radius: 1rem;
+
+      border-width: .3rem;
+      border-style: solid;
+      border-color: ${ props => props.theme.name === 'dark' ? 'rgba(0,0,0,.2)' : 'rgba(255,255,255,.35)' };
+      border-top-color: ${ props => props.theme.name === 'dark' ? 'rgba(0,0,0,.6)' : 'rgba(255,255,255,1)' };
+
+      margin-left: .5em;
+      
+      animation: ${LoadingAnimation} 1s linear infinite;
+   }
 `
 
 export const Button = styled.button`
@@ -38,6 +76,20 @@ export const Button = styled.button`
       cursor: pointer;
       opacity: .75;
    }
+
    
+   svg {
+      font-size: 1.5em;
+      position: relative;
+      ${ props => props.prefix ? PrefixStyle : '' };
+      ${ props => props.sufix ? SufixStyle : '' };
+   }
+
+   ${ props => props.loading ? LoadingStyle : '' };
+
    transition: .3s;
+`
+
+export const Loading = styled.span`
+
 `

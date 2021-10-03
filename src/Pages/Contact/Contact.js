@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import * as S from './styles'
 
@@ -8,30 +8,35 @@ import Page from '../../Layout/Page/Page'
 
 import Input from '../../Components/Forms/Input/Input'
 import Button from '../../Components/Buttons/Button'
-import { FaEnvelope } from 'react-icons/fa'
+
+import { IoIosSend } from 'react-icons/io'
+import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 
 import AuthorLinks from '../../Components/Author/AuthorLinks/AuthorLinks'
 
 import useForm from '../../Hooks/useForm'
 
-import MaskedInput from 'react-input-mask'
-
 const Contact = () => {
-   const [ status, setStatus ] = React.useState({
-      loading: false,
-      error: null
-   })
+   const [loading, setLoading] = useState(false)
+   const [success, setSuccess] = useState(false)
+   const [error, setError] = useState(null)
 
    const name = useForm('name')
    const tel = useForm('tel')
    const email = useForm('email')
    const message = useForm('message')
 
+   const validateAll = () => (
+      name.validate() &&
+      tel.validate() &&
+      email.validate() &&
+      message.validate()
+   )
+
    const sendMessage = e => {
       e.preventDefault()
 
       const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
-
       const settings = {
          method: 'post',
          body: {
@@ -42,11 +47,16 @@ const Contact = () => {
          }
       }
 
-      console.log(settings.body)
+      if( validateAll() ) {
+         setLoading(true)
 
-      fetch(url, settings)
-         .then( response => response)
-         .then( response => console.log(response))
+         fetch(url, settings)
+            .then( response => response)
+            .then( response => console.log(response))
+            .then( response => setLoading(false))
+            .finally( response => setSuccess(true))
+      }
+
    }
 
    return (
@@ -101,7 +111,8 @@ const Contact = () => {
                <Button
                   type="submit"
                   label="Enviar Mensagem"
-                  icon={ <FaEnvelope /> }
+                  sufix={ success? <IoMdCheckmarkCircleOutline /> : <IoIosSend /> }
+                  loading={ loading }
                   onClick={ sendMessage }
                />
             </S.ButtonWrapper>
