@@ -13,6 +13,17 @@ export const LinkButton = styled.a`
    height: 100%;
 `
 
+const DisabledStyled = css`
+   transition: unset;
+   opacity: .75;
+   filter: grayscale(1);
+
+   &:hover {
+      opacity: .75;
+      cursor: default;
+   }
+`
+
 const PrefixStyle = css`
    right: .2em;
 `
@@ -87,9 +98,7 @@ export const Button = styled.button`
 
    ${ props => props.loading ? LoadingStyle : '' };
 
+   ${ props => props.disabled? DisabledStyled : '' }
+
    transition: .3s;
-`
-
-export const Loading = styled.span`
-
 `

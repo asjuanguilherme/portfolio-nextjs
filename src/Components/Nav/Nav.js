@@ -3,9 +3,12 @@ import React from 'react'
 import * as S from './styles'
 import { FaHome, FaUser, FaEnvelope, FaPager } from 'react-icons/fa'
 
-const Nav = () => {
+import { connect } from 'react-redux'
+import { changeMenuState  } from '../../Store/Actions/menu'
+
+const Nav = ({ menuController }) => {
    return (
-      <S.Nav>
+      <S.Nav onClick={ () => menuController(false) }>
          <S.List>
 
             <S.ListItem>
@@ -41,4 +44,22 @@ const Nav = () => {
    )
 }
 
-export default Nav
+const mapStateToProps = state => {
+   return {
+      menuActive: state.menuActive
+   }
+}
+
+const mapActionCreatorsToProps = (dispatch) => {
+   return {
+      menuController(newState) {
+         const action = changeMenuState(newState)
+         dispatch(action)
+      }
+   }
+}
+
+export default connect(
+   mapStateToProps,
+   mapActionCreatorsToProps
+)(Nav)

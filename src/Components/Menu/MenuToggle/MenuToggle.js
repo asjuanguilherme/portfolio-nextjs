@@ -42,6 +42,6 @@ const mapActionCreatorsToProps = (dispatch) => {
 }
 
 export default connect(
-      mapStateToProps,
-      mapActionCreatorsToProps
-   )(MenuToggle)
+   mapStateToProps,
+   mapActionCreatorsToProps
+)(MenuToggle)

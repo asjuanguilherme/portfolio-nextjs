@@ -26,15 +26,13 @@ const Contact = () => {
    const email = useForm('email')
    const message = useForm('message')
 
-   const validateAll = () => (
-      name.validate() &&
-      tel.validate() &&
-      email.validate() &&
-      message.validate()
-   )
-
    const sendMessage = e => {
       e.preventDefault()
+
+      name.validate()
+      tel.validate()
+      email.validate()
+      message.validate()
 
       const url = 'http://diana-teste.000webhostapp.com/cms/wp-json/contact-form-7/v1/contact-forms/58/feedback'
       const settings = {
@@ -47,7 +45,8 @@ const Contact = () => {
          }
       }
 
-      if( validateAll() ) {
+
+      if( name.validate() && tel.validate() && email.validate() && message.validate()) {
          setLoading(true)
 
          fetch(url, settings)

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const Wrapper = styled.div`
    position: relative;
@@ -58,6 +58,18 @@ export const Textarea = styled.textarea`
    ${InputStyle}
 `
 
+const showError = keyframes`
+   from {
+      transform: translateX(-1.5rem);
+      opacity: .2;
+   }
+
+   to {
+      transform: initial;
+      opacity: 1;
+   }
+`
+
 export const Error = styled.span`
    display: flex;
    align-items: center;
@@ -70,6 +82,8 @@ export const Error = styled.span`
    
    color: ${ props => props.theme.colors.status.error };
    
+   animation: ${showError} .3s;
+
    svg {
       margin-right: 4px;
       font-size: 1rem;
