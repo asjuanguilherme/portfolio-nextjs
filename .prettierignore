@@ -1,0 +1,6 @@
+.next
+.husky
+.prettierignore
+.eslintignore
+yarn.lock
+src/generators/templates
