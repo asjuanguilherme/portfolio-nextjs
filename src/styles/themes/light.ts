@@ -19,16 +19,16 @@ const light: DefaultTheme = {
     },
     layers: {
       0: {
-        background: '#FCFCFC',
-        border: '#E5E5E5'
+        background: '#EEEEEE',
+        border: '#E2E2E2'
       },
       1: {
-        background: '#FFFFFF',
-        border: '#E6E6E6'
+        background: '#F6F6F6',
+        border: '#E9E9E9'
       },
       2: {
-        background: '#FCFCFC',
-        border: '#CDCDCD'
+        background: '#FFFFFF',
+        border: '#F2F2F2'
       }
     }
   }

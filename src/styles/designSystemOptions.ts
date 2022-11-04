@@ -2,7 +2,7 @@ import { breakpoints } from 'styles/screens'
 
 const designSystemOptions = {
   layout: {
-    containerMaxWidht: breakpoints.desktop,
+    containerMaxWidht: breakpoints.desktop + 'px',
     gutter: '1.5rem'
   },
   spacing: {
