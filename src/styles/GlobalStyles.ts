@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 500;
     font-family: Poppins, sans-serif;
     box-sizing: border-box;
+    color: ${props => props.theme.colors.text};
   }
   
   html, body, #__next {

@@ -41,11 +41,14 @@ const designSystemOptions = {
     small: '.75rem',
     medium: '1rem',
     large: '1.5rem',
-    full: '9999px',
+    pill: '9999px',
     circle: '100%'
   },
   zIndex: {
     navbar: 100
+  },
+  transition: {
+    default: '.2s'
   }
 }
 

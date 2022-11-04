@@ -3,6 +3,10 @@ import * as S from './styles'
 // Types
 import { ReactNode } from 'react'
 
+// Components
+import Footer from './Footer'
+import Header from './Header'
+
 export type LayoutProps = {
   children: ReactNode
 }
@@ -10,9 +14,9 @@ export type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <S.Wrapper>
-      <S.Header>Header Component</S.Header>
+      <Header />
       <S.Main>{children}</S.Main>
-      <S.Footer>Footer Component</S.Footer>
+      <Footer />
     </S.Wrapper>
   )
 }
