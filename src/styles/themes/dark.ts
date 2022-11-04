@@ -1,0 +1,37 @@
+import { DefaultTheme } from 'styled-components'
+
+const dark: DefaultTheme = {
+  name: 'dark',
+  colors: {
+    title: '#FFFFFF',
+    text: '#E6E6E6',
+    main: {
+      primary: {
+        light: '#99D8FF',
+        normal: '#06A1FE',
+        dark: '#266FD1'
+      },
+      themeGradient: {
+        light: '#2B4363',
+        normal: '#001522',
+        dark: '#001522'
+      }
+    },
+    layers: {
+      0: {
+        background: '#081117',
+        border: '#4C5257'
+      },
+      1: {
+        background: '#151D23',
+        border: '#2C3439'
+      },
+      2: {
+        background: '#283035',
+        border: '#3D4549'
+      }
+    }
+  }
+}
+
+export default dark
