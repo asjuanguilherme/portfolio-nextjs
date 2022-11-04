@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     user-select: none;
     scroll-behavior: smooth;
     font-weight: 500;
-    font-family: Montserrat, sans-serif;
+    font-family: Poppins, sans-serif;
     box-sizing: border-box;
   }
   
