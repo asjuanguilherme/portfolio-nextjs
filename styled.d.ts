@@ -1,5 +1,5 @@
 import 'styled-components'
-import designSystemOptions from 'styles/themes/utils/designSystemOptions'
+import designSystemOptions from 'styles/designSystemOptions'
 
 declare module 'styled-components' {
   export interface DefaultTheme extends designSystemOptions {
