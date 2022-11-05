@@ -10,6 +10,7 @@
     "generate": "yarn plop --plopfile ./src/generators/plopfile.js"
   },
   "dependencies": {
+    "lottie-react": "^2.3.1",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
