@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import Layout from 'components/layout'
-import { ThemeProvider } from 'contexts/ThemeProvider'
+import { ThemeProvider } from 'contexts/ThemeContext'
 
 // Styles
 import 'styles/static/fonts.css'

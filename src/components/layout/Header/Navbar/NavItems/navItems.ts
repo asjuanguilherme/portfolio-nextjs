@@ -4,7 +4,7 @@ export interface INavItem {
 }
 
 const navItems: INavItem[] = [
-  { title: 'Início', link: '/#home' },
+  { title: 'Início', link: '/' },
   { title: 'Sobre', link: '/#about' },
   { title: 'Habilidades', link: '/#skills' },
   { title: 'Testemunhos', link: '/#testimonials' },

@@ -6,18 +6,18 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     outline: none;
     border: 0;
-    user-select: none;
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+
+  html {
+    color: ${props => props.theme.colors.text};
     font-weight: 500;
     font-family: Poppins, sans-serif;
-    box-sizing: border-box;
-    color: ${props => props.theme.colors.text};
   }
   
   html, body, #__next {
     height: 100%;
   }
-
 `
 
 export default GlobalStyles
