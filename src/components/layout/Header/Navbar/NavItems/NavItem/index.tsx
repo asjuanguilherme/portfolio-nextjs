@@ -1,7 +1,7 @@
 import * as S from './styles'
-import { INavItem } from '../navItems'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { INavItem } from '../navItems'
 
 export type NavItemProps = INavItem
 

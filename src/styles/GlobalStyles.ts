@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     outline: none;
     border: 0;
     box-sizing: border-box;
+    color: inherit;
   }
 
   html {
@@ -18,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
   html, body, #__next {
     height: 100%;
   }
+  
 `
 
 export default GlobalStyles
