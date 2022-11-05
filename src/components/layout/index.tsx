@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 // Types
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 
 // Components
 import Footer from './Footer'
@@ -12,9 +12,15 @@ export type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const [menuOpened, setMenuOpened] = useState(false)
+
+  const menuToggle = () => {
+    setMenuOpened(state => !state)
+  }
+
   return (
     <S.Wrapper>
-      <Header />
+      <Header menuOpened={menuOpened} menuToggle={menuToggle} />
       <S.Main>{children}</S.Main>
       <Footer />
     </S.Wrapper>

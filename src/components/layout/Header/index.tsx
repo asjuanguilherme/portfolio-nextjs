@@ -11,9 +11,12 @@ import Logo from 'components/shared/Logo'
 import Navbar from './Navbar'
 import MenuToggle from '../MenuToggle'
 
-export type HeaderProps = {}
+export type HeaderProps = {
+  menuOpened: boolean
+  menuToggle: () => void
+}
 
-const Header = ({}: HeaderProps) => {
+const Header = ({ menuOpened, menuToggle }: HeaderProps) => {
   const { screen, breakpoints } = useScreenDimensions()
 
   return (
@@ -22,7 +25,11 @@ const Header = ({}: HeaderProps) => {
         <Logo
           style={{ marginRight: designSystemOptions.spacing.sections.medium }}
         />
-        {screen.width > breakpoints.tablet ? <Navbar /> : <MenuToggle />}
+        {screen.width > breakpoints.tablet ? (
+          <Navbar />
+        ) : (
+          <MenuToggle menuOpened={menuOpened} menuToggle={menuToggle} />
+        )}
       </S.Container>
     </S.Wrapper>
   )
