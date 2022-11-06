@@ -31,7 +31,7 @@ const HomeMainSection = ({}: HomeMainSectionProps) => {
         </S.SaudationPart>
         <S.PhotoPart>
           <Image
-            src="https://react-web-portfolio-sigma.vercel.app/static/media/author.c6f80ed8.jpg"
+            src="/assets/images/author.webp"
             alt="Foto de Juan Guilherme"
             layout="fill"
           />
