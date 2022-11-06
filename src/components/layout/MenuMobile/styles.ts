@@ -47,10 +47,7 @@ export const NavList = styled.ul`
 
 export const ThemeToggle = styled(UnstyledThemeToggle)`
   margin-top: ${spacing.components.small};
-
-  svg {
-    color: white;
-  }
+  color: white;
 `
 
 export const Wrapper = styled.nav`

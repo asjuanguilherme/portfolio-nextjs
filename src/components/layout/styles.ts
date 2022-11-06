@@ -3,8 +3,9 @@ import designSystemOptions from 'styles/designSystemOptions'
 
 const { borderRadius } = designSystemOptions
 
-export const Main = styled.main`
+export const Main = styled.main<{ secureMarginForContent: number }>`
   flex: 1;
+  margin-top: ${props => props.secureMarginForContent + 'px'};
 `
 
 export const PageWrapper = styled.div`
@@ -27,9 +28,16 @@ export const PageWrapper = styled.div`
 
 const menuOpenedStyle = css`
   ${PageWrapper} {
+    position: absolute;
+    overflow: hidden;
     border-radius: ${borderRadius.medium};
     transform: scale(0.8);
     left: -60%;
+  }
+
+  ${Main} {
+    overflow: scroll;
+    pointer-events: none;
   }
 `
 

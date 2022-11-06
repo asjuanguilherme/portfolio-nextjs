@@ -1,5 +1,8 @@
 import * as S from './styles'
 
+// Types
+import { MutableRefObject } from 'react'
+
 // Hooks
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
@@ -14,13 +17,14 @@ import MenuToggle from '../MenuToggle'
 export type HeaderProps = {
   menuOpened: boolean
   menuToggle: () => void
+  headerRef: MutableRefObject<HTMLElement | null>
 }
 
-const Header = ({ menuOpened, menuToggle }: HeaderProps) => {
+const Header = ({ menuOpened, menuToggle, headerRef }: HeaderProps) => {
   const { screen, breakpoints } = useScreenDimensions()
 
   return (
-    <S.Wrapper>
+    <S.Wrapper ref={headerRef}>
       <S.Container>
         <Logo
           style={{ marginRight: designSystemOptions.spacing.sections.medium }}

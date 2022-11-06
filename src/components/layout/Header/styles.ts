@@ -10,6 +10,8 @@ export const Container = styled(DefaultContainer)`
 
 export const Wrapper = styled.header`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: ${designSystemOptions.zIndex.navbar};
   width: 100%;
   padding: ${designSystemOptions.spacing.components.large} 0;
