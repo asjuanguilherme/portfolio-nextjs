@@ -1,9 +1,9 @@
 import * as S from './styles'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import navItems from '../Header/Navbar/NavItems/navItems'
 import ThemeToggle from '../ThemeToggle'
 import designSystemOptions from 'styles/designSystemOptions'
+import { navigationItems } from 'config/navigation'
 
 type MenuMobileProps = {
   closeMenu: () => void
@@ -17,7 +17,7 @@ const MenuMobile = ({ closeMenu }: MenuMobileProps) => {
   return (
     <S.Wrapper>
       <S.NavList>
-        {navItems.map(item => (
+        {navigationItems.map(item => (
           <S.NavItem
             key={item.link}
             active={router.asPath === item.link}

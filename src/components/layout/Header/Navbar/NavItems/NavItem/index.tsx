@@ -1,9 +1,9 @@
 import * as S from './styles'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { INavItem } from '../navItems'
+import { NavigationItemProps } from 'config/navigation'
 
-export type NavItemProps = INavItem
+export type NavItemProps = NavigationItemProps
 
 const NavItem = ({ title, link }: NavItemProps) => {
   const router = useRouter()
