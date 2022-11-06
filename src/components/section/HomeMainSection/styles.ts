@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import DefaultContainer from 'components/shared/Container'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
@@ -68,5 +68,25 @@ export const Container = styled(DefaultContainer)`
 `
 
 export const Wrapper = styled.section`
-  padding: 5rem 0;
+  padding: 7rem 0;
+  color: white;
+  background: ${props => css`
+    linear-gradient(0deg, ${props.theme.colors.main.themeGradient.normal}, ${props.theme.colors.main.themeGradient.light})
+  `};
+
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url('/assets/images/pattern-bg.png');
+    background-size: 350px;
+    opacity: 0.1;
+  }
 `
