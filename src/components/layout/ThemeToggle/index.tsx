@@ -6,6 +6,7 @@ import Moon from 'components/shared/Icons/Moon'
 import Sun from 'components/shared/Icons/Sun'
 
 export type ThemeToggleProps = {
+  forTransparentBackground?: boolean
   onlyIcon?: boolean
   style?: CSSProperties
   className?: string
@@ -23,13 +24,19 @@ const labelByTheme = {
 
 export const ThemeToggle = ({
   onlyIcon = false,
+  forTransparentBackground = false,
   ...props
 }: ThemeToggleProps) => {
   const theme = useTheme()
   const { themeToggle } = useContext(ThemeContext)
 
   return (
-    <S.Wrapper onClick={themeToggle} {...props} onlyIcon={onlyIcon}>
+    <S.Wrapper
+      onClick={themeToggle}
+      {...props}
+      onlyIcon={onlyIcon}
+      forTransparentBackground={forTransparentBackground}
+    >
       {iconByTheme[theme.name]}
       {!onlyIcon && <S.Label>{labelByTheme[theme.name]}</S.Label>}
     </S.Wrapper>

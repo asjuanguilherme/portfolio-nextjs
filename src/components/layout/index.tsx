@@ -1,7 +1,8 @@
 import * as S from './styles'
 
 // Hooks
-import { useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
 // Components
@@ -14,11 +15,15 @@ export type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const router = useRouter()
   const [menuOpened, setMenuOpened] = useState(false)
   const { screen, breakpoints } = useScreenDimensions()
-  const isMobile = screen.width < breakpoints.tablet
-  const headerRef = useRef(null)
   const [headerHeight, setHeaderHeight] = useState(0)
+  const headerRef = useRef<HTMLDivElement | null>(null)
+  const pageWrapperRef = useRef<HTMLDivElement | null>(null)
+  const isMobile = screen.width < breakpoints.tablet
+  const isHome = router.pathname === '/'
+  const [showTransparentHeader, setShowTransparentHeader] = useState(isHome)
 
   useEffect(() => {
     if (!headerRef.current) return
@@ -38,15 +43,40 @@ const Layout = ({ children }: LayoutProps) => {
 
   const closeMenu = () => setMenuOpened(false)
 
+  const handlePageScroll = (e: SyntheticEvent) => {
+    const eventTarget = e.target as HTMLDivElement
+    const scrollPositionY = eventTarget.scrollTop
+
+    if (scrollPositionY === 0 && isHome) setShowTransparentHeader(true)
+    else setShowTransparentHeader(false)
+  }
+
+  const handlePageClick = () => {
+    menuOpened && setMenuOpened(false)
+  }
+
+  useEffect(() => {
+    const scrollPositionY = pageWrapperRef.current?.scrollTop
+
+    setShowTransparentHeader(scrollPositionY === 0 && isHome)
+  }, [isHome, pageWrapperRef])
+
   return (
     <S.Wrapper menuOpened={menuOpened} isMobile={isMobile}>
-      <S.PageWrapper onClick={() => menuOpened && setMenuOpened(false)}>
+      <S.PageWrapper
+        onClick={handlePageClick}
+        onScroll={handlePageScroll}
+        ref={pageWrapperRef}
+      >
         <Header
           menuOpened={menuOpened}
           menuToggle={menuToggle}
           headerRef={headerRef}
+          showTransparentHeader={showTransparentHeader}
         />
-        <S.Main secureMarginForContent={headerHeight}>{children}</S.Main>
+        <S.Main secureMarginForContent={isHome ? 0 : headerHeight}>
+          {children}
+        </S.Main>
         {!menuOpened && <Footer />}
       </S.PageWrapper>
       {isMobile && <MenuMobile closeMenu={closeMenu} />}

@@ -1,5 +1,5 @@
 import designSystemOptions from 'styles/designSystemOptions'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import DefaultContainer from 'components/shared/Container'
 
 export const Container = styled(DefaultContainer)`
@@ -8,7 +8,13 @@ export const Container = styled(DefaultContainer)`
   justify-content: space-between;
 `
 
-export const Wrapper = styled.header`
+const transparentStyle = css`
+  background: transparent;
+`
+
+export const Wrapper = styled.header<{
+  showTransparentHeader: boolean
+}>`
   position: fixed;
   top: 0;
   left: 0;
@@ -16,4 +22,6 @@ export const Wrapper = styled.header`
   width: 100%;
   padding: ${designSystemOptions.spacing.components.large} 0;
   background: ${props => props.theme.colors.layers[2].background};
+
+  ${props => props.showTransparentHeader && transparentStyle}
 `

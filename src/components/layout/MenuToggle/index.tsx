@@ -7,9 +7,14 @@ import designSystemOptions from 'styles/designSystemOptions'
 export type MenuToggleProps = {
   menuOpened: boolean
   menuToggle: () => void
+  forTransparentBackground: boolean
 }
 
-const MenuToggle = ({ menuOpened, menuToggle }: MenuToggleProps) => {
+const MenuToggle = ({
+  menuOpened,
+  menuToggle,
+  forTransparentBackground
+}: MenuToggleProps) => {
   const lottieRef = useRef<LottieRefCurrentProps>(null)
 
   useEffect(() => {
@@ -28,6 +33,7 @@ const MenuToggle = ({ menuOpened, menuToggle }: MenuToggleProps) => {
       onClick={menuToggle}
       menuOpened={menuOpened}
       aria-label={menuOpened ? 'Fechar Menu' : 'Abrir Menu'}
+      forTransparentBackground={forTransparentBackground}
     >
       <Lottie
         lottieRef={lottieRef}

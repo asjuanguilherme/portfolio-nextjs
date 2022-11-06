@@ -3,16 +3,24 @@ import { navigationItems } from 'config/navigation'
 import ThemeToggle from 'components/layout/ThemeToggle'
 import NavItem from './NavItem'
 
-const Navbar = () => {
+type NavbarProps = {
+  forTransparentBackground: boolean
+}
+
+const Navbar = ({ forTransparentBackground }: NavbarProps) => {
   return (
     <S.Wrapper>
       <S.NavList>
         {navigationItems.map(navItem => (
-          <NavItem key={navItem.title} {...navItem} />
+          <NavItem
+            key={navItem.title}
+            forTransparentBackground={forTransparentBackground}
+            {...navItem}
+          />
         ))}
       </S.NavList>
 
-      <ThemeToggle />
+      <ThemeToggle forTransparentBackground={forTransparentBackground} />
     </S.Wrapper>
   )
 }

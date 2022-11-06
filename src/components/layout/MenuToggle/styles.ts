@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.button<{ menuOpened: boolean }>`
+export const Wrapper = styled.button<{
+  menuOpened: boolean
+  forTransparentBackground: boolean
+}>`
   background: unset;
   transition: 0.3s;
   path {
@@ -8,12 +11,10 @@ export const Wrapper = styled.button<{ menuOpened: boolean }>`
   }
   cursor: pointer;
 
-  &:hover {
-    color: ${props => props.theme.colors.main.primary.normal};
-  }
-
   color: ${props =>
-    props.menuOpened
+    props.forTransparentBackground
+      ? 'white'
+      : props.menuOpened
       ? props.theme.colors.main.primary.normal
       : props.theme.colors.title};
 `

@@ -3,15 +3,26 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { NavigationItemProps } from 'config/navigation'
 
-export type NavItemProps = NavigationItemProps
+export type NavItemProps = NavigationItemProps & {
+  forTransparentBackground: boolean
+}
 
-const NavItem = ({ title, link }: NavItemProps) => {
+const NavItem = ({ title, link, forTransparentBackground }: NavItemProps) => {
   const router = useRouter()
 
   return (
     <S.Wrapper>
       <Link href={link} passHref>
-        <S.ButtonLink active={router.asPath === link}>{title}</S.ButtonLink>
+        <S.ButtonLink
+          active={
+            link === '/'
+              ? router.asPath === '/'
+              : router.pathname === link || router.asPath === link
+          }
+          forTransparentBackground={forTransparentBackground}
+        >
+          {title}
+        </S.ButtonLink>
       </Link>
     </S.Wrapper>
   )

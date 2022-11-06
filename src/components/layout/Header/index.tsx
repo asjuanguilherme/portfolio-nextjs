@@ -1,6 +1,4 @@
 import * as S from './styles'
-
-// Types
 import { MutableRefObject } from 'react'
 
 // Hooks
@@ -18,21 +16,31 @@ export type HeaderProps = {
   menuOpened: boolean
   menuToggle: () => void
   headerRef: MutableRefObject<HTMLElement | null>
+  showTransparentHeader: boolean
 }
 
-const Header = ({ menuOpened, menuToggle, headerRef }: HeaderProps) => {
+const Header = ({
+  menuOpened,
+  menuToggle,
+  headerRef,
+  showTransparentHeader
+}: HeaderProps) => {
   const { screen, breakpoints } = useScreenDimensions()
 
   return (
-    <S.Wrapper ref={headerRef}>
+    <S.Wrapper ref={headerRef} showTransparentHeader={showTransparentHeader}>
       <S.Container>
         <Logo
           style={{ marginRight: designSystemOptions.spacing.sections.medium }}
         />
         {screen.width > breakpoints.tablet ? (
-          <Navbar />
+          <Navbar forTransparentBackground={showTransparentHeader} />
         ) : (
-          <MenuToggle menuOpened={menuOpened} menuToggle={menuToggle} />
+          <MenuToggle
+            menuOpened={menuOpened}
+            menuToggle={menuToggle}
+            forTransparentBackground={showTransparentHeader}
+          />
         )}
       </S.Container>
     </S.Wrapper>

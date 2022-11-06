@@ -3,25 +3,37 @@ import styled, { css } from 'styled-components'
 
 const { font, spacing, borderRadius, transition } = designSystemOptions
 
-const activeStyle = css`
-  color: white;
+const activeStyle = css<{ forTransparentBackground: boolean }>`
+  color: ${props =>
+    props.forTransparentBackground
+      ? props.theme.colors.main.primary.normal
+      : 'white'};
 
   &::before {
-    background: ${props => props.theme.colors.main.primary.normal};
+    background: ${props =>
+      props.forTransparentBackground
+        ? 'white'
+        : props.theme.colors.main.primary.normal};
     transform: translate(-50%, -50%) scale(9);
   }
 `
 
-const standardStyle = css`
-  color: inherit;
+const standardStyle = css<{ forTransparentBackground: boolean }>`
+  color: ${props => (props.forTransparentBackground ? 'white' : 'inherit')};
+  border-color: rgba(255, 255, 255, 0.15);
 
   &:hover {
-    box-shadow: inset 0 0 0.3rem rgba(0, 0, 0, 0.1);
-    color: ${props => props.theme.colors.main.primary.normal};
+    color: ${props =>
+      props.forTransparentBackground
+        ? 'white'
+        : props.theme.colors.main.primary.normal};
   }
 `
 
-export const ButtonLink = styled.a<{ active: boolean }>`
+export const ButtonLink = styled.a<{
+  active: boolean
+  forTransparentBackground: boolean
+}>`
   display: inline-flex;
   text-decoration: none;
   font-size: ${font.sizes.small};

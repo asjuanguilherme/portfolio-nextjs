@@ -24,7 +24,10 @@ export const Label = styled.span`
   font-weight: ${font.weight.semibold};
 `
 
-export const Wrapper = styled.button<{ onlyIcon?: boolean }>`
+export const Wrapper = styled.button<{
+  onlyIcon?: boolean
+  forTransparentBackground: boolean
+}>`
   height: ${font.sizes.xlarger};
   width: ${props => (props.onlyIcon ? font.sizes.xlarger : 'auto')};
   font-size: ${font.sizes.small};
@@ -76,4 +79,9 @@ export const Wrapper = styled.button<{ onlyIcon?: boolean }>`
   }
 
   ${props => props.theme.name === 'dark' && darkStyle}
+  ${props =>
+    props.forTransparentBackground &&
+    css`
+      color: white;
+    `}
 `
