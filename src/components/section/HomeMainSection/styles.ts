@@ -93,7 +93,6 @@ export const Container = styled(DefaultContainer)`
 `
 
 export const Wrapper = styled.section`
-  padding: 7rem 0;
   color: white;
   background: ${props => css`
     linear-gradient(0deg, ${props.theme.colors.main.themeGradient.dark}, ${props.theme.colors.main.themeGradient.light})
@@ -101,6 +100,13 @@ export const Wrapper = styled.section`
 
   position: relative;
   z-index: 1;
+  padding-bottom: 4rem;
+  padding-top: 7rem;
+
+  ${screens.tablet} {
+    padding-bottom: 7rem;
+    padding-top: 10rem;
+  }
 
   &::after {
     content: '';
