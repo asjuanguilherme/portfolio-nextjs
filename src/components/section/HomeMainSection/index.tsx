@@ -1,5 +1,6 @@
 import * as S from './styles'
 import Image from 'next/image'
+import { socialItems } from 'config/socials'
 
 export type HomeMainSectionProps = {}
 
@@ -10,7 +11,23 @@ const HomeMainSection = ({}: HomeMainSectionProps) => {
         <S.SaudationPart>
           <S.SaudationText>Olá, sou Juan!</S.SaudationText>
           <S.SaudationRole>Front End Developer</S.SaudationRole>
-          <S.Socials>{/* <Socials /> */}</S.Socials>
+          <S.Socials>
+            {socialItems.map(item => {
+              const Icon = item.icon
+              return (
+                <li key={item.link}>
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    alt-role={`Abrir o ${item.title}`}
+                  >
+                    <Icon />
+                  </a>
+                </li>
+              )
+            })}
+          </S.Socials>
         </S.SaudationPart>
         <S.PhotoPart>
           <Image

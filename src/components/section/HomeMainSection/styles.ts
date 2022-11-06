@@ -3,7 +3,7 @@ import DefaultContainer from 'components/shared/Container'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
-const { borderRadius, font, spacing } = designSystemOptions
+const { borderRadius, font, spacing, transition } = designSystemOptions
 
 export const PhotoPart = styled.div`
   margin-left: auto;
@@ -25,7 +25,32 @@ export const PhotoPart = styled.div`
   }
 `
 
-export const Socials = styled.div``
+export const Socials = styled.ul`
+  display: inline-flex;
+  gap: ${spacing.components.medium};
+  list-style: none;
+  margin-top: ${spacing.components.larger};
+
+  li {
+    a {
+      height: ${font.sizes.xxlarger};
+      width: ${font.sizes.xxlarger};
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: ${borderRadius.circle};
+      font-size: ${font.sizes.large};
+      transition: ${transition.default};
+
+      &:hover {
+        background: white;
+        color: ${props => props.theme.colors.main.primary.normal};
+      }
+    }
+  }
+`
 
 export const SaudationRole = styled.p`
   font-size: ${font.sizes.larger};
@@ -71,7 +96,7 @@ export const Wrapper = styled.section`
   padding: 7rem 0;
   color: white;
   background: ${props => css`
-    linear-gradient(0deg, ${props.theme.colors.main.themeGradient.normal}, ${props.theme.colors.main.themeGradient.light})
+    linear-gradient(0deg, ${props.theme.colors.main.themeGradient.dark}, ${props.theme.colors.main.themeGradient.light})
   `};
 
   position: relative;
@@ -87,6 +112,6 @@ export const Wrapper = styled.section`
     z-index: -1;
     background-image: url('/assets/images/pattern-bg.png');
     background-size: 350px;
-    opacity: 0.1;
+    opacity: 0.05;
   }
 `
