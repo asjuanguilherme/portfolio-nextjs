@@ -45,7 +45,8 @@ const designSystemOptions = {
     circle: '100%'
   },
   zIndex: {
-    navbar: 100
+    navbar: 100,
+    preLoader: 200
   },
   transition: {
     default: '.2s'
