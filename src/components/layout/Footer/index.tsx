@@ -1,9 +1,13 @@
 import * as S from './styles'
 
-export type FooterProps = {}
+const year = new Date().getFullYear()
 
-const Footer = ({}: FooterProps) => {
-  return <S.Wrapper>Hello! I am Footer component.</S.Wrapper>
+const Footer = () => {
+  return (
+    <S.Wrapper>
+      <S.Container>Juan © {year} - Todos os direitos reservados</S.Container>
+    </S.Wrapper>
+  )
 }
 
 export default Footer
