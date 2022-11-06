@@ -1,11 +1,12 @@
 import * as S from './styles'
 import { useTheme } from 'styled-components'
-import Moon from 'components/shared/Icons/Moon'
-import Sun from 'components/shared/Icons/Sun'
 import { CSSProperties, useContext } from 'react'
 import { ThemeContext } from 'contexts/ThemeContext'
+import Moon from 'components/shared/Icons/Moon'
+import Sun from 'components/shared/Icons/Sun'
 
 export type ThemeToggleProps = {
+  onlyIcon?: boolean
   style?: CSSProperties
   className?: string
 }
@@ -15,13 +16,22 @@ const iconByTheme = {
   light: <Sun />
 }
 
-const ThemeToggle = (props: ThemeToggleProps) => {
+const labelByTheme = {
+  dark: 'Tema Escuro',
+  light: 'Tema Claro'
+}
+
+export const ThemeToggle = ({
+  onlyIcon = false,
+  ...props
+}: ThemeToggleProps) => {
   const theme = useTheme()
   const { themeToggle } = useContext(ThemeContext)
 
   return (
-    <S.Wrapper onClick={themeToggle} {...props}>
+    <S.Wrapper onClick={themeToggle} {...props} onlyIcon={onlyIcon}>
       {iconByTheme[theme.name]}
+      {!onlyIcon && <S.Label>{labelByTheme[theme.name]}</S.Label>}
     </S.Wrapper>
   )
 }

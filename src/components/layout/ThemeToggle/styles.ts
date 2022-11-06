@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 
-const { font, borderRadius } = designSystemOptions
+const { font, borderRadius, spacing } = designSystemOptions
 
 const spinIcon = keyframes`
   from {
@@ -19,15 +19,20 @@ const darkStyle = css`
   }
 `
 
-export const Wrapper = styled.button`
+export const Label = styled.span`
+  margin-left: ${spacing.components.small};
+  font-weight: ${font.weight.semibold};
+`
+
+export const Wrapper = styled.button<{ onlyIcon?: boolean }>`
   height: ${font.sizes.xlarger};
-  width: ${font.sizes.xlarger};
+  width: ${props => (props.onlyIcon ? font.sizes.xlarger : 'auto')};
   font-size: ${font.sizes.small};
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: ${borderRadius.circle};
-
+  border-radius: ${borderRadius.pill};
+  padding: 0 ${spacing.components.small};
   background: rgba(255, 255, 255, 0.25);
   border: 1px solid ${props => props.theme.colors.text}20;
   color: #f6a43b;
@@ -51,7 +56,7 @@ export const Wrapper = styled.button`
     width: 100%;
     z-index: -1;
     background: #f6a43b;
-    border-radius: ${borderRadius.circle};
+    border-radius: ${borderRadius.pill};
     opacity: 0;
     transform: scale(0.3);
     transition: 0.2s;

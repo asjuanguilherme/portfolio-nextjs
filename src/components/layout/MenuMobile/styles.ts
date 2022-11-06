@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
+import UnstyledThemeToggle from '../ThemeToggle'
 
 const { borderRadius, spacing, font } = designSystemOptions
 
@@ -10,7 +11,7 @@ const navItemActiveStyle = css`
 
 const navItemStandardStyle = css`
   &:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.25);
   }
 `
 
@@ -23,10 +24,11 @@ export const NavItem = styled.li<{ active: boolean }>`
     padding: ${css`
       ${spacing.components.small} ${spacing.components.medium}
     `};
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: ${font.sizes.small};
+    font-weight: ${font.weight.semibold};
     text-decoration: none;
     transition: 0.15s;
     transition-property: background;
@@ -41,6 +43,14 @@ export const NavList = styled.ul`
   align-items: flex-end;
   gap: ${spacing.components.small};
   list-style: none;
+`
+
+export const ThemeToggle = styled(UnstyledThemeToggle)`
+  margin-top: ${spacing.components.small};
+
+  svg {
+    color: white;
+  }
 `
 
 export const Wrapper = styled.nav`

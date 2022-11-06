@@ -1,15 +1,11 @@
 import * as S from './styles'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import ThemeToggle from '../ThemeToggle'
-import designSystemOptions from 'styles/designSystemOptions'
 import { navigationItems } from 'config/navigation'
 
 type MenuMobileProps = {
   closeMenu: () => void
 }
-
-const { spacing } = designSystemOptions
 
 const MenuMobile = ({ closeMenu }: MenuMobileProps) => {
   const router = useRouter()
@@ -28,7 +24,7 @@ const MenuMobile = ({ closeMenu }: MenuMobileProps) => {
             </Link>
           </S.NavItem>
         ))}
-        <ThemeToggle style={{ marginTop: spacing.components.small }} />
+        <S.ThemeToggle />
       </S.NavList>
     </S.Wrapper>
   )
