@@ -23,7 +23,7 @@ export const Wrapper = styled.button`
   height: ${font.sizes.xlarger};
   width: ${font.sizes.xlarger};
   font-size: ${font.sizes.small};
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: ${borderRadius.circle};

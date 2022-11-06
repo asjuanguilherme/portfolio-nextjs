@@ -1,21 +1,10 @@
 import styled, { css } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 
-const { borderRadius, spacing } = designSystemOptions
+const { borderRadius } = designSystemOptions
 
 export const Main = styled.main`
   flex: 1;
-`
-
-export const MenuMobileWrapper = styled.div`
-  width: 65%;
-  position: absolute;
-  right: ${spacing.components.small};
-  top: 50%;
-  transform: translateY(-50%);
-  background: red;
-  padding: ${spacing.components.small};
-  z-index: 1;
 `
 
 export const PageWrapper = styled.div`

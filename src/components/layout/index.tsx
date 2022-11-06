@@ -1,15 +1,16 @@
 import * as S from './styles'
 
-// Types
-import { ReactNode, useEffect, useState } from 'react'
+// Hooks
+import { useState } from 'react'
+import useScreenDimensions from 'hooks/useScreenDimensions'
 
 // Components
 import Footer from './Footer'
 import Header from './Header'
-import useScreenDimensions from 'hooks/useScreenDimensions'
+import MenuMobile from './MenuMobile'
 
 export type LayoutProps = {
-  children: ReactNode
+  children: JSX.Element | JSX.Element[]
 }
 
 const Layout = ({ children }: LayoutProps) => {
@@ -21,6 +22,8 @@ const Layout = ({ children }: LayoutProps) => {
     setMenuOpened(state => !state)
   }
 
+  const closeMenu = () => setMenuOpened(false)
+
   return (
     <S.Wrapper menuOpened={menuOpened} isMobile={isMobile}>
       <S.PageWrapper onClick={() => menuOpened && setMenuOpened(false)}>
@@ -28,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
         <S.Main>{children}</S.Main>
         <Footer />
       </S.PageWrapper>
-      {isMobile && menuOpened && <S.MenuMobileWrapper>red</S.MenuMobileWrapper>}
+      {isMobile && <MenuMobile closeMenu={closeMenu} />}
     </S.Wrapper>
   )
 }
