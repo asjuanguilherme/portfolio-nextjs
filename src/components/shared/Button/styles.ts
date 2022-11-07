@@ -3,7 +3,7 @@ import { ButtonProps } from '.'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
-const { font, spacing, borderRadius } = designSystemOptions
+const { font, spacing, borderRadius, buttonSizes } = designSystemOptions
 
 const handleButtonColor = (color: ButtonProps['color']) => {
   if (color === 'white')
@@ -49,11 +49,22 @@ const handleButtonColor = (color: ButtonProps['color']) => {
   `
 }
 
+const onlyIconStyles = css<ButtonProps>`
+  padding: 0;
+  width: ${buttonSizes.default};
+
+  svg {
+    margin: 0;
+    font-size: ${font.sizes.large};
+  }
+`
+
 export const Wrapper = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: ${spacing.components.small} ${spacing.components.large};
+  height: ${buttonSizes.default};
+  padding: 0 ${spacing.components.large};
   font-weight: ${font.weight.semibold};
   font-size: ${font.sizes.small};
   text-transform: capitalize;
@@ -66,4 +77,5 @@ export const Wrapper = styled.button<ButtonProps>`
   }
 
   ${({ color }) => handleButtonColor(color)}
+  ${props => props.onlyIcon && onlyIconStyles}
 `

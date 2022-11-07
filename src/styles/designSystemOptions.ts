@@ -37,6 +37,9 @@ const designSystemOptions = {
       bold: 700
     }
   },
+  buttonSizes: {
+    default: '2.5rem'
+  },
   borderRadius: {
     small: '.75rem',
     medium: '1rem',

@@ -1,12 +1,13 @@
 import * as S from './styles'
-import { CSSProperties, ReactNode } from 'react'
+import { CSSProperties } from 'react'
 import Link from 'next/link'
 import { IconComponent } from '../Icons/utils/createIconComponent'
 
 export type ButtonProps = {
   color?: 'primary' | 'white'
-  children?: ReactNode
+  children?: string
   icon?: IconComponent
+  onlyIcon?: boolean
   onClick?: VoidFunction
   href?: string
   isExternal?: boolean
@@ -20,9 +21,14 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const ButtonComponent = (buttonProps: any) => (
-    <S.Wrapper color={color} {...props} {...buttonProps}>
+    <S.Wrapper
+      color={color}
+      {...props}
+      {...buttonProps}
+      aria-label={props.onlyIcon && children}
+    >
       {Icon && <Icon />}
-      {children}
+      {!props.onlyIcon && children}
     </S.Wrapper>
   )
 
