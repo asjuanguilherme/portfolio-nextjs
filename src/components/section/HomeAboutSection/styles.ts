@@ -4,6 +4,17 @@ import { screens } from 'styles/screens'
 
 const { spacing, borderRadius } = designSystemOptions
 
+export const SkillList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${spacing.components.medium} ${spacing.components.small};
+
+  ${screens.mobileL} {
+    gap: ${spacing.components.medium};
+  }
+`
+
 export const Box = styled.div`
   background: ${props => props.theme.colors.layers[1].background};
   padding: 0 ${spacing.sections.smaller};

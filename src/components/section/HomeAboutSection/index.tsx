@@ -3,6 +3,8 @@ import { SectionHeading, SectionWrapper } from 'components/shared/Section'
 import Container from 'components/shared/Container'
 import { CurriculumPaper } from 'components/shared/Icons'
 import Button from 'components/shared/Button'
+import Skill from 'components/shared/Skill'
+import skillListMockup from 'mockups/skills'
 
 export type HomeAboutSectionProps = {}
 
@@ -26,8 +28,14 @@ const HomeAboutSection = ({}: HomeAboutSectionProps) => {
           </Button>
         </SectionWrapper>
         <SectionWrapper as="div" style={{ paddingTop: 0 }}>
-          <SectionHeading>Minhas Habilidades?</SectionHeading>
-          <p>put skills list here</p>
+          <SectionHeading>Minhas Habilidades</SectionHeading>
+          <S.SkillList>
+            {skillListMockup.map(skill => (
+              <li key={skill.id}>
+                <Skill {...skill} />
+              </li>
+            ))}
+          </S.SkillList>
         </SectionWrapper>
       </S.Box>
     </Container>
