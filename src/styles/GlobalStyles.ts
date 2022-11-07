@@ -8,12 +8,12 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     box-sizing: border-box;
     color: inherit;
+    font-family: Poppins, sans-serif;
   }
 
   html {
     color: ${props => props.theme.colors.text};
     font-weight: 500;
-    font-family: Poppins, sans-serif;
   }
   
   html, body, #__next {
