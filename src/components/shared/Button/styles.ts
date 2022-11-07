@@ -27,20 +27,21 @@ const handleButtonColor = (color: ButtonProps['color']) => {
       top: 50%;
       transform: translate(-50%, -50%);
       z-index: -1;
-      height: 1rem;
-      width: 1rem;
+      height: 0px;
+      width: 0px;
       border-radius: ${designSystemOptions.borderRadius.circle};
 
-      transition: 0.5s;
-      transition-property: transform;
+      transition: 0.3s;
+      transition-property: transform, height, width;
       transform: translate(-50%, -50%);
-      background: transparent;
+      background: ${props => props.theme.colors.main.primary.dark};
     }
 
     ${screens.tablet} {
       &:hover {
         &::before {
-          background: ${props => props.theme.colors.main.primary.dark};
+          height: 1.5rem;
+          width: 1.5rem;
           transform: translate(-50%, -50%) scale(9);
         }
       }
@@ -59,6 +60,10 @@ export const Wrapper = styled.button<ButtonProps>`
 
   border-radius: ${borderRadius.pill};
   cursor: pointer;
+
+  svg {
+    margin-right: ${spacing.components.small};
+  }
 
   ${({ color }) => handleButtonColor(color)}
 `

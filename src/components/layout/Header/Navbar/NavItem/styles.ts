@@ -43,7 +43,7 @@ export const ButtonLink = styled.a<{
   `};
   border-radius: ${borderRadius.pill};
   transition-duration: ${transition.default};
-  transition-property: background, border, color, box-shadow;
+  transition-property: background, border, color;
 
   overflow: hidden;
   position: relative;

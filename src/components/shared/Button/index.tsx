@@ -1,19 +1,27 @@
 import * as S from './styles'
 import { CSSProperties, ReactNode } from 'react'
 import Link from 'next/link'
+import { IconComponent } from '../Icons/utils/createIconComponent'
 
 export type ButtonProps = {
   color?: 'primary' | 'white'
   children?: ReactNode
-  onClick: VoidFunction
+  icon?: IconComponent
+  onClick?: VoidFunction
   href?: string
   isExternal?: boolean
   style?: CSSProperties
 }
 
-const Button = ({ children, color = 'primary', ...props }: ButtonProps) => {
+const Button = ({
+  children,
+  color = 'primary',
+  icon: Icon,
+  ...props
+}: ButtonProps) => {
   const ButtonComponent = (buttonProps: any) => (
     <S.Wrapper color={color} {...props} {...buttonProps}>
+      {Icon && <Icon />}
       {children}
     </S.Wrapper>
   )
