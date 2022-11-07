@@ -33,8 +33,12 @@ export const Socials = styled.ul`
 `
 
 export const SaudationRole = styled.p`
-  font-size: ${font.sizes.larger};
+  font-size: ${font.sizes.medium};
   letter-spacing: 1.5px;
+
+  ${screens.mobileL} {
+    font-size: ${font.sizes.larger};
+  }
 
   ${screens.tablet} {
     font-size: ${font.sizes.xlarger};
@@ -42,9 +46,13 @@ export const SaudationRole = styled.p`
 `
 
 export const SaudationText = styled.h1`
-  font-size: ${font.sizes.xxlarger};
+  font-size: ${font.sizes.xlarger};
   font-weight: ${font.weight.bold};
   width: max-content;
+
+  ${screens.mobileL} {
+    font-size: ${font.sizes.xxlarger};
+  }
 
   ${screens.tablet} {
     font-size: calc(${font.sizes.xlarger} * 2);
