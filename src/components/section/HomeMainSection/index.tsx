@@ -1,6 +1,7 @@
 import * as S from './styles'
 import Image from 'next/image'
 import { socialItems } from 'config/socials'
+import Button from 'components/shared/Button'
 
 export type HomeMainSectionProps = {}
 
@@ -12,21 +13,18 @@ const HomeMainSection = ({}: HomeMainSectionProps) => {
           <S.SaudationText>Olá, sou Juan!</S.SaudationText>
           <S.SaudationRole>Front End Developer</S.SaudationRole>
           <S.Socials>
-            {socialItems.map(item => {
-              const Icon = item.icon
-              return (
-                <li key={item.link}>
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    alt-role={`Abrir o ${item.title}`}
-                  >
-                    <Icon />
-                  </a>
-                </li>
-              )
-            })}
+            {socialItems.map(item => (
+              <li key={item.link}>
+                <Button
+                  color="translucent"
+                  aria-label={`Abrir o ${item.title}`}
+                  href={item.link}
+                  icon={item.icon}
+                  isExternal
+                  onlyIcon
+                />
+              </li>
+            ))}
           </S.Socials>
         </S.SaudationPart>
         <S.PhotoPart>

@@ -25,7 +25,8 @@ const Button = ({
       color={color}
       {...props}
       {...buttonProps}
-      aria-label={props.onlyIcon && children}
+      target={props.isExternal ? '_blank' : '_self'}
+      rel={props.isExternal && 'noopener noreferrer'}
     >
       {Icon && <Icon />}
       {!props.onlyIcon && children}

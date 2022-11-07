@@ -30,26 +30,6 @@ export const Socials = styled.ul`
   gap: ${spacing.components.medium};
   list-style: none;
   margin-top: ${spacing.components.larger};
-
-  li {
-    a {
-      height: ${font.sizes.xxlarger};
-      width: ${font.sizes.xxlarger};
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: ${borderRadius.circle};
-      font-size: ${font.sizes.large};
-      transition: ${transition.default};
-
-      &:hover {
-        background: white;
-        color: ${props => props.theme.colors.main.primary.normal};
-      }
-    }
-  }
 `
 
 export const SaudationRole = styled.p`
