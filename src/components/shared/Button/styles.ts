@@ -1,20 +1,64 @@
-import styled, { css } from 'styled-components'
-import { ButtonProps } from '.'
+import styled, { css, DefaultTheme, ThemedStyledProps } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
 const { font, spacing, borderRadius, buttonSizes } = designSystemOptions
 
-const handleButtonColor = (color: ButtonProps['color']) => {
-  if (color === 'white')
-    return css`
-      background: white;
-      color: ${props => props.theme.colors.main.primary.normal};
-    `
+type Props = {
+  color: 'primary' | 'white' | 'translucent'
+  onlyIcon: boolean
+}
+
+const handleButtonColor = (color: Props['color']) => {
+  const colors = {
+    white: {
+      normal: {
+        background: 'white',
+        text: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.primary.normal,
+        border: 'initial'
+      },
+      hover: {
+        background: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.primary.normal,
+        text: 'white',
+        border: 'initial'
+      }
+    },
+    primary: {
+      normal: {
+        background: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.primary.normal,
+        text: 'white',
+        border: 'initial'
+      },
+      hover: {
+        background: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.primary.dark,
+        text: 'white',
+        border: 'initial'
+      }
+    },
+    translucent: {
+      normal: {
+        background: 'rgba(255,255,255,.15)',
+        text: 'white',
+        border: '1px solid rgba(255,255,255,.15)'
+      },
+      hover: {
+        background: 'white',
+        text: css`
+          ${props => props.theme.colors.main.primary.normal}
+        `,
+        border: '1px solid rgba(255,255,255,.15)'
+      }
+    }
+  }
 
   return css`
-    background: ${props => props.theme.colors.main.primary.normal};
-    color: white;
+    background: ${colors[color].normal.background};
+    color: ${colors[color].normal.text};
+    border: ${colors[color].normal.border};
 
     overflow: hidden;
     position: relative;
@@ -32,13 +76,16 @@ const handleButtonColor = (color: ButtonProps['color']) => {
       border-radius: ${designSystemOptions.borderRadius.circle};
 
       transition: 0.3s;
-      transition-property: transform, height, width;
+      transition-property: transform, height, width, border;
       transform: translate(-50%, -50%);
-      background: ${props => props.theme.colors.main.primary.dark};
+      background: ${colors[color].hover.background};
     }
 
     ${screens.tablet} {
       &:hover {
+        color: ${colors[color].hover.text};
+        border: ${colors[color].hover.border};
+
         &::before {
           height: 1.5rem;
           width: 1.5rem;
@@ -49,7 +96,7 @@ const handleButtonColor = (color: ButtonProps['color']) => {
   `
 }
 
-const onlyIconStyles = css<ButtonProps>`
+const onlyIconStyles = css<Props>`
   padding: 0;
   width: ${buttonSizes.default};
 
@@ -59,7 +106,7 @@ const onlyIconStyles = css<ButtonProps>`
   }
 `
 
-export const Wrapper = styled.button<ButtonProps>`
+export const Wrapper = styled.button<Props>`
   display: inline-flex;
   align-items: center;
   justify-content: center;

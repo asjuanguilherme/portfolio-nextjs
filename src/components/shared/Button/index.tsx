@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { IconComponent } from '../Icons/utils/createIconComponent'
 
 export type ButtonProps = {
-  color?: 'primary' | 'white'
+  color?: 'primary' | 'white' | 'translucent'
   children?: string
   icon?: IconComponent
   onlyIcon?: boolean
