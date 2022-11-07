@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
@@ -34,8 +34,12 @@ export const SectionHeading = styled.h2`
   }
 `
 
-export const SectionWrapper = styled.section`
+export const SectionWrapper = styled.section<{
+  layer?: keyof DefaultTheme['colors']['layers']
+}>`
   padding: ${spacing.sections.small} 0;
+  background: ${props =>
+    props.theme.colors.layers[props.layer || 0].background};
 
   ${screens.tablet} {
     padding: ${spacing.sections.medium} 0;

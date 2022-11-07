@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
@@ -15,8 +15,10 @@ export const SkillList = styled.ul`
   }
 `
 
-export const Box = styled.div`
-  background: ${props => props.theme.colors.layers[1].background};
+export const Box = styled.div<{
+  layer: keyof DefaultTheme['colors']['layers']
+}>`
+  background: ${props => props.theme.colors.layers[props.layer].background};
   padding: 0 ${spacing.sections.smaller};
   position: relative;
   z-index: 1;

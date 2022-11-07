@@ -9,10 +9,12 @@ import skillListMockup from 'mockups/skills'
 export type HomeAboutSectionProps = {}
 
 const HomeAboutSection = ({}: HomeAboutSectionProps) => {
+  const layer = 2
+
   return (
     <Container as="section" id="#about">
-      <S.Box>
-        <SectionWrapper as="div">
+      <S.Box layer={layer}>
+        <SectionWrapper as="div" layer={layer}>
           <SectionHeading>Quem sou eu?</SectionHeading>
           <p>
             Sou natural de Natal - RN, tenho 21 anos e sou um desenvolvedor web
@@ -27,7 +29,7 @@ const HomeAboutSection = ({}: HomeAboutSectionProps) => {
             Ver Currículo
           </Button>
         </SectionWrapper>
-        <SectionWrapper as="div" style={{ paddingTop: 0 }}>
+        <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={layer}>
           <SectionHeading>Minhas Habilidades</SectionHeading>
           <S.SkillList>
             {skillListMockup.map(skill => (
