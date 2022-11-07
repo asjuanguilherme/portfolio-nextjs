@@ -1,0 +1,37 @@
+import * as S from './styles'
+import { SectionHeading, SectionWrapper } from 'components/shared/Section'
+import Container from 'components/shared/Container'
+import { CurriculumPaper } from 'components/shared/Icons'
+import Button from 'components/shared/Button'
+
+export type HomeAboutSectionProps = {}
+
+const HomeAboutSection = ({}: HomeAboutSectionProps) => {
+  return (
+    <Container as="section" id="#about">
+      <S.Box>
+        <SectionWrapper as="div">
+          <SectionHeading>Quem sou eu?</SectionHeading>
+          <p>
+            Sou natural de Natal - RN, tenho 21 anos e sou um desenvolvedor web
+            frontend! Desde que iniciei as minhas aventuras no mundo da
+            programação, há mais ou menos 3 anos, venho me dedicando e sempre me
+            aperfeiçoando para realizar minhas entregas com qualidade e sempre
+            contribuir no que for preciso. Sou curioso e motivado a conhecer
+            cada vez mais sobre novas tecnologias técnicas e ferramentas para me
+            apromiorar cada vez mais.
+          </p>
+          <Button icon={CurriculumPaper} href="/curriculo">
+            Ver Currículo
+          </Button>
+        </SectionWrapper>
+        <SectionWrapper as="div" style={{ paddingTop: 0 }}>
+          <SectionHeading>Minhas Habilidades?</SectionHeading>
+          <p>put skills list here</p>
+        </SectionWrapper>
+      </S.Box>
+    </Container>
+  )
+}
+
+export default HomeAboutSection

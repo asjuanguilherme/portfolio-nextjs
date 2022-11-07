@@ -1,0 +1,20 @@
+import styled from 'styled-components'
+import designSystemOptions from 'styles/designSystemOptions'
+import { screens } from 'styles/screens'
+
+const { spacing, borderRadius } = designSystemOptions
+
+export const Box = styled.div`
+  background: ${props => props.theme.colors.layers[1].background};
+  padding: 0 ${spacing.sections.smaller};
+  position: relative;
+  z-index: 1;
+  top: -${spacing.sections.smaller};
+  border-radius: ${borderRadius.medium};
+  border: 1px solid ${props => props.theme.colors.layers[1].border};
+
+  ${screens.tablet} {
+    padding: 0 ${spacing.sections.medium};
+    top: -${spacing.sections.medium};
+  }
+`
