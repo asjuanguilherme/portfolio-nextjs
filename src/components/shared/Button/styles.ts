@@ -115,6 +115,7 @@ export const Wrapper = styled.button<Props>`
   font-weight: ${font.weight.semibold};
   font-size: ${font.sizes.small};
   text-transform: capitalize;
+  text-decoration: none;
 
   border-radius: ${borderRadius.pill};
   cursor: pointer;
