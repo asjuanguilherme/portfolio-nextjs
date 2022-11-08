@@ -3,11 +3,10 @@ import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 import CircleBackgroundAnimation from '../CircleBackgroundAnimation'
 
-const { font, spacing, borderRadius, buttonSizes, transition } =
-  designSystemOptions
+const { font, spacing, borderRadius, buttonSizes } = designSystemOptions
 
 type Props = {
-  color: 'primary' | 'white' | 'translucent'
+  color: 'primary' | 'yellow' | 'white' | 'translucent'
   onlyIcon: boolean
 }
 
@@ -41,6 +40,20 @@ const handleButtonColor = (color: Props['color']) => {
         border: 'initial'
       }
     },
+    yellow: {
+      normal: {
+        background: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.yellow.normal,
+        text: 'white',
+        border: 'initial'
+      },
+      hover: {
+        background: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.yellow.dark,
+        text: 'white',
+        border: 'initial'
+      }
+    },
     translucent: {
       normal: {
         background: 'rgba(255,255,255,.15)',
@@ -49,9 +62,8 @@ const handleButtonColor = (color: Props['color']) => {
       },
       hover: {
         background: 'white',
-        text: css`
-          ${props => props.theme.colors.main.primary.normal}
-        `,
+        text: (props: ThemedStyledProps<Props, DefaultTheme>) =>
+          props.theme.colors.main.primary.normal,
         border: '1px solid rgba(255,255,255,.15)'
       }
     }

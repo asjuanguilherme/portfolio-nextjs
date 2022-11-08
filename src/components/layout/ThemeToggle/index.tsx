@@ -1,21 +1,20 @@
 import * as S from './styles'
-import { useTheme } from 'styled-components'
 import { CSSProperties, useContext } from 'react'
+import { DefaultTheme, useTheme } from 'styled-components'
 import { ThemeContext } from 'contexts/ThemeContext'
+import { ButtonProps } from 'components/shared/Button'
 import Moon from 'components/shared/Icons/Moon'
 import Sun from 'components/shared/Icons/Sun'
-import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
 export type ThemeToggleProps = {
   forTransparentBackground?: boolean
-  onlyIcon?: boolean
   style?: CSSProperties
   className?: string
 }
 
 const iconByTheme = {
-  dark: <Moon />,
-  light: <Sun />
+  dark: Moon,
+  light: Sun
 }
 
 const labelByTheme = {
@@ -23,8 +22,12 @@ const labelByTheme = {
   light: 'Tema Claro'
 }
 
+const colorByTheme: Record<DefaultTheme['name'], ButtonProps['color']> = {
+  dark: 'primary',
+  light: 'yellow'
+}
+
 export const ThemeToggle = ({
-  onlyIcon = false,
   forTransparentBackground = false,
   ...props
 }: ThemeToggleProps) => {
@@ -33,14 +36,14 @@ export const ThemeToggle = ({
 
   return (
     <S.Wrapper
-      onClick={themeToggle}
-      {...props}
-      onlyIcon={onlyIcon}
+      icon={iconByTheme[theme.name]}
       forTransparentBackground={forTransparentBackground}
+      themeColor={colorByTheme[theme.name]}
+      onClick={themeToggle}
+      color="translucent"
+      {...props}
     >
-      {iconByTheme[theme.name]}
-      {!onlyIcon && <S.Label>{labelByTheme[theme.name]}</S.Label>}
-      <CircleBackgroundAnimation />
+      {labelByTheme[theme.name]}
     </S.Wrapper>
   )
 }

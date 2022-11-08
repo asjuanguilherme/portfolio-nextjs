@@ -11,6 +11,11 @@ const dark: DefaultTheme = {
         normal: '#06A1FE',
         dark: '#266FD1'
       },
+      yellow: {
+        light: '#f6a43b',
+        normal: '#ef7911',
+        dark: '#d3570c'
+      },
       themeGradient: {
         light: '#2B4363',
         normal: '#001522',

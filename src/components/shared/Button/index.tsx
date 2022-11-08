@@ -5,7 +5,7 @@ import { IconComponent } from '../Icons/utils/createIconComponent'
 import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
 export type ButtonProps = {
-  color?: 'primary' | 'white' | 'translucent'
+  color?: 'primary' | 'yellow' | 'white' | 'translucent'
   children?: string
   icon?: IconComponent
   onlyIcon?: boolean
