@@ -19,11 +19,11 @@ export const PageWrapper = styled.div`
   background: ${props => props.theme.colors.layers[0].background};
   transition: ${transition.slow} ease-out;
   transition-property: transform, left;
-
   display: flex;
   flex-direction: column;
   height: 100%;
   z-index: 2;
+  scroll-behavior: smooth;
 `
 
 const menuOpenedStyle = css`
@@ -38,6 +38,12 @@ const menuOpenedStyle = css`
   ${Main} {
     overflow: scroll;
     pointer-events: none;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `
 

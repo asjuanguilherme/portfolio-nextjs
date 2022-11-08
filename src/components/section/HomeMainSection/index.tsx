@@ -1,13 +1,19 @@
 import * as S from './styles'
-import Image from 'next/image'
+
+// Utils
 import { socialItems } from 'config/socials'
+
+// Components
+import Image from 'next/image'
 import Button from 'components/shared/Button'
+import SectionAnchor from 'components/shared/SectionAnchor'
 
 export type HomeMainSectionProps = {}
 
 const HomeMainSection = ({}: HomeMainSectionProps) => {
   return (
     <S.Wrapper>
+      <SectionAnchor name="main" />
       <S.Container>
         <S.SaudationPart>
           <S.SaudationText>Olá, sou Juan!</S.SaudationText>

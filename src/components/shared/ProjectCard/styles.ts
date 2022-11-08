@@ -1,5 +1,6 @@
 import styled, { DefaultTheme } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
+import getNextLayer from 'utils/getNextLayer'
 
 const { font, spacing, borderRadius, transition } = designSystemOptions
 
@@ -65,10 +66,6 @@ export const Wrapper = styled.div<{
 
   &:hover {
     background: ${props =>
-      props.theme.colors.layers[
-        (props.layer < 2
-          ? props.layer + 1
-          : 2) as keyof DefaultTheme['colors']['layers']
-      ].background};
+      props.theme.colors.layers[getNextLayer(props.layer)].background};
   }
 `

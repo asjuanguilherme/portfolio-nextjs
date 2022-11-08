@@ -1,7 +1,12 @@
 import * as S from './styles'
-import Container from 'components/shared/Container'
-import { SectionHeading, SectionWrapper } from 'components/shared/Section'
+
+// Utils
 import { socialItems } from 'config/socials'
+
+// Components
+import { SectionHeading, SectionWrapper } from 'components/shared/Section'
+import Container from 'components/shared/Container'
+import SectionAnchor from 'components/shared/SectionAnchor'
 import Button from 'components/shared/Button'
 
 export type HomeContactSectionProps = {}
@@ -9,6 +14,7 @@ export type HomeContactSectionProps = {}
 const HomeContactSection = ({}: HomeContactSectionProps) => {
   return (
     <SectionWrapper style={{ textAlign: 'center' }}>
+      <SectionAnchor name="contact" />
       <SectionHeading>Fale Comigo</SectionHeading>
       <Container style={{ maxWidth: '540px' }}>
         <p>

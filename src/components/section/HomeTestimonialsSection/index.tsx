@@ -1,6 +1,10 @@
 import * as S from './styles'
 import { useRef, useState } from 'react'
 
+// Utils
+import getNextLayer from 'utils/getNextLayer'
+import testimonialListMockup from 'mockups/testimonials'
+
 // Swiper
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -11,19 +15,21 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 // Components
 import Container from 'components/shared/Container'
-import { SectionHeading, SectionWrapper } from 'components/shared/Section'
-import testimonialListMockup from 'mockups/testimonials'
+import { SectionHeading } from 'components/shared/Section'
 import TestimonialCard from 'components/shared/TestimonialCard'
 import { Pagination } from 'components/shared/Swiper'
-import { breakpoints } from 'styles/screens'
+import SectionAnchor from 'components/shared/SectionAnchor'
+
 export type HomeTestimonialsSectionProps = {}
 
 const HomeTestimonialsSection = ({}: HomeTestimonialsSectionProps) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef<HTMLDivElement>(null)
+  const layer = 1
 
   return (
-    <S.SectionWrapper>
+    <S.SectionWrapper layer={layer}>
+      <SectionAnchor name="testimonials" />
       <Container>
         <SectionHeading>O que acham do meu trabalho?</SectionHeading>
         <S.TestimonialsCarouselWrapper>
@@ -44,7 +50,7 @@ const HomeTestimonialsSection = ({}: HomeTestimonialsSectionProps) => {
           >
             {testimonialListMockup.map(testimonial => (
               <SwiperSlide key={testimonial.id}>
-                <TestimonialCard {...testimonial} />
+                <TestimonialCard {...testimonial} layer={getNextLayer(layer)} />
               </SwiperSlide>
             ))}
             <Pagination ref={paginationRef} />

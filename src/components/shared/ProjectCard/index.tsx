@@ -1,7 +1,14 @@
 import * as S from './styles'
+
+// Types
+import { DefaultTheme } from 'styled-components'
+
+// Utils
+import getNextLayer from 'utils/getNextLayer'
+
+// Components
 import Image from 'next/image'
 import Button from 'components/shared/Button'
-import { DefaultTheme } from 'styled-components'
 
 export type ProjectCardProps = {
   title: string

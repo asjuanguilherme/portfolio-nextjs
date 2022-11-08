@@ -1,20 +1,26 @@
 import * as S from './styles'
+
+// Utils
+import skillListMockup from 'mockups/skills'
+
+// Components
+import SectionAnchor from 'components/shared/SectionAnchor'
 import { SectionHeading, SectionWrapper } from 'components/shared/Section'
 import Container from 'components/shared/Container'
 import { CurriculumPaper } from 'components/shared/Icons'
 import Button from 'components/shared/Button'
 import Skill from 'components/shared/Skill'
-import skillListMockup from 'mockups/skills'
 
 export type HomeAboutSectionProps = {}
 
-const HomeAboutSection = ({}: HomeAboutSectionProps) => {
-  const layer = 2
+const boxLayer = 1
 
+const HomeAboutSection = ({}: HomeAboutSectionProps) => {
   return (
-    <Container as="section" id="#about">
-      <S.Box layer={layer}>
-        <SectionWrapper as="div" layer={layer}>
+    <Container as="section">
+      <SectionAnchor name="about" />
+      <S.Box layer={boxLayer}>
+        <SectionWrapper as="div" layer={boxLayer}>
           <SectionHeading>Quem sou eu?</SectionHeading>
           <p>
             Sou natural de Natal - RN, tenho 21 anos e sou um desenvolvedor web
@@ -29,7 +35,7 @@ const HomeAboutSection = ({}: HomeAboutSectionProps) => {
             Ver Currículo
           </Button>
         </SectionWrapper>
-        <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={layer}>
+        <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={boxLayer}>
           <SectionHeading>Minhas Habilidades</SectionHeading>
           <S.SkillList>
             {skillListMockup.map(skill => (

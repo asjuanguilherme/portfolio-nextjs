@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import Container from 'components/shared/Container'
-import { breakpoints } from 'styles/screens'
 import designSystemOptions from 'styles/designSystemOptions'
+import { breakpoints } from 'styles/screens'
+import Container from 'components/shared/Container'
 
 const { spacing } = designSystemOptions
 

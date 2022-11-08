@@ -1,6 +1,8 @@
 import * as S from './styles'
 import { useRef, useState } from 'react'
 import useScreenDimensions from 'hooks/useScreenDimensions'
+
+// Utils
 import projectsListMockup from 'mockups/projects'
 
 // Swiper
@@ -15,8 +17,12 @@ import { SectionHeading, SectionWrapper } from 'components/shared/Section'
 import Container from 'components/shared/Container'
 import ProjectCard from 'components/shared/ProjectCard'
 import { Pagination } from 'components/shared/Swiper'
+import SectionAnchor from 'components/shared/SectionAnchor'
+import getNextLayer from 'utils/getNextLayer'
 
 export type HomeProjectsSectionProps = {}
+
+const sectionLayer = 0
 
 const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
@@ -25,7 +31,8 @@ const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
   const isTabletUp = screen.width > breakpoints.tabletS
 
   return (
-    <SectionWrapper id="#projects">
+    <SectionWrapper layer={sectionLayer}>
+      <SectionAnchor name="projects" />
       <Container>
         <SectionHeading>Ultimos Projetos</SectionHeading>
       </Container>
@@ -59,7 +66,7 @@ const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
         >
           {projectsListMockup.map(project => (
             <SwiperSlide key={project.id}>
-              <ProjectCard {...project} layer={1} />
+              <ProjectCard {...project} layer={getNextLayer(sectionLayer)} />
             </SwiperSlide>
           ))}
           {isTabletUp && <Pagination ref={paginationRef} />}
