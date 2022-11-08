@@ -13,7 +13,7 @@ const skillMockup = {
 
 const skillListMockup: (SkillProps & { id: number })[] = []
 
-for (let i = 0; i <= 18; i++) {
+for (let i = 0; i < 18; i++) {
   skillListMockup.push({ ...skillMockup, id: i })
 }
 

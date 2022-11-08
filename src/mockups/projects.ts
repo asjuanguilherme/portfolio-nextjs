@@ -17,7 +17,7 @@ const projectsMockup = {
 
 const projectsListMockup: (ProjectCardProps & { id: number })[] = []
 
-for (let i = 0; i <= 14; i++) {
+for (let i = 0; i < 14; i++) {
   projectsListMockup.push({ ...projectsMockup, id: i })
 }
 

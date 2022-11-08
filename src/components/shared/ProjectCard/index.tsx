@@ -24,7 +24,13 @@ const ProjectCard = ({
   return (
     <S.Wrapper layer={layer}>
       <S.ImageWrapper>
-        <Image src={image.url} alt={image.alt} layout="fill" />
+        <Image
+          src={image.url}
+          alt={image.alt}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
       </S.ImageWrapper>
       <S.Informations>
         <S.Category>{category}</S.Category>
