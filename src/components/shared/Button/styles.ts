@@ -1,8 +1,10 @@
 import styled, { css, DefaultTheme, ThemedStyledProps } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
+import CircleBackgroundAnimation from '../CircleBackgroundAnimation'
 
-const { font, spacing, borderRadius, buttonSizes } = designSystemOptions
+const { font, spacing, borderRadius, buttonSizes, transition } =
+  designSystemOptions
 
 type Props = {
   color: 'primary' | 'white' | 'translucent'
@@ -64,21 +66,10 @@ const handleButtonColor = (color: Props['color']) => {
     position: relative;
     z-index: 1;
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-      height: 0px;
-      width: 0px;
-      border-radius: ${designSystemOptions.borderRadius.circle};
-
-      transition: 0.3s;
-      transition-property: transform, height, width, border;
-      transform: translate(-50%, -50%);
-      background: ${colors[color].hover.background};
+    ${CircleBackgroundAnimation} {
+      &::after {
+        background: ${colors[color].hover.background};
+      }
     }
 
     ${screens.tablet} {
@@ -86,10 +77,8 @@ const handleButtonColor = (color: Props['color']) => {
         color: ${colors[color].hover.text};
         border: ${colors[color].hover.border};
 
-        &::before {
-          height: 1.5rem;
-          width: 1.5rem;
-          transform: translate(-50%, -50%) scale(9);
+        ${CircleBackgroundAnimation} {
+          width: 100%;
         }
       }
     }

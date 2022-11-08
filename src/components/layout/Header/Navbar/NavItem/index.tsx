@@ -2,6 +2,7 @@ import * as S from './styles'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { NavigationItemProps } from 'config/navigation'
+import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
 export type NavItemProps = NavigationItemProps & {
   forTransparentBackground: boolean
@@ -22,6 +23,7 @@ const NavItem = ({ title, link, forTransparentBackground }: NavItemProps) => {
           forTransparentBackground={forTransparentBackground}
         >
           {title}
+          <CircleBackgroundAnimation />
         </S.ButtonLink>
       </Link>
     </S.Wrapper>

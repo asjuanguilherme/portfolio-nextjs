@@ -52,7 +52,9 @@ const designSystemOptions = {
     preLoader: 200
   },
   transition: {
-    default: '.2s'
+    fast: '.15s',
+    default: '.2s',
+    slow: '.3s'
   }
 }
 

@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
-const { spacing, font, borderRadius } = designSystemOptions
+const { spacing, font, borderRadius, transition } = designSystemOptions
 
 export const Wrapper = styled.div<{ hoverColor: string }>`
   display: inline-flex;
   align-items: center;
-  transition: 0.2s;
+  transition: ${transition.default};
   transition-property: color, transform;
   font-size: ${font.sizes.small};
   padding: ${spacing.components.smaller} ${spacing.components.medium};

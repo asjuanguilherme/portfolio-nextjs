@@ -4,6 +4,7 @@ import { CSSProperties, useContext } from 'react'
 import { ThemeContext } from 'contexts/ThemeContext'
 import Moon from 'components/shared/Icons/Moon'
 import Sun from 'components/shared/Icons/Sun'
+import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
 export type ThemeToggleProps = {
   forTransparentBackground?: boolean
@@ -39,6 +40,7 @@ export const ThemeToggle = ({
     >
       {iconByTheme[theme.name]}
       {!onlyIcon && <S.Label>{labelByTheme[theme.name]}</S.Label>}
+      <CircleBackgroundAnimation />
     </S.Wrapper>
   )
 }

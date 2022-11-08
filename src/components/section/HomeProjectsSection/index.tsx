@@ -1,7 +1,6 @@
 import * as S from './styles'
 import { useRef, useState } from 'react'
 import useScreenDimensions from 'hooks/useScreenDimensions'
-import { breakpoints } from 'styles/screens'
 import projectsListMockup from 'mockups/projects'
 
 // Swiper

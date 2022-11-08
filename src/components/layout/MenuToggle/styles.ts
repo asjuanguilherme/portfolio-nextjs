@@ -1,11 +1,14 @@
 import styled from 'styled-components'
+import designSystemOptions from 'styles/designSystemOptions'
+
+const { transition } = designSystemOptions
 
 export const Wrapper = styled.button<{
   menuOpened: boolean
   forTransparentBackground: boolean
 }>`
   background: unset;
-  transition: 0.3s;
+  transition: ${transition.slow};
   path {
     stroke: currentColor;
   }

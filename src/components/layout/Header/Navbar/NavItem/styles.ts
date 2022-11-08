@@ -1,5 +1,6 @@
 import designSystemOptions from 'styles/designSystemOptions'
 import styled, { css } from 'styled-components'
+import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
 const { font, spacing, borderRadius, transition } = designSystemOptions
 
@@ -9,12 +10,15 @@ const activeStyle = css<{ forTransparentBackground: boolean }>`
       ? props.theme.colors.main.primary.normal
       : 'white'};
 
-  &::before {
-    background: ${props =>
-      props.forTransparentBackground
-        ? 'white'
-        : props.theme.colors.main.primary.normal};
-    transform: translate(-50%, -50%) scale(9);
+  ${CircleBackgroundAnimation} {
+    width: 100%;
+
+    &::after {
+      background: ${props =>
+        props.forTransparentBackground
+          ? 'white'
+          : props.theme.colors.main.primary.normal};
+    }
   }
 `
 
@@ -48,23 +52,6 @@ export const ButtonLink = styled.a<{
   overflow: hidden;
   position: relative;
   z-index: 1;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    height: 1rem;
-    width: 1rem;
-    border-radius: ${designSystemOptions.borderRadius.circle};
-
-    transition: 0.5s;
-    transition-property: transform;
-    transform: translate(-50%, -50%);
-    background: transparent;
-  }
 
   ${props => (props.active ? activeStyle : standardStyle)};
 `

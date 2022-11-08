@@ -2,6 +2,7 @@ import * as S from './styles'
 import { CSSProperties } from 'react'
 import Link from 'next/link'
 import { IconComponent } from '../Icons/utils/createIconComponent'
+import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
 export type ButtonProps = {
   color?: 'primary' | 'white' | 'translucent'
@@ -30,6 +31,7 @@ const Button = ({
     >
       {Icon && <Icon />}
       {!props.onlyIcon && children}
+      <CircleBackgroundAnimation />
     </S.Wrapper>
   )
 

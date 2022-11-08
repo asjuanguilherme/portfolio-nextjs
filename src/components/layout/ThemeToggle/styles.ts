@@ -1,7 +1,8 @@
 import styled, { css, keyframes } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
+import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
-const { font, borderRadius, spacing } = designSystemOptions
+const { font, borderRadius, spacing, transition } = designSystemOptions
 
 const spinIcon = keyframes`
   from {
@@ -13,9 +14,6 @@ const darkStyle = css`
   color: white;
 
   &:hover {
-    &::before {
-      background: ${props => props.theme.colors.main.primary.normal};
-    }
   }
 `
 
@@ -41,40 +39,34 @@ export const Wrapper = styled.button<{
   color: #f6a43b;
   flex-shrink: 0;
   cursor: pointer;
-  transition: 0.2s;
+  transition: ${transition.default};
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   svg {
     animation: ${spinIcon} 0.5s ease-in-out;
-    transition: 0.15s;
+    transition: ${transition.fast};
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background: #f6a43b;
-    border-radius: ${borderRadius.pill};
-    opacity: 0;
-    transform: scale(0.3);
-    transition: 0.2s;
+  ${CircleBackgroundAnimation} {
+    &::after {
+      background: ${props =>
+        props.theme.name === 'dark'
+          ? props.theme.colors.main.primary.normal
+          : '#f6a43b'};
+    }
   }
 
   &:hover {
     color: white;
 
-    svg {
-      transform: rotate(-45deg) scale(1.2);
+    ${CircleBackgroundAnimation} {
+      width: 101%;
     }
 
-    &::before {
-      opacity: 1;
-      transform: initial;
+    svg {
+      transform: rotate(-45deg) scale(1.2);
     }
   }
 

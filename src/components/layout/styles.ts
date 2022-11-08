@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 
-const { borderRadius } = designSystemOptions
+const { borderRadius, transition } = designSystemOptions
 
 export const Main = styled.main<{ secureMarginForContent: number }>`
   flex: 1;
@@ -17,7 +17,7 @@ export const PageWrapper = styled.div`
   overflow: auto;
   overflow-x: hidden;
   background: ${props => props.theme.colors.layers[0].background};
-  transition: 0.3s ease-out;
+  transition: ${transition.slow} ease-out;
   transition-property: transform, left;
 
   display: flex;

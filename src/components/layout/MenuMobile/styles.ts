@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import UnstyledThemeToggle from '../ThemeToggle'
 
-const { borderRadius, spacing, font } = designSystemOptions
+const { borderRadius, spacing, font, transition } = designSystemOptions
 
 const navItemActiveStyle = css`
   background: white;
@@ -30,7 +30,7 @@ export const NavItem = styled.li<{ active: boolean }>`
     font-size: ${font.sizes.small};
     font-weight: ${font.weight.semibold};
     text-decoration: none;
-    transition: 0.15s;
+    transition: ${transition.fast};
     transition-property: background;
 
     ${props => (props.active ? navItemActiveStyle : navItemStandardStyle)}
