@@ -3,7 +3,7 @@ import DefaultContainer from 'components/shared/Container'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
-const { borderRadius, font, spacing, transition } = designSystemOptions
+const { borderRadius, font, spacing } = designSystemOptions
 
 export const PhotoPart = styled.div`
   margin-left: auto;
@@ -11,17 +11,12 @@ export const PhotoPart = styled.div`
   width: 70%;
   border-radius: ${borderRadius.circle};
   overflow: hidden;
-  border: 8px solid rgba(255, 255, 255, 0.25);
-
-  & > span {
-    position: relative !important;
-    padding-top: 100% !important;
-  }
+  border: ${spacing.components.small} solid rgba(255, 255, 255, 0.25);
 
   ${screens.laptop} {
     margin-left: auto;
     margin-right: initial;
-    border-width: 16px;
+    border-width: ${spacing.components.medium};
   }
 `
 

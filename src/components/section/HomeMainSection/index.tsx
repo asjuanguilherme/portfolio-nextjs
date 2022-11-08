@@ -37,7 +37,9 @@ const HomeMainSection = ({}: HomeMainSectionProps) => {
           <Image
             src="/assets/images/author.webp"
             alt="Foto de Juan Guilherme"
-            layout="fill"
+            layout="responsive"
+            height="100%"
+            width="100%"
           />
         </S.PhotoPart>
       </S.Container>
