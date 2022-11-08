@@ -1,18 +1,30 @@
 import * as S from './styles'
+import { useRef, useState } from 'react'
+import useScreenDimensions from 'hooks/useScreenDimensions'
 import { breakpoints } from 'styles/screens'
-import { SectionHeading, SectionWrapper } from 'components/shared/Section'
-import Container from 'components/shared/Container'
 import projectsListMockup from 'mockups/projects'
-import ProjectCard from 'components/shared/ProjectCard'
 
+// Swiper
+import { Swiper as SwiperProps } from 'swiper/types'
+import { Pagination as PaginationModule } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import 'swiper/css/pagination'
 
-import designSystemOptions from 'styles/designSystemOptions'
+// Components
+import { SectionHeading, SectionWrapper } from 'components/shared/Section'
+import Container from 'components/shared/Container'
+import ProjectCard from 'components/shared/ProjectCard'
+import { Pagination } from 'components/shared/Swiper'
 
 export type HomeProjectsSectionProps = {}
 
 const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
+  const [swiper, setSwiper] = useState<SwiperProps>()
+  const paginationRef = useRef<HTMLDivElement | null>(null)
+  const { screen, breakpoints } = useScreenDimensions()
+  const isTabletUp = screen.width > breakpoints.tabletS
+
   return (
     <SectionWrapper id="#projects">
       <Container>
@@ -20,6 +32,13 @@ const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
       </Container>
       <S.ProjectsCarouselContainer>
         <Swiper
+          onSwiper={setSwiper}
+          modules={[PaginationModule]}
+          pagination={{
+            enabled: true,
+            clickable: true,
+            el: paginationRef.current
+          }}
           slidesOffsetAfter={24}
           slidesOffsetBefore={24}
           spaceBetween={24}
@@ -44,6 +63,7 @@ const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
               <ProjectCard {...project} layer={1} />
             </SwiperSlide>
           ))}
+          {isTabletUp && <Pagination ref={paginationRef} />}
         </Swiper>
       </S.ProjectsCarouselContainer>
     </SectionWrapper>
