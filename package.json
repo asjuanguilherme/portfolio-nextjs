@@ -10,6 +10,8 @@
     "generate": "yarn plop --plopfile ./src/generators/plopfile.js"
   },
   "dependencies": {
+    "@types/js-cookie": "^3.0.2",
+    "js-cookie": "^3.0.1",
     "lottie-react": "^2.3.1",
     "next": "latest",
     "react": "^18.2.0",
