@@ -6,4 +6,6 @@ const themes = {
   dark
 }
 
+export type Theme = keyof typeof themes
+
 export default themes

@@ -4,7 +4,7 @@ import {
   DefaultTheme
 } from 'styled-components'
 import { storeThemeStateToCookies } from './utils'
-import themes from 'styles/themes'
+import themes, { Theme } from 'styles/themes'
 
 type ThemeContextProps = {
   currentTheme: DefaultTheme
@@ -13,7 +13,7 @@ type ThemeContextProps = {
 
 type ThemeProviderProps = {
   children: ReactNode
-  storedTheme: keyof typeof themes
+  storedTheme: Theme
 }
 
 export const ThemeContext = createContext<ThemeContextProps>(
@@ -24,8 +24,7 @@ export const ThemeProvider = ({
   children,
   storedTheme = 'light'
 }: ThemeProviderProps) => {
-  const [selectedTheme, setSelectedTheme] =
-    useState<keyof typeof themes>(storedTheme)
+  const [selectedTheme, setSelectedTheme] = useState<Theme>(storedTheme)
 
   const themeToggle = () => {
     const newTheme = selectedTheme === 'light' ? 'dark' : 'light'
