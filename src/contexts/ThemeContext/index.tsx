@@ -1,9 +1,13 @@
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 import {
   ThemeProvider as StyledComponentsThemeProvider,
   DefaultTheme
 } from 'styled-components'
-import { DEFAULT_THEME } from './utils'
+import {
+  DEFAULT_THEME,
+  getStoredThemeState,
+  storeThemeStateInLocalStorage
+} from './utils'
 import themes from 'styles/themes'
 
 type ThemeContextProps = {
@@ -20,8 +24,14 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     useState<keyof typeof themes>(DEFAULT_THEME)
 
   const themeToggle = () => {
-    setSelectedTheme(selectedTheme === 'light' ? 'dark' : 'light')
+    const newTheme = selectedTheme === 'light' ? 'dark' : 'light'
+    setSelectedTheme(newTheme)
+    storeThemeStateInLocalStorage(newTheme)
   }
+
+  useEffect(() => {
+    setSelectedTheme(getStoredThemeState())
+  }, [])
 
   return (
     <ThemeContext.Provider
