@@ -1,14 +1,20 @@
-import type { AppProps } from 'next/app'
-import Layout from 'components/layout'
-import { ThemeProvider } from 'contexts/ThemeContext'
+import { AppProps } from 'next/app'
 
 // Styles
 import 'styles/static/fonts.css'
 import GlobalStyles from 'styles/GlobalStyles'
+import themes from 'styles/themes'
 
-const App = ({ Component, pageProps }: AppProps) => {
+// Components
+import Layout from 'components/layout'
+import { ThemeProvider } from 'contexts/ThemeContext'
+
+const App = ({
+  Component,
+  pageProps
+}: AppProps<{ storedTheme: keyof typeof themes }>) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider storedTheme={pageProps.storedTheme}>
       <GlobalStyles />
       <Layout>
         <Component {...pageProps} />
