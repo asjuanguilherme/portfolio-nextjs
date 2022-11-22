@@ -13,6 +13,7 @@ export const Wrapper = styled.button<{
     stroke: currentColor;
   }
   cursor: pointer;
+  margin-left: auto;
 
   color: ${props =>
     props.forTransparentBackground

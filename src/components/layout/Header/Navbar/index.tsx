@@ -10,7 +10,7 @@ type NavbarProps = {
 const Navbar = ({ forTransparentBackground }: NavbarProps) => {
   return (
     <S.Wrapper>
-      <S.NavList>
+      <S.NavList forTransparentBackground={forTransparentBackground}>
         {navigationItems.map(navItem => (
           <NavItem
             key={navItem.title}
