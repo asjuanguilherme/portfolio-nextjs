@@ -1,4 +1,4 @@
-type StrapiData<Fields> = {
+export type StrapiData<Fields> = {
   id: number
   attributes: Fields & {
     createdAt: string
@@ -24,4 +24,8 @@ export type StrapiCollectionRequest<Fields> = {
 export type StrapiSingleRequest<Fields> = {
   data: StrapiData<Fields>
   meta: StrapiMeta
+}
+
+export type StrapiRelationalField<Fields> = {
+  data: StrapiData<Fields> | null
 }

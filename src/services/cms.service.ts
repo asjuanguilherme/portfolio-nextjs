@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { StrapiCollectionRequest, StrapiSingleRequest } from './types/strapi'
+import { StrapiCollectionRequest, StrapiRelationalField } from '../types/strapi'
 
 const CMS_API_URL = process.env.NEXT_PUBLIC_CMS_API_URL
 
@@ -7,14 +7,22 @@ if (!CMS_API_URL) throw new Error('You must insert the CMS_API_URL env value')
 
 const cms = axios.create({ baseURL: CMS_API_URL })
 
-export const getSkills = async () => {
-  const { data } = await cms.get<
-    StrapiCollectionRequest<{
-      slug: string
-      svg: string
-      color: string
-    }>
-  >('/skills')
+export type GetSkillsResult = StrapiCollectionRequest<{
+  title: string
+  color: string
+  icon: StrapiRelationalField<{
+    slug: string
+    viewbox: string
+    svgLight: string
+    svgBold: string
+  }>
+}>
 
-  return data.data
+export const getSkills = async () => {
+  try {
+    const { data } = await cms.get<GetSkillsResult>('/skills?populate=icon')
+    return data
+  } catch (err) {
+    return null
+  }
 }

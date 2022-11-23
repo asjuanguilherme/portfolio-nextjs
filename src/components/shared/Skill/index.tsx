@@ -4,7 +4,7 @@ import createIconComponent from '../Icons/utils/createIconComponent'
 
 export type SkillProps = {
   title: string
-  icon: {
+  icon?: {
     svgContent: string
     viewBox: string
   }
@@ -15,16 +15,18 @@ const Skill = ({ title, icon, hoverColor }: SkillProps) => {
   const theme = useTheme()
 
   const svgComponentsContent = (
-    <g dangerouslySetInnerHTML={{ __html: icon.svgContent }}></g>
+    <g dangerouslySetInnerHTML={{ __html: icon?.svgContent || '' }}></g>
   )
 
-  const Icon = createIconComponent({
-    content: {
-      light: svgComponentsContent,
-      bold: svgComponentsContent
-    },
-    viewBox: icon.viewBox
-  })
+  const Icon = icon
+    ? createIconComponent({
+        content: {
+          light: svgComponentsContent,
+          bold: svgComponentsContent
+        },
+        viewBox: icon.viewBox
+      })
+    : () => <></>
 
   return (
     <S.Wrapper hoverColor={hoverColor || theme.colors.main.primary.normal}>

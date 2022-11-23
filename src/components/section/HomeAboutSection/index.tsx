@@ -1,7 +1,7 @@
 import * as S from './styles'
 
-// Utils
-import skillListMockup from 'mockups/skills'
+// Types
+import { GetSkillsResult } from 'services/cms.service'
 
 // Components
 import SectionAnchor from 'components/shared/SectionAnchor'
@@ -11,11 +11,13 @@ import { CurriculumPaper } from 'components/shared/Icons'
 import Button from 'components/shared/Button'
 import Skill from 'components/shared/Skill'
 
-export type HomeAboutSectionProps = {}
+export type HomeAboutSectionProps = {
+  skills: GetSkillsResult | null
+}
 
 const boxLayer = 1
 
-const HomeAboutSection = ({}: HomeAboutSectionProps) => {
+const HomeAboutSection = ({ skills }: HomeAboutSectionProps) => {
   return (
     <Container as="section">
       <SectionAnchor name="about" />
@@ -38,9 +40,20 @@ const HomeAboutSection = ({}: HomeAboutSectionProps) => {
         <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={boxLayer}>
           <SectionHeading>Minhas Habilidades</SectionHeading>
           <S.SkillList>
-            {skillListMockup.map(skill => (
+            {skills?.data.map(skill => (
               <li key={skill.id}>
-                <Skill {...skill} />
+                <Skill
+                  {...skill}
+                  icon={
+                    skill.attributes.icon.data && {
+                      viewBox: skill.attributes.icon.data?.attributes.viewbox,
+                      svgContent:
+                        skill.attributes.icon.data?.attributes.svgLight
+                    }
+                  }
+                  title={skill.attributes.title}
+                  hoverColor={skill.attributes.color}
+                />
               </li>
             ))}
           </S.SkillList>
