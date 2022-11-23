@@ -20,7 +20,8 @@ export const ModalContext = createContext({} as ModalContextProps)
 export const ModalProvider = ({ children }: ModalProviderProps) => {
   const [modals, setModals] = useState<Modal[]>([])
 
-  const addModal = (modal: Modal) => setModals(state => [...state, modal])
+  const addModal = (modal: Modal) =>
+    setModals(state => [...state, { ...modal, opened: true }])
 
   const closeModal = (identifier: string) => {
     setModals(state =>

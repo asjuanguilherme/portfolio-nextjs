@@ -23,10 +23,13 @@ export const CloseButton = styled.button`
   display: inline-flex;
   padding: ${spacing.components.small};
   font-size: ${font.sizes.large};
-  margin-right: -${spacing.components.smaller};
   transition: 0.2s;
   transition-property: color;
   cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  right: ${spacing.components.small};
+  top: ${spacing.components.small};
 
   &:hover {
     color: ${props => props.theme.colors.main.yellow.normal};
@@ -50,9 +53,13 @@ const appearBoxKeyframes = keyframes`
   }
 `
 
-export const Box = styled.div<{ width: number }>`
+export const Box = styled.div<{
+  width: number
+  hasTitle: boolean
+}>`
+  position: relative;
   width: 100%;
-  max-height: 70vh;
+  max-height: 85vh;
   max-width: ${props => props.width}px;
   background: ${props => props.theme.colors.layers[1].background};
   border: 1px solid ${props => props.theme.colors.layers[1].border};
@@ -61,6 +68,8 @@ export const Box = styled.div<{ width: number }>`
   animation: ${appearBoxKeyframes} 0.3s ease-out;
   display: flex;
   flex-direction: column;
+  padding-top: ${props =>
+    props.hasTitle ? 'initial' : spacing.components.medium};
 `
 
 const wrapperAppearKeyframes = keyframes`from {

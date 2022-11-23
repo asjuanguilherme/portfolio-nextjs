@@ -19,14 +19,16 @@ const TestimonialCard = ({
     <S.Wrapper layer={layer}>
       <S.Author>
         <S.AuthorImage>
-          <Image
-            src={getCmsMediaUrl(authorPhoto)}
-            alt={authorPhoto.data?.attributes.alt}
-            height={64}
-            width={64}
-            objectFit="cover"
-            objectPosition="center"
-          />
+          {authorPhoto.data && (
+            <Image
+              src={getCmsMediaUrl(authorPhoto.data)}
+              alt={authorPhoto.data?.attributes.alt}
+              height={64}
+              width={64}
+              objectFit="cover"
+              objectPosition="center"
+            />
+          )}
         </S.AuthorImage>
         <S.AuthorInfo>
           <S.AuthorName>{authorName}</S.AuthorName>

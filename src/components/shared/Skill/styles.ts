@@ -1,10 +1,21 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 import { screens } from 'styles/screens'
 
 const { spacing, font, borderRadius, transition } = designSystemOptions
 
-export const Wrapper = styled.div<{ hoverColor: string }>`
+type Props = {
+  hoverColor: string
+  enableHoverEffect: boolean
+  smallSize: boolean
+}
+
+const smallSizeStyle = css`
+  font-size: ${font.sizes.smaller} !important;
+  padding: 0 ${spacing.components.small};
+`
+
+export const Wrapper = styled.div<Props>`
   display: inline-flex;
   align-items: center;
   transition: ${transition.default};
@@ -19,12 +30,23 @@ export const Wrapper = styled.div<{ hoverColor: string }>`
     font-size: ${font.sizes.medium};
   }
 
-  &:hover {
-    color: ${props => props.hoverColor};
-    transform: scale(1.2);
-  }
+  ${props =>
+    props.enableHoverEffect
+      ? css<Props>`
+          &:hover {
+            color: ${props => props.hoverColor};
+            transform: scale(1.2);
+          }
+        `
+      : css<Props>`
+          svg {
+            color: ${props => props.hoverColor};
+          }
+        `}
 
   svg {
     margin-right: ${spacing.components.small};
   }
+
+  ${props => props.smallSize && smallSizeStyle}
 `

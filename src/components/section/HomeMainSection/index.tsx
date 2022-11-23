@@ -39,10 +39,10 @@ const HomeMainSection = ({ data, socials }: HomeMainSectionProps) => {
             ))}
           </S.Socials>
         </S.SaudationPart>
-        {data?.data?.attributes.authorPhoto && (
+        {data?.data?.attributes.authorPhoto.data && (
           <S.PhotoPart>
             <Image
-              src={getCmsMediaUrl(data?.data?.attributes.authorPhoto)}
+              src={getCmsMediaUrl(data?.data?.attributes.authorPhoto.data)}
               alt={data?.data?.attributes.authorPhoto.data?.attributes.alt}
               layout="responsive"
               height="100%"
