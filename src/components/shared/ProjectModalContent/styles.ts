@@ -7,16 +7,23 @@ const { spacing, borderRadius, font } = designSystemOptions
 export const Text = styled.div`
   flex: 1;
   overflow-y: auto;
+  font-size: ${font.sizes.small};
 `
 
 export const Skills = styled.ul`
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  gap: ${spacing.components.smaller};
+
+  ${screens.tabletS} {
+    gap: ${spacing.components.small};
+  }
 `
 
 export const Type = styled.span`
   display: inline-block;
+  margin-top: -1rem;
 `
 
 export const Title = styled.h2`

@@ -1,7 +1,44 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
+import Button from '../Button'
+import ChevronLeft from '../Icons/ChevronLeft'
+import ChevronRight from '../Icons/ChevronRight'
 
-const { borderRadius, spacing, transition } = designSystemOptions
+const { borderRadius, spacing, transition, font } = designSystemOptions
+
+export const NavigationButton = styled(Button).attrs(props => ({
+  onlyIcon: true,
+  color: 'primary',
+  ...props
+}))<{ disabled: boolean }>`
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 1.5rem);
+  svg {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 0 3px black);
+  }
+
+  &:hover {
+    svg {
+      filter: initial;
+    }
+  }
+`
+
+export const NavigationNext = styled(NavigationButton).attrs(props => ({
+  icon: ChevronRight,
+  ...props
+}))`
+  right: ${spacing.components.small};
+`
+
+export const NavigationPrev = styled(NavigationButton).attrs(props => ({
+  icon: ChevronLeft,
+  ...props
+}))`
+  left: ${spacing.components.small};
+`
 
 export const Pagination = styled.span`
   width: 100%;

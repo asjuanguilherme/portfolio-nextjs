@@ -5,6 +5,15 @@ import designSystemOptions from 'styles/designSystemOptions'
 const { spacing, font } = designSystemOptions
 
 const GlobalStyles = createGlobalStyle`
+  :root {
+    --swiper-theme-color: ${props => props.theme.colors.main.primary.normal};
+    --swiper-navigation-size: ${font.sizes.xxlarger};
+  }
+
+  .swiper-wrapper {
+    list-style: none;
+  }
+
   * {
     padding: 0;
     margin: 0;

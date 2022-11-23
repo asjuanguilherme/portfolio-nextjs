@@ -1,6 +1,21 @@
 import * as S from './styles'
+import { useRef, useState } from 'react'
+
+// Types
 import ProjectDto from 'services/cms/types/ProjectDto'
+
+// Utils
 import { getCmsMediaUrl } from 'services/cms/utils'
+
+// Swiper
+import { Swiper as SwiperProps } from 'swiper/types'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination as PaginationModule, Navigation } from 'swiper'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+// Components
+import { Pagination } from '../Swiper'
 import Image from 'next/image'
 import Markdown from 'markdown-to-jsx'
 import Skill from '../Skill'
@@ -14,19 +29,39 @@ const ProjectModalContent = ({
   skills,
   images
 }: ProjectDto) => {
+  const [swiper, setSwiper] = useState<SwiperProps>()
+  const paginationRef = useRef(null)
+
   return (
     <S.Wrapper>
       {images?.data && (
         <S.ImageWrapper>
-          <Image
-            src={getCmsMediaUrl(images.data[0])}
-            alt={images.data[0].attributes.alt}
-            layout="responsive"
-            height={'100%'}
-            width={'100%'}
-            objectFit="contain"
-            objectPosition="center"
-          />
+          <Swiper
+            wrapperTag="ul"
+            onSwiper={setSwiper}
+            modules={[PaginationModule, Navigation]}
+            pagination={{
+              clickable: true,
+              el: paginationRef.current,
+              enabled: true
+            }}
+            navigation
+          >
+            {images.data.map(image => (
+              <SwiperSlide key={image.id} tag="li">
+                <Image
+                  src={getCmsMediaUrl(image)}
+                  alt={image.attributes.alt}
+                  layout="responsive"
+                  height="100%"
+                  width="100%"
+                  objectFit="contain"
+                  objectPosition="center"
+                />
+              </SwiperSlide>
+            ))}
+            <Pagination ref={paginationRef} />
+          </Swiper>
         </S.ImageWrapper>
       )}
       <S.Content>
