@@ -46,7 +46,7 @@ export const BoxHeader = styled.div`
 const appearBoxKeyframes = keyframes`
   from {
     transform: scale(.9);
-    opacity: .6;
+    opacity: 0;
   }
   to {
     transform: initial;
@@ -70,10 +70,11 @@ export const Box = styled.div<{
   flex-direction: column;
   padding-top: ${props =>
     props.hasTitle ? 'initial' : spacing.components.medium};
+  transition: 0.15s;
 `
 
 const wrapperAppearKeyframes = keyframes`from {
-    backdrop-filter: blur(4px);
+  backdrop-filter: initial;
 }`
 
 const closedStyle = css`
@@ -82,7 +83,7 @@ const closedStyle = css`
   visibility: hidden;
 
   ${Box} {
-    transform: scale(0.5);
+    transform: scale(0.9);
     opacity: 0;
   }
 `
