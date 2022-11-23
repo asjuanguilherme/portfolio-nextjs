@@ -4,6 +4,7 @@ import { StrapiSingleTypeData } from 'types/strapi'
 export type GetAboutSectionResult = StrapiSingleTypeData<{
   title: string
   content: string
+  skillsTitle: string
 }>
 
 export const getAboutSection = async () => {

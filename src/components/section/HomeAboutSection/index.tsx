@@ -33,7 +33,7 @@ const HomeAboutSection = ({ data, skills }: HomeAboutSectionProps) => {
           </Button>
         </SectionWrapper>
         <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={boxLayer}>
-          <SectionHeading>Minhas Habilidades</SectionHeading>
+          <SectionHeading>{data?.data?.attributes.skillsTitle}</SectionHeading>
           <S.SkillList>
             {skills?.data?.map(skill => (
               <li key={skill.id}>
