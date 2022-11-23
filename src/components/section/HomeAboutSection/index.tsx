@@ -40,20 +40,9 @@ const HomeAboutSection = ({ skills }: HomeAboutSectionProps) => {
         <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={boxLayer}>
           <SectionHeading>Minhas Habilidades</SectionHeading>
           <S.SkillList>
-            {skills?.data.map(skill => (
+            {skills?.data?.map(skill => (
               <li key={skill.id}>
-                <Skill
-                  {...skill}
-                  icon={
-                    skill.attributes.icon.data && {
-                      viewBox: skill.attributes.icon.data?.attributes.viewbox,
-                      svgContent:
-                        skill.attributes.icon.data?.attributes.svgLight
-                    }
-                  }
-                  title={skill.attributes.title}
-                  hoverColor={skill.attributes.color}
-                />
+                <Skill {...skill.attributes} />
               </li>
             ))}
           </S.SkillList>

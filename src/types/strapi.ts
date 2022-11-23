@@ -16,16 +16,12 @@ type StrapiMeta = {
   }
 }
 
-export type StrapiCollectionRequest<Fields> = {
-  data: StrapiData<Fields>[]
-  meta: StrapiMeta
+export type StrapiCollectionTypeData<Fields> = {
+  data: StrapiData<Fields>[] | null
+  meta?: StrapiMeta
 }
 
-export type StrapiSingleRequest<Fields> = {
-  data: StrapiData<Fields>
-  meta: StrapiMeta
-}
-
-export type StrapiRelationalField<Fields> = {
+export type StrapiSingleTypeData<Fields> = {
   data: StrapiData<Fields> | null
+  meta?: StrapiMeta
 }

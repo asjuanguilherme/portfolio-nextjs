@@ -1,36 +1,19 @@
 import * as S from './styles'
 import { useTheme } from 'styled-components'
-import createIconComponent from '../Icons/utils/createIconComponent'
+import StrapiDynamicIcon, { StrapiDynamicIconProps } from '../StrapiDynamicIcon'
 
 export type SkillProps = {
   title: string
-  icon?: {
-    svgContent: string
-    viewBox: string
-  }
-  hoverColor?: string
+  icon: StrapiDynamicIconProps
+  color?: string
 }
 
-const Skill = ({ title, icon, hoverColor }: SkillProps) => {
+const Skill = ({ title, icon, color }: SkillProps) => {
   const theme = useTheme()
 
-  const svgComponentsContent = (
-    <g dangerouslySetInnerHTML={{ __html: icon?.svgContent || '' }}></g>
-  )
-
-  const Icon = icon
-    ? createIconComponent({
-        content: {
-          light: svgComponentsContent,
-          bold: svgComponentsContent
-        },
-        viewBox: icon.viewBox
-      })
-    : () => <></>
-
   return (
-    <S.Wrapper hoverColor={hoverColor || theme.colors.main.primary.normal}>
-      <Icon />
+    <S.Wrapper hoverColor={color || theme.colors.main.primary.normal}>
+      {icon.data && <StrapiDynamicIcon {...icon} />}
       {title}
     </S.Wrapper>
   )
