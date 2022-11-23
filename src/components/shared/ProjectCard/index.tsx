@@ -1,50 +1,44 @@
 import * as S from './styles'
 
+// Utils
+import { getCmsMediaUrl } from 'services/cms/utils'
+
 // Types
 import { DefaultTheme } from 'styled-components'
-
-// Utils
-import getNextLayer from 'utils/getNextLayer'
 
 // Components
 import Image from 'next/image'
 import Button from 'components/shared/Button'
+import ProjectDto from 'services/cms/types/ProjectDto'
 
-export type ProjectCardProps = {
-  title: string
-  category: string
-  tags: string[]
-  image: {
-    url: string
-    alt: string
-  }
+export type ProjectCardProps = ProjectDto & {
   layer?: keyof DefaultTheme['colors']['layers']
 }
 
 const ProjectCard = ({
   title,
-  category,
-  tags,
-  image,
+  type,
+  skills,
+  cardImage,
   layer = 1
 }: ProjectCardProps) => {
   return (
     <S.Wrapper layer={layer}>
       <S.ImageWrapper>
         <Image
-          src={image.url}
-          alt={image.alt}
+          src={getCmsMediaUrl(cardImage)}
+          alt={cardImage.data?.attributes.alt}
           layout="fill"
           objectFit="cover"
           objectPosition="center"
         />
       </S.ImageWrapper>
       <S.Informations>
-        <S.Category>{category}</S.Category>
+        <S.Category>{type}</S.Category>
         <S.Title>{title}</S.Title>
         <S.Tags>
-          {tags.map(tag => (
-            <S.TagItem key={tag}>{tag}</S.TagItem>
+          {skills?.data?.map(skill => (
+            <S.TagItem key={skill.id}>{skill.attributes.title}</S.TagItem>
           ))}
         </S.Tags>
       </S.Informations>

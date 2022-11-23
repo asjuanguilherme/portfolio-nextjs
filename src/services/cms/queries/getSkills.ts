@@ -1,16 +1,8 @@
 import { cms } from '../config'
-import { StrapiCollectionTypeData, StrapiSingleTypeData } from 'types/strapi'
+import { StrapiCollectionTypeData } from 'types/strapi'
+import SkillDto from '../types/SkillDto'
 
-export type GetSkillsResult = StrapiCollectionTypeData<{
-  title: string
-  color: string
-  icon: StrapiSingleTypeData<{
-    slug: string
-    viewBox: string
-    svgLight: string
-    svgBold: string
-  }>
-}>
+export type GetSkillsResult = StrapiCollectionTypeData<SkillDto>
 
 export const getSkills = async () => {
   try {

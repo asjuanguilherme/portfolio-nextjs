@@ -1,10 +1,11 @@
 import { cms } from '../config'
 import { StrapiSingleTypeData } from 'types/strapi'
+import ImageDto from '../types/ImageDto'
 
 export type GetMainSectionResult = StrapiSingleTypeData<{
   saudation: string
   authorRole: string
-  authorPhoto: StrapiSingleTypeData<{ url: string; alt: string }>
+  authorPhoto: StrapiSingleTypeData<ImageDto>
 }>
 
 export const getMainSection = async () => {

@@ -19,12 +19,15 @@ import ProjectCard from 'components/shared/ProjectCard'
 import { Pagination } from 'components/shared/Swiper'
 import SectionAnchor from 'components/shared/SectionAnchor'
 import getNextLayer from 'utils/getNextLayer'
+import { GetProjectsResult } from 'services/cms/queries/getProjects'
 
-export type HomeProjectsSectionProps = {}
+export type HomeProjectsSectionProps = {
+  projects: GetProjectsResult | null
+}
 
 const sectionLayer = 0
 
-const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
+const HomeProjectsSection = ({ projects }: HomeProjectsSectionProps) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef<HTMLDivElement | null>(null)
   const { screen, breakpoints } = useScreenDimensions()
@@ -64,9 +67,12 @@ const HomeProjectsSection = ({}: HomeProjectsSectionProps) => {
             }
           }}
         >
-          {projectsListMockup.map(project => (
+          {projects?.data?.map(project => (
             <SwiperSlide key={project.id}>
-              <ProjectCard {...project} layer={getNextLayer(sectionLayer)} />
+              <ProjectCard
+                {...project.attributes}
+                layer={getNextLayer(sectionLayer)}
+              />
             </SwiperSlide>
           ))}
           {isTabletUp && <Pagination ref={paginationRef} />}
