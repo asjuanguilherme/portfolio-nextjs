@@ -49,6 +49,7 @@ const designSystemOptions = {
   },
   zIndex: {
     navbar: 100,
+    modals: 110,
     preLoader: 200
   },
   transition: {
