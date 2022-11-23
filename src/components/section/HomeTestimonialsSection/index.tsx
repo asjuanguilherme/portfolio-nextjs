@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 // Types
 import { GetTestimonialsResult } from 'services/cms/queries/getTestimonials'
@@ -22,6 +22,7 @@ import { SectionHeading } from 'components/shared/Section'
 import TestimonialCard from 'components/shared/TestimonialCard'
 import { Pagination } from 'components/shared/Swiper'
 import SectionAnchor from 'components/shared/SectionAnchor'
+import { NavigationContext } from 'contexts/NavigationContext'
 
 export type HomeTestimonialsSectionProps = {
   testimonials: GetTestimonialsResult | null
@@ -32,14 +33,28 @@ const HomeTestimonialsSection = ({
   data,
   testimonials
 }: HomeTestimonialsSectionProps) => {
+  const { setActiveSection } = useContext(NavigationContext)
+  const sectionRef = useRef<HTMLElement | null>(null)
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef<HTMLDivElement>(null)
-  const layer = 1
+  const layer = 0
+
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver(
+      (entries: any) =>
+        entries.some((entry: any) => entry.isIntersecting) &&
+        setActiveSection('testimonials'),
+      { threshold: 1 }
+    )
+    intersectionObserver.observe(sectionRef.current as any)
+
+    return () => intersectionObserver.disconnect()
+  }, [])
 
   if (!testimonials?.data || testimonials?.data?.length < 1) return <></>
 
   return (
-    <S.SectionWrapper layer={layer}>
+    <S.SectionWrapper layer={layer} ref={sectionRef}>
       <SectionAnchor name="testimonials" />
       <Container>
         <SectionHeading>{data?.data?.attributes.title}</SectionHeading>

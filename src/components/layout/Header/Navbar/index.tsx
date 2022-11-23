@@ -1,21 +1,28 @@
 import * as S from './styles'
-import { navigationItems } from 'config/navigation'
+import { navigationItems } from 'contexts/NavigationContext/navigationItems'
 import ThemeToggle from 'components/layout/ThemeToggle'
 import NavItem from './NavItem'
+import { NavigationContext } from 'contexts/NavigationContext'
+import { useContext } from 'react'
 
 type NavbarProps = {
   forTransparentBackground: boolean
 }
 
 const Navbar = ({ forTransparentBackground }: NavbarProps) => {
+  const { activeSection } = useContext(NavigationContext)
+
   return (
     <S.Wrapper>
       <S.NavList forTransparentBackground={forTransparentBackground}>
-        {navigationItems.map(navItem => (
+        {Object.keys(navigationItems).map(navItem => (
           <NavItem
-            key={navItem.title}
+            key={navItem}
+            // @ts-ignore-next-line
+            title={navigationItems[navItem]}
+            link={`/#${navItem}`}
+            active={navItem === activeSection}
             forTransparentBackground={forTransparentBackground}
-            {...navItem}
           />
         ))}
       </S.NavList>

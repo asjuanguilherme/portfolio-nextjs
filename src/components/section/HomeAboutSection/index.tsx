@@ -1,8 +1,12 @@
 import * as S from './styles'
+import { useContext, useEffect, useRef } from 'react'
 
 // Types
 import { GetSkillsResult } from 'services/cms/queries/getSkills'
 import { GetAboutSectionResult } from 'services/cms/queries/getAboutSection'
+
+// Contexts
+import { NavigationContext } from 'contexts/NavigationContext'
 
 // Components
 import Markdown from 'markdown-to-jsx'
@@ -21,8 +25,23 @@ export type HomeAboutSectionProps = {
 const boxLayer = 1
 
 const HomeAboutSection = ({ data, skills }: HomeAboutSectionProps) => {
+  const { setActiveSection } = useContext(NavigationContext)
+  const sectionRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver(
+      (entries: any) =>
+        entries.some((entry: any) => entry.isIntersecting) &&
+        setActiveSection('about'),
+      { threshold: 1 }
+    )
+    intersectionObserver.observe(sectionRef.current as any)
+
+    return () => intersectionObserver.disconnect()
+  }, [])
+
   return (
-    <Container as="section">
+    <Container as="section" ref={sectionRef}>
       <SectionAnchor name="about" />
       <S.Box layer={boxLayer}>
         <SectionWrapper as="div" layer={boxLayer}>

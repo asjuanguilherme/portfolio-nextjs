@@ -1,8 +1,12 @@
 import * as S from './styles'
+import { useContext, useEffect, useRef } from 'react'
 
 // Types
 import { GetSocialsResult } from 'services/cms/queries/getSocials'
 import { GetMainSectionResult } from 'services/cms/queries/getMainSection'
+
+// Contexts
+import { NavigationContext } from 'contexts/NavigationContext'
 
 // Components
 import Image from 'next/image'
@@ -17,8 +21,23 @@ export type HomeMainSectionProps = {
 }
 
 const HomeMainSection = ({ data, socials }: HomeMainSectionProps) => {
+  const { setActiveSection } = useContext(NavigationContext)
+  const sectionRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver(
+      (entries: any) =>
+        entries.some((entry: any) => entry.isIntersecting) &&
+        setActiveSection('main'),
+      { threshold: 0.75 }
+    )
+    intersectionObserver.observe(sectionRef.current as any)
+
+    return () => intersectionObserver.disconnect()
+  }, [])
+
   return (
-    <S.Wrapper>
+    <S.Wrapper ref={sectionRef}>
       <SectionAnchor name="main" />
       <S.Container>
         <S.SaudationPart>

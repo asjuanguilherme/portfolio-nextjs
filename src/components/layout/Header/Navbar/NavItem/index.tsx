@@ -1,25 +1,25 @@
 import * as S from './styles'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { NavigationItemProps } from 'config/navigation'
 import CircleBackgroundAnimation from 'components/shared/CircleBackgroundAnimation'
 
-export type NavItemProps = NavigationItemProps & {
+export type NavItemProps = {
+  title: string
+  link: string
+  active: boolean
   forTransparentBackground: boolean
 }
 
-const NavItem = ({ title, link, forTransparentBackground }: NavItemProps) => {
-  const router = useRouter()
-
+const NavItem = ({
+  title,
+  link,
+  active,
+  forTransparentBackground
+}: NavItemProps) => {
   return (
     <S.Wrapper>
       <Link href={link} passHref>
         <S.ButtonLink
-          active={
-            link === '/'
-              ? router.asPath === '/'
-              : router.pathname === link || router.asPath === link
-          }
+          active={active}
           forTransparentBackground={forTransparentBackground}
         >
           {title}

@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
 // Types
@@ -12,6 +12,9 @@ import { Pagination as PaginationModule } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
+
+// Contexts
+import { NavigationContext } from 'contexts/NavigationContext'
 
 // Components
 import { SectionHeading, SectionWrapper } from 'components/shared/Section'
@@ -33,9 +36,23 @@ const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
   const paginationRef = useRef<HTMLDivElement | null>(null)
   const { screen, breakpoints } = useScreenDimensions()
   const isTabletUp = screen.width > breakpoints.tabletS
+  const { setActiveSection } = useContext(NavigationContext)
+  const sectionRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver(
+      (entries: any) =>
+        entries.some((entry: any) => entry.isIntersecting) &&
+        setActiveSection('projects'),
+      { threshold: 1 }
+    )
+    intersectionObserver.observe(sectionRef.current as any)
+
+    return () => intersectionObserver.disconnect()
+  }, [])
 
   return (
-    <SectionWrapper layer={sectionLayer}>
+    <SectionWrapper layer={sectionLayer} ref={sectionRef}>
       <SectionAnchor name="projects" />
       <Container>
         <SectionHeading>{data?.data?.attributes.title}</SectionHeading>

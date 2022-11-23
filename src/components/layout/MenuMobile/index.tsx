@@ -1,26 +1,28 @@
 import * as S from './styles'
-import { useRouter } from 'next/router'
+import { useContext } from 'react'
 import Link from 'next/link'
-import { navigationItems } from 'config/navigation'
+import { navigationItems } from 'contexts/NavigationContext/navigationItems'
+import { NavigationContext } from 'contexts/NavigationContext'
 
 type MenuMobileProps = {
   closeMenu: () => void
 }
 
 const MenuMobile = ({ closeMenu }: MenuMobileProps) => {
-  const router = useRouter()
+  const { activeSection } = useContext(NavigationContext)
 
   return (
     <S.Wrapper>
       <S.NavList>
-        {navigationItems.map(item => (
+        {Object.keys(navigationItems).map(item => (
           <S.NavItem
-            key={item.link}
-            active={router.asPath === item.link}
+            key={item}
+            active={item === activeSection}
             onClick={closeMenu}
           >
-            <Link href={item.link} passHref>
-              <a>{item.title}</a>
+            <Link href={`/#${item}`} passHref>
+              {/* @ts-ignore-next-line */}
+              <a>{navigationItems[item]}</a>
             </Link>
           </S.NavItem>
         ))}

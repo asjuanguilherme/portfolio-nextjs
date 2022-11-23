@@ -1,8 +1,9 @@
+import { navigationItems } from 'contexts/NavigationContext/navigationItems'
 import { CSSProperties } from 'react'
 import * as S from './styles'
 
 export type SectionAnchorProps = {
-  name: string
+  name: keyof typeof navigationItems
   style?: CSSProperties
   className?: string
 }
