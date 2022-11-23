@@ -5,7 +5,10 @@ import { PageProps } from 'types/pageProps'
 import { Theme } from 'styles/themes'
 
 // Services
-import { getSkills, GetSkillsResult } from 'services/cms.service'
+import { getSkills, GetSkillsResult } from 'services/cms/queries/getSkills'
+import getAboutSection, {
+  GetAboutSectionResult
+} from 'services/cms/queries/getAboutSection'
 
 // Components
 const HomeMainSection = dynamic(
@@ -25,14 +28,15 @@ const HomeContactSection = dynamic(
 )
 
 type HomePageProps = PageProps<{
+  aboutSection: GetAboutSectionResult | null
   skills: GetSkillsResult | null
 }>
 
-const HomePage = ({ skills }: HomePageProps) => {
+const HomePage = ({ aboutSection, skills }: HomePageProps) => {
   return (
     <>
       <HomeMainSection />
-      <HomeAboutSection skills={skills} />
+      <HomeAboutSection data={aboutSection} skills={skills} />
       <HomeProjectsSection />
       <HomeTestimonialsSection />
       <HomeContactSection />
@@ -50,6 +54,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async ({
   return {
     props: {
       storedTheme,
+      aboutSection: await getAboutSection(),
       skills: await getSkills()
     }
   }
