@@ -4,13 +4,19 @@ import Close from '../Icons/Close'
 
 export type ModalProps = {
   title: string
-  width: number
   content: ReactNode
   opened: boolean
+  width?: number
   onClose?: () => void
 }
 
-const Modal = ({ title, content, width, onClose, opened }: ModalProps) => {
+const Modal = ({
+  title,
+  content,
+  width = 350,
+  onClose,
+  opened
+}: ModalProps) => {
   const handleOnCloseClick = () => {
     onClose && onClose()
   }
