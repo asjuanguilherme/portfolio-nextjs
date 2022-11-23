@@ -6,5 +6,6 @@ const { spacing } = designSystemOptions
 export const SocialLinks = styled.ul`
   list-style: none;
   display: inline-flex;
-  gap: ${spacing.components.small};
+  gap: ${spacing.components.medium};
+  margin-top: ${spacing.components.large};
 `

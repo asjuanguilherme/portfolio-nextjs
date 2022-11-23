@@ -19,6 +19,15 @@ import getProjects, {
 import getTestimonials, {
   GetTestimonialsResult
 } from 'services/cms/queries/getTestimonials'
+import getProjectsSection, {
+  GetProjectsSectionResult
+} from 'services/cms/queries/getProjectsSection'
+import getTestimonialsSection, {
+  GetTestimonialsSectionResult
+} from 'services/cms/queries/getTestimonialsSection'
+import getContactSection, {
+  GetContactSectionResult
+} from 'services/cms/queries/getContactSection'
 
 // Components
 const HomeMainSection = dynamic(
@@ -40,6 +49,9 @@ const HomeContactSection = dynamic(
 type HomePageProps = PageProps<{
   mainSection: GetMainSectionResult | null
   aboutSection: GetAboutSectionResult | null
+  projectsSection: GetProjectsSectionResult | null
+  testimonialsSection: GetTestimonialsSectionResult | null
+  contactSection: GetContactSectionResult | null
   skills: GetSkillsResult | null
   socials: GetSocialsResult | null
   projects: GetProjectsResult | null
@@ -49,6 +61,9 @@ type HomePageProps = PageProps<{
 const HomePage = ({
   mainSection,
   aboutSection,
+  projectsSection,
+  testimonialsSection,
+  contactSection,
   skills,
   socials,
   projects,
@@ -58,9 +73,12 @@ const HomePage = ({
     <>
       <HomeMainSection data={mainSection} socials={socials} />
       <HomeAboutSection data={aboutSection} skills={skills} />
-      <HomeProjectsSection projects={projects} />
-      <HomeTestimonialsSection testimonials={testimonials} />
-      <HomeContactSection socials={socials} />
+      <HomeProjectsSection data={projectsSection} projects={projects} />
+      <HomeTestimonialsSection
+        data={testimonialsSection}
+        testimonials={testimonials}
+      />
+      <HomeContactSection data={contactSection} socials={socials} />
     </>
   )
 }
@@ -78,6 +96,9 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async ({
       socials: await getSocials(),
       mainSection: await getMainSection(),
       aboutSection: await getAboutSection(),
+      projectsSection: await getProjectsSection(),
+      testimonialsSection: await getTestimonialsSection(),
+      contactSection: await getContactSection(),
       skills: await getSkills(),
       projects: await getProjects(),
       testimonials: await getTestimonials()

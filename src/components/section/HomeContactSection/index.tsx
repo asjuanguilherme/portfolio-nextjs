@@ -2,6 +2,7 @@ import * as S from './styles'
 
 // Types
 import { GetSocialsResult } from 'services/cms/queries/getSocials'
+import { GetContactSectionResult } from 'services/cms/queries/getContactSection'
 
 // Components
 import { SectionHeading, SectionWrapper } from 'components/shared/Section'
@@ -9,21 +10,24 @@ import Container from 'components/shared/Container'
 import SectionAnchor from 'components/shared/SectionAnchor'
 import Button from 'components/shared/Button'
 import StrapiDynamicIcon from 'components/shared/StrapiDynamicIcon'
+import Markdown from 'markdown-to-jsx'
 
 export type HomeContactSectionProps = {
   socials: GetSocialsResult | null
+  data: GetContactSectionResult | null
 }
 
-const HomeContactSection = ({ socials }: HomeContactSectionProps) => {
+const HomeContactSection = ({ data, socials }: HomeContactSectionProps) => {
   return (
     <SectionWrapper style={{ textAlign: 'center' }}>
       <SectionAnchor name="contact" />
-      <SectionHeading>Fale Comigo</SectionHeading>
+      <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
       <Container style={{ maxWidth: '540px' }}>
-        <p>
-          Caso tenha interesse em ter uma conversa comigo, minhas redes sociais,
-          meu WhatsApp e também meu email estarão aguardando a sua mensagem.
-        </p>
+        <div>
+          {data?.data?.attributes.content && (
+            <Markdown>{data?.data?.attributes.content}</Markdown>
+          )}
+        </div>
         <S.SocialLinks>
           {socials?.data?.map(social => (
             <li key={social.id}>

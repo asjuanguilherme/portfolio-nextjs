@@ -2,8 +2,9 @@ import * as S from './styles'
 import { useRef, useState } from 'react'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
-// Utils
-import projectsListMockup from 'mockups/projects'
+// Types
+import { GetProjectsResult } from 'services/cms/queries/getProjects'
+import { GetProjectsSectionResult } from 'services/cms/queries/getProjectsSection'
 
 // Swiper
 import { Swiper as SwiperProps } from 'swiper/types'
@@ -19,15 +20,15 @@ import ProjectCard from 'components/shared/ProjectCard'
 import { Pagination } from 'components/shared/Swiper'
 import SectionAnchor from 'components/shared/SectionAnchor'
 import getNextLayer from 'utils/getNextLayer'
-import { GetProjectsResult } from 'services/cms/queries/getProjects'
 
 export type HomeProjectsSectionProps = {
   projects: GetProjectsResult | null
+  data: GetProjectsSectionResult | null
 }
 
 const sectionLayer = 0
 
-const HomeProjectsSection = ({ projects }: HomeProjectsSectionProps) => {
+const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef<HTMLDivElement | null>(null)
   const { screen, breakpoints } = useScreenDimensions()
@@ -37,7 +38,7 @@ const HomeProjectsSection = ({ projects }: HomeProjectsSectionProps) => {
     <SectionWrapper layer={sectionLayer}>
       <SectionAnchor name="projects" />
       <Container>
-        <SectionHeading>Ultimos Projetos</SectionHeading>
+        <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
       </Container>
       <S.ProjectsCarouselContainer>
         <Swiper
