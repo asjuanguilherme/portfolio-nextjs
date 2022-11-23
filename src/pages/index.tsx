@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import dynamic from 'next/dynamic'
 import { DEFAULT_THEME } from 'contexts/ThemeContext/utils'
 import { PageProps } from 'types/pageProps'
 import { Theme } from 'styles/themes'
@@ -7,11 +8,21 @@ import { Theme } from 'styles/themes'
 import { getSkills, GetSkillsResult } from 'services/cms.service'
 
 // Components
-import HomeMainSection from 'components/section/HomeMainSection'
-import HomeAboutSection from 'components/section/HomeAboutSection'
-import HomeProjectsSection from 'components/section/HomeProjectsSection'
-import HomeTestimonialsSection from 'components/section/HomeTestimonialsSection'
-import HomeContactSection from 'components/section/HomeContactSection'
+const HomeMainSection = dynamic(
+  () => import('components/section/HomeMainSection')
+)
+const HomeAboutSection = dynamic(
+  () => import('components/section/HomeAboutSection')
+)
+const HomeProjectsSection = dynamic(
+  () => import('components/section/HomeProjectsSection')
+)
+const HomeTestimonialsSection = dynamic(
+  () => import('components/section/HomeTestimonialsSection')
+)
+const HomeContactSection = dynamic(
+  () => import('components/section/HomeContactSection')
+)
 
 type HomePageProps = PageProps<{
   skills: GetSkillsResult | null

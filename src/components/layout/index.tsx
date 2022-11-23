@@ -1,4 +1,5 @@
 import * as S from './styles'
+import dynamic from 'next/dynamic'
 
 // Hooks
 import { SyntheticEvent, useEffect, useRef, useState } from 'react'
@@ -6,9 +7,9 @@ import { useRouter } from 'next/router'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
 // Components
-import Footer from './Footer'
-import Header from './Header'
-import MenuMobile from './MenuMobile'
+const Footer = dynamic(() => import('./Footer'))
+const Header = dynamic(() => import('./Header'))
+const MenuMobile = dynamic(() => import('./MenuMobile'))
 
 export type LayoutProps = {
   children: JSX.Element | JSX.Element[]
