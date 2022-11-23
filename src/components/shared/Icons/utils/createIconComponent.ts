@@ -13,7 +13,7 @@ export type IconComponentProps = {
   styles?: CSSObject
 }
 
-export type IconComponent = (props: IconComponentProps) => ReactSVGElement
+export type IconComponent = (props: IconComponentProps) => JSX.Element
 
 export type CreateIconComponentProps = {
   content: Content

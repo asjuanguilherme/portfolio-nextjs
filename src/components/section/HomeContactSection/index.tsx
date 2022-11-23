@@ -1,17 +1,20 @@
 import * as S from './styles'
 
-// Utils
-import { socialItems } from 'config/socials'
+// Types
+import { GetSocialsResult } from 'services/cms/queries/getSocials'
 
 // Components
 import { SectionHeading, SectionWrapper } from 'components/shared/Section'
 import Container from 'components/shared/Container'
 import SectionAnchor from 'components/shared/SectionAnchor'
 import Button from 'components/shared/Button'
+import StrapiDynamicIcon from 'components/shared/StrapiDynamicIcon'
 
-export type HomeContactSectionProps = {}
+export type HomeContactSectionProps = {
+  socials: GetSocialsResult | null
+}
 
-const HomeContactSection = ({}: HomeContactSectionProps) => {
+const HomeContactSection = ({ socials }: HomeContactSectionProps) => {
   return (
     <SectionWrapper style={{ textAlign: 'center' }}>
       <SectionAnchor name="contact" />
@@ -22,12 +25,12 @@ const HomeContactSection = ({}: HomeContactSectionProps) => {
           meu WhatsApp e também meu email estarão aguardando a sua mensagem.
         </p>
         <S.SocialLinks>
-          {socialItems.map(social => (
-            <li key={social.link}>
+          {socials?.data?.map(social => (
+            <li key={social.id}>
               <Button
-                href={social.link}
-                aria-label={`Abrir ${social.title}`}
-                icon={social.icon}
+                href={social.attributes.url}
+                aria-label={`Abrir ${social.attributes.label}`}
+                icon={() => <StrapiDynamicIcon {...social.attributes.icon} />}
                 onlyIcon
                 isExternal
               />

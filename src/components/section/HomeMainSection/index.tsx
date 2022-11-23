@@ -1,16 +1,19 @@
 import * as S from './styles'
 
-// Utils
-import { socialItems } from 'config/socials'
+// Types
+import { GetSocialsResult } from 'services/cms/queries/getSocials'
 
 // Components
 import Image from 'next/image'
 import Button from 'components/shared/Button'
 import SectionAnchor from 'components/shared/SectionAnchor'
+import StrapiDynamicIcon from 'components/shared/StrapiDynamicIcon'
 
-export type HomeMainSectionProps = {}
+export type HomeMainSectionProps = {
+  socials: GetSocialsResult | null
+}
 
-const HomeMainSection = ({}: HomeMainSectionProps) => {
+const HomeMainSection = ({ socials }: HomeMainSectionProps) => {
   return (
     <S.Wrapper>
       <SectionAnchor name="main" />
@@ -19,13 +22,13 @@ const HomeMainSection = ({}: HomeMainSectionProps) => {
           <S.SaudationText>Olá, sou Juan!</S.SaudationText>
           <S.SaudationRole>Front End Developer</S.SaudationRole>
           <S.Socials>
-            {socialItems.map(item => (
-              <li key={item.link}>
+            {socials?.data?.map(item => (
+              <li key={item.id}>
                 <Button
                   color="translucent"
-                  aria-label={`Abrir o ${item.title}`}
-                  href={item.link}
-                  icon={item.icon}
+                  aria-label={`Abrir o ${item.attributes.label}`}
+                  href={item.attributes.url}
+                  icon={() => <StrapiDynamicIcon {...item.attributes.icon} />}
                   isExternal
                   onlyIcon
                 />
