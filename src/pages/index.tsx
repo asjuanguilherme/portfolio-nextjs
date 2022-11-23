@@ -10,6 +10,9 @@ import getAboutSection, {
   GetAboutSectionResult
 } from 'services/cms/queries/getAboutSection'
 import getSocials, { GetSocialsResult } from 'services/cms/queries/getSocials'
+import getMainSection, {
+  GetMainSectionResult
+} from 'services/cms/queries/getMainSection'
 
 // Components
 const HomeMainSection = dynamic(
@@ -29,15 +32,21 @@ const HomeContactSection = dynamic(
 )
 
 type HomePageProps = PageProps<{
+  mainSection: GetMainSectionResult | null
   aboutSection: GetAboutSectionResult | null
   skills: GetSkillsResult | null
   socials: GetSocialsResult | null
 }>
 
-const HomePage = ({ aboutSection, skills, socials }: HomePageProps) => {
+const HomePage = ({
+  mainSection,
+  aboutSection,
+  skills,
+  socials
+}: HomePageProps) => {
   return (
     <>
-      <HomeMainSection socials={socials} />
+      <HomeMainSection data={mainSection} socials={socials} />
       <HomeAboutSection data={aboutSection} skills={skills} />
       <HomeProjectsSection />
       <HomeTestimonialsSection />
@@ -57,6 +66,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async ({
     props: {
       storedTheme,
       socials: await getSocials(),
+      mainSection: await getMainSection(),
       aboutSection: await getAboutSection(),
       skills: await getSkills()
     }
