@@ -20,9 +20,9 @@ import Image from 'next/image'
 import Markdown from 'markdown-to-jsx'
 import Skill from '../Skill'
 
-export type ProjectModalContentProps = ProjectDto
+export type ProjectDetailsModalProps = ProjectDto
 
-const ProjectModalContent = ({
+const ProjectDetailsModal = ({
   title,
   type,
   content,
@@ -86,4 +86,4 @@ const ProjectModalContent = ({
   )
 }
 
-export default ProjectModalContent
+export default ProjectDetailsModal

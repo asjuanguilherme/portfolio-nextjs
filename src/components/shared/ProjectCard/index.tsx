@@ -12,7 +12,7 @@ import Button from 'components/shared/Button'
 import ProjectDto from 'services/cms/types/ProjectDto'
 import { useContext } from 'react'
 import { ModalContext } from 'contexts/ModalContext'
-import ProjectModalContent from '../ProjectModalContent'
+import ProjectDetailsModal from '../ProjectDetailsModal'
 
 export type ProjectCardProps = ProjectDto & {
   layer?: keyof DefaultTheme['colors']['layers']
@@ -31,7 +31,7 @@ const ProjectCard = ({
   const handleClick = () => {
     addModal({
       content: (
-        <ProjectModalContent
+        <ProjectDetailsModal
           title={title}
           type={type}
           skills={skills}
