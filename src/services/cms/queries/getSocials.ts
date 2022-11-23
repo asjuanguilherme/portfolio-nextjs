@@ -1,12 +1,8 @@
 import { cms } from '../config'
-import { StrapiCollectionTypeData, StrapiSingleTypeData } from 'types/strapi'
-import IconDto from '../types/IconDto'
+import { StrapiCollectionTypeData } from 'types/strapi'
+import SocialDto from '../types/SocialDto'
 
-export type GetSocialsResult = StrapiCollectionTypeData<{
-  label: string
-  url: string
-  icon: StrapiSingleTypeData<IconDto>
-}>
+export type GetSocialsResult = StrapiCollectionTypeData<SocialDto>
 
 export const getSocials = async () => {
   try {

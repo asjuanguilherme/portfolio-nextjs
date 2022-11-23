@@ -1,6 +1,9 @@
 import * as S from './styles'
 import { useRef, useState } from 'react'
 
+// Types
+import { GetTestimonialsResult } from 'services/cms/queries/getTestimonials'
+
 // Utils
 import getNextLayer from 'utils/getNextLayer'
 import testimonialListMockup from 'mockups/testimonials'
@@ -20,9 +23,13 @@ import TestimonialCard from 'components/shared/TestimonialCard'
 import { Pagination } from 'components/shared/Swiper'
 import SectionAnchor from 'components/shared/SectionAnchor'
 
-export type HomeTestimonialsSectionProps = {}
+export type HomeTestimonialsSectionProps = {
+  testimonials: GetTestimonialsResult | null
+}
 
-const HomeTestimonialsSection = ({}: HomeTestimonialsSectionProps) => {
+const HomeTestimonialsSection = ({
+  testimonials
+}: HomeTestimonialsSectionProps) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef<HTMLDivElement>(null)
   const layer = 1
@@ -48,9 +55,12 @@ const HomeTestimonialsSection = ({}: HomeTestimonialsSectionProps) => {
             centeredSlides={true}
             slidesPerView={1.1}
           >
-            {testimonialListMockup.map(testimonial => (
+            {testimonials?.data?.map(testimonial => (
               <SwiperSlide key={testimonial.id}>
-                <TestimonialCard {...testimonial} layer={getNextLayer(layer)} />
+                <TestimonialCard
+                  {...testimonial.attributes}
+                  layer={getNextLayer(layer)}
+                />
               </SwiperSlide>
             ))}
             <Pagination ref={paginationRef} />

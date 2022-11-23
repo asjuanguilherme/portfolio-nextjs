@@ -1,29 +1,27 @@
 import * as S from './styles'
 import Image from 'next/image'
 import { DefaultTheme } from 'styled-components'
+import TestimonialDto from 'services/cms/types/TestimonialDto'
+import { getCmsMediaUrl } from 'services/cms/utils'
 
-export type TestimonialCardProps = {
-  author: {
-    name: string
-    role: string
-    image: {
-      url: string
-      alt: string
-    }
-    company?: string
-  }
-  text: string
+export type TestimonialCardProps = TestimonialDto & {
   layer?: keyof DefaultTheme['colors']['layers']
 }
 
-const TestimonialCard = ({ author, text, layer = 1 }: TestimonialCardProps) => {
+const TestimonialCard = ({
+  authorName,
+  authorPhoto,
+  authorRole,
+  testimonial,
+  layer = 1
+}: TestimonialCardProps) => {
   return (
     <S.Wrapper layer={layer}>
       <S.Author>
         <S.AuthorImage>
           <Image
-            src={author.image.url}
-            alt={author.image.alt}
+            src={getCmsMediaUrl(authorPhoto)}
+            alt={authorPhoto.data?.attributes.alt}
             height={64}
             width={64}
             objectFit="cover"
@@ -31,13 +29,11 @@ const TestimonialCard = ({ author, text, layer = 1 }: TestimonialCardProps) => {
           />
         </S.AuthorImage>
         <S.AuthorInfo>
-          <S.AuthorName>{author.name}</S.AuthorName>
-          <S.AuthorRole>
-            {author.role} {author.company ? ' - ' + author.company : ''}
-          </S.AuthorRole>
+          <S.AuthorName>{authorName}</S.AuthorName>
+          <S.AuthorRole>{authorRole}</S.AuthorRole>
         </S.AuthorInfo>
       </S.Author>
-      <S.Text>{text}</S.Text>
+      <S.Text>{testimonial}</S.Text>
     </S.Wrapper>
   )
 }
