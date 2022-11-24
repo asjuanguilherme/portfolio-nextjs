@@ -27,14 +27,8 @@ const Header = ({
     <S.Wrapper ref={headerRef} showTransparentHeader={showTransparentHeader}>
       <S.Container>
         <S.Logo isHidden={showTransparentHeader} />
-        {screen.width > breakpoints.tablet ? (
+        {screen.width > breakpoints.tablet && (
           <Navbar forTransparentBackground={showTransparentHeader} />
-        ) : (
-          <MenuToggle
-            menuOpened={menuOpened}
-            menuToggle={menuToggle}
-            forTransparentBackground={showTransparentHeader}
-          />
         )}
       </S.Container>
     </S.Wrapper>

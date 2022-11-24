@@ -8,9 +8,8 @@ const { transition, zIndex, spacing } = designSystemOptions
 
 export const Logo = styled(DefaultLogo)<{ isHidden: boolean }>`
   transition: 0.7s;
-  transition-property: transform;
+  transition-property: transform, opacity;
   display: flex;
-  position: absolute;
   color: ${props =>
     props.theme.name === 'dark'
       ? 'white'
@@ -28,10 +27,14 @@ export const Logo = styled(DefaultLogo)<{ isHidden: boolean }>`
       transform: translateX(-100%);
       opacity: 0;
     `}
+
+  ${screens.laptop} {
+    position: absolute;
+  }
 `
 
 export const Container = styled(DefaultContainer)`
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: space-between;
 `
@@ -52,7 +55,6 @@ export const Wrapper = styled.header<{
   padding: ${spacing.components.large} 0;
   background: ${props => props.theme.colors.layers[2].background};
   border-bottom: 1px solid ${props => props.theme.colors.layers[2].border};
-  transition: ${transition.default};
 
   ${props => props.showTransparentHeader && transparentStyle}
 `

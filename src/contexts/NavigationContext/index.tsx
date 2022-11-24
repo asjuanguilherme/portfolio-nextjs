@@ -26,11 +26,13 @@ export const NavigationProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     router
       .replace({ pathname: router.pathname, hash: activeSection }, undefined, {
-        shallow: true
+        shallow: true,
+        scroll: false
       })
       .catch(e => {
         if (!e.cancelled) throw e
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSection])
 
   return (

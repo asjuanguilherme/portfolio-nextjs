@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 
-const { transition } = designSystemOptions
+const { transition, zIndex, layout } = designSystemOptions
 
 export const Wrapper = styled.button<{
   menuOpened: boolean
@@ -14,11 +14,15 @@ export const Wrapper = styled.button<{
   }
   cursor: pointer;
   margin-left: auto;
+  position: fixed;
+  z-index: ${zIndex.navbar};
+  top: ${layout.gutter};
+  right: ${layout.gutter};
 
   color: ${props =>
     props.forTransparentBackground
       ? 'white'
       : props.menuOpened
-      ? props.theme.colors.main.primary.normal
+      ? 'white'
       : props.theme.colors.title};
 `

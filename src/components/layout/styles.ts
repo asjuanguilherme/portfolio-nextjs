@@ -14,14 +14,12 @@ export const PageWrapper = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  overflow: auto;
-  overflow-x: hidden;
+  overflow-y: auto;
   background: ${props => props.theme.colors.layers[0].background};
   transition: ${transition.slow} ease-out;
   transition-property: transform, left;
   display: flex;
   flex-direction: column;
-  height: 100%;
   z-index: 2;
   scroll-behavior: smooth;
 `
@@ -29,16 +27,12 @@ export const PageWrapper = styled.div`
 const menuOpenedStyle = css`
   ${PageWrapper} {
     position: absolute;
-    overflow: hidden;
     border-radius: ${borderRadius.medium};
     transform: scale(0.8);
     left: -60%;
   }
 
   ${Main} {
-    overflow: scroll;
-    pointer-events: none;
-
     -ms-overflow-style: none;
     scrollbar-width: none;
     &::-webkit-scrollbar {
