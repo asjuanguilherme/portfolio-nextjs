@@ -91,7 +91,7 @@ const closedStyle = css`
 export const Wrapper = styled.div<{ opened: boolean }>`
   position: fixed;
   z-index: ${zIndex.modals};
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   padding: 0 ${layout.gutter};
   background: rgba(

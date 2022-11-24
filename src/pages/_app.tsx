@@ -18,11 +18,11 @@ const App = ({ Component, pageProps }: AppProps<{ storedTheme: Theme }>) => {
     <ThemeProvider storedTheme={pageProps.storedTheme}>
       <GlobalStyles />
       <NavigationProvider>
-        <Layout>
-          <ModalProvider>
+        <ModalProvider>
+          <Layout>
             <Component {...pageProps} />
-          </ModalProvider>
-        </Layout>
+          </Layout>
+        </ModalProvider>
       </NavigationProvider>
     </ThemeProvider>
   )

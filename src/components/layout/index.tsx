@@ -1,13 +1,16 @@
 import * as S from './styles'
+import layoutConfig from './layoutConfig'
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
 // Hooks
 import { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import useScreenDimensions from 'hooks/useScreenDimensions'
-import MenuToggle from './MenuToggle'
+import { useTheme } from 'styled-components'
 
 // Components
+import MenuToggle from './MenuToggle'
 const Footer = dynamic(() => import('./Footer'))
 const Header = dynamic(() => import('./Header'))
 const MenuMobile = dynamic(() => import('./MenuMobile'))
@@ -26,6 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
   const isMobile = screen.width < breakpoints.tablet
   const isHome = router.pathname === '/'
   const [showTransparentHeader, setShowTransparentHeader] = useState(isHome)
+  const theme = useTheme()
 
   useEffect(() => {
     if (!headerRef.current) return
@@ -64,32 +68,42 @@ const Layout = ({ children }: LayoutProps) => {
   }, [isHome, pageWrapperRef])
 
   return (
-    <S.Wrapper menuOpened={menuOpened} isMobile={isMobile}>
-      {!(screen.width > breakpoints.tablet) && (
-        <MenuToggle
-          menuOpened={menuOpened}
-          menuToggle={menuToggle}
-          forTransparentBackground={showTransparentHeader}
-        />
-      )}
-      <S.PageWrapper
-        onClick={handlePageClick}
-        onScroll={handlePageScroll}
-        ref={pageWrapperRef}
-      >
-        <Header
-          menuOpened={menuOpened}
-          menuToggle={menuToggle}
-          headerRef={headerRef}
-          showTransparentHeader={showTransparentHeader}
-        />
-        <S.Main secureMarginForContent={isHome ? 0 : headerHeight}>
-          {children}
-        </S.Main>
-        {!menuOpened && <Footer />}
-      </S.PageWrapper>
-      {isMobile && <MenuMobile closeMenu={closeMenu} />}
-    </S.Wrapper>
+    <>
+      <Head>
+        <meta
+          name="theme-color"
+          content={
+            showTransparentHeader
+              ? theme.colors.main.themeGradient.normal
+              : theme.colors.layers[2].background
+          }
+        ></meta>
+      </Head>
+      <S.Wrapper menuOpened={menuOpened} isMobile={isMobile}>
+        {screen.width <= breakpoints[layoutConfig.menuMobileMaxBreakpoint] && (
+          <MenuToggle
+            menuOpened={menuOpened}
+            menuToggle={menuToggle}
+            forTransparentBackground={showTransparentHeader}
+          />
+        )}
+        <S.PageWrapper
+          onClick={handlePageClick}
+          onScroll={handlePageScroll}
+          ref={pageWrapperRef}
+        >
+          <Header
+            headerRef={headerRef}
+            showTransparentHeader={showTransparentHeader}
+          />
+          <S.Main secureMarginForContent={isHome ? 0 : headerHeight}>
+            {children}
+          </S.Main>
+          {!menuOpened && <Footer />}
+        </S.PageWrapper>
+        {isMobile && <MenuMobile closeMenu={closeMenu} />}
+      </S.Wrapper>
+    </>
   )
 }
 

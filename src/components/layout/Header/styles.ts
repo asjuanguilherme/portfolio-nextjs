@@ -3,8 +3,9 @@ import { screens } from 'styles/screens'
 import DefaultContainer from 'components/shared/Container'
 import designSystemOptions from 'styles/designSystemOptions'
 import DefaultLogo from 'components/shared/Logo'
+import layoutConfig from '../layoutConfig'
 
-const { transition, zIndex, spacing } = designSystemOptions
+const { zIndex, spacing } = designSystemOptions
 
 export const Logo = styled(DefaultLogo)<{ isHidden: boolean }>`
   transition: 0.7s;
@@ -28,7 +29,7 @@ export const Logo = styled(DefaultLogo)<{ isHidden: boolean }>`
       opacity: 0;
     `}
 
-  ${screens.laptop} {
+  ${screens[layoutConfig.menuMobileMaxBreakpoint]} {
     position: absolute;
   }
 `
