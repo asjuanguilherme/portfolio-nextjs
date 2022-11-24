@@ -5,6 +5,9 @@ import Instagram from './Instagram'
 import Linkedin from './Linkedin'
 import Envelope from './Envelope'
 import CurriculumPaper from './CurriculumPaper'
+import ChevronLeft from './ChevronLeft'
+import ChevronRight from './ChevronRight'
+import ExternalLink from './ExternalLink'
 
 export { Moon }
 export { Sun }
@@ -13,3 +16,6 @@ export { Instagram }
 export { Linkedin }
 export { Envelope }
 export { CurriculumPaper }
+export { ChevronLeft }
+export { ChevronRight }
+export { ExternalLink }

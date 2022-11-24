@@ -1,17 +1,19 @@
 import * as S from './styles'
+import { useContext } from 'react'
 
 // Utils
 import { getCmsMediaUrl } from 'services/cms/utils'
 
 // Types
 import { DefaultTheme } from 'styled-components'
+import ProjectDto from 'services/cms/types/ProjectDto'
+
+// Contexts
+import { ModalContext } from 'contexts/ModalContext'
 
 // Components
 import Image from 'next/image'
 import Button from 'components/shared/Button'
-import ProjectDto from 'services/cms/types/ProjectDto'
-import { useContext } from 'react'
-import { ModalContext } from 'contexts/ModalContext'
 import ProjectDetailsModal from '../ProjectDetailsModal'
 
 export type ProjectCardProps = ProjectDto & {

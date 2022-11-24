@@ -10,6 +10,7 @@ type ProjectDto = {
   cardImage: StrapiSingleTypeData<ImageDto>
   images: StrapiCollectionTypeData<ImageDto>
   skills: StrapiCollectionTypeData<SkillDto>
+  url?: string
 }
 
 export default ProjectDto

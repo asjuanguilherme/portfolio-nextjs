@@ -15,6 +15,7 @@ export const Skills = styled.ul`
   flex-wrap: wrap;
   list-style: none;
   gap: ${spacing.components.smaller};
+  margin-top: 0.75rem;
 
   ${screens.tabletS} {
     gap: ${spacing.components.small};

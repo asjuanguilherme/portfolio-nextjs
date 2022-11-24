@@ -19,6 +19,8 @@ import { Pagination } from '../Swiper'
 import Image from 'next/image'
 import Markdown from 'markdown-to-jsx'
 import Skill from '../Skill'
+import Button from '../Button'
+import { ExternalLink } from '../Icons'
 
 export type ProjectDetailsModalProps = ProjectDto
 
@@ -27,7 +29,8 @@ const ProjectDetailsModal = ({
   type,
   content,
   skills,
-  images
+  images,
+  url
 }: ProjectDto) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef(null)
@@ -67,6 +70,11 @@ const ProjectDetailsModal = ({
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.Type>{type}</S.Type>
+        {url && (
+          <Button icon={ExternalLink} href={url} isExternal>
+            Acessar Projeto Publicado
+          </Button>
+        )}
         <S.Skills>
           {skills?.data?.map(skill => (
             <li key={skill.id}>
