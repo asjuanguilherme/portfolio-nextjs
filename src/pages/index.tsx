@@ -1,8 +1,13 @@
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { DEFAULT_THEME } from 'contexts/ThemeContext/utils'
 import { PageProps } from 'types/pageProps'
 import { Theme } from 'styles/themes'
+
+// Context
+import { NavigationContext } from 'contexts/NavigationContext'
+import { navigationItems } from 'contexts/NavigationContext/navigationItems'
 
 // Services
 import { getSkills, GetSkillsResult } from 'services/cms/queries/getSkills'
@@ -28,6 +33,9 @@ import getTestimonialsSection, {
 import getContactSection, {
   GetContactSectionResult
 } from 'services/cms/queries/getContactSection'
+import SeoMetaTags from 'components/infra/SeoMetaTags'
+import { getCmsMediaUrl } from 'services/cms/utils'
+import { useContext } from 'react'
 
 // Components
 const HomeMainSection = dynamic(
@@ -69,8 +77,21 @@ const HomePage = ({
   projects,
   testimonials
 }: HomePageProps) => {
+  const { activeSection } = useContext(NavigationContext)
+
   return (
     <>
+      <Head>
+        <SeoMetaTags
+          title="Inicio"
+          description="Site e portfolio de Juan Guilherme, desenvolvedor frontend. Venha conferir meus trabalhos!"
+          pathname="/"
+          image={getCmsMediaUrl(
+            mainSection?.data?.attributes.authorPhoto.data!
+          )}
+        />
+        <title>Juan | {navigationItems[activeSection]}</title>
+      </Head>
       <HomeMainSection data={mainSection} socials={socials} />
       <HomeAboutSection data={aboutSection} skills={skills} />
       <HomeProjectsSection data={projectsSection} projects={projects} />

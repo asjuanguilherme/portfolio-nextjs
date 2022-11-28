@@ -9,10 +9,6 @@ import { useRouter } from 'next/router'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 import { useTheme } from 'styled-components'
 
-// Context
-import { NavigationContext } from 'contexts/NavigationContext'
-import { navigationItems } from 'contexts/NavigationContext/navigationItems'
-
 // Components
 import MenuToggle from './MenuToggle'
 const Footer = dynamic(() => import('./Footer'))
@@ -34,7 +30,6 @@ const Layout = ({ children }: LayoutProps) => {
   const isHome = router.pathname === '/'
   const [showTransparentHeader, setShowTransparentHeader] = useState(isHome)
   const theme = useTheme()
-  const { activeSection } = useContext(NavigationContext)
 
   useEffect(() => {
     if (!headerRef.current) return
@@ -83,7 +78,6 @@ const Layout = ({ children }: LayoutProps) => {
               : theme.colors.layers[2].background
           }
         ></meta>
-        <title>Juan | {navigationItems[activeSection]}</title>
       </Head>
       <S.Wrapper menuOpened={menuOpened} isMobile={isMobile}>
         {screen.width <= breakpoints[layoutConfig.menuMobileMaxBreakpoint] && (
