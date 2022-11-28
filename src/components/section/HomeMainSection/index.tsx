@@ -62,7 +62,10 @@ const HomeMainSection = ({ data, socials }: HomeMainSectionProps) => {
           <S.PhotoPart>
             <Image
               src={getCmsMediaUrl(data?.data?.attributes.authorPhoto.data)}
-              alt={data?.data?.attributes.authorPhoto.data?.attributes.alt}
+              alt={
+                data?.data?.attributes.authorPhoto.data?.attributes
+                  .alternativeText
+              }
               layout="responsive"
               height="100%"
               width="100%"

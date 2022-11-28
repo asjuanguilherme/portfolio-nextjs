@@ -22,7 +22,7 @@ const TestimonialCard = ({
           {authorPhoto.data && (
             <Image
               src={getCmsMediaUrl(authorPhoto.data)}
-              alt={authorPhoto.data?.attributes.alt}
+              alt={authorPhoto.data?.attributes.alternativeText}
               height={64}
               width={64}
               objectFit="cover"

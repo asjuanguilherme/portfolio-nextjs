@@ -52,7 +52,7 @@ const ProjectCard = ({
         {cardImage.data && (
           <Image
             src={getCmsMediaUrl(cardImage.data)}
-            alt={cardImage.data?.attributes.alt}
+            alt={cardImage.data?.attributes.alternativeText}
             layout="fill"
             objectFit="cover"
             objectPosition="center"

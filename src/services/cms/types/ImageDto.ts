@@ -1,6 +1,6 @@
 type ImageDto = {
   url: string
-  alt: string
+  alternativeText: string
 }
 
 export default ImageDto
