@@ -6,7 +6,8 @@ import layoutConfig from '../layoutConfig'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
 // Components
-import Navbar from './Navbar'
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import('./Navbar'))
 
 export type HeaderProps = {
   headerRef: MutableRefObject<HTMLElement | null>

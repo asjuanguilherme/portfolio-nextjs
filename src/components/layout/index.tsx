@@ -4,16 +4,16 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 // Hooks
-import { SyntheticEvent, useContext, useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 import { useTheme } from 'styled-components'
 
 // Components
-import MenuToggle from './MenuToggle'
 const Footer = dynamic(() => import('./Footer'))
 const Header = dynamic(() => import('./Header'))
 const MenuMobile = dynamic(() => import('./MenuMobile'))
+const MenuToggle = dynamic(() => import('./MenuToggle'))
 
 export type LayoutProps = {
   children: JSX.Element | JSX.Element[]

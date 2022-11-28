@@ -54,7 +54,7 @@ const ProjectDetailsModal = ({
               <SwiperSlide key={image.id} tag="li">
                 <Image
                   src={getCmsMediaUrl(image)}
-                  alt={image.attributes.alt}
+                  alt={image.attributes.alternativeText}
                   layout="responsive"
                   height="100%"
                   width="100%"
