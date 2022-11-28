@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
 
 const CMS_URL = new URL(process.env.NEXT_PUBLIC_CMS_URL)
 
@@ -12,4 +15,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig)
