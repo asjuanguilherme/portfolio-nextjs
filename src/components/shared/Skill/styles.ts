@@ -45,7 +45,9 @@ export const Wrapper = styled.div<Props>`
         `}
 
   svg {
+    stroke: initial;
     margin-right: ${spacing.components.small};
+    font-size: 1.2em;
   }
 
   ${props => props.smallSize && smallSizeStyle}
