@@ -25,15 +25,19 @@ const HomeMainSection = ({ data, socials }: HomeMainSectionProps) => {
   const sectionRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries: any) =>
-        entries.some((entry: any) => entry.isIntersecting) &&
-        setActiveSection('main'),
-      { threshold: 0.75 }
-    )
-    intersectionObserver.observe(sectionRef.current as any)
+    try {
+      const intersectionObserver = new IntersectionObserver(
+        (entries: any) =>
+          entries.some((entry: any) => entry.isIntersecting) &&
+          setActiveSection('main'),
+        { threshold: 0.75 }
+      )
+      intersectionObserver.observe(sectionRef.current as any)
 
-    return () => intersectionObserver.disconnect()
+      return () => intersectionObserver.disconnect()
+    } catch (err) {
+      console.log(err)
+    }
   }, [])
 
   return (

@@ -40,15 +40,19 @@ const HomeTestimonialsSection = ({
   const layer = 0
 
   useEffect(() => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries: any) =>
-        entries.some((entry: any) => entry.isIntersecting) &&
-        setActiveSection('testimonials'),
-      { threshold: 1 }
-    )
-    intersectionObserver.observe(sectionRef.current as any)
+    try {
+      const intersectionObserver = new IntersectionObserver(
+        (entries: any) =>
+          entries.some((entry: any) => entry.isIntersecting) &&
+          setActiveSection('testimonials'),
+        { threshold: 1 }
+      )
+      intersectionObserver.observe(sectionRef.current as any)
 
-    return () => intersectionObserver.disconnect()
+      return () => intersectionObserver.disconnect()
+    } catch (err) {
+      console.log(err)
+    }
   }, [])
 
   if (!testimonials?.data || testimonials?.data?.length < 1) return <></>

@@ -3,15 +3,13 @@ const withPWA = require('next-pwa')({
   dest: 'public'
 })
 
-const CMS_URL = new URL(process.env.NEXT_PUBLIC_CMS_URL)
-
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true
   },
   images: {
-    domains: [CMS_URL.hostname]
+    domains: process.env.NEXT_PUBLIC_IMAGE_DOMAINS.split(',')
   }
 }
 

@@ -26,15 +26,19 @@ const HomeContactSection = ({ data, socials }: HomeContactSectionProps) => {
   const sectionRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries: any) =>
-        entries.some((entry: any) => entry.isIntersecting) &&
-        setActiveSection('contact'),
-      { threshold: 1 }
-    )
-    intersectionObserver.observe(sectionRef.current as any)
+    try {
+      const intersectionObserver = new IntersectionObserver(
+        (entries: any) =>
+          entries.some((entry: any) => entry.isIntersecting) &&
+          setActiveSection('contact'),
+        { threshold: 1 }
+      )
+      intersectionObserver.observe(sectionRef.current as any)
 
-    return () => intersectionObserver.disconnect()
+      return () => intersectionObserver.disconnect()
+    } catch (err) {
+      console.log(err)
+    }
   }, [])
 
   return (

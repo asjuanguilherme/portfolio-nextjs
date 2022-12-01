@@ -6,5 +6,5 @@ export const getCmsMediaUrl = (media: StrapiData<ImageDto>) => {
   if (process.env.NEXT_PUBLIC_IMAGES_DOMAIN === 'localhost')
     return `${CMS_URL}${media.attributes.url}`
 
-  return media.attributes.url
+  return media?.attributes.url
 }

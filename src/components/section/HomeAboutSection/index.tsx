@@ -29,15 +29,19 @@ const HomeAboutSection = ({ data, skills }: HomeAboutSectionProps) => {
   const sectionRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries: any) =>
-        entries.some((entry: any) => entry.isIntersecting) &&
-        setActiveSection('about'),
-      { threshold: 1 }
-    )
-    intersectionObserver.observe(sectionRef.current as any)
+    try {
+      const intersectionObserver = new IntersectionObserver(
+        (entries: any) =>
+          entries.some((entry: any) => entry.isIntersecting) &&
+          setActiveSection('about'),
+        { threshold: 1 }
+      )
+      intersectionObserver.observe(sectionRef.current as any)
 
-    return () => intersectionObserver.disconnect()
+      return () => intersectionObserver.disconnect()
+    } catch (err) {
+      console.log(err)
+    }
   }, [])
 
   return (
