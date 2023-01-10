@@ -7,7 +7,7 @@ export type GetProjectsResult = StrapiCollectionTypeData<ProjectDto>
 export const getProjects = async () => {
   try {
     const { data } = await cms.get<GetProjectsResult>(
-      'projects?populate[images]=images&populate[cardImage]=cardImage&populate[skills][populate][0]=icon&sort=rank:asc'
+      'projects?populate[images]=images&populate[cardImage]=cardImage&populate[skills][populate][0]=icon&populate[curriculum]=curriculum&sort=rank:asc'
     )
     return data
   } catch (err) {

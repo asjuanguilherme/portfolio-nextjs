@@ -51,13 +51,15 @@ const HomeAboutSection = ({ data, skills }: HomeAboutSectionProps) => {
         <SectionWrapper as="div" layer={boxLayer}>
           <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
           <Markdown>{data?.data?.attributes.content || ''}</Markdown>
-          <Button
-            icon={CurriculumPaper}
-            href={data?.data?.attributes.curriculum.data?.attributes.url}
-            download
-          >
-            Ver Currículo
-          </Button>
+          {data?.data?.attributes.curriculum && (
+            <Button
+              icon={CurriculumPaper}
+              href={data?.data?.attributes.curriculum.data?.attributes.url}
+              download
+            >
+              Ver Currículo
+            </Button>
+          )}
         </SectionWrapper>
         <SectionWrapper as="div" style={{ paddingTop: 0 }} layer={boxLayer}>
           <SectionHeading>{data?.data?.attributes.skillsTitle}</SectionHeading>

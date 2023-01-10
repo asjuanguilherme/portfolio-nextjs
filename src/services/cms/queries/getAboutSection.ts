@@ -5,7 +5,7 @@ export type GetAboutSectionResult = StrapiSingleTypeData<{
   title: string
   content: string
   skillsTitle: string
-  curriculum: StrapiSingleTypeData<{
+  curriculum?: StrapiSingleTypeData<{
     url: string
   }>
 }>
