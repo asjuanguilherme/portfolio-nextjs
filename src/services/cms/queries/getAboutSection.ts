@@ -12,7 +12,9 @@ export type GetAboutSectionResult = StrapiSingleTypeData<{
 
 export const getAboutSection = async () => {
   try {
-    const { data } = await cms.get<GetAboutSectionResult>('/about-section')
+    const { data } = await cms.get<GetAboutSectionResult>(
+      '/about-section?populate=curriculum'
+    )
     return data
   } catch (err) {
     return null
