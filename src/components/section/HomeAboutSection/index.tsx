@@ -51,7 +51,11 @@ const HomeAboutSection = ({ data, skills }: HomeAboutSectionProps) => {
         <SectionWrapper as="div" layer={boxLayer}>
           <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
           <Markdown>{data?.data?.attributes.content || ''}</Markdown>
-          <Button icon={CurriculumPaper} href="/curriculo">
+          <Button
+            icon={CurriculumPaper}
+            href={data?.data?.attributes.curriculum.data?.attributes.url}
+            download
+          >
             Ver Currículo
           </Button>
         </SectionWrapper>

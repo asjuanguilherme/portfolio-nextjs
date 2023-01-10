@@ -13,6 +13,7 @@ export type ButtonProps = {
   href?: string
   isExternal?: boolean
   style?: CSSProperties
+  download?: boolean
 }
 
 // eslint-disable-next-line react/display-name

@@ -5,6 +5,9 @@ export type GetAboutSectionResult = StrapiSingleTypeData<{
   title: string
   content: string
   skillsTitle: string
+  curriculum: StrapiSingleTypeData<{
+    url: string
+  }>
 }>
 
 export const getAboutSection = async () => {
