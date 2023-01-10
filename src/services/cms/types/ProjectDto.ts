@@ -4,7 +4,6 @@ import SkillDto from './SkillDto'
 
 type ProjectDto = {
   title: string
-  description: string
   content: string
   type: string
   cardImage: StrapiSingleTypeData<ImageDto>
