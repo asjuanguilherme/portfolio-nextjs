@@ -7,7 +7,7 @@ export type GetSocialsResult = StrapiCollectionTypeData<SocialDto>
 export const getSocials = async () => {
   try {
     const { data } = await cms.get<GetSocialsResult>(
-      '/social-medias?populate=icon'
+      '/social-medias?populate=icon&sort=rank:asc'
     )
     return data
   } catch (err) {

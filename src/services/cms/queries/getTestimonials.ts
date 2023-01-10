@@ -7,7 +7,7 @@ export type GetTestimonialsResult = StrapiCollectionTypeData<TestimonialDto>
 export const getTestimonials = async () => {
   try {
     const { data } = await cms.get<GetTestimonialsResult>(
-      '/testimonials?populate=authorPhoto'
+      '/testimonials?populate=authorPhoto&sort=rank:asc'
     )
     return data
   } catch (err) {

@@ -6,7 +6,9 @@ export type GetSkillsResult = StrapiCollectionTypeData<SkillDto>
 
 export const getSkills = async () => {
   try {
-    const { data } = await cms.get<GetSkillsResult>('/skills?populate=icon')
+    const { data } = await cms.get<GetSkillsResult>(
+      '/skills?populate=icon&sort=rank:asc'
+    )
     return data
   } catch (err) {
     return null
