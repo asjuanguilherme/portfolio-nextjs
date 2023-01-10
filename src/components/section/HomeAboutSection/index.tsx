@@ -55,6 +55,7 @@ const HomeAboutSection = ({ data, skills }: HomeAboutSectionProps) => {
             <Button
               icon={CurriculumPaper}
               href={data?.data?.attributes.curriculum.data?.attributes.url}
+              isExternal
               download
             >
               Ver Currículo
