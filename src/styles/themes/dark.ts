@@ -1,7 +1,11 @@
 import { DefaultTheme } from 'styled-components'
+import Moon from 'components/shared/Icons/Moon'
 
 const dark: DefaultTheme = {
   name: 'dark',
+  title: 'Tema Escuro',
+  icon: Moon,
+  themeColor: 'primary',
   colors: {
     title: '#FFFFFF',
     text: '#E6E6E6',
