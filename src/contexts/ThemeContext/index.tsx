@@ -1,4 +1,11 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react'
 import {
   ThemeProvider as StyledComponentsThemeProvider,
   DefaultTheme
@@ -26,20 +33,20 @@ export const ThemeProvider = ({
 }: ThemeProviderProps) => {
   const [selectedTheme, setSelectedTheme] = useState<Theme>(storedTheme)
 
-  const themeToggle = () => {
+  const themeToggle = useCallback(() => {
     const newTheme = selectedTheme === 'light' ? 'dark' : 'light'
     setSelectedTheme(newTheme)
-  }
+  }, [selectedTheme])
+
+  const currentTheme = useMemo(() => themes[selectedTheme], [selectedTheme])
 
   useEffect(() => {
     storeThemeStateToCookies(selectedTheme)
   }, [selectedTheme])
 
   return (
-    <ThemeContext.Provider
-      value={{ currentTheme: themes[selectedTheme], themeToggle }}
-    >
-      <StyledComponentsThemeProvider theme={themes[selectedTheme]}>
+    <ThemeContext.Provider value={{ currentTheme, themeToggle }}>
+      <StyledComponentsThemeProvider theme={currentTheme}>
         {children}
       </StyledComponentsThemeProvider>
     </ThemeContext.Provider>

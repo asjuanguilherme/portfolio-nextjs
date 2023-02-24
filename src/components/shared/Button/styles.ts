@@ -6,8 +6,9 @@ import CircleBackgroundAnimation from '../CircleBackgroundAnimation'
 const { font, spacing, borderRadius, buttonSizes } = designSystemOptions
 
 type Props = {
+  target?: string
+  onlyIcon?: boolean
   color: 'primary' | 'yellow' | 'white' | 'translucent'
-  onlyIcon: boolean
 }
 
 const handleButtonColor = (color: Props['color']) => {

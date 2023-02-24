@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 // Hooks
-import { SyntheticEvent, useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, useCallback, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 import { useTheme } from 'styled-components'
@@ -43,23 +43,26 @@ const Layout = ({ children }: LayoutProps) => {
     resizeObserver.observe(headerRef.current)
   }, [headerRef])
 
-  const menuToggle = () => {
+  const menuToggle = useCallback(() => {
     setMenuOpened(state => !state)
-  }
+  }, [setMenuOpened])
 
-  const closeMenu = () => setMenuOpened(false)
+  const closeMenu = useCallback(() => setMenuOpened(false), [])
 
-  const handlePageScroll = (e: SyntheticEvent) => {
-    const eventTarget = e.target as HTMLDivElement
-    const scrollPositionY = eventTarget.scrollTop
+  const handlePageScroll = useCallback(
+    (e: SyntheticEvent) => {
+      const eventTarget = e.target as HTMLDivElement
+      const scrollPositionY = eventTarget.scrollTop
 
-    if (scrollPositionY === 0 && isHome) setShowTransparentHeader(true)
-    else setShowTransparentHeader(false)
-  }
+      if (scrollPositionY === 0 && isHome) setShowTransparentHeader(true)
+      else setShowTransparentHeader(false)
+    },
+    [isHome]
+  )
 
-  const handlePageClick = () => {
+  const handlePageClick = useCallback(() => {
     menuOpened && setMenuOpened(false)
-  }
+  }, [menuOpened])
 
   useEffect(() => {
     const scrollPositionY = pageWrapperRef.current?.scrollTop

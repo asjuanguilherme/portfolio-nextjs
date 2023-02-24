@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { CSSProperties, useContext, useMemo } from 'react'
+import { CSSProperties, useContext } from 'react'
 import { useTheme } from 'styled-components'
 import { ThemeContext } from 'contexts/ThemeContext'
 export type ThemeToggleProps = {
