@@ -9,6 +9,7 @@ export const Main = styled.main<{ secureMarginForContent: number }>`
 `
 
 export const PageWrapper = styled.div`
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
   position: fixed;
