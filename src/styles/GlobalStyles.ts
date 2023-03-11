@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
   
   html, body, #__next {
     height: 100%;
+    overflow-x: hidden;
   }
   
   h1,h2,h3,h4,h5,h6 {
@@ -48,6 +49,29 @@ const GlobalStyles = createGlobalStyle`
 
   strong {
     font-weight: ${font.weight.semibold};
+  }
+
+  ${screens.tablet} {
+    ::-webkit-scrollbar {
+      width: 8px;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${props => props.theme.colors.layers[0].border};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: ${({ theme }) =>
+        theme.name === 'dark'
+          ? theme.colors.layers[2].background
+          : theme.colors.main.primary.normal};
+      border: 1px solid ${({ theme }) =>
+        theme.name === 'dark'
+          ? theme.colors.layers[2].border
+          : theme.colors.main.primary.normal};
+    }
   }
 `
 
