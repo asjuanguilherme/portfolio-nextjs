@@ -90,7 +90,7 @@ const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
           }}
         >
           {projects?.data?.map(project => (
-            <SwiperSlide key={project.id}>
+            <SwiperSlide key={project.id} style={{ height: 'auto' }}>
               <ProjectCard
                 {...project.attributes}
                 layer={getNextLayer(sectionLayer)}

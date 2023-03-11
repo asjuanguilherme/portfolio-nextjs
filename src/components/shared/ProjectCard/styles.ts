@@ -54,6 +54,7 @@ export const ImageWrapper = styled.span`
 export const Wrapper = styled.div<{
   layer: keyof DefaultTheme['colors']['layers']
 }>`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
