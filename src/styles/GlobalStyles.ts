@@ -35,10 +35,10 @@ const GlobalStyles = createGlobalStyle`
   }
   
   h1,h2,h3,h4,h5,h6 {
-    margin-bottom: ${spacing.components.medium};
+    margin-bottom: ${spacing.components.large};
 
     ${screens.tablet} {
-      margin-bottom: ${spacing.components.large};
+      margin-bottom: ${spacing.components.larger};
     }
   }
 

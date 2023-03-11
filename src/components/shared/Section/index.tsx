@@ -7,10 +7,10 @@ const { spacing, font } = designSystemOptions
 export const SectionHeading = styled.h2`
   color: ${props => props.theme.colors.main.primary.normal};
   font-weight: ${font.weight.semibold};
-  font-size: ${font.sizes.medium};
+  font-size: ${font.sizes.large};
 
   ${screens.mobileL} {
-    font-size: ${font.sizes.large};
+    font-size: ${font.sizes.larger};
   }
 
   &::before {

@@ -59,7 +59,9 @@ const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
     <SectionWrapper layer={sectionLayer} ref={sectionRef}>
       <SectionAnchor name="projects" />
       <Container>
-        <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
+        <SectionHeading style={{ textAlign: 'center' }}>
+          {data?.data?.attributes.title}
+        </SectionHeading>
       </Container>
       <S.ProjectsCarouselContainer>
         <Swiper
