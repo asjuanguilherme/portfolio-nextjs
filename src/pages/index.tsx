@@ -111,18 +111,40 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async ({
 }) => {
   const storedTheme = (req.cookies.APP_THEME as Theme) || DEFAULT_THEME
 
+  const [
+    socials,
+    mainSection,
+    aboutSection,
+    projectsSection,
+    testimonialsSection,
+    contactSection,
+    skills,
+    projects,
+    testimonials
+  ] = await Promise.all([
+    await getSocials(),
+    await getMainSection(),
+    await getAboutSection(),
+    await getProjectsSection(),
+    await getTestimonialsSection(),
+    await getContactSection(),
+    await getSkills(),
+    await getProjects(),
+    await getTestimonials()
+  ])
+
   return {
     props: {
       storedTheme,
-      socials: await getSocials(),
-      mainSection: await getMainSection(),
-      aboutSection: await getAboutSection(),
-      projectsSection: await getProjectsSection(),
-      testimonialsSection: await getTestimonialsSection(),
-      contactSection: await getContactSection(),
-      skills: await getSkills(),
-      projects: await getProjects(),
-      testimonials: await getTestimonials()
+      socials,
+      mainSection,
+      aboutSection,
+      projectsSection,
+      testimonialsSection,
+      contactSection,
+      skills,
+      projects,
+      testimonials
     }
   }
 }
