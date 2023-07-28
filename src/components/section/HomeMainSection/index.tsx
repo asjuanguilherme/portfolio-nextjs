@@ -62,7 +62,12 @@ const HomeMainSection = () => {
             layout="responsive"
             height="100%"
             width="100%"
+            objectFit="cover"
+            style={{
+              borderRadius: '100%'
+            }}
           />
+          <S.OutImage />
         </S.PhotoPart>
       </S.Container>
     </S.Wrapper>

@@ -5,13 +5,25 @@ import { screens } from 'styles/screens'
 
 const { borderRadius, font, spacing } = designSystemOptions
 
+export const OutImage = styled.div`
+  background-image: url(/assets/images/juan-transparent.png);
+  background-size: cover;
+  padding-top: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+`
+
 export const PhotoPart = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 70%;
   border-radius: ${borderRadius.circle};
-  overflow: hidden;
   border: ${spacing.components.small} solid rgba(255, 255, 255, 0.25);
+  position: relative;
 
   ${screens.laptop} {
     margin-left: auto;
