@@ -77,7 +77,7 @@ const HomeAboutSection = () => {
           </p>
           <Button
             icon={CurriculumPaperIcon}
-            href="/assets/docs/curriculum.pdf"
+            href="/assets/docs/curriculo.pdf"
             isExternal
             download
           >
