@@ -51,15 +51,13 @@ export const ImageWrapper = styled.span`
   }
 `
 
-export const Wrapper = styled.div<{
-  layer: keyof DefaultTheme['colors']['layers']
-}>`
+export const Wrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: ${props => props.theme.colors.layers[props.layer].background};
-  border: 1px solid ${props => props.theme.colors.layers[props.layer].border};
+  background: ${props => props.theme.colors.layers[1].background};
+  border: 1px solid ${props => props.theme.colors.layers[1].border};
   border-radius: ${borderRadius.small};
   padding: ${spacing.components.medium};
   transition: ${transition.default};
@@ -67,6 +65,6 @@ export const Wrapper = styled.div<{
 
   &:hover {
     background: ${props =>
-      props.theme.colors.layers[getNextLayer(props.layer)].background};
+      props.theme.colors.layers[getNextLayer(1)].background};
   }
 `

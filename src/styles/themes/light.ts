@@ -1,10 +1,10 @@
 import { DefaultTheme } from 'styled-components'
-import { Sun } from 'components/shared/Icons'
+import SunIcon from 'components/shared/Icons/Sun'
 
 const light: DefaultTheme = {
   name: 'light',
   title: 'Tema Claro',
-  icon: Sun,
+  icon: SunIcon,
   themeColor: 'yellow',
   colors: {
     title: '#444444',

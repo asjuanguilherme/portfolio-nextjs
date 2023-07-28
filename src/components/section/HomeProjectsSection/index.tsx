@@ -2,16 +2,15 @@ import * as S from './styles'
 import { useContext, useEffect, useRef, useState } from 'react'
 import useScreenDimensions from 'hooks/useScreenDimensions'
 
-// Types
-import { GetProjectsResult } from 'services/cms/queries/getProjects'
-import { GetProjectsSectionResult } from 'services/cms/queries/getProjectsSection'
-
 // Swiper
 import { Swiper as SwiperProps } from 'swiper/types'
 import { Pagination as PaginationModule } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
+
+// Data
+import { projectsData } from 'data/projects'
 
 // Contexts
 import { NavigationContext } from 'contexts/NavigationContext'
@@ -22,16 +21,10 @@ import Container from 'components/shared/Container'
 import ProjectCard from 'components/shared/ProjectCard'
 import { Pagination } from 'components/shared/Swiper'
 import SectionAnchor from 'components/shared/SectionAnchor'
-import getNextLayer from 'utils/getNextLayer'
-
-export type HomeProjectsSectionProps = {
-  projects: GetProjectsResult | null
-  data: GetProjectsSectionResult | null
-}
 
 const sectionLayer = 0
 
-const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
+const HomeProjectsSection = () => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef<HTMLDivElement | null>(null)
   const { screen, breakpoints } = useScreenDimensions()
@@ -60,7 +53,7 @@ const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
       <SectionAnchor name="projects" />
       <Container>
         <SectionHeading style={{ textAlign: 'center' }}>
-          {data?.data?.attributes.title}
+          Projetos que Fiz
         </SectionHeading>
       </Container>
       <S.ProjectsCarouselContainer>
@@ -91,12 +84,9 @@ const HomeProjectsSection = ({ data, projects }: HomeProjectsSectionProps) => {
             }
           }}
         >
-          {projects?.data?.map(project => (
-            <SwiperSlide key={project.id} style={{ height: 'auto' }}>
-              <ProjectCard
-                {...project.attributes}
-                layer={getNextLayer(sectionLayer)}
-              />
+          {projectsData.map(project => (
+            <SwiperSlide key={project.slug} style={{ height: 'auto' }}>
+              <ProjectCard {...project} />
             </SwiperSlide>
           ))}
           {isTabletUp && <Pagination ref={paginationRef} />}

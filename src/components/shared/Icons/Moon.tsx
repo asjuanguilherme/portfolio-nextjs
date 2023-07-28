@@ -7,7 +7,7 @@ const svgContent = (
   </>
 )
 
-const Moon = createIconComponent({
+const MoonIcon = createIconComponent({
   content: {
     light: svgContent,
     bold: svgContent
@@ -15,4 +15,4 @@ const Moon = createIconComponent({
   viewBox: '0 0 512 512'
 })
 
-export default Moon
+export default MoonIcon

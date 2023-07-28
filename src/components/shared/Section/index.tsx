@@ -13,14 +13,14 @@ export const SectionHeading = styled.h2`
     font-size: ${font.sizes.larger};
   }
 
-  &::before {
+  /* &::before {
     content: '<h2>';
     margin-right: ${spacing.components.small};
   }
   &::after {
     content: '<h2/>';
     margin-left: ${spacing.components.small};
-  }
+  } */
 
   &::before,
   &::after {

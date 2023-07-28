@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled from 'styled-components'
 import designSystemOptions from 'styles/designSystemOptions'
 
 const { spacing, borderRadius, font } = designSystemOptions
@@ -35,11 +35,9 @@ export const Author = styled.div`
   margin-bottom: ${spacing.components.medium};
 `
 
-export const Wrapper = styled.div<{
-  layer: keyof DefaultTheme['colors']['layers']
-}>`
-  background: ${props => props.theme.colors.layers[props.layer].background};
-  border: 1px solid ${props => props.theme.colors.layers[props.layer].border};
+export const Wrapper = styled.div`
+  background: ${props => props.theme.colors.layers[1].background};
+  border: 1px solid ${props => props.theme.colors.layers[1].border};
   border-radius: ${borderRadius.small};
   padding: ${spacing.components.large};
   display: flex;

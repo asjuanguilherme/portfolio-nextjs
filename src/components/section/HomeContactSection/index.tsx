@@ -1,10 +1,6 @@
 import * as S from './styles'
 import { useContext, useRef, useEffect } from 'react'
 
-// Types
-import { GetSocialsResult } from 'services/cms/queries/getSocials'
-import { GetContactSectionResult } from 'services/cms/queries/getContactSection'
-
 // Contexts
 import { NavigationContext } from 'contexts/NavigationContext'
 
@@ -13,15 +9,11 @@ import { SectionHeading, SectionWrapper } from 'components/shared/Section'
 import Container from 'components/shared/Container'
 import SectionAnchor from 'components/shared/SectionAnchor'
 import Button from 'components/shared/Button'
-import StrapiDynamicIcon from 'components/shared/StrapiDynamicIcon'
-import Markdown from 'markdown-to-jsx'
+import { socialsData } from 'data/socials'
 
-export type HomeContactSectionProps = {
-  socials: GetSocialsResult | null
-  data: GetContactSectionResult | null
-}
+export type HomeContactSectionProps = {}
 
-const HomeContactSection = ({ data, socials }: HomeContactSectionProps) => {
+const HomeContactSection = () => {
   const { setActiveSection } = useContext(NavigationContext)
   const sectionRef = useRef<HTMLElement | null>(null)
 
@@ -44,20 +36,23 @@ const HomeContactSection = ({ data, socials }: HomeContactSectionProps) => {
   return (
     <SectionWrapper style={{ textAlign: 'center' }} ref={sectionRef}>
       <SectionAnchor name="contact" />
-      <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
+      <SectionHeading>Entre em contato e vamos conversar!</SectionHeading>
       <Container style={{ maxWidth: '540px' }}>
         <div>
-          {data?.data?.attributes.content && (
-            <Markdown>{data?.data?.attributes.content}</Markdown>
-          )}
+          <p>
+            Se você estiver interessado em ter uma conversa comigo, fique à
+            vontade para entrar em contato por meio das minhas redes sociais,
+            WhatsApp ou email. Estou ansioso para receber sua mensagem e iniciar
+            uma conversa produtiva.
+          </p>
         </div>
         <S.SocialLinks>
-          {socials?.data?.map(social => (
-            <li key={social.id}>
+          {socialsData.map((social, index) => (
+            <li key={index}>
               <Button
-                href={social.attributes.url}
-                aria-label={`Abrir ${social.attributes.label}`}
-                icon={() => <StrapiDynamicIcon {...social.attributes.icon} />}
+                href={social.url}
+                aria-label={`Abrir ${social.label}`}
+                icon={social.icon}
                 onlyIcon
                 isExternal
               />

@@ -1,13 +1,6 @@
 import * as S from './styles'
 import { useContext, useEffect, useRef, useState } from 'react'
 
-// Types
-import { GetTestimonialsResult } from 'services/cms/queries/getTestimonials'
-import { GetTestimonialsSectionResult } from 'services/cms/queries/getTestimonialsSection'
-
-// Utils
-import getNextLayer from 'utils/getNextLayer'
-
 // Swiper
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -23,16 +16,11 @@ import TestimonialCard from 'components/shared/TestimonialCard'
 import { Pagination } from 'components/shared/Swiper'
 import SectionAnchor from 'components/shared/SectionAnchor'
 import { NavigationContext } from 'contexts/NavigationContext'
+import { testimonialsData } from 'data/testimonials'
 
-export type HomeTestimonialsSectionProps = {
-  testimonials: GetTestimonialsResult | null
-  data: GetTestimonialsSectionResult | null
-}
+export type HomeTestimonialsSectionProps = {}
 
-const HomeTestimonialsSection = ({
-  data,
-  testimonials
-}: HomeTestimonialsSectionProps) => {
+const HomeTestimonialsSection = ({}: HomeTestimonialsSectionProps) => {
   const { setActiveSection } = useContext(NavigationContext)
   const sectionRef = useRef<HTMLElement | null>(null)
   const [swiper, setSwiper] = useState<SwiperProps>()
@@ -55,18 +43,16 @@ const HomeTestimonialsSection = ({
     }
   }, [])
 
-  if (!testimonials?.data || testimonials?.data?.length < 1) return <></>
-
   return (
     <S.SectionWrapper layer={layer} ref={sectionRef}>
       <SectionAnchor name="testimonials" />
       <Container>
-        <SectionHeading>{data?.data?.attributes.title}</SectionHeading>
+        <SectionHeading>O que acham do meu trabalho</SectionHeading>
         <S.TestimonialsCarouselWrapper>
           <Swiper
             onSwiper={setSwiper}
             modules={[PaginationModule, Autoplay]}
-            loop={testimonials.data.length > 2}
+            loop={testimonialsData.length > 2}
             pagination={{
               enabled: true,
               clickable: true,
@@ -78,12 +64,9 @@ const HomeTestimonialsSection = ({
             centeredSlides={true}
             slidesPerView={1.1}
           >
-            {testimonials?.data?.map(testimonial => (
-              <SwiperSlide key={testimonial.id}>
-                <TestimonialCard
-                  {...testimonial.attributes}
-                  layer={getNextLayer(layer)}
-                />
+            {testimonialsData.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <TestimonialCard {...testimonial} />
               </SwiperSlide>
             ))}
             <Pagination ref={paginationRef} />

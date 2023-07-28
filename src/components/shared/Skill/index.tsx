@@ -1,10 +1,10 @@
 import * as S from './styles'
 import { useTheme } from 'styled-components'
-import StrapiDynamicIcon, { StrapiDynamicIconProps } from '../StrapiDynamicIcon'
+import { IconComponent } from '../Icons/utils/createIconComponent'
 
 export type SkillProps = {
   title: string
-  icon: StrapiDynamicIconProps
+  icon: IconComponent
   color?: string
   enableHoverEffect?: boolean
   smallSize?: boolean
@@ -12,7 +12,7 @@ export type SkillProps = {
 
 const Skill = ({
   title,
-  icon,
+  icon: Icon,
   color,
   enableHoverEffect = true,
   smallSize = false
@@ -25,7 +25,7 @@ const Skill = ({
       enableHoverEffect={enableHoverEffect}
       smallSize={smallSize}
     >
-      {icon.data && <StrapiDynamicIcon {...icon} />}
+      <Icon />
       {title}
     </S.Wrapper>
   )

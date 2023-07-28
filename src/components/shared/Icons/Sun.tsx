@@ -10,7 +10,7 @@ const svgContent = (
   </>
 )
 
-const Sun = createIconComponent({
+const SunIcon = createIconComponent({
   content: {
     light: svgContent,
     bold: svgContent
@@ -18,4 +18,4 @@ const Sun = createIconComponent({
   viewBox: '0 0 24 25'
 })
 
-export default Sun
+export default SunIcon

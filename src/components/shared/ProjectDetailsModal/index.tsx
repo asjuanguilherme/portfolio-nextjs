@@ -2,10 +2,7 @@ import * as S from './styles'
 import { useRef, useState } from 'react'
 
 // Types
-import ProjectDto from 'services/cms/types/ProjectDto'
-
-// Utils
-import { getCmsMediaUrl } from 'services/cms/utils'
+import { ProjectData } from 'types/ProjectData'
 
 // Swiper
 import { Swiper as SwiperProps } from 'swiper/types'
@@ -17,12 +14,9 @@ import 'swiper/css/navigation'
 // Components
 import { Pagination } from '../Swiper'
 import Image from 'next/image'
-import Markdown from 'markdown-to-jsx'
 import Skill from '../Skill'
 import Button from '../Button'
-import { ExternalLink } from '../Icons'
-
-export type ProjectDetailsModalProps = ProjectDto
+import ExternalLinkIcon from '../Icons/ExternalLink'
 
 const ProjectDetailsModal = ({
   title,
@@ -30,65 +24,58 @@ const ProjectDetailsModal = ({
   content,
   skills,
   images,
-  url
-}: ProjectDto) => {
+  liveUrl
+}: ProjectData) => {
   const [swiper, setSwiper] = useState<SwiperProps>()
   const paginationRef = useRef(null)
 
   return (
     <S.Wrapper>
-      {images?.data && (
-        <S.ImageWrapper>
-          <Swiper
-            wrapperTag="ul"
-            onSwiper={setSwiper}
-            modules={[PaginationModule, Navigation]}
-            pagination={{
-              clickable: true,
-              el: paginationRef.current,
-              enabled: true
-            }}
-            navigation
-          >
-            {images.data.map(image => (
-              <SwiperSlide key={image.id} tag="li">
-                <Image
-                  src={getCmsMediaUrl(image)}
-                  alt={image.attributes.alternativeText}
-                  layout="responsive"
-                  height="100%"
-                  width="100%"
-                  objectFit="contain"
-                  objectPosition="center"
-                />
-              </SwiperSlide>
-            ))}
-            <Pagination ref={paginationRef} />
-          </Swiper>
-        </S.ImageWrapper>
-      )}
+      <S.ImageWrapper>
+        <Swiper
+          wrapperTag="ul"
+          onSwiper={setSwiper}
+          modules={[PaginationModule, Navigation]}
+          pagination={{
+            clickable: true,
+            el: paginationRef.current,
+            enabled: true
+          }}
+          navigation
+        >
+          {images.map(image => (
+            <SwiperSlide key={image} tag="li">
+              <Image
+                src={image}
+                alt=""
+                layout="responsive"
+                height="100%"
+                width="100%"
+                objectFit="contain"
+                objectPosition="center"
+              />
+            </SwiperSlide>
+          ))}
+          <Pagination ref={paginationRef} />
+        </Swiper>
+      </S.ImageWrapper>
+
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.Type>{type}</S.Type>
-        {url && (
-          <Button icon={ExternalLink} href={url} isExternal>
+        {liveUrl && (
+          <Button icon={ExternalLinkIcon} href={liveUrl} isExternal>
             Acessar Projeto Publicado
           </Button>
         )}
         <S.Skills>
-          {skills?.data?.map(skill => (
-            <li key={skill.id}>
-              <Skill
-                {...skill.attributes}
-                enableHoverEffect={false}
-                smallSize
-              />
+          {skills.map((skill, index) => (
+            <li key={index}>
+              <Skill {...skill} enableHoverEffect={false} smallSize />
             </li>
           ))}
         </S.Skills>
-        <S.Text>
-          <Markdown>{content}</Markdown>
-        </S.Text>
+        <S.Text>{content}</S.Text>
       </S.Content>
     </S.Wrapper>
   )

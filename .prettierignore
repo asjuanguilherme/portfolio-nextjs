@@ -4,3 +4,4 @@
 .eslintignore
 yarn.lock
 src/generators/templates
+public
