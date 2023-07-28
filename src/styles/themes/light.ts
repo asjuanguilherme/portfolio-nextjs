@@ -11,9 +11,9 @@ const light: DefaultTheme = {
     text: '#777777',
     main: {
       primary: {
-        light: '#99D8FF',
-        normal: '#06A1FE',
-        dark: '#266FD1'
+        light: '#971bff',
+        normal: '#7911CB',
+        dark: '#3d0070'
       },
       yellow: {
         light: '#f6a43b',
@@ -21,9 +21,9 @@ const light: DefaultTheme = {
         dark: '#d3570c'
       },
       themeGradient: {
-        light: '#06A1FE',
-        normal: '#06A1FE',
-        dark: '#266FD1'
+        light: '#971bff',
+        normal: '#971bff',
+        dark: '#3d0070'
       }
     },
     layers: {

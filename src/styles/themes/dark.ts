@@ -11,9 +11,9 @@ const dark: DefaultTheme = {
     text: '#E6E6E6',
     main: {
       primary: {
-        light: '#99D8FF',
-        normal: '#06A1FE',
-        dark: '#266FD1'
+        light: '#dcb0ff',
+        normal: '#b657ff',
+        dark: '#891ad6'
       },
       yellow: {
         light: '#f6a43b',
@@ -21,23 +21,23 @@ const dark: DefaultTheme = {
         dark: '#d3570c'
       },
       themeGradient: {
-        light: '#2B4363',
-        normal: '#001522',
-        dark: '#001522'
+        light: '#6a06ac',
+        normal: '#6a06ac',
+        dark: '#34005c'
       }
     },
     layers: {
       0: {
-        background: '#081117',
-        border: '#4C5257'
+        background: '#131129',
+        border: '#1C1A31'
       },
       1: {
-        background: '#151D23',
-        border: '#2C3439'
+        background: '#1F1C34',
+        border: '#28253C'
       },
       2: {
-        background: '#283035',
-        border: '#3D4549'
+        background: '#302D44',
+        border: '#302D44'
       }
     }
   }
