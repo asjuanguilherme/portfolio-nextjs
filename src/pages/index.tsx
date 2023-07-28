@@ -41,7 +41,7 @@ const HomePage = ({}: HomePageProps) => {
           title="Inicio"
           description="Portfolio de Juan Guilherme, desenvolvedor frontend. Venha conferir meu trabalho."
           pathname="/"
-          image="/assets/images/juan.png"
+          image="/assets/images/share-image.png"
         />
         <title>Juan | {navigationItems[activeSection]}</title>
       </Head>
