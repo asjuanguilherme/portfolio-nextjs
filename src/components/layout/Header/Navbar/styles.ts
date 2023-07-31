@@ -12,7 +12,7 @@ export const NavList = styled.ul<{ forTransparentBackground: boolean }>`
   ${props =>
     !props.forTransparentBackground &&
     css`
-      transform: translateX(100px);
+      transform: translateX(200px);
     `}
 `
 
