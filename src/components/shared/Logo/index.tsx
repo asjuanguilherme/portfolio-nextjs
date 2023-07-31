@@ -7,7 +7,7 @@ export type LogoProps = {
 }
 
 const Logo = (props: LogoProps) => {
-  return <S.Wrapper {...props}>Juan!</S.Wrapper>
+  return <S.Wrapper {...props}>juanguilher.me</S.Wrapper>
 }
 
 export default Logo

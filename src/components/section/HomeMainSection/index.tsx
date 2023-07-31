@@ -37,7 +37,7 @@ const HomeMainSection = () => {
       <SectionAnchor name="main" />
       <S.Container>
         <S.SaudationPart>
-          <S.SaudationText>Olá, sou Juan!</S.SaudationText>
+          <S.SaudationText>Juan Guilherme</S.SaudationText>
           <S.SaudationRole>Desenvolvedor Frontend</S.SaudationRole>
           <S.Socials>
             {socialsData.map((item, index) => (
