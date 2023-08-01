@@ -53,7 +53,7 @@ const HomeProjectsSection = () => {
       <SectionAnchor name="projects" />
       <Container>
         <SectionHeading style={{ textAlign: 'center' }}>
-          Projetos que Fiz
+          Projetos em Destaque
         </SectionHeading>
       </Container>
       <S.ProjectsCarouselContainer>

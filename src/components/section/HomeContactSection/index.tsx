@@ -36,7 +36,7 @@ const HomeContactSection = () => {
   return (
     <SectionWrapper style={{ textAlign: 'center' }} ref={sectionRef}>
       <SectionAnchor name="contact" />
-      <SectionHeading>Entre em contato e vamos conversar!</SectionHeading>
+      <SectionHeading>Entre em contato comigo!</SectionHeading>
       <Container style={{ maxWidth: '540px' }}>
         <div>
           <p>

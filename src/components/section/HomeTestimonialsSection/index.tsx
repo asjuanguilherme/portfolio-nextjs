@@ -47,7 +47,7 @@ const HomeTestimonialsSection = ({}: HomeTestimonialsSectionProps) => {
     <S.SectionWrapper layer={layer} ref={sectionRef}>
       <SectionAnchor name="testimonials" />
       <Container>
-        <SectionHeading>O que acham do meu trabalho</SectionHeading>
+        <SectionHeading>O que dizem sobre o meu trabalho</SectionHeading>
         <S.TestimonialsCarouselWrapper>
           <Swiper
             onSwiper={setSwiper}
