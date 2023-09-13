@@ -7,6 +7,6 @@ import { susanooGeekStoreProject } from './susanooGeekStore'
 export const projectsData: ProjectData[] = [
   susanooGeekStoreProject,
   ibtiWebsiteProject,
-  tecindicaProject,
-  anesgWebsiteProject
+  tecindicaProject
+  // anesgWebsiteProject
 ]
