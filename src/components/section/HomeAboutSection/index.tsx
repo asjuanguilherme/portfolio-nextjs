@@ -4,8 +4,9 @@ import { useContext, useEffect, useRef } from 'react'
 // Data
 import { skillsData } from 'data/skills'
 
-// Contexts
+// Utils
 import { NavigationContext } from 'contexts/NavigationContext'
+import { calculateAge } from 'utils/calculateAge'
 
 // Components
 import SectionAnchor from 'components/shared/SectionAnchor'
@@ -41,16 +42,18 @@ const HomeAboutSection = () => {
       <S.Box layer={1}>
         <SectionWrapper as="div" layer={1}>
           <SectionHeading>Quem sou eu?</SectionHeading>
+
           <p>
-            Sou natural de Natal - RN e com 21 anos de idade, sou apaixonado por
-            desenvolvimento frontend e estou comprometido no papel de entregar
-            soluções de alta qualidade nos projetos em que me comprometo.
+            Sou natural de Natal - RN e com{' '}
+            {calculateAge(new Date('2001-08-25'))} anos de idade, sou um
+            apaixonado pelo desenvolvimento frontend e estou comprometido em
+            entregar soluções de alta qualidade nos projetos que me envolvo.
           </p>
 
           <p>
-            Com foco na experiencia do usuário, desenvolvo interfaces elegantes,
-            responsivas, animadas e eficientes, para que seus usuários possam
-            acessar seu site de qualquer lugar.
+            Com foco na experiência do usuário, desenvolvo interfaces elegantes,
+            responsivas, animadas e eficientes, permitindo que seus usuários
+            acessem seu site de qualquer lugar.
           </p>
 
           <p>
@@ -59,8 +62,8 @@ const HomeAboutSection = () => {
           </p>
 
           <p>
-            Empenho-me em atender as necessidades do cliente, buscando oferecer
-            a melhor solução pro seu projeto.
+            Empenho-me em atender às necessidades do cliente, buscando oferecer
+            a melhor solução para o seu projeto.
           </p>
 
           <p>
@@ -73,8 +76,9 @@ const HomeAboutSection = () => {
           <p>
             Se você está procurando um desenvolvedor frontend dedicado, estou
             pronto para trabalhar com você. Vamos criar interfaces incríveis.
-            Estarei honrado em contribuir com o sucesso do seu projeto!
+            Será uma honra contribuir para o sucesso do seu projeto!
           </p>
+
           <Button
             icon={CurriculumPaperIcon}
             href="/assets/docs/curriculo.pdf"
