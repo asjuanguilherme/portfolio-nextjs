@@ -1,9 +1,9 @@
-import EnvelopeIcon from 'components/shared/Icons/Envelope'
-import GitHubIcon from 'components/shared/Icons/Github'
-import InstagramIcon from 'components/shared/Icons/Instagram'
-import LinkedInIcon from 'components/shared/Icons/Linkedin'
-import WhatsappIcon from 'components/shared/Icons/Whatsapp'
-import { SocialData } from 'types/SocialData'
+import EnvelopeIcon from '../components/shared/Icons/Envelope'
+import GitHubIcon from '../components/shared/Icons/Github'
+import InstagramIcon from '../components/shared/Icons/Instagram'
+import LinkedInIcon from '../components/shared/Icons/Linkedin'
+import WhatsappIcon from '../components/shared/Icons/Whatsapp'
+import { SocialData } from './types/SocialData'
 
 export const socialsData: SocialData[] = [
   {

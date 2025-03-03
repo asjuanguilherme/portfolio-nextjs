@@ -1,4 +1,4 @@
-import { skillsData } from 'data/skills'
+import { skillsData } from '../skills'
 
 export const susanooGeekStoreProject = {
   type: 'WebSite - Loja Virtual',

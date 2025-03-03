@@ -1,4 +1,4 @@
-import { skillsData } from 'data/skills'
+import { skillsData } from '../skills'
 
 export const anesgWebsiteProject = {
   type: 'Website',
@@ -27,10 +27,6 @@ export const anesgWebsiteProject = {
   ],
   content: (
     <>
-      <p>
-        **OBS: O site se encontra em momento de inserção de conteúdo por parte
-        do cliente.**
-      </p>
       <p>
         O cliente tinha um site antigo, e precisou criar um novo. O cliente já
         contava com um backend do projeto, ficando por minha responsabilidade a

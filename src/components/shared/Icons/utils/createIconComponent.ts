@@ -1,6 +1,5 @@
 /* eslint-disable react/display-name */
-import { createElement, ReactSVGElement } from 'react'
-import { CSSObject } from 'styled-components'
+import { createElement } from 'react'
 
 type Content = { bold: JSX.Element; light: JSX.Element }
 type Variant = 'bold' | 'light'
@@ -10,7 +9,6 @@ export type IconComponentProps = {
   color?: string
   size?: string
   className?: string
-  styles?: CSSObject
 }
 
 export type IconComponent = (props: IconComponentProps) => JSX.Element
