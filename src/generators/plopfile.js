@@ -1,4 +1,6 @@
-module.exports = plop => {
+// eslint-disable
+
+export default function (plop) {
   plop.setGenerator('component', {
     prompts: [
       {
@@ -24,11 +26,6 @@ module.exports = plop => {
         type: 'add',
         path: '../components/{{ dashCase category }}/{{ pascalCase name }}/index.tsx',
         templateFile: './templates/component/index.tsx.hbs'
-      },
-      {
-        type: 'add',
-        path: '../components/{{ dashCase category }}/{{ pascalCase name }}/styles.ts',
-        templateFile: './templates/component/styles.ts.hbs'
       }
     ]
   }),
