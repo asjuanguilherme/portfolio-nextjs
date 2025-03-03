@@ -9,7 +9,7 @@
     "lint": "next lint",
     "prettier:format": "npx prettier --write src/**/* --ignore-unknown",
     "plop:generate": "plop --plopfile='./src/generators/plopfile.js'",
-    "prepare": "husky"
+    "prepare": "husky && npx panda codegen"
   },
   "dependencies": {
     "next": "15.2.0",
@@ -20,6 +20,7 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@eslint/eslintrc": "^3",
+    "@pandacss/dev": "^0.53.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

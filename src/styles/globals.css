@@ -1,0 +1,11 @@
+/* Panda CSS layers */
+@layer panda_reset, panda_base, antd, panda_tokens, panda_recipes, panda_utilities;
+
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  font-family: var(--font-inter);
+  font-size: 14px;
+}
