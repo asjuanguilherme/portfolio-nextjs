@@ -1,40 +1,8 @@
-'use client'
-
 import { css } from '@styled-system/css'
-import { NavItem } from '../NavItem'
-import { useState } from 'react'
 import LanguageSwitcher from '../LanguageSwitcher'
+import { NavigationMenu } from '../NavigationMenu'
 
 export const LayoutSidebar = () => {
-  const [active, setActive] = useState('/#start')
-
-  const navItems = [
-    {
-      label: 'Start',
-      href: '/#start'
-    },
-    {
-      label: 'About me',
-      href: '/#about'
-    },
-    {
-      label: 'Expertises',
-      href: '/#expertises'
-    },
-    {
-      label: 'Experiences',
-      href: '/#experiences'
-    },
-    {
-      label: 'Projects',
-      href: '/#projects'
-    },
-    {
-      label: 'Testimonials',
-      href: '/#testimonials'
-    }
-  ]
-
   return (
     <aside
       className={css({
@@ -59,25 +27,14 @@ export const LayoutSidebar = () => {
         })}
       >
         <span className={css({ color: 'primary.500', fontSize: 'sm' })}>
+          {/* Local time pending */}
           18:32 Brussels, BE
         </span>
 
         <LanguageSwitcher />
       </div>
 
-      <div role="navigation">
-        <ul className={css({ display: 'flex', flexDirection: 'column' })}>
-          {navItems.map(item => (
-            <li key={item.href}>
-              <NavItem
-                label={item.label}
-                active={item.href === active}
-                onClick={() => setActive(item.href)}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <NavigationMenu />
 
       <div>{/* Sidebar Footer */}</div>
     </aside>

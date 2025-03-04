@@ -1,3 +1,5 @@
+'use client'
+
 import LanguageOptionItem from '@/components/shared/LanguageOptionItem'
 import { Locale } from '@/i18n/locales.config'
 import { css, cx } from '@styled-system/css'
