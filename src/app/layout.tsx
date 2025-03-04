@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Playfair, Inter } from 'next/font/google'
 import '../styles/globals.css'
-import LayoutSidebar from '@/components/layout/LayoutSidebar'
 import { css, cx } from '@styled-system/css'
+import Layout from '@/components/layout/Layout'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -26,19 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cx(`${playfair.variable} ${inter.variable}`)}>
-        <main
-          className={css({
-            width: '100%',
-            minHeight: '100%',
-            lg: {
-              paddingRight: '270px'
-            }
-          })}
-        >
-          {children}
-        </main>
-        <LayoutSidebar />
+      <body
+        className={cx(
+          `${playfair.variable} ${inter.variable}`,
+          css({ bg: 'secondary.500' })
+        )}
+      >
+        <Layout>{children}</Layout>
       </body>
     </html>
   )

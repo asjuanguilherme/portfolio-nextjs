@@ -11,8 +11,8 @@ export type ButtonProps = {
   variant?: ButtonVariant
   children?: ReactNode
   icon?: JSX.Element
-  as?: keyof JSX.IntrinsicElements
-} & HTMLAttributes<HTMLElement>
+  as?: React.ElementType
+} & HTMLAttributes<HTMLButtonElement>
 
 const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
   primary: {
@@ -50,7 +50,8 @@ export const Button = ({
   icon,
   color = 'primary',
   variant = 'filled',
-  as: Wrapper = 'button'
+  as: Wrapper = 'button',
+  ...props
 }: ButtonProps) => {
   return (
     <Wrapper
@@ -73,6 +74,7 @@ export const Button = ({
           }
         })
       )}
+      {...props}
     >
       {icon}
       {children}
