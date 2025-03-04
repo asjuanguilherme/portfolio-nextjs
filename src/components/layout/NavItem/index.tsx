@@ -13,6 +13,7 @@ export const NavItem = ({ label, active, onClick }: NavItemProps) => {
       className={cx(
         css({
           py: 'sm',
+          px: 'md',
           width: '100%',
           display: 'flex',
           alignItems: 'center',
@@ -26,6 +27,11 @@ export const NavItem = ({ label, active, onClick }: NavItemProps) => {
             color: '#ffffff',
 
             _hover: {
+              '& .nav-item-bullet': {
+                transform: 'rotate(-45deg)'
+              }
+            },
+            _focus: {
               '& .nav-item-bullet': {
                 transform: 'rotate(-45deg)'
               }

@@ -26,16 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cx(
-          `${playfair.variable} ${inter.variable}`,
-          css({
-            display: 'flex'
-          })
-        )}
-      >
-        {children}
-        <main className={css({ width: '100%' })}>teste</main>
+      <body className={cx(`${playfair.variable} ${inter.variable}`)}>
+        <main
+          className={css({
+            width: '100%',
+            minHeight: '100%',
+            lg: {
+              paddingRight: '270px'
+            }
+          })}
+        >
+          {children}
+        </main>
         <LayoutSidebar />
       </body>
     </html>

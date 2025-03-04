@@ -1,6 +1,8 @@
 import { css } from '@styled-system/css'
 import LanguageSwitcher from '../LanguageSwitcher'
 import { NavigationMenu } from '../NavigationMenu'
+import SocialItems from '../SocialItems'
+import CurrentLocalTime from '../CurrentLocalTime'
 
 export const LayoutSidebar = () => {
   return (
@@ -14,7 +16,15 @@ export const LayoutSidebar = () => {
         py: '3xl',
         px: 'sm',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: '100%',
+        position: 'fixed',
+        right: 0,
+        top: 0,
+        zIndex: -1,
+        lg: {
+          zIndex: 0
+        }
       })}
     >
       <div
@@ -26,17 +36,14 @@ export const LayoutSidebar = () => {
           alignItems: 'center'
         })}
       >
-        <span className={css({ color: 'primary.500', fontSize: 'sm' })}>
-          {/* Local time pending */}
-          18:32 Brussels, BE
-        </span>
+        <CurrentLocalTime />
 
         <LanguageSwitcher />
       </div>
 
       <NavigationMenu />
 
-      <div>{/* Sidebar Footer */}</div>
+      <SocialItems />
     </aside>
   )
 }
