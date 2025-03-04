@@ -58,6 +58,7 @@ export const TopNavbar = ({ setMenuOpen }: TopNavbarProps) => {
         </div>
         <LanguageSwitcher showLabel={false} />
         <Button
+          aria-label="Open menu"
           icon={<MenuIcon />}
           color="secondary"
           onClick={handleMenuClick}

@@ -50,7 +50,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <TopNavbar setMenuOpen={setMenuOpen} />
         {children}
       </main>
-      <LayoutSidebar />
+      <LayoutSidebar menuOpen={menuOpen} />
     </>
   )
 }

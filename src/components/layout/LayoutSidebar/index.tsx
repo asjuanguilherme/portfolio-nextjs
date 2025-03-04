@@ -1,31 +1,44 @@
-import { css } from '@styled-system/css'
+import { css, cx } from '@styled-system/css'
 import LanguageSwitcher from '../LanguageSwitcher'
 import { NavigationMenu } from '../NavigationMenu'
 import SocialItems from '../SocialItems'
 import CurrentLocalTime from '../CurrentLocalTime'
 
-export const LayoutSidebar = () => {
+export type LayoutSidebarProps = {
+  menuOpen: boolean
+}
+
+export const LayoutSidebar = ({ menuOpen }: LayoutSidebarProps) => {
   return (
     <aside
-      className={css({
-        width: '270px',
-        display: 'flex',
-        flexDir: 'column',
-        background: 'secondary.500',
-        color: 'white',
-        py: '3xl',
-        px: 'sm',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: '100%',
-        position: 'fixed',
-        right: 0,
-        top: 0,
-        zIndex: -1,
-        lg: {
-          zIndex: 0
-        }
-      })}
+      className={cx(
+        css({
+          width: '270px',
+          display: 'flex',
+          flexDir: 'column',
+          background: 'secondary.500',
+          color: 'white',
+          py: '3xl',
+          px: 'sm',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: '100%',
+          position: 'fixed',
+          right: 0,
+          top: 0,
+          zIndex: -1,
+
+          lg: {
+            zIndex: 0
+          }
+        }),
+        !menuOpen &&
+          css({
+            lgDown: {
+              visibility: 'hidden'
+            }
+          })
+      )}
     >
       <div
         className={css({

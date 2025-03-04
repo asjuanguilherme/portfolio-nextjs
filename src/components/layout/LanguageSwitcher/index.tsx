@@ -4,7 +4,7 @@ import LanguageOptionItem from '@/components/shared/LanguageOptionItem'
 import { Locale } from '@/i18n/locales.config'
 import { css, cx } from '@styled-system/css'
 import { ChevronDown } from 'lucide-react'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export type LanguageSwitcherProps = {
   showLabel?: boolean
@@ -18,6 +18,7 @@ export const LanguageSwitcher = ({
 
   const listRef = useRef<HTMLUListElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
 
   const langOptions = [
     {
@@ -82,8 +83,24 @@ export const LanguageSwitcher = ({
     }
   }
 
+  // Closes dropdown when user clicks outside of it
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as Node
+
+      if (wrapperRef.current && !wrapperRef.current.contains(target)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener('click', handleOutsideClick)
+
+    return () => document.removeEventListener('click', handleOutsideClick)
+  }, [])
+
   return (
     <div
+      ref={wrapperRef}
       className={css({ position: 'relative' })}
       onClick={e => e.stopPropagation()}
     >
