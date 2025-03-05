@@ -84,3 +84,5 @@ export const HomeHeroSection = async () => {
     </section>
   )
 }
+
+export default HomeHeroSection

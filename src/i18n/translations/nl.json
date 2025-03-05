@@ -7,7 +7,7 @@
       "CONTACT_ME": "Neem contact op",
       "NAVIGATION": {
         "START": "Start",
-        "ABOUT": "Over mij",
+        "ABOUT": "Over",
         "EXPERIENCES": "Ervaringen",
         "EXPERTISES": "Vaardigheden",
         "PROJECTS": "Projecten",
@@ -15,7 +15,7 @@
       }
     },
     "FOOTER": {
-      "HAVE_A_PROJECT_IN_MIND": "Heb je een project in gedachten?",
+      "HAVE_A_PROJECT_IN_MIND": "Heeft u een project in gedachten?",
       "LETS_CONNECT": "Laten we verbinden",
       "COPYRIGHT_TEXT": "Alle rechten voorbehouden."
     },
@@ -33,19 +33,31 @@
         "YEARS_OF_EXPERIENCE": "Jaren ervaring"
       },
       "ABOUT": {
-        "TITLE": "Over mij"
+        "TITLE": "Over mij",
+        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar die gepassioneerd is over het creëren van elegante, snelle en gebruiksvriendelijke interfaces. Met meer dan 3 jaar ervaring, specialiseer ik me in end-to-end ontwikkeling, van ontwerp en prototyping van interfaces tot het bouwen van schaalbare applicaties. Mijn focus ligt op het leveren van foutloze gebruikerservaringen, met nadruk op prestaties, toegankelijkheid en onderhoudbaarheid.</p><p>Ik heb gewerkt aan verschillende projecten, waaronder e-commerceplatforms, bedrijfsblogs, interne systemen en mobiele apps. Ik maak ook op maat gemaakte ontwerp systemen en herbruikbare componentbibliotheken om schaalbaarheid en consistentie te verbeteren.</p><p>Mijn technologie-stack omvat React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi en SEO-optimalisatie. Momenteel woon ik in Brussel, België, en ben altijd op zoek naar kansen om digitale ervaringen van hoge kwaliteit te creëren die zowel voldoen aan de zakelijke behoeften als de beste praktijken van de industrie.</p><p>Als je op zoek bent naar een ontwikkelaar die creativiteit, technische expertise en robleemoplossend vermogen combineert, laten we dan verbinding maken!</p>"
+      },
+      "SERVICES": {
+        "TITLE": "Mijn Diensten",
+        "SOFTWARE_DEVELOPMENT": {
+          "TITLE": "Softwareontwikkeling",
+          "CONTENT": "Ik schrijf niet alleen code; ik architectuur applicaties die snel en schaalbaar zijn. Met React, Next.js en React Native in mijn toolkit, lever ik veerkrachtige oplossingen die de tand des tijds doorstaan. Prestaties en schaalbaarheid staan altijd centraal, zodat elk project dat ik bouw gemakkelijk kan groeien. In al mijn projecten houd ik een scherpe focus op de gebruikerservaring, waarbij ik een op de gebruiker gerichte methodologie toepas om intuïtieve en foutloze oplossingen te creëren."
+        },
+        "UI_DESIGN": {
+          "TITLE": "UI Ontwerp",
+          "CONTENT": "Ik ben geen fulltime ontwerper, maar ik heb een goed begrip van ontwerpprincipes. Ik maak schone en functionele lay-outs en wireframes in Figma, en ik ben ook in staat om ontwerpen te vectoriseren en met andere ontwerptools te werken. Hoewel mijn focus ligt op het bouwen van gebruiksvriendelijke interfaces, breng ik praktische ontwerpkennis in om zowel bruikbaarheid als stijl te waarborgen."
+        }
       },
       "EXPERTISES": {
-        "TITLE": "Mijn expertise"
+        "TITLE": "Mijn Specialiteiten"
       },
       "EXPERIENCES": {
-        "TITLE": "Mijn professionele ervaringen"
+        "TITLE": "Mijn Professionele Ervaringen"
       },
       "PROJECTS": {
-        "TITLE": "Geselecteerde projecten"
+        "TITLE": "Geselecteerde Projecten"
       },
       "TESTIMONIALS": {
-        "TITLE": "Wat mensen over mij zeggen"
+        "TITLE": "Wat anderen over mij zeggen"
       }
     }
   },
@@ -53,7 +65,7 @@
     "VIEW_PUBLISHED_PROJECT": "Bekijk gepubliceerd project",
     "SEE_PROJECT_DETAILS": "Bekijk projectdetails",
     "RETURN": "Terug",
-    "DOWNLOAD_CV": "CV downloaden",
+    "DOWNLOAD_CV": "Download CV",
     "SEE_MY_WORK": "Bekijk mijn werk"
   }
 }

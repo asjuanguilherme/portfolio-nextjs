@@ -8,8 +8,8 @@ export type Translations = {
       NAVIGATION: {
         START: string
         ABOUT: string
-        EXPERTISES: string
         EXPERIENCES: string
+        EXPERTISES: string
         PROJECTS: string
         TESTIMONIALS: string
       }
@@ -34,6 +34,18 @@ export type Translations = {
       }
       ABOUT: {
         TITLE: string
+        CONTENT: string
+      }
+      SERVICES: {
+        TITLE: string
+        SOFTWARE_DEVELOPMENT: {
+          TITLE: string
+          CONTENT: string
+        }
+        UI_DESIGN: {
+          TITLE: string
+          CONTENT: string
+        }
       }
       EXPERTISES: {
         TITLE: string
@@ -51,6 +63,7 @@ export type Translations = {
   }
   ACTION_BUTTONS: {
     VIEW_PUBLISHED_PROJECT: string
+    SEE_PROJECT_DETAILS: string
     RETURN: string
     DOWNLOAD_CV: string
     SEE_MY_WORK: string

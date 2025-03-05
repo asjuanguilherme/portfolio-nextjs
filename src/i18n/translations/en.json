@@ -4,18 +4,18 @@
   },
   "UI": {
     "SIDEBAR": {
-      "CONTACT_ME": "Contact me",
+      "CONTACT_ME": "Contact Me",
       "NAVIGATION": {
         "START": "Home",
         "ABOUT": "About",
-        "EXPERTISES": "Skills",
         "EXPERIENCES": "Experiences",
+        "EXPERTISES": "Expertises",
         "PROJECTS": "Projects",
         "TESTIMONIALS": "Testimonials"
       }
     },
     "FOOTER": {
-      "HAVE_A_PROJECT_IN_MIND": "Do you have a project in mind?",
+      "HAVE_A_PROJECT_IN_MIND": "Have a project in mind?",
       "LETS_CONNECT": "Let's connect",
       "COPYRIGHT_TEXT": "All rights reserved."
     },
@@ -33,26 +33,38 @@
         "YEARS_OF_EXPERIENCE": "Years of experience"
       },
       "ABOUT": {
-        "TITLE": "About me"
+        "TITLE": "About Me",
+        "CONTENT": "<p>Hello! I'm a frontend developer passionate about creating sleek, high-performance, and user-friendly interfaces. With over 3 years of experience, I specialize in end-to-end development, from design and prototyping interfaces to building scalable applications. My focus is on delivering flawless user experiences with a strong emphasis on performance, accessibility, and maintainability.</p><p>I've worked on various projects, including e-commerce platforms, corporate blogs, internal systems, and mobile apps. I also create custom design systems and reusable component libraries to enhance scalability and consistency.</p><p>My tech stack includes React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi, and SEO optimization. Currently based in Brussels, Belgium, I'm always seeking opportunities to create high-quality digital experiences that meet business needs and industry best practices.</p><p>If you're looking for a developer who blends creativity, technical expertise, and problem-solving skills, let's connect!</p>"
+      },
+      "SERVICES": {
+        "TITLE": "My Services",
+        "SOFTWARE_DEVELOPMENT": {
+          "TITLE": "Software Development",
+          "CONTENT": "I'm not just writing code; I'm architecting fast and scalable applications. With React, Next.js, and React Native in my toolkit, I deliver resilient solutions that stand the test of time. Performance and scalability are always top of mind, ensuring that every project I build can grow easily. In all my projects, I keep a sharp focus on user experience, adopting a user-centered methodology to create intuitive and flawless solutions."
+        },
+        "UI_DESIGN": {
+          "TITLE": "UI Design",
+          "CONTENT": "I'm not a dedicated designer by profession, but I have a solid understanding of design principles. I create clean and functional layouts and wireframes in Figma, and I'm also able to vectorize designs and work with other design tools. While my focus is on building user-friendly interfaces, I bring practical design knowledge to ensure both usability and style."
+        }
       },
       "EXPERTISES": {
-        "TITLE": "My expertise"
+        "TITLE": "My Expertise"
       },
       "EXPERIENCES": {
-        "TITLE": "My professional experiences"
+        "TITLE": "My Professional Experiences"
       },
       "PROJECTS": {
-        "TITLE": "Selected projects"
+        "TITLE": "Selected Projects"
       },
       "TESTIMONIALS": {
-        "TITLE": "What people say about me"
+        "TITLE": "What People Say About Me"
       }
     }
   },
   "ACTION_BUTTONS": {
     "VIEW_PUBLISHED_PROJECT": "View published project",
     "SEE_PROJECT_DETAILS": "See project details",
-    "RETURN": "Return",
+    "RETURN": "Back",
     "DOWNLOAD_CV": "Download CV",
     "SEE_MY_WORK": "See my work"
   }
