@@ -133,6 +133,13 @@ export const pandaThemeConfig: Config['theme'] = {
       }
     }
   },
+  keyframes: {
+    blink: {
+      '50%': {
+        opacity: '0%'
+      }
+    }
+  },
   semanticTokens: {
     colors: {
       primary: tokensColors.amber,

@@ -32,6 +32,7 @@ export const HomeHeroSection = async () => {
               fontWeight: 'extrabold',
               lineHeight: '1em',
               fontSize: '6xl',
+              letterSpacing: '-0.04em',
 
               xl: {
                 fontSize: '8xl'
