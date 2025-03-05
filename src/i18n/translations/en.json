@@ -1,0 +1,59 @@
+{
+  "COMMON": {
+    "DEVELOPER_TITLE": "Frontend Developer"
+  },
+  "UI": {
+    "SIDEBAR": {
+      "CONTACT_ME": "Contact me",
+      "NAVIGATION": {
+        "START": "Home",
+        "ABOUT": "About",
+        "EXPERTISES": "Skills",
+        "EXPERIENCES": "Experiences",
+        "PROJECTS": "Projects",
+        "TESTIMONIALS": "Testimonials"
+      }
+    },
+    "FOOTER": {
+      "HAVE_A_PROJECT_IN_MIND": "Do you have a project in mind?",
+      "LETS_CONNECT": "Let's connect",
+      "COPYRIGHT_TEXT": "All rights reserved."
+    },
+    "LANGUAGES": {
+      "PT": "Portuguese",
+      "EN": "English",
+      "NL": "Dutch"
+    }
+  },
+  "HOME": {
+    "SECTIONS": {
+      "HERO": {
+        "SUBTITLE": "Frontend Developer",
+        "COMPLETED_PROJECTS": "Completed projects",
+        "YEARS_OF_EXPERIENCE": "Years of experience"
+      },
+      "ABOUT": {
+        "TITLE": "About me"
+      },
+      "EXPERTISES": {
+        "TITLE": "My expertise"
+      },
+      "EXPERIENCES": {
+        "TITLE": "My professional experiences"
+      },
+      "PROJECTS": {
+        "TITLE": "Selected projects"
+      },
+      "TESTIMONIALS": {
+        "TITLE": "What people say about me"
+      }
+    }
+  },
+  "ACTION_BUTTONS": {
+    "VIEW_PUBLISHED_PROJECT": "View published project",
+    "SEE_PROJECT_DETAILS": "See project details",
+    "RETURN": "Return",
+    "DOWNLOAD_CV": "Download CV",
+    "SEE_MY_WORK": "See my work"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "COMMON": {
+    "DEVELOPER_TITLE": "Desenvolvedor Frontend"
+  },
+  "UI": {
+    "SIDEBAR": {
+      "CONTACT_ME": "Contactar-me",
+      "NAVIGATION": {
+        "START": "Início",
+        "ABOUT": "Sobre",
+        "EXPERIENCES": "Experiências",
+        "EXPERTISES": "Habilidades",
+        "PROJECTS": "Projetos",
+        "TESTIMONIALS": "Testemunhos"
+      }
+    },
+    "FOOTER": {
+      "HAVE_A_PROJECT_IN_MIND": "Tem um projeto em mente?",
+      "LETS_CONNECT": "Vamos conectar-nos",
+      "COPYRIGHT_TEXT": "Todos os direitos reservados."
+    },
+    "LANGUAGES": {
+      "PT": "Português",
+      "EN": "Inglês",
+      "NL": "Neerlandês"
+    }
+  },
+  "HOME": {
+    "SECTIONS": {
+      "HERO": {
+        "SUBTITLE": "Desenvolvedor Frontend",
+        "COMPLETED_PROJECTS": "Projetos trabalhados",
+        "YEARS_OF_EXPERIENCE": "Anos de experiência"
+      },
+      "ABOUT": {
+        "TITLE": "Sobre mim"
+      },
+      "EXPERTISES": {
+        "TITLE": "Minhas especialidades"
+      },
+      "EXPERIENCES": {
+        "TITLE": "Minhas Experiências Profissionais"
+      },
+      "PROJECTS": {
+        "TITLE": "Projetos selecionados"
+      },
+      "TESTIMONIALS": {
+        "TITLE": "O que dizem sobre mim"
+      }
+    }
+  },
+  "ACTION_BUTTONS": {
+    "VIEW_PUBLISHED_PROJECT": "Ver projeto publicado",
+    "SEE_PROJECT_DETAILS": "Ver detalhes do projeto",
+    "RETURN": "Voltar",
+    "DOWNLOAD_CV": "Descarregar CV",
+    "SEE_MY_WORK": "Veja o meu trabalho"
+  }
+}

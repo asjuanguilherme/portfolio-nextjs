@@ -26,7 +26,9 @@ const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
     outlined: css({
       bg: 'transparent',
       color: 'primary.500',
-      border: '1px solid currentColor'
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: 'primary.500'
     })
   },
   secondary: {
@@ -40,7 +42,9 @@ const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
     outlined: css({
       bg: 'transparent',
       color: 'secondary.500',
-      border: '1px solid currentColor'
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: 'secondary.500'
     })
   }
 }
@@ -57,7 +61,6 @@ export const Button = ({
     <Wrapper
       className={cx(
         buttonStyleByColor[color][variant],
-        !children && icon && css({ width: '40px', px: 0 }),
         css({
           fontSize: '16px',
           fontWeight: 'medium',
@@ -72,7 +75,8 @@ export const Button = ({
           _hover: {
             cursor: 'pointer'
           }
-        })
+        }),
+        !children && icon && css({ width: '40px', px: '0px' })
       )}
       {...props}
     >

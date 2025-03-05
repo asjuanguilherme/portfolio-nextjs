@@ -1,7 +1,5 @@
-'use client'
-
 import { css, cx } from '@styled-system/css'
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import LayoutSidebar from '../LayoutSidebar'
 import TopNavbar from '../TopNavbar'
 
@@ -9,30 +7,27 @@ export type LayoutProps = {
   children: ReactNode
 }
 
-export const Layout = ({ children }: LayoutProps) => {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const handleMainClick = () => {
-    if (menuOpen) setMenuOpen(false)
-  }
-
+export const Layout = async ({ children }: LayoutProps) => {
   return (
     <>
       <main
-        onClick={handleMainClick}
+        id="app-main"
         className={cx(
           css({
             width: '100%',
             minHeight: '100%',
             background: 'white',
-            transitionDuration: 'slow',
+            transitionDuration: 'normal',
+            transitionProperty: 'transform',
             transition: 'ease-in-out',
+            paddingTop: '70px',
+
             lg: {
+              paddingTop: 0,
               paddingRight: '270px'
-            }
-          }),
-          menuOpen &&
-            css({
+            },
+
+            '&.menu-open': {
               lgDown: {
                 position: 'absolute',
                 borderRadius: '2xl',
@@ -44,13 +39,14 @@ export const Layout = ({ children }: LayoutProps) => {
                 cursor: 'pointer',
                 transform: 'scale(.9) translateX(-270px)'
               }
-            })
+            }
+          })
         )}
       >
-        <TopNavbar setMenuOpen={setMenuOpen} />
+        <TopNavbar />
         {children}
       </main>
-      <LayoutSidebar menuOpen={menuOpen} />
+      <LayoutSidebar />
     </>
   )
 }

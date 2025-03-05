@@ -3,16 +3,13 @@
 import { css } from '@styled-system/css'
 import React, { useEffect, useState } from 'react'
 
-const getCurrentTime = () => {
-  const localTime = new Date().toLocaleString('en-US', {
+const getCurrentTime = () =>
+  new Date().toLocaleString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
     timeZone: 'Europe/Brussels'
   })
-
-  return localTime
-}
 
 export const CurrentLocalTime = () => {
   const [time, setTime] = useState<string>(() => getCurrentTime())

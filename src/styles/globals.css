@@ -27,5 +27,7 @@ svg.lucide {
   outline: 2px solid var(--panda-colors-primary-400);
   box-shadow: 0px 0px 8px var(--panda-colors-secondary-400);
   border-radius: 4px;
-  transition: outline 0.2s, box-shadow 0.2s;
+  transition:
+    outline 0.2s,
+    box-shadow 0.2s;
 }

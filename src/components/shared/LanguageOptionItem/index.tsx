@@ -1,5 +1,6 @@
-import { Locale } from '@/i18n/locales.config'
+import { Locale } from '@/i18n/locales'
 import { css } from '@styled-system/css'
+import { useTranslations } from 'use-intl'
 
 export type LanguageOptionItemProps = {
   locale: Locale
@@ -10,16 +11,11 @@ export const LanguageOptionItem = ({
   locale,
   showLabel
 }: LanguageOptionItemProps) => {
-  const flagByLanguage = {
+  const translations = useTranslations('UI.LANGUAGES')
+  const flagByLanguage: Record<Locale, string> = {
     en: '/assets/flags/uk.png',
     nl: '/assets/flags/nl.png',
     pt: '/assets/flags/pt.png'
-  }
-
-  const labelByLanguage: Record<Locale, string> = {
-    en: 'English',
-    nl: 'Nederlands',
-    pt: 'Português'
   }
 
   return (
@@ -44,7 +40,7 @@ export const LanguageOptionItem = ({
           mr: '4px'
         })}
       ></span>
-      {showLabel && <span>{labelByLanguage[locale]}</span>}
+      {showLabel && <span>{translations(locale.toUpperCase() as 'EN')}</span>}
     </span>
   )
 }

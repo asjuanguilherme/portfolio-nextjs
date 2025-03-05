@@ -4,11 +4,7 @@ import { NavigationMenu } from '../NavigationMenu'
 import SocialItems from '../SocialItems'
 import CurrentLocalTime from '../CurrentLocalTime'
 
-export type LayoutSidebarProps = {
-  menuOpen: boolean
-}
-
-export const LayoutSidebar = ({ menuOpen }: LayoutSidebarProps) => {
+export const LayoutSidebar = () => {
   return (
     <aside
       className={cx(
@@ -30,14 +26,14 @@ export const LayoutSidebar = ({ menuOpen }: LayoutSidebarProps) => {
 
           lg: {
             zIndex: 0
-          }
-        }),
-        !menuOpen &&
-          css({
+          },
+
+          '&.menu-open': {
             lgDown: {
               visibility: 'hidden'
             }
-          })
+          }
+        })
       )}
     >
       <div

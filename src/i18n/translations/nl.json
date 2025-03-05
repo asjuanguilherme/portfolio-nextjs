@@ -1,0 +1,59 @@
+{
+  "COMMON": {
+    "DEVELOPER_TITLE": "Frontend Ontwikkelaar"
+  },
+  "UI": {
+    "SIDEBAR": {
+      "CONTACT_ME": "Neem contact op",
+      "NAVIGATION": {
+        "START": "Start",
+        "ABOUT": "Over mij",
+        "EXPERIENCES": "Ervaringen",
+        "EXPERTISES": "Vaardigheden",
+        "PROJECTS": "Projecten",
+        "TESTIMONIALS": "Getuigenissen"
+      }
+    },
+    "FOOTER": {
+      "HAVE_A_PROJECT_IN_MIND": "Heb je een project in gedachten?",
+      "LETS_CONNECT": "Laten we verbinden",
+      "COPYRIGHT_TEXT": "Alle rechten voorbehouden."
+    },
+    "LANGUAGES": {
+      "PT": "Portugees",
+      "EN": "Engels",
+      "NL": "Nederlands"
+    }
+  },
+  "HOME": {
+    "SECTIONS": {
+      "HERO": {
+        "SUBTITLE": "Frontend Ontwikkelaar",
+        "COMPLETED_PROJECTS": "Voltooide projecten",
+        "YEARS_OF_EXPERIENCE": "Jaren ervaring"
+      },
+      "ABOUT": {
+        "TITLE": "Over mij"
+      },
+      "EXPERTISES": {
+        "TITLE": "Mijn expertise"
+      },
+      "EXPERIENCES": {
+        "TITLE": "Mijn professionele ervaringen"
+      },
+      "PROJECTS": {
+        "TITLE": "Geselecteerde projecten"
+      },
+      "TESTIMONIALS": {
+        "TITLE": "Wat mensen over mij zeggen"
+      }
+    }
+  },
+  "ACTION_BUTTONS": {
+    "VIEW_PUBLISHED_PROJECT": "Bekijk gepubliceerd project",
+    "SEE_PROJECT_DETAILS": "Bekijk projectdetails",
+    "RETURN": "Terug",
+    "DOWNLOAD_CV": "CV downloaden",
+    "SEE_MY_WORK": "Bekijk mijn werk"
+  }
+}

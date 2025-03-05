@@ -2,34 +2,36 @@
 import { useRef, useState } from 'react'
 import { NavItem } from '../NavItem'
 import { css } from '@styled-system/css'
+import { useTranslations } from 'next-intl'
 
 export const NavigationMenu = () => {
   const [active, setActive] = useState('/#start')
   const listRef = useRef<HTMLUListElement>(null)
+  const translations = useTranslations('UI.SIDEBAR.NAVIGATION')
 
   const navItems = [
     {
-      label: 'Start',
+      label: translations('START'),
       href: '/#start'
     },
     {
-      label: 'About me',
+      label: translations('ABOUT'),
       href: '/#about'
     },
     {
-      label: 'Expertises',
+      label: translations('EXPERTISES'),
       href: '/#expertises'
     },
     {
-      label: 'Experiences',
+      label: translations('EXPERIENCES'),
       href: '/#experiences'
     },
     {
-      label: 'Projects',
+      label: translations('PROJECTS'),
       href: '/#projects'
     },
     {
-      label: 'Testimonials',
+      label: translations('TESTIMONIALS'),
       href: '/#testimonials'
     }
   ]

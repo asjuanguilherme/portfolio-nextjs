@@ -1,9 +1,12 @@
 import Button from '@/components/shared/Button'
 import { socialsData } from '@/data/socials'
 import { css } from '@styled-system/css'
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 
-export const SocialItems = () => {
+export const SocialItems = async () => {
+  const translations = await getTranslations('UI.SIDEBAR')
+
   return (
     <div>
       <span
@@ -15,7 +18,7 @@ export const SocialItems = () => {
           textAlign: 'center'
         })}
       >
-        Contact-me
+        {translations('CONTACT_ME')}
       </span>
       <ul className={css({ display: 'flex' })}>
         {socialsData.map(item => (

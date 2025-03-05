@@ -1,9 +1,11 @@
 'use client'
 
 import LanguageOptionItem from '@/components/shared/LanguageOptionItem'
-import { Locale } from '@/i18n/locales.config'
+import { Locale, locales } from '@/i18n/locales'
+import { usePathname, useRouter } from '@/i18n/navigation'
 import { css, cx } from '@styled-system/css'
 import { ChevronDown } from 'lucide-react'
+import { useParams } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
 
 export type LanguageSwitcherProps = {
@@ -13,31 +15,22 @@ export type LanguageSwitcherProps = {
 export const LanguageSwitcher = ({
   showLabel = true
 }: LanguageSwitcherProps) => {
-  const [locale, setLocale] = useState<Locale>('en')
   const [open, setOpen] = useState(false)
+
+  const params = useParams()
+
+  const router = useRouter()
+  const pathname = usePathname()
 
   const listRef = useRef<HTMLUListElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const wrapperRef = useRef<HTMLDivElement>(null)
 
-  const langOptions = [
-    {
-      label: 'English',
-      locale: 'en'
-    },
-    {
-      label: 'Português',
-      locale: 'pt'
-    },
-    {
-      label: 'Nederlands',
-      locale: 'nl'
-    }
-  ] as const
-
-  const handleOptionClick = (locale: 'pt' | 'en' | 'nl') => {
-    setLocale(locale)
+  const handleOptionClick = (locale: Locale) => {
     setOpen(false)
+    const pathnameWithoutLocale = pathname.replace(`/${params.locale}`, '/')
+
+    router.push(pathnameWithoutLocale, { locale })
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -122,7 +115,10 @@ export const LanguageSwitcher = ({
         onClick={() => setOpen(state => !state)}
         onKeyDown={handleKeyDown}
       >
-        <LanguageOptionItem showLabel={showLabel} locale={locale} />
+        <LanguageOptionItem
+          locale={params.locale as Locale}
+          showLabel={showLabel}
+        />
         <ChevronDown
           className={cx(
             css({ transitionDuration: 'fast', marginLeft: 'sm' }),
@@ -156,12 +152,12 @@ export const LanguageSwitcher = ({
         )}
       >
         <ul ref={listRef}>
-          {langOptions.map(item => (
-            <li key={item.locale}>
+          {locales.map(locale => (
+            <li key={locale}>
               <button
                 role="option"
-                aria-selected={locale === item.locale}
-                onClick={() => handleOptionClick(item.locale)}
+                aria-selected={params.locale === locale}
+                onClick={() => handleOptionClick(locale)}
                 onFocus={() => setOpen(true)}
                 onKeyDown={handleOptionKeyDown}
                 className={css({
@@ -176,7 +172,7 @@ export const LanguageSwitcher = ({
                   }
                 })}
               >
-                <LanguageOptionItem locale={item.locale} showLabel />
+                <LanguageOptionItem locale={locale} showLabel />
               </button>
             </li>
           ))}
