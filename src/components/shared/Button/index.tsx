@@ -1,9 +1,9 @@
 import { css, cx } from '@styled-system/css'
 import React, { HTMLAttributes, JSX, ReactNode } from 'react'
 
-type ButtonColor = 'primary' | 'secondary'
+export type ButtonColor = 'primary' | 'secondary'
 
-type ButtonVariant = 'filled' | 'outlined'
+export type ButtonVariant = 'filled' | 'outlined'
 
 export type ButtonProps = {
   href?: string

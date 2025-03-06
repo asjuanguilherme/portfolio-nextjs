@@ -2,6 +2,7 @@ import { css, cx } from '@styled-system/css'
 import { ReactNode } from 'react'
 import LayoutSidebar from '../LayoutSidebar'
 import TopNavbar from '../TopNavbar'
+import { Footer } from '../Footer'
 
 export type LayoutProps = {
   children: ReactNode
@@ -45,6 +46,7 @@ export const Layout = async ({ children }: LayoutProps) => {
       >
         <TopNavbar />
         {children}
+        <Footer />
       </main>
       <LayoutSidebar />
     </>

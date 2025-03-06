@@ -1,10 +1,13 @@
 import { css, cx } from '@styled-system/css'
 import LanguageSwitcher from '../LanguageSwitcher'
 import { NavigationMenu } from '../NavigationMenu'
-import SocialItems from '../SocialItems'
+import SocialItems from '../../shared/SocialItems'
 import CurrentLocalTime from '../CurrentLocalTime'
+import { getTranslations } from 'next-intl/server'
 
-export const LayoutSidebar = () => {
+export const LayoutSidebar = async () => {
+  const translation = await getTranslations('UI.SIDEBAR')
+
   return (
     <aside
       className={cx(
@@ -52,7 +55,11 @@ export const LayoutSidebar = () => {
 
       <NavigationMenu />
 
-      <SocialItems />
+      <SocialItems
+        buttonColor="secondary"
+        onlyIcon
+        title={translation('CONTACT_ME')}
+      />
     </aside>
   )
 }
