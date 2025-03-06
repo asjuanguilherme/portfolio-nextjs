@@ -40,7 +40,7 @@ export const LanguageOptionItem = ({
           mr: '4px'
         })}
       ></span>
-      {showLabel && <span>{translations(locale.toUpperCase() as 'EN')}</span>}
+      {showLabel && <span>{translations(locale)}</span>}
     </span>
   )
 }

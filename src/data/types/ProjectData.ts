@@ -7,7 +7,7 @@ export type ProjectData = {
   slug: string
   title: string
   cardImage: string
-  images: string[]
+  images: { src: string; alt?: string }[]
   content: JSX.Element
   skills: SkillData[]
   href?: string

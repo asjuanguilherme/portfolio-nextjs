@@ -5,16 +5,16 @@ export const projects: ProjectData[] = [
   {
     id: 0,
     category: 'Website',
-    slug: 'ibtiWebsite',
+    slug: 'ibti-website',
     title: 'IBTI Soluções em TI',
     images: [
-      '/assets/images/projects/ibtiWebsite/images/1.png',
-      '/assets/images/projects/ibtiWebsite/images/2.png',
-      '/assets/images/projects/ibtiWebsite/images/3.png',
-      '/assets/images/projects/ibtiWebsite/images/4.png',
-      '/assets/images/projects/ibtiWebsite/images/5.png'
+      { src: '/assets/images/projects/ibti-website/images/1.png', alt: '' },
+      { src: '/assets/images/projects/ibti-website/images/2.png', alt: '' },
+      { src: '/assets/images/projects/ibti-website/images/2.png', alt: '' },
+      { src: '/assets/images/projects/ibti-website/images/2.png', alt: '' },
+      { src: '/assets/images/projects/ibti-website/images/2.png', alt: '' }
     ],
-    cardImage: '/assets/images/projects/ibtiWebsite/card.png',
+    cardImage: '/assets/images/projects/ibti-website/card.png',
     href: 'https://ibti.tech',
     skills: [
       skills.next,
@@ -64,13 +64,25 @@ export const projects: ProjectData[] = [
     slug: 'tecindica',
     title: 'Tec Indica',
     images: [
-      '/assets/images/projects/tecindicaWebsite/images/1.png',
-      '/assets/images/projects/tecindicaWebsite/images/2.png',
-      '/assets/images/projects/tecindicaWebsite/images/3.png',
-      '/assets/images/projects/tecindicaWebsite/images/4.png',
-      '/assets/images/projects/tecindicaWebsite/images/5.png'
+      {
+        src: '/assets/images/projects/tecindica-website/images/1.png',
+        alt: ''
+      },
+      {
+        src: '/assets/images/projects/tecindica-website/images/2.png',
+        alt: ''
+      },
+      {
+        src: '/assets/images/projects/tecindica-website/images/2.png',
+        alt: ''
+      },
+      {
+        src: '/assets/images/projects/tecindica-website/images/2.png',
+        alt: ''
+      },
+      { src: '/assets/images/projects/tecindica-website/images/2.png', alt: '' }
     ],
-    cardImage: '/assets/images/projects/tecindicaWebsite/card.png',
+    cardImage: '/assets/images/projects/tecindica-website/card.png',
     href: 'https://tecindica.com.br',
     skills: [
       skills.next,

@@ -1,7 +1,7 @@
 import Button from '@/components/shared/Button'
+import { Link } from '@/i18n/navigation'
 import { css } from '@styled-system/css'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
 
 export const CTAButtons = () => {
   const translations = useTranslations('ACTION_BUTTONS')

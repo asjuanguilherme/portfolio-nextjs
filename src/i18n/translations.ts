@@ -1,4 +1,6 @@
-export type Translations = {
+import { Locale } from './locales'
+
+export interface Translations {
   COMMON: {
     DEVELOPER_TITLE: string
   }
@@ -19,11 +21,7 @@ export type Translations = {
       LETS_CONNECT: string
       COPYRIGHT_TEXT: string
     }
-    LANGUAGES: {
-      PT: string
-      EN: string
-      NL: string
-    }
+    LANGUAGES: Record<Locale, string>
   }
   HOME: {
     SECTIONS: {
@@ -57,6 +55,16 @@ export type Translations = {
         TITLE: string
       }
       TESTIMONIALS: {
+        TITLE: string
+      }
+    }
+  }
+  PROJECT_DETAILS: {
+    SECTIONS: {
+      ABOUT_THE_PROJECT: {
+        TITLE: string
+      }
+      TECHNOLOGIES_AND_TOOLS: {
         TITLE: string
       }
     }

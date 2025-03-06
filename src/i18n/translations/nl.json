@@ -4,10 +4,10 @@
   },
   "UI": {
     "SIDEBAR": {
-      "CONTACT_ME": "Neem contact op",
+      "CONTACT_ME": "Contacteer Mij",
       "NAVIGATION": {
         "START": "Start",
-        "ABOUT": "Over",
+        "ABOUT": "Over Mij",
         "EXPERIENCES": "Ervaringen",
         "EXPERTISES": "Vaardigheden",
         "PROJECTS": "Projecten",
@@ -15,40 +15,40 @@
       }
     },
     "FOOTER": {
-      "HAVE_A_PROJECT_IN_MIND": "Heeft u een project in gedachten?",
+      "HAVE_A_PROJECT_IN_MIND": "Heb je een project in gedachten?",
       "LETS_CONNECT": "Laten we verbinden",
       "COPYRIGHT_TEXT": "Alle rechten voorbehouden."
     },
     "LANGUAGES": {
-      "PT": "Portugees",
-      "EN": "Engels",
-      "NL": "Nederlands"
+      "pt": "Portugees",
+      "en": "Engels",
+      "nl": "Nederlands"
     }
   },
   "HOME": {
     "SECTIONS": {
       "HERO": {
         "SUBTITLE": "Frontend Ontwikkelaar",
-        "COMPLETED_PROJECTS": "Voltooide projecten",
-        "YEARS_OF_EXPERIENCE": "Jaren ervaring"
+        "COMPLETED_PROJECTS": "Afgeronde Projecten",
+        "YEARS_OF_EXPERIENCE": "Jaren Ervaring"
       },
       "ABOUT": {
-        "TITLE": "Over mij",
-        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar die gepassioneerd is over het creëren van elegante, snelle en gebruiksvriendelijke interfaces. Met meer dan 3 jaar ervaring, specialiseer ik me in end-to-end ontwikkeling, van ontwerp en prototyping van interfaces tot het bouwen van schaalbare applicaties. Mijn focus ligt op het leveren van foutloze gebruikerservaringen, met nadruk op prestaties, toegankelijkheid en onderhoudbaarheid.</p><p>Ik heb gewerkt aan verschillende projecten, waaronder e-commerceplatforms, bedrijfsblogs, interne systemen en mobiele apps. Ik maak ook op maat gemaakte ontwerp systemen en herbruikbare componentbibliotheken om schaalbaarheid en consistentie te verbeteren.</p><p>Mijn technologie-stack omvat React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi en SEO-optimalisatie. Momenteel woon ik in Brussel, België, en ben altijd op zoek naar kansen om digitale ervaringen van hoge kwaliteit te creëren die zowel voldoen aan de zakelijke behoeften als de beste praktijken van de industrie.</p><p>Als je op zoek bent naar een ontwikkelaar die creativiteit, technische expertise en robleemoplossend vermogen combineert, laten we dan verbinding maken!</p>"
+        "TITLE": "Over Mij",
+        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar gepassioneerd over het creëren van elegante, high-performance en gebruiksvriendelijke interfaces...</p>"
       },
       "SERVICES": {
         "TITLE": "Mijn Diensten",
         "SOFTWARE_DEVELOPMENT": {
           "TITLE": "Softwareontwikkeling",
-          "CONTENT": "Ik schrijf niet alleen code; ik architectuur applicaties die snel en schaalbaar zijn. Met React, Next.js en React Native in mijn toolkit, lever ik veerkrachtige oplossingen die de tand des tijds doorstaan. Prestaties en schaalbaarheid staan altijd centraal, zodat elk project dat ik bouw gemakkelijk kan groeien. In al mijn projecten houd ik een scherpe focus op de gebruikerservaring, waarbij ik een op de gebruiker gerichte methodologie toepas om intuïtieve en foutloze oplossingen te creëren."
+          "CONTENT": "Ik schrijf niet alleen code; ik ontwerp snelle en schaalbare applicaties..."
         },
         "UI_DESIGN": {
           "TITLE": "UI Ontwerp",
-          "CONTENT": "Ik ben geen fulltime ontwerper, maar ik heb een goed begrip van ontwerpprincipes. Ik maak schone en functionele lay-outs en wireframes in Figma, en ik ben ook in staat om ontwerpen te vectoriseren en met andere ontwerptools te werken. Hoewel mijn focus ligt op het bouwen van gebruiksvriendelijke interfaces, breng ik praktische ontwerpkennis in om zowel bruikbaarheid als stijl te waarborgen."
+          "CONTENT": "Ik ben geen professionele ontwerper, maar ik heb een goed begrip van ontwerpprincipes..."
         }
       },
       "EXPERTISES": {
-        "TITLE": "Mijn Specialiteiten"
+        "TITLE": "Mijn Expertise"
       },
       "EXPERIENCES": {
         "TITLE": "Mijn Professionele Ervaringen"
@@ -57,15 +57,25 @@
         "TITLE": "Geselecteerde Projecten"
       },
       "TESTIMONIALS": {
-        "TITLE": "Wat anderen over mij zeggen"
+        "TITLE": "Wat Mensen Over Mij Zeggen"
+      }
+    }
+  },
+  "PROJECT_DETAILS": {
+    "SECTIONS": {
+      "ABOUT_THE_PROJECT": {
+        "TITLE": "Over het Project"
+      },
+      "TECHNOLOGIES_AND_TOOLS": {
+        "TITLE": "Technologieën & Tools"
       }
     }
   },
   "ACTION_BUTTONS": {
-    "VIEW_PUBLISHED_PROJECT": "Bekijk gepubliceerd project",
-    "SEE_PROJECT_DETAILS": "Bekijk projectdetails",
+    "VIEW_PUBLISHED_PROJECT": "Bekijk Gepubliceerd Project",
+    "SEE_PROJECT_DETAILS": "Bekijk Projectdetails",
     "RETURN": "Terug",
-    "DOWNLOAD_CV": "Download CV",
-    "SEE_MY_WORK": "Bekijk mijn werk"
+    "DOWNLOAD_CV": "CV Downloaden",
+    "SEE_MY_WORK": "Bekijk Mijn Werk"
   }
 }

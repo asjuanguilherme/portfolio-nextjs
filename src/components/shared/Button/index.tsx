@@ -3,7 +3,7 @@ import React, { HTMLAttributes, JSX, ReactNode } from 'react'
 
 export type ButtonColor = 'primary' | 'secondary'
 
-export type ButtonVariant = 'filled' | 'outlined'
+export type ButtonVariant = 'filled' | 'outlined' | 'inline'
 
 export type ButtonProps = {
   href?: string
@@ -30,6 +30,14 @@ const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: 'primary.500'
+    }),
+    inline: css({
+      color: 'primary.500',
+      py: 0,
+      px: 0,
+      _hover: {
+        opacity: 0.7
+      }
     })
   },
   secondary: {
@@ -46,6 +54,14 @@ const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: 'secondary.500'
+    }),
+    inline: css({
+      color: 'secondary.500',
+      py: 0,
+      px: 0,
+      _hover: {
+        opacity: 0.7
+      }
     })
   }
 }
