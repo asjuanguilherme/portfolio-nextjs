@@ -8,12 +8,12 @@ export const CTAButtons = () => {
 
   return (
     <div className={css({ display: 'flex', gap: 'sm' })}>
-      <Link href="https://website.com.br" download legacyBehavior>
+      <a href="/assets/docs/cv-en.pdf" download>
         <Button as="a" color="secondary">
           {translations('DOWNLOAD_CV')}
         </Button>
-      </Link>
-      <Link href="#experiences" legacyBehavior>
+      </a>
+      <Link href="/#experiences" legacyBehavior>
         <Button as="a" color="secondary" variant="outlined">
           {translations('SEE_MY_WORK')}
         </Button>

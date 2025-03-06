@@ -5,15 +5,15 @@ export type ButtonColor = 'primary' | 'secondary'
 
 export type ButtonVariant = 'filled' | 'outlined' | 'inline'
 
-export type ButtonProps = {
+export type ButtonProps<T extends React.ElementType> = {
   href?: string
   color?: ButtonColor
   variant?: ButtonVariant
   children?: ReactNode
   icon?: JSX.Element
-  as?: React.ElementType
+  as?: T
   fill?: boolean
-} & HTMLAttributes<HTMLButtonElement>
+} & HTMLAttributes<T>
 
 const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
   primary: {
@@ -74,7 +74,7 @@ export const Button = ({
   as: Wrapper = 'button',
   fill,
   ...props
-}: ButtonProps) => {
+}: ButtonProps<React.ElementType>) => {
   return (
     <Wrapper
       className={cx(
