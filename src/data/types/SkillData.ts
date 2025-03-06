@@ -1,7 +1,14 @@
-import { IconComponent } from '../../components/shared/Icons/utils/createIconComponent'
+import { Locale } from '@/i18n/locales'
+import { ReactNode } from 'react'
+import { SkillCategoriesEnum } from '../skillCategories'
+
+export type SkillCategoryData = {
+  name: SkillCategoriesEnum
+  translations: Record<Locale, string>
+}
 
 export type SkillData = {
-  icon: IconComponent
+  category: SkillCategoriesEnum
   title: string
-  color: string
+  icon: () => ReactNode
 }

@@ -6,7 +6,6 @@ export const LinkedinIcon = () => {
       x="0px"
       y="0px"
       viewBox="0 0 24 24"
-      width="1em"
       height="1em"
       fill="currentColor"
     >
