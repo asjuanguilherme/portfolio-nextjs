@@ -12,6 +12,7 @@ export type ButtonProps = {
   children?: ReactNode
   icon?: JSX.Element
   as?: React.ElementType
+  fill?: boolean
 } & HTMLAttributes<HTMLButtonElement>
 
 const buttonStyleByColor: Record<ButtonColor, Record<ButtonVariant, string>> = {
@@ -55,12 +56,17 @@ export const Button = ({
   color = 'primary',
   variant = 'filled',
   as: Wrapper = 'button',
+  fill,
   ...props
 }: ButtonProps) => {
   return (
     <Wrapper
       className={cx(
         buttonStyleByColor[color][variant],
+        fill &&
+          css({
+            width: '100%'
+          }),
         css({
           fontSize: '16px',
           fontWeight: 'medium',

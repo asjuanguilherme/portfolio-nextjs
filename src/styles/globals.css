@@ -32,3 +32,38 @@ svg.lucide {
     outline 0.2s,
     box-shadow 0.2s;
 }
+
+:root {
+  --swiper-theme-color: var(--panda-colors-primary-500) !important;
+  --swiper-pagination-bullet-inactive-color: var(
+    --panda-colors-primary-500
+  ) !important;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.swiper-pagination-bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 0 !important;
+  transform: rotate(45deg);
+  transition-duration: var(--panda-durations-fast);
+  box-shadow: 0 0 0 1px var(--panda-colors-secondary-500);
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+  background: white;
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover {
+  transform: rotate(0deg);
+}
+
+.swiper-pagination-bullet-active {
+  transform: initial;
+  width: 16px !important;
+  height: 16px !important;
+}
