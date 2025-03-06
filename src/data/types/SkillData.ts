@@ -8,6 +8,7 @@ export type SkillCategoryData = {
 }
 
 export type SkillData = {
+  name: string
   category: SkillCategoriesEnum
   title: string
   icon: () => ReactNode
