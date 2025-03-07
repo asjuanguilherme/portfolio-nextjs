@@ -15,15 +15,21 @@ export const PageHeader = async ({ title, returnHref }: PageHeaderProps) => {
   return (
     <header
       className={css({
-        py: '2xl',
         background: 'secondary.500',
-        lg: { py: '4xl' }
+        py: 'xl',
+        lg: { py: 'xl' },
+        xl: { py: '2xl' }
       })}
     >
       <div className={container()}>
         {returnHref && (
-          <Link href={returnHref}>
-            <Button icon={<ArrowLeftIcon />} color="primary" variant="inline">
+          <Link href={returnHref} legacyBehavior>
+            <Button
+              as="a"
+              icon={<ArrowLeftIcon />}
+              color="primary"
+              variant="inline"
+            >
               {translations('ACTION_BUTTONS.RETURN')}
             </Button>
           </Link>
@@ -35,7 +41,7 @@ export const PageHeader = async ({ title, returnHref }: PageHeaderProps) => {
             fontWeight: 'semibold',
             letterSpacing: '-0.04em',
             fontSize: '5xl',
-            marginBottom: 'xl',
+            lineHeight: '1em',
 
             md: {
               fontSize: '6xl'

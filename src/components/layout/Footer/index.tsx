@@ -9,11 +9,12 @@ export const Footer = async () => {
     <footer
       className={css({
         bg: 'primary.500',
-        textAlign: 'center',
         py: '2xl',
         display: 'flex',
         flexDirection: 'column',
         gap: 'xl',
+        textAlign: 'center',
+        alignItems: 'center',
 
         lg: { py: '4xl' }
       })}
@@ -32,11 +33,10 @@ export const Footer = async () => {
           className={css({
             letterSpacing: '.01em',
             color: 'primary.500',
-            textShadow: `
-            1px 1px 0px {colors.secondary.500},
-              -1px -1px 0px {colors.secondary.500},
-              1px -1px 0px {colors.secondary.500},
-              -1px 1px 0px {colors.secondary.500}`
+            bg: 'secondary.500',
+            maxWidth: 'max-content',
+            margin: '0 auto',
+            px: 'md'
           })}
         >
           {translations('LETS_CONNECT')}
@@ -47,6 +47,7 @@ export const Footer = async () => {
           display: 'flex',
           justifyContent: 'center',
           flexDir: 'column',
+          alignItems: 'center',
           gap: 'xs',
           md: { flexDir: 'row' }
         })}

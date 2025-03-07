@@ -51,7 +51,14 @@ export default async function ProjectDetailsPage({
         title={projectData.translations[locale].title}
         returnHref="/"
       />
-      <section className={css({ py: '2xl', lg: { py: '2xl' } })}>
+      <section
+        className={css({
+          py: 'xl',
+          pb: 0,
+          md: { pb: 'xl' },
+          lg: { py: '2xl' }
+        })}
+      >
         <div className={container()}>
           <SectionTitle className={css({ mb: '2xl' })}>
             {translations('PROJECT_DETAILS.SECTIONS.ABOUT_THE_PROJECT.TITLE')}
@@ -78,18 +85,19 @@ export default async function ProjectDetailsPage({
           ></div>
           {projectData.href && (
             <Link
+              legacyBehavior
               href={projectData.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button icon={<ExternalLinkIcon />} color="secondary">
+              <Button as="a" icon={<ExternalLinkIcon />} color="secondary">
                 {translations('ACTION_BUTTONS.VIEW_PUBLISHED_PROJECT')}
               </Button>
             </Link>
           )}
         </div>
       </section>
-      <section className={css({ py: '2xl', lg: { py: '2xl' } })}>
+      <section className={css({ py: 'xl', lg: { py: '2xl' } })}>
         {projectData.images.length > 0 && (
           <ImagesCarousel
             className={css({ mt: '2xl' })}

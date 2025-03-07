@@ -25,6 +25,7 @@ export const ProjectsCarousel = () => {
       breakpoints={{
         [breakpoints.xs]: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
           spaceBetween: spacing.md,
           centeredSlides: true
         },

@@ -1,15 +1,21 @@
+'use client'
+
 import { css, cx } from '@styled-system/css'
 import LanguageSwitcher from '../LanguageSwitcher'
 import { NavigationMenu } from '../NavigationMenu'
 import SocialItems from '../../shared/SocialItems'
 import CurrentLocalTime from '../CurrentLocalTime'
-import { getTranslations } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
+import { closeMenu } from '../layout-menu'
 
-export const LayoutSidebar = async () => {
-  const translation = await getTranslations('UI.SIDEBAR')
+export const LayoutSidebar = () => {
+  const translation = useTranslations('UI.SIDEBAR')
 
   return (
     <aside
+      onBlur={() => {
+        closeMenu()
+      }}
       className={cx(
         css({
           width: '270px',
@@ -22,7 +28,7 @@ export const LayoutSidebar = async () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           height: '100%',
-          position: 'fixed',
+          position: 'absolute',
           right: 0,
           top: 0,
           zIndex: -1,

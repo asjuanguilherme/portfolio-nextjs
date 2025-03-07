@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import LayoutSidebar from '../LayoutSidebar'
 import TopNavbar from '../TopNavbar'
 import { Footer } from '../Footer'
+import { mainElementID } from '../layout-menu'
 
 export type LayoutProps = {
   children: ReactNode
@@ -12,20 +13,24 @@ export const Layout = async ({ children }: LayoutProps) => {
   return (
     <>
       <main
-        id="app-main"
+        id={mainElementID}
         className={cx(
           css({
-            width: '100%',
-            minHeight: '100%',
+            maxWidth: '100%',
+            maxHeight: '100%',
             background: 'white',
             transitionDuration: 'normal',
             transitionProperty: 'transform',
             transition: 'ease-in-out',
             paddingTop: '70px',
+            transform: 'initial',
+            overflowY: 'scroll',
+            scrollBehavior: 'smooth',
+            scrollbarWidth: 'thin',
 
             lg: {
               paddingTop: 0,
-              paddingRight: '270px'
+              marginRight: '270px'
             },
 
             '&.menu-open': {

@@ -8,6 +8,7 @@ import { container } from '@styled-system/patterns'
 import { useTranslations } from 'next-intl'
 import { usePathname } from '@/i18n/navigation'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
+import { menuToggle } from '../layout-menu'
 
 export const TopNavbar = () => {
   const translations = useTranslations()
@@ -15,28 +16,6 @@ export const TopNavbar = () => {
   const isHome = pathname === '/'
   const scrollPosition = useScrollPosition()
   const authorNameIsVisible = scrollPosition < 70
-
-  // Directly manipulating the DOM here to toggle the
-  // 'menu-open' class on the main element.
-  // If the root layout had an useState or other hook, all its child components
-  // would be forced to become client components, which is not ideal.
-
-  const menuToggle = () => {
-    const main = document.getElementById('app-main')
-
-    if (!main)
-      throw new Error(
-        'Main element was not found. Ensure that the main element has id="app-main".'
-      )
-
-    const isMenuOpen = main.classList.contains('menu-open')
-
-    if (isMenuOpen) {
-      main.classList.remove('menu-open')
-    } else {
-      main.classList.add('menu-open')
-    }
-  }
 
   return (
     <header
@@ -50,7 +29,8 @@ export const TopNavbar = () => {
           zIndex: 2,
           color: 'white',
           transitionDuration: 'slow',
-          transitionProperty: 'background',
+          transitionProperty: 'background border',
+          borderBottom: '1px solid {colors.secondary.300}',
 
           lg: {
             display: 'none'
@@ -59,6 +39,7 @@ export const TopNavbar = () => {
         isHome &&
           authorNameIsVisible &&
           css({
+            borderBottom: 'transparent',
             background: 'primary.500'
           })
       )}

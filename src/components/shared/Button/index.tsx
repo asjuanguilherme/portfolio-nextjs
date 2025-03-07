@@ -79,12 +79,17 @@ export const Button = ({
     <Wrapper
       className={cx(
         buttonStyleByColor[color][variant],
-        fill &&
-          css({
-            width: '100%'
-          }),
+        fill
+          ? css({
+              width: '100%'
+            })
+          : !children && icon
+            ? css({ width: '40px', px: '0px' })
+            : css({
+                width: 'max-content'
+              }),
         css({
-          fontSize: '16px',
+          fontSize: '14px',
           fontWeight: 'medium',
           border: 0,
           transitionDuration: 'normal',
@@ -94,11 +99,15 @@ export const Button = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+
           _hover: {
             cursor: 'pointer'
+          },
+
+          md: {
+            fontSize: '16px'
           }
-        }),
-        !children && icon && css({ width: '40px', px: '0px' })
+        })
       )}
       {...props}
     >

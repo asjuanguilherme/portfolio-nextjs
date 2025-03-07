@@ -8,6 +8,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { ExternalLinkIcon } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { Locale } from '@/i18n/locales'
+import { useState } from 'react'
 
 export type ProjectCardProps = {
   data: ProjectData
@@ -16,29 +17,40 @@ export type ProjectCardProps = {
 export const ProjectCard = ({ data }: ProjectCardProps) => {
   const translations = useTranslations('ACTION_BUTTONS')
   const locale = useLocale() as Locale
+  const [focused, setFocused] = useState(false)
 
   return (
     <div
       aria-labelledby={`$project-title-${data.id}`}
-      className={css({
-        bg: 'primary.500',
-        height: '300px',
-        width: '100%',
-        position: 'relative',
-        overflow: 'hidden',
-        p: 'md',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+      className={cx(
+        focused &&
+          css({
+            '& .card-image': {
+              transform: 'scale(2)',
+              opacity: 0,
+              pointerEvents: 'none'
+            }
+          }),
+        css({
+          bg: 'primary.500',
+          height: '300px',
+          width: '100%',
+          position: 'relative',
+          overflow: 'hidden',
+          p: 'md',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
 
-        _hover: {
-          '& .card-image': {
-            transform: 'scale(2)',
-            opacity: 0,
-            pointerEvents: 'none'
+          '&:hover': {
+            '& .card-image': {
+              transform: 'scale(2)',
+              opacity: 0,
+              pointerEvents: 'none'
+            }
           }
-        }
-      })}
+        })
+      )}
     >
       <Image
         src={data.cardImage}
@@ -89,14 +101,32 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 
       <div>
         {data.href && (
-          <Link href={data.href} target="_blank" rel="noopener noreferrer">
-            <Button color="primary" icon={<ExternalLinkIcon />} fill>
+          <Link
+            href={data.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            legacyBehavior
+          >
+            <Button
+              onFocus={() => setFocused(true)}
+              onBlur={() => setFocused(false)}
+              as="a"
+              color="primary"
+              icon={<ExternalLinkIcon />}
+              fill
+            >
               {translations('VIEW_PUBLISHED_PROJECT')}
             </Button>
           </Link>
         )}
-        <Link href={`/projects/${data.slug}`}>
-          <Button color="secondary" fill>
+        <Link href={`/projects/${data.slug}`} legacyBehavior>
+          <Button
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            as="a"
+            color="secondary"
+            fill
+          >
             {translations('SEE_PROJECT_DETAILS')}
           </Button>
         </Link>

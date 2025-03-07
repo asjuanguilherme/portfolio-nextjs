@@ -4,15 +4,25 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavItem } from '../NavItem'
 import { css } from '@styled-system/css'
 import { useLocale, useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/i18n/navigation'
+import { breakpoints } from '@/styles/theme.config'
+import { closeMenu, mainElementID } from '../layout-menu'
 
 export const NavigationMenu = () => {
   const listRef = useRef<HTMLUListElement>(null)
   const translations = useTranslations('UI.SIDEBAR.NAVIGATION')
   const locale = useLocale()
   const [activeSectionId, setActiveSectionId] = useState('')
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const sections = document.body.querySelectorAll('main > section')
+
+    if (pathname !== '/') {
+      setActiveSectionId('')
+      return
+    }
 
     const observer = new IntersectionObserver(
       entries => {
@@ -20,26 +30,19 @@ export const NavigationMenu = () => {
         let highestVisibility = 0
 
         entries.forEach(entry => {
-          const section = entry.target
-          const { intersectionRatio, isIntersecting } = entry
+          const { intersectionRatio, isIntersecting, target } = entry
 
           if (isIntersecting && intersectionRatio > highestVisibility) {
-            mostVisibleSection = section
+            mostVisibleSection = target
             highestVisibility = intersectionRatio
           }
         })
 
-        if (mostVisibleSection!.id !== activeSectionId) {
-          console.log('mostVisibleSection!.id', mostVisibleSection!.id)
-          console.log('activeSectionId', activeSectionId)
-          console.log(mostVisibleSection!.id !== activeSectionId)
-
-          setActiveSectionId(mostVisibleSection!.id)
-
+        if (mostVisibleSection! && mostVisibleSection.id !== activeSectionId) {
           window.history.replaceState(
             {},
             '',
-            `/${locale}/#${mostVisibleSection!.id}`
+            `/${locale}/#${mostVisibleSection.id}`
           )
         }
       },
@@ -54,11 +57,27 @@ export const NavigationMenu = () => {
     })
 
     return () => {
-      sections.forEach(section => {
-        if (section.id) observer.unobserve(section)
-      })
+      observer.disconnect()
     }
-  }, [locale, activeSectionId])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
+
+  const getActiveSectionIdFromHash = () => {
+    const hash = window.location.hash
+    if (hash) {
+      setActiveSectionId(hash.replace('#', ''))
+    }
+  }
+
+  useEffect(() => {
+    getActiveSectionIdFromHash()
+
+    const interval = setInterval(() => {
+      getActiveSectionIdFromHash()
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [pathname])
 
   const navItems = useMemo(
     () => [
@@ -88,12 +107,23 @@ export const NavigationMenu = () => {
 
   const handleNavItemClick = (sectionId: string) => {
     const section = document.getElementById(sectionId)
+    const main = document.getElementById(mainElementID)
 
-    if (!section) return
+    if (section) {
+      window.location.hash = '#' + sectionId
 
-    window.location.hash = '#' + sectionId
-    window.scrollTo({ top: section.offsetTop - 100, behavior: 'smooth' })
-    setActiveSectionId(sectionId)
+      // Offset added to handle with mobile top navbar
+      if (window.innerWidth < breakpoints.lg)
+        main?.scroll({
+          top: section.offsetTop - 70,
+          behavior: 'smooth'
+        })
+    } else {
+      router.push('/#' + sectionId)
+      setActiveSectionId(sectionId)
+    }
+
+    closeMenu()
   }
 
   const handleOptionKeyDown = (event: React.KeyboardEvent<HTMLLIElement>) => {

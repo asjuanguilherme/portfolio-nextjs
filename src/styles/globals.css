@@ -9,11 +9,11 @@ html {
   font-family: var(--font-inter);
   font-size: 14px;
   color: var(--panda-colors-secondary-500);
-  scroll-behavior: smooth;
 }
 
 body {
   pointer-events: none;
+  overflow: hidden;
 }
 
 body > * {

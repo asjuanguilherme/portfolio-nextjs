@@ -39,13 +39,19 @@ export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
             right: '0 !important'
           },
           '& .swiper-button-prev, .swiper-button-next': {
-            width: '48px !important',
-            height: '48px !important',
+            width: '40px !important',
+            height: '40px !important',
             background: 'primary.500',
+            transform: 'translateY(-50%)',
+            top: '50%',
 
             _after: {
               fontSize: '1.2rem !important',
               color: 'white'
+            },
+
+            mdDown: {
+              visibility: 'hidden'
             }
           }
         })
