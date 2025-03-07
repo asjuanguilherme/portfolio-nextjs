@@ -1,111 +1,152 @@
-import BootstrapIcon from 'components/shared/Icons/Bootstrap'
-import CssIcon from 'components/shared/Icons/Css'
-import GitIcon from 'components/shared/Icons/Git'
-import GulpIcon from 'components/shared/Icons/Gulp'
-import HTMLIcon from 'components/shared/Icons/HTML'
-import JavascriptIcon from 'components/shared/Icons/Javascript'
-import JestIcon from 'components/shared/Icons/Jest'
-import MagIcon from 'components/shared/Icons/Mag'
-import NextJsIcon from 'components/shared/Icons/NextJs'
-import PenNibIcon from 'components/shared/Icons/PenNib'
-import PhpIcon from 'components/shared/Icons/Php'
-import ReactJsIcon from 'components/shared/Icons/ReactJs'
-import SassIcon from 'components/shared/Icons/Sass'
-import StrapiIcon from 'components/shared/Icons/Strapi'
-import StyledComponentsIcon from 'components/shared/Icons/StyledComponents'
-import TailwindIcon from 'components/shared/Icons/Tailwind'
-import TypescriptIcon from 'components/shared/Icons/Typescript'
-import WordpressIcon from 'components/shared/Icons/Wordpress'
+import JavascriptColoredIcon from '@/components/icons/JavascriptColored'
+import ReactJSColoredIcon from '@/components/icons/ReactJSColored'
+import NextJSColoredIcon from '@/components/icons/NextJSColored'
+import TypescriptColoredIcon from '@/components/icons/TypescriptColored'
+import TailwindColoredIcon from '@/components/icons/TailwindColored'
+import SassColoredIcon from '@/components/icons/SassColored'
+import GitColoredIcon from '@/components/icons/GitColoredIcon'
+import NodeJSColoredIcon from '@/components/icons/NodeJSColored'
+import NestJSColoredIcon from '@/components/icons/NestJSColored'
+import DockerColoredIcon from '@/components/icons/DockerColored'
+import FigmaColoredIcon from '@/components/icons/FigmaColored'
+import PostgresColoredIcon from '@/components/icons/PostgresColored'
+import PrismaColoredIcon from '@/components/icons/PrismaColored'
+import ReactQueryColoredIcon from '@/components/icons/ReactQueryColored'
+import ReduxColoredIcon from '@/components/icons/ReduxColored'
+import PandaCSSColoredIcon from '@/components/icons/PandaCSSColored'
+import { SkillCategoriesEnum } from './skillCategories'
+import AntdColoredIcon from '@/components/icons/AntdColored'
+import WordpressColoredIcon from '@/components/icons/WordPressColored'
+import StrapiColoredIcon from '@/components/icons/StrapiColored'
+import GraphQLColoredIcon from '@/components/icons/GraphQLColored'
 
-export const skillsData = {
-  next: {
-    title: 'Next.js',
-    color: '#000000',
-    icon: NextJsIcon
-  },
+export const skills = {
   react: {
+    name: 'react',
+    category: SkillCategoriesEnum.frontend,
     title: 'React.js',
-    color: '#61DBFB',
-    icon: ReactJsIcon
+    icon: ReactJSColoredIcon
   },
-  styledComponents: {
-    title: 'Styled Components',
-    color: '#FF7490',
-    icon: StyledComponentsIcon
-  },
-  typescript: {
-    title: 'Typescript',
-    color: '#3178C6',
-    icon: TypescriptIcon
+  next: {
+    name: 'next',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Next.js',
+    icon: NextJSColoredIcon
   },
   javascript: {
-    title: 'Javascript',
-    color: '#F0DB4F',
-    icon: JavascriptIcon
+    name: 'javascript',
+    category: SkillCategoriesEnum.frontend,
+    title: 'JavaScript',
+    icon: JavascriptColoredIcon
   },
-  html5: {
-    title: 'HTML5',
-    color: '#E34C26',
-    icon: HTMLIcon
-  },
-  gulp: {
-    title: 'Gulp',
-    color: '#D34A47',
-    icon: GulpIcon
-  },
-  css3: {
-    title: 'CSS3',
-    color: '#264DE4',
-    icon: CssIcon
+  typescript: {
+    name: 'typescript',
+    category: SkillCategoriesEnum.frontend,
+    title: 'TypeScript',
+    icon: TypescriptColoredIcon
   },
   tailwindCSS: {
-    title: 'TailwindCSS',
-    color: '#00AAC5',
-    icon: TailwindIcon
+    name: 'tailwind',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Tailwind CSS',
+    icon: TailwindColoredIcon
   },
-  bootstrap: {
-    title: 'Bootstrap',
-    color: '#6F42C1',
-    icon: BootstrapIcon
+  redux: {
+    name: 'redux',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Redux',
+    icon: ReduxColoredIcon
+  },
+  reactQuery: {
+    name: 'react-query',
+    category: SkillCategoriesEnum.frontend,
+    title: 'React Query',
+    icon: ReactQueryColoredIcon
+  },
+  antDesign: {
+    name: 'ant-design',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Ant Design',
+    icon: AntdColoredIcon
+  },
+  pandaCSS: {
+    name: 'pandacss',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Panda CSS',
+    icon: PandaCSSColoredIcon
+  },
+  styledComponents: {
+    name: 'styled',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Styled Components',
+    icon: () => '<💅>'
   },
   sass: {
+    name: 'sass',
+    category: SkillCategoriesEnum.frontend,
     title: 'Sass',
-    color: '#CD6799',
-    icon: SassIcon
+    icon: SassColoredIcon
   },
-  jest: {
-    title: 'Jest',
-    color: '#C63D14',
-    icon: JestIcon
+  node: {
+    name: 'node',
+    category: SkillCategoriesEnum.backend,
+    title: 'Node.js',
+    icon: NodeJSColoredIcon
   },
-  strapi: {
-    title: 'Strapi',
-    color: '#7B79FF',
-    icon: StrapiIcon
+  nestjs: {
+    name: 'nestjs',
+    category: SkillCategoriesEnum.backend,
+    title: 'NestJS',
+    icon: NestJSColoredIcon
   },
-  git: {
-    title: 'Git',
-    color: '#F1502F',
-    icon: GitIcon
+  postgres: {
+    name: 'postgres',
+    category: SkillCategoriesEnum.backend,
+    title: 'Postgres',
+    icon: PostgresColoredIcon
   },
-  php: {
-    title: 'PHP',
-    color: '#474A8A',
-    icon: PhpIcon
+  graphql: {
+    name: 'graphql',
+    category: SkillCategoriesEnum.backend,
+    title: 'GraphQL',
+    icon: GraphQLColoredIcon
+  },
+  prisma: {
+    name: 'prisma',
+    category: SkillCategoriesEnum.backend,
+    title: 'Prisma ORM',
+    icon: PrismaColoredIcon
   },
   wordpress: {
+    name: 'wordpress',
+    category: SkillCategoriesEnum.backend,
     title: 'Wordpress',
-    color: '#00749C',
-    icon: WordpressIcon
+    icon: WordpressColoredIcon
   },
-  uxUiDesign: {
-    title: 'UX UI Design',
-    color: '#FF3295',
-    icon: PenNibIcon
+  strapi: {
+    name: 'strapi',
+    category: SkillCategoriesEnum.backend,
+    title: 'Strapi',
+    icon: StrapiColoredIcon
   },
-  seo: {
-    title: 'SEO',
-    color: '#EEC657',
-    icon: MagIcon
+  git: {
+    name: 'git',
+    category: SkillCategoriesEnum.tools,
+    title: 'Git',
+    icon: GitColoredIcon
+  },
+  docker: {
+    name: 'docker',
+    category: SkillCategoriesEnum.tools,
+    title: 'Docker',
+    icon: DockerColoredIcon
+  },
+  figma: {
+    name: 'figma',
+    category: SkillCategoriesEnum.tools,
+    title: 'Figma',
+    icon: FigmaColoredIcon
   }
-}
+} as const
+
+export const skillsList = Object.values(skills)

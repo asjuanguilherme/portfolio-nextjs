@@ -1,12 +1,16 @@
 import * as S from './styles'
+import { css, cx } from "@styled-system/css";
+import { container } from "@styled-system/patterns";
 
 export type {{ pascalCase name }}Props = {}
 
-const {{ pascalCase name }} = ({}: {{ pascalCase name }}Props) => {
+export const {{ pascalCase name }} = ({}: {{ pascalCase name }}Props) => {
   return (
-    <S.Wrapper>
-      Hello! I am {{ titleCase name }} component.
-    </S.Wrapper>
+    <div className={cx(container(), css({}))}>
+      <div className={css({color: 'red'})}>
+        Hello! I am {{ titleCase name }} component.
+      </div>
+    </div>
   )
 }
 

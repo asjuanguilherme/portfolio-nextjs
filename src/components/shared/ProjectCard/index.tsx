@@ -1,52 +1,137 @@
-import * as S from './styles'
-import { useContext } from 'react'
+'use client'
 
-// Types
-import { ProjectData } from 'types/ProjectData'
-
-// Contexts
-import { ModalContext } from 'contexts/ModalContext'
-
-// Components
+import { ProjectData } from '@/data/types/ProjectData'
+import { css, cx } from '@styled-system/css'
 import Image from 'next/image'
-import Button from 'components/shared/Button'
-import ProjectDetailsModal from '../ProjectDetailsModal'
+import Button from '../Button'
+import { useLocale, useTranslations } from 'next-intl'
+import { ExternalLinkIcon } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
+import { Locale } from '@/i18n/locales'
+import { useState } from 'react'
 
-export type ProjectCardProps = ProjectData
+export type ProjectCardProps = {
+  data: ProjectData
+}
 
-const ProjectCard = (props: ProjectCardProps) => {
-  const { addModal } = useContext(ModalContext)
-
-  const handleClick = () => {
-    addModal({
-      content: <ProjectDetailsModal {...props} />,
-      width: 990,
-      identifier: 'projectModal'
-    })
-  }
+export const ProjectCard = ({ data }: ProjectCardProps) => {
+  const translations = useTranslations('ACTION_BUTTONS')
+  const locale = useLocale() as Locale
+  const [focused, setFocused] = useState(false)
 
   return (
-    <S.Wrapper>
-      <S.ImageWrapper>
-        <Image
-          src={props.cardImage}
-          alt={props.title}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
-      </S.ImageWrapper>
-      <S.Informations>
-        <S.Category>{props.type}</S.Category>
-        <S.Title>{props.title}</S.Title>
-        <S.Tags>
-          {props.skills.map((skill, index) => (
-            <S.TagItem key={index}>{skill.title}</S.TagItem>
+    <div
+      aria-labelledby={`$project-title-${data.id}`}
+      className={cx(
+        focused &&
+          css({
+            '& .card-image': {
+              transform: 'scale(2)',
+              opacity: 0,
+              pointerEvents: 'none'
+            }
+          }),
+        css({
+          bg: 'primary.500',
+          height: '300px',
+          width: '100%',
+          position: 'relative',
+          overflow: 'hidden',
+          p: 'md',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+
+          '&:hover': {
+            '& .card-image': {
+              transform: 'scale(2)',
+              opacity: 0,
+              pointerEvents: 'none'
+            }
+          }
+        })
+      )}
+    >
+      <Image
+        src={data.cardImage}
+        alt={data.translations[locale].title}
+        height={400}
+        width={400}
+        className={cx(
+          'card-image',
+          css({
+            objectFit: 'cover',
+            objectPosition: 'center',
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            transitionDuration: 'normal'
+          })
+        )}
+      />
+      <div className={css({ display: 'flex', flexDir: 'column' })}>
+        <span
+          id={`$project-title-${data.id}`}
+          className={css({
+            fontSize: '2xl',
+            fontWeight: 'medium',
+            marginBottom: 'xs'
+          })}
+        >
+          {data.translations[locale].title}
+        </span>
+        <ul
+          className={css({
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '4px',
+            fontSize: 'sm'
+          })}
+        >
+          {data.skills.map(skill => (
+            <li key={skill.title}>
+              {skill.title}
+              {<span role="none"> | </span>}
+            </li>
           ))}
-        </S.Tags>
-      </S.Informations>
-      <Button onClick={handleClick}>Saiba Mais</Button>
-    </S.Wrapper>
+        </ul>
+      </div>
+
+      <div>
+        {data.href && (
+          <Link
+            href={data.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            legacyBehavior
+          >
+            <Button
+              onFocus={() => setFocused(true)}
+              onBlur={() => setFocused(false)}
+              as="a"
+              color="primary"
+              icon={<ExternalLinkIcon />}
+              fill
+            >
+              {translations('VIEW_PUBLISHED_PROJECT')}
+            </Button>
+          </Link>
+        )}
+        <Link href={`/projects/${data.slug}`} legacyBehavior>
+          <Button
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            as="a"
+            color="secondary"
+            fill
+          >
+            {translations('SEE_PROJECT_DETAILS')}
+          </Button>
+        </Link>
+      </div>
+    </div>
   )
 }
 
