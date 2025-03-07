@@ -49,12 +49,12 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
           'card-image',
           css({
             objectFit: 'cover',
-            objectPosition: 'top',
+            objectPosition: 'center',
+            width: '100%',
+            height: '100%',
             position: 'absolute',
             left: 0,
             top: 0,
-            height: '100%',
-            width: '100%',
             transitionDuration: 'normal'
           })
         )}
@@ -62,11 +62,22 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
       <div className={css({ display: 'flex', flexDir: 'column' })}>
         <span
           id={`$project-title-${data.id}`}
-          className={css({ fontSize: '3xl', fontWeight: 'medium' })}
+          className={css({
+            fontSize: '2xl',
+            fontWeight: 'medium',
+            marginBottom: 'xs'
+          })}
         >
           {data.translations[locale].title}
         </span>
-        <ul className={css({ display: 'flex', flexWrap: 'wrap', gap: '4px' })}>
+        <ul
+          className={css({
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '4px',
+            fontSize: 'sm'
+          })}
+        >
           {data.skills.map(skill => (
             <li key={skill.title}>
               {skill.title}

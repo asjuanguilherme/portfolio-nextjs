@@ -4,10 +4,11 @@ import ProjectCard from '@/components/shared/ProjectCard'
 import { projects } from '@/data/projects'
 import { breakpoints, spacing } from '@/styles/theme.config'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Mousewheel, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import 'swiper/css/mousewheel'
 import { css } from '@styled-system/css'
 import { useRef, useState } from 'react'
 
@@ -18,21 +19,24 @@ export const ProjectsCarousel = () => {
   return (
     <Swiper
       onSwiper={setSwiper}
-      modules={[Pagination, Navigation]}
+      modules={[Pagination, Navigation, Mousewheel]}
+      mousewheel={{ enabled: true }}
       pagination={{ enabled: true, clickable: true, el: paginationRef.current }}
       breakpoints={{
         [breakpoints.xs]: {
-          slidesPerView: 1.3,
+          slidesPerView: 1,
           spaceBetween: spacing.md,
           centeredSlides: true
         },
         [breakpoints.sm]: {
-          slidesPerView: 2.5,
+          slidesPerView: 2,
+          slidesPerGroup: 2,
           spaceBetween: spacing.md,
           centeredSlides: false
         },
-        [breakpoints.lg]: {
+        [breakpoints.xl]: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: spacing.md,
           centeredSlides: false
         }

@@ -1,6 +1,10 @@
 import { Locale } from './locales'
 
 export interface Translations {
+  METADATA: {
+    SITE_TITLE: string
+    DESCRIPTION: string
+  }
   COMMON: {
     DEVELOPER_TITLE: string
   }
@@ -60,6 +64,7 @@ export interface Translations {
     }
   }
   PROJECT_DETAILS: {
+    PAGE_TITLE: string
     SECTIONS: {
       ABOUT_THE_PROJECT: {
         TITLE: string

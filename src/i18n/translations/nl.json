@@ -1,4 +1,8 @@
 {
+  "METADATA": {
+    "SITE_TITLE": "Portefeuille - Juan Guilherme",
+    "DESCRIPTION": "Persoonlijk portfolio van Juan Guilherme"
+  },
   "COMMON": {
     "DEVELOPER_TITLE": "Frontend Ontwikkelaar"
   },
@@ -62,6 +66,7 @@
     }
   },
   "PROJECT_DETAILS": {
+    "PAGE_TITLE": "Project: {title}",
     "SECTIONS": {
       "ABOUT_THE_PROJECT": {
         "TITLE": "Over het Project"

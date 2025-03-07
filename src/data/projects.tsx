@@ -97,7 +97,7 @@ export const projects: ProjectData[] = [
   {
     id: 1,
     year: 2025,
-    cardImage: '/assets/projects/grupocaos/card.png',
+    cardImage: '/assets/projects/grupo-caos/card.png',
     slug: 'grupo-caos',
     images: [
       {
@@ -167,18 +167,19 @@ export const projects: ProjectData[] = [
       nl: {
         title: 'Grupo Caos Website',
         content: `
-        <p>Grupo Caos is a society that manages more than six establishments, such as bars, nightclubs, and other event spaces. The client wanted a dynamic website where they could manage the information of each venue, portfolio, rotating banners, partners, contact details, and more.</p>
-        <p>The project underwent several versions and adjustments, being modified according to the client's needs during the process. The website and admin panel were built in Next.js, integrated with a backend developed in NestJS, allowing for efficient management of information.</p>
-        <p><strong>My role:</strong></p>
-        <ul>
-          <li>Designed the website in Figma, based on the client's needs.</li>
-          <li>Developed the website in Next.js, integrated with the backend built in NestJS.</li>
-          <li>Developed a custom admin panel for dynamic content management.</li>
-          <li>Implemented responsive solutions to ensure an optimized user experience across devices.</li>
-        </ul>
-        <p><a href="https://www.figma.com/design/D0MbqJN0Efz5lT7LQrOVWF/Grupo-Caos?m=auto&t=WDMNVHMSG67e5Bsn-6" target="_blank">View the design on Figma</a></p>
-      `
+  <p>Grupo Caos is een organisatie die meer dan zes etablissementen beheert, zoals bars, nachtclubs en andere evenementruimtes. De klant wilde een dynamische website waar ze de informatie van elk etablissement, portfolio, roterende banners, partners, contactgegevens en meer konden beheren.</p>
+  <p>Het project heeft verschillende versies en aanpassingen ondergaan, die tijdens het proces werden gewijzigd op basis van de behoeften van de klant. De website en het beheerpaneel werden gebouwd in Next.js, geïntegreerd met een backend ontwikkeld in NestJS, waarmee efficiënte informatiebeheer mogelijk werd gemaakt.</p>
+  <p><strong>Mijn rol:</strong></p>
+  <ul>
+    <li>Het ontwerp van de website gemaakt in Figma, gebaseerd op de behoeften van de klant.</li>
+    <li>De website ontwikkeld in Next.js, geïntegreerd met de backend gebouwd in NestJS.</li>
+    <li>Een aangepast beheerpaneel ontwikkeld voor dynamisch contentbeheer.</li>
+    <li>Responsieve oplossingen geïmplementeerd om een geoptimaliseerde gebruikerservaring op verschillende apparaten te waarborgen.</li>
+  </ul>
+  <p><a href="https://www.figma.com/design/D0MbqJN0Efz5lT7LQrOVWF/Grupo-Caos?m=auto&t=WDMNVHMSG67e5Bsn-6" target="_blank">Bekijk het ontwerp op Figma</a></p>
+  `
       },
+
       en: {
         title: 'Grupo Caos Website',
         content: `
@@ -246,20 +247,20 @@ export const projects: ProjectData[] = [
         title: 'Site do Tec Indica',
         content: `
         <p>
-          O **Tec Indica** é uma plataforma especializada no redirecionamento de promoções. O projeto teve início em 2022, com o objetivo de atender às necessidades específicas do cliente, começando com um design de interface do usuário (UI) customizado. Inicialmente desenvolvido em WordPress com um tema personalizado baseado no **Roots Sage**, o projeto foi evoluindo ao longo do tempo para atender às novas demandas.
+          O <strong>Tec Indica</strong> é uma plataforma especializada no redirecionamento de promoções. O projeto teve início em 2022, com o objetivo de atender às necessidades específicas do cliente, começando com um design de interface do usuário (UI) customizado. Inicialmente desenvolvido em WordPress com um tema personalizado baseado no <strong>Roots Sage</strong>, o projeto foi evoluindo ao longo do tempo para atender às novas demandas.
         </p>
         <p>
-          À medida que as necessidades do cliente cresceram, foi implementada uma **API personalizada** e um frontend moderno utilizando **React** e **Next.js**, proporcionando maior flexibilidade e capacidade de resposta. Com isso, conseguimos oferecer uma experiência de usuário mais dinâmica, ágil e otimizada. A criação de uma API também possibilitou uma integração mais eficiente com outros sistemas e permitiu a expansão das funcionalidades da plataforma.
+          À medida que as necessidades do cliente cresceram, foi implementada uma <strong>API personalizada</strong> e um frontend moderno utilizando <strong>React</strong> e <strong>Next.js</strong>, proporcionando maior flexibilidade e capacidade de resposta. Com isso, conseguimos oferecer uma experiência de usuário mais dinâmica, ágil e otimizada. A criação de uma API também possibilitou uma integração mais eficiente com outros sistemas e permitiu a expansão das funcionalidades da plataforma.
         </p>
         <p>
-          Além disso, o site foi transformado em uma **Progressive Web App (PWA)**, garantindo uma experiência de navegação ainda mais robusta, com o desempenho ideal em dispositivos móveis e desktop, e funcionalidades offline. O resultado é uma plataforma ágil, que combina o poder do WordPress com a agilidade do React e Next.js, oferecendo uma experiência de navegação aprimorada e conveniente para explorar e redirecionar promoções.
+          Além disso, o site foi transformado em uma <strong>Progressive Web App (PWA)</strong>, garantindo uma experiência de navegação ainda mais robusta, com o desempenho ideal em dispositivos móveis e desktop, e funcionalidades offline. O resultado é uma plataforma ágil, que combina o poder do WordPress com a agilidade do React e Next.js, oferecendo uma experiência de navegação aprimorada e conveniente para explorar e redirecionar promoções.
         </p>
         <p><strong>Meu papel:</strong></p>
         <ul>
-          <li>Criação da **UI** do site com foco na experiência do usuário.</li>
-          <li>Desenvolvimento do frontend com **React** e **Next.js**.</li>
-          <li>Desenvolvimento e integração de uma **API personalizada** para otimizar a funcionalidade do site.</li>
-          <li>Transformação do site em um **PWA**, garantindo uma experiência robusta e otimizada em dispositivos móveis e desktops.</li>
+          <li>Criação da <strong>UI</strong> do site com foco na experiência do usuário.</li>
+          <li>Desenvolvimento do frontend com <strong>React</strong> e <strong>Next.js</strong>.</li>
+          <li>Desenvolvimento e integração de uma <strong>API personalizada</strong> para otimizar a funcionalidade do site.</li>
+          <li>Transformação do site em um <strong>PWA</strong>, garantindo uma experiência robusta e otimizada em dispositivos móveis e desktops.</li>
           <li>Implementação de soluções de integração e personalização conforme as necessidades do cliente.</li>
         </ul>
       `
@@ -267,43 +268,44 @@ export const projects: ProjectData[] = [
       nl: {
         title: 'Tec Indica Website',
         content: `
-        <p>
-          **Tec Indica** is a platform specialized in redirecting promotions. The project began in 2022, aiming to meet the client's specific needs, starting with a custom user interface (UI) design. Initially developed in WordPress using a custom theme based on **Roots Sage**, the project evolved over time to accommodate new requirements.
-        </p>
-        <p>
-          As the client's needs grew, a **custom API** was implemented, and a modern frontend using **React** and **Next.js** was developed, providing greater flexibility and responsiveness. This allowed us to offer a more dynamic, agile, and optimized user experience. The creation of the API also enabled more efficient integration with other systems and allowed the platform's functionalities to expand.
-        </p>
-        <p>
-          Additionally, the site was transformed into a **Progressive Web App (PWA)**, ensuring an even more robust browsing experience, with optimal performance on both mobile devices and desktops, and offline capabilities. The result is a fast platform that combines the power of WordPress with the agility of React and Next.js, offering an enhanced and convenient browsing experience for exploring and redirecting promotions.
-        </p>
-        <p><strong>Mijn rol:</strong></p>
-        <ul>
-          <li>Creëerde de **UI** van de website, met focus op de gebruikerservaring.</li>
-          <li>Ontwikkelde de frontend met **React** en **Next.js**.</li>
-          <li>Ontwikkelde en integreerde een **aangepaste API** om de functionaliteit van de site te optimaliseren.</li>
-          <li>Zette de website om naar een **PWA**, die zorgt voor een robuuste en geoptimaliseerde ervaring op mobiele apparaten en desktops.</li>
-          <li>Implementeerde integratieoplossingen en maatwerk volgens de behoeften van de klant.</li>
-        </ul>
-      `
+  <p>
+    <strong>Tec Indica</strong> is een platform dat gespecialiseerd is in het doorverwijzen van promoties. Het project begon in 2022 en was gericht op het voldoen aan de specifieke behoeften van de klant, beginnend met een op maat ontworpen gebruikersinterface (UI). Het werd aanvankelijk ontwikkeld in WordPress met een aangepast thema op basis van <strong>Roots Sage</strong>, en evolueerde in de loop van de tijd om nieuwe vereisten te accommoderen.
+  </p>
+  <p>
+    Naarmate de behoeften van de klant groeiden, werd een <strong>aangepaste API</strong> geïmplementeerd en werd een moderne frontend ontwikkeld met <strong>React</strong> en <strong>Next.js</strong>, wat meer flexibiliteit en responsiviteit bood. Dit stelde ons in staat een dynamischere, snellere en geoptimaliseerde gebruikerservaring aan te bieden. De creatie van de API maakte ook een efficiëntere integratie met andere systemen mogelijk en breidde de functionaliteiten van het platform uit.
+  </p>
+  <p>
+    Bovendien werd de website omgezet in een <strong>Progressive Web App (PWA)</strong>, waarmee een nog robuustere browse-ervaring werd gegarandeerd, met optimale prestaties op zowel mobiele apparaten als desktops, en offline mogelijkheden. Het resultaat is een snel platform dat de kracht van WordPress combineert met de wendbaarheid van React en Next.js, en een verbeterde en handige browse-ervaring biedt voor het verkennen en doorverwijzen van promoties.
+  </p>
+  <p><strong>Mijn rol:</strong></p>
+  <ul>
+    <li>Creëerde de <strong>UI</strong> van de website, met focus op de gebruikerservaring.</li>
+    <li>Ontwikkelde de frontend met <strong>React</strong> en <strong>Next.js</strong>.</li>
+    <li>Ontwikkelde en integreerde een <strong>aangepaste API</strong> om de functionaliteit van de site te optimaliseren.</li>
+    <li>Zette de website om naar een <strong>PWA</strong>, die zorgt voor een robuuste en geoptimaliseerde ervaring op mobiele apparaten en desktops.</li>
+    <li>Implementeerde integratieoplossingen en maatwerk volgens de behoeften van de klant.</li>
+  </ul>
+  `
       },
+
       en: {
         title: 'Tec Indica Website',
         content: `
         <p>
-          **Tec Indica** is a platform specialized in redirecting promotions. The project started in 2022, with the goal of meeting the client's specific needs, initially with a custom user interface (UI) design. It was initially developed using WordPress with a custom theme based on **Roots Sage**, and the project evolved over time to meet new demands.
+          <strong>Tec Indica</strong> is a platform specialized in redirecting promotions. The project started in 2022, with the goal of meeting the client's specific needs, initially with a custom user interface (UI) design. It was initially developed using WordPress with a custom theme based on <strong>Roots Sage</strong>, and the project evolved over time to meet new demands.
         </p>
         <p>
-          As the client's needs expanded, a **custom API** was implemented, and a modern frontend using **React** and **Next.js** was created, providing greater flexibility and responsiveness. This transition allowed us to deliver a more dynamic, agile, and optimized user experience. The development of the API also enabled more efficient integration with other systems and expanded the platform's capabilities.
+          As the client's needs expanded, a <strong>custom API</strong> was implemented, and a modern frontend using <strong>React</strong> and <strong>Next.js</strong> was created, providing greater flexibility and responsiveness. This transition allowed us to deliver a more dynamic, agile, and optimized user experience. The development of the API also enabled more efficient integration with other systems and expanded the platform's capabilities.
         </p>
         <p>
-          Furthermore, the website was transformed into a **Progressive Web App (PWA)**, ensuring an even more robust browsing experience, with optimal performance on both mobile devices and desktops, and offline functionality. The result is a high-performance platform that combines the power of WordPress with the speed and agility of React and Next.js, providing a seamless and convenient experience for discovering and redirecting promotions.
+          Furthermore, the website was transformed into a <strong>Progressive Web App (PWA)</strong>, ensuring an even more robust browsing experience, with optimal performance on both mobile devices and desktops, and offline functionality. The result is a high-performance platform that combines the power of WordPress with the speed and agility of React and Next.js, providing a seamless and convenient experience for discovering and redirecting promotions.
         </p>
         <p><strong>My role:</strong></p>
         <ul>
-          <li>Designed the **UI** of the website, focusing on user experience.</li>
-          <li>Developed the frontend using **React** and **Next.js**.</li>
-          <li>Developed and integrated a **custom API** to optimize the site’s functionality.</li>
-          <li>Transformed the site into a **PWA**, ensuring a robust and optimized experience across mobile and desktop devices.</li>
+          <li>Designed the <strong>UI</strong> of the website, focusing on user experience.</li>
+          <li>Developed the frontend using <strong>React</strong> and <strong>Next.js</strong>.</li>
+          <li>Developed and integrated a <strong>custom API</strong> to optimize the site’s functionality.</li>
+          <li>Transformed the site into a <strong>PWA</strong>, ensuring a robust and optimized experience across mobile and desktop devices.</li>
           <li>Implemented integration solutions and customization based on the client's needs.</li>
         </ul>
       `

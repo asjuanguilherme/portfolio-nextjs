@@ -7,6 +7,7 @@ export const ProjectsSection = async () => {
   const translations = await getTranslations('HOME.SECTIONS.PROJECTS')
   return (
     <section
+      id="projects"
       className={css({
         background: 'secondary.500'
       })}

@@ -24,10 +24,12 @@ export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
       onSwiper={setSwiper}
       modules={[Navigation, Pagination]}
       navigation
-      pagination={{ el: paginationRef.current, enabled: true }}
+      pagination={{ el: paginationRef.current, enabled: true, clickable: true }}
       className={cx(
         className,
         css({
+          overflow: 'visible',
+
           width: '100%',
 
           '& .swiper-button-prev': {
@@ -90,9 +92,9 @@ export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
               })}
             ></Image>
           </div>
-          <div ref={paginationRef}></div>
         </SwiperSlide>
       ))}
+      <div className={css({ pt: '2xl', pb: 'md' })} ref={paginationRef}></div>
     </Swiper>
   )
 }
