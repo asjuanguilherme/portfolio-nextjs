@@ -12,6 +12,7 @@ export const ExpertisesSection = async () => {
 
   return (
     <section
+      id="skills"
       className={css({ bg: 'backgroundLight', py: '2xl', lg: { py: '4xl' } })}
     >
       <div className={container()}>

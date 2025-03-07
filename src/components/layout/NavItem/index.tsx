@@ -1,12 +1,13 @@
 import { css, cx } from '@styled-system/css'
+import { HTMLAttributes } from 'react'
 
 export type NavItemProps = {
   label: string
   active: boolean
   onClick: VoidFunction
-}
+} & HTMLAttributes<HTMLButtonElement>
 
-export const NavItem = ({ label, active, onClick }: NavItemProps) => {
+export const NavItem = ({ label, active, onClick, ...props }: NavItemProps) => {
   return (
     <button
       onClick={onClick}
@@ -38,6 +39,7 @@ export const NavItem = ({ label, active, onClick }: NavItemProps) => {
             }
           })
       )}
+      {...props}
     >
       <span
         className={cx(
@@ -58,7 +60,7 @@ export const NavItem = ({ label, active, onClick }: NavItemProps) => {
               height: '16px',
               width: '16px',
               background: 'currentcolor',
-              transitionDuration: 'faster'
+              transitionDuration: 'normal'
             }),
             !active &&
               css({

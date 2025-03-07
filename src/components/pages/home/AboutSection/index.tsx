@@ -8,7 +8,7 @@ export const AboutSection = async () => {
   const translations = await getTranslations('HOME.SECTIONS.ABOUT')
 
   return (
-    <section className={css({ bg: '#FFFCF2' })}>
+    <section className={css({ bg: '#FFFCF2' })} id="about">
       <div
         className={cx(
           container(),

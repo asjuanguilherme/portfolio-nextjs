@@ -9,6 +9,7 @@ export const HomeHeroSection = async () => {
 
   return (
     <section
+      id="start"
       className={css({
         bg: 'primary.500',
         color: 'secondary.500',

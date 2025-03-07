@@ -9,6 +9,7 @@ html {
   font-family: var(--font-inter);
   font-size: 14px;
   color: var(--panda-colors-secondary-500);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,7 +29,9 @@ svg.lucide {
   outline: 2px solid var(--panda-colors-primary-400);
   box-shadow: 0px 0px 0px 4px var(--panda-colors-secondary-500);
   border-radius: 4px;
-  transition: outline 0.2s, box-shadow 0.2s;
+  transition:
+    outline 0.2s,
+    box-shadow 0.2s;
 }
 
 :root {
@@ -57,7 +60,7 @@ svg.lucide {
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
   background: white;
-  transform: rotate(45deg) scale(.6);
+  transform: rotate(45deg) scale(0.6);
 }
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover {

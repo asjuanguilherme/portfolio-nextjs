@@ -1,40 +1,100 @@
 'use client'
-import { useRef, useState } from 'react'
+
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavItem } from '../NavItem'
 import { css } from '@styled-system/css'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export const NavigationMenu = () => {
-  const [active, setActive] = useState('/#start')
   const listRef = useRef<HTMLUListElement>(null)
   const translations = useTranslations('UI.SIDEBAR.NAVIGATION')
+  const locale = useLocale()
+  const [activeSectionId, setActiveSectionId] = useState('')
 
-  const navItems = [
-    {
-      label: translations('START'),
-      href: '/#start'
-    },
-    {
-      label: translations('ABOUT'),
-      href: '/#about'
-    },
-    {
-      label: translations('EXPERTISES'),
-      href: '/#expertises'
-    },
-    {
-      label: translations('EXPERIENCES'),
-      href: '/#experiences'
-    },
-    {
-      label: translations('PROJECTS'),
-      href: '/#projects'
-    },
-    {
-      label: translations('TESTIMONIALS'),
-      href: '/#testimonials'
+  useEffect(() => {
+    const sections = document.body.querySelectorAll('main > section')
+
+    const observer = new IntersectionObserver(
+      entries => {
+        let mostVisibleSection: Element
+        let highestVisibility = 0
+
+        entries.forEach(entry => {
+          const section = entry.target
+          const { intersectionRatio, isIntersecting } = entry
+
+          if (isIntersecting && intersectionRatio > highestVisibility) {
+            mostVisibleSection = section
+            highestVisibility = intersectionRatio
+          }
+        })
+
+        if (mostVisibleSection!.id !== activeSectionId) {
+          console.log('mostVisibleSection!.id', mostVisibleSection!.id)
+          console.log('activeSectionId', activeSectionId)
+          console.log(mostVisibleSection!.id !== activeSectionId)
+
+          setActiveSectionId(mostVisibleSection!.id)
+
+          window.history.replaceState(
+            {},
+            '',
+            `/${locale}/#${mostVisibleSection!.id}`
+          )
+        }
+      },
+      {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50% 0px'
+      }
+    )
+
+    sections.forEach(section => {
+      if (section.id) observer.observe(section)
+    })
+
+    return () => {
+      sections.forEach(section => {
+        if (section.id) observer.unobserve(section)
+      })
     }
-  ]
+  }, [locale, activeSectionId])
+
+  const navItems = useMemo(
+    () => [
+      {
+        label: translations('START'),
+        sectionId: 'start'
+      },
+      {
+        label: translations('ABOUT'),
+        sectionId: 'about'
+      },
+      {
+        label: translations('EXPERTISES'),
+        sectionId: 'skills'
+      },
+      {
+        label: translations('EXPERIENCES'),
+        sectionId: 'experiences'
+      },
+      {
+        label: translations('PROJECTS'),
+        sectionId: 'projects'
+      }
+    ],
+    [translations]
+  )
+
+  const handleNavItemClick = (sectionId: string) => {
+    const section = document.getElementById(sectionId)
+
+    if (!section) return
+
+    window.location.hash = '#' + sectionId
+    window.scrollTo({ top: section.offsetTop - 100, behavior: 'smooth' })
+    setActiveSectionId(sectionId)
+  }
 
   const handleOptionKeyDown = (event: React.KeyboardEvent<HTMLLIElement>) => {
     if (!listRef.current) return
@@ -69,11 +129,11 @@ export const NavigationMenu = () => {
         className={css({ display: 'flex', flexDirection: 'column' })}
       >
         {navItems.map(item => (
-          <li key={item.href} onKeyDown={handleOptionKeyDown}>
+          <li key={item.sectionId} onKeyDown={handleOptionKeyDown}>
             <NavItem
               label={item.label}
-              active={item.href === active}
-              onClick={() => setActive(item.href)}
+              onClick={() => handleNavItemClick(item.sectionId)}
+              active={item.sectionId === activeSectionId}
             />
           </li>
         ))}

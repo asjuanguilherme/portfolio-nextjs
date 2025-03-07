@@ -11,7 +11,7 @@ export const ProfessionalExperiencesSection = async () => {
   const locale = (await getLocale()) as Locale
 
   return (
-    <section className={css({ bg: '#FFFCF2' })}>
+    <section id="experiences" className={css({ bg: '#FFFCF2' })}>
       <div
         className={cx(
           container(),
