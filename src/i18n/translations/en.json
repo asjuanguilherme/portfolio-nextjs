@@ -34,17 +34,17 @@
       },
       "ABOUT": {
         "TITLE": "About Me",
-        "CONTENT": "<p>Hello! I'm a frontend developer passionate about creating elegant, high-performance, and user-friendly interfaces...</p>"
+        "CONTENT": "<p>Hello! I'm a frontend developer passionate about creating sleek, high-performance, and user-friendly interfaces. With over 3 years of experience, I specialize in end-to-end development, from design and prototyping interfaces to building scalable applications. My focus is on delivering flawless user experiences with a strong emphasis on performance, accessibility, and maintainability.</p><p>I've worked on various projects, including e-commerce platforms, corporate blogs, internal systems, and mobile apps. I also create custom design systems and reusable component libraries to enhance scalability and consistency.</p><p>My tech stack includes React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi, and SEO optimization. Currently based in Brussels, Belgium, I'm always seeking opportunities to create high-quality digital experiences that meet business needs and industry best practices.</p><p>If you're looking for a developer who blends creativity, technical expertise, and problem-solving skills, let's connect!</p>"
       },
       "SERVICES": {
         "TITLE": "My Services",
         "SOFTWARE_DEVELOPMENT": {
           "TITLE": "Software Development",
-          "CONTENT": "I'm not just writing code; I'm architecting fast and scalable applications..."
+          "CONTENT": "I'm not just writing code; I'm architecting fast and scalable applications. With React, Next.js, and React Native in my toolkit, I deliver resilient solutions that stand the test of time. Performance and scalability are always top of mind, ensuring that every project I build can grow easily. In all my projects, I keep a sharp focus on user experience, adopting a user-centered methodology to create intuitive and flawless solutions."
         },
         "UI_DESIGN": {
           "TITLE": "UI Design",
-          "CONTENT": "I'm not a professional designer, but I have a solid understanding of design principles..."
+          "CONTENT": "I'm not a dedicated designer by profession, but I have a solid understanding of design principles. I create clean and functional layouts and wireframes in Figma, and I'm also able to vectorize designs and work with other design tools. While my focus is on building user-friendly interfaces, I bring practical design knowledge to ensure both usability and style."
         }
       },
       "EXPERTISES": {

@@ -33,18 +33,18 @@
         "YEARS_OF_EXPERIENCE": "Jaren Ervaring"
       },
       "ABOUT": {
-        "TITLE": "Over Mij",
-        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar gepassioneerd over het creëren van elegante, high-performance en gebruiksvriendelijke interfaces...</p>"
+        "TITLE": "Over mij",
+        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar die gepassioneerd is over het creëren van elegante, snelle en gebruiksvriendelijke interfaces. Met meer dan 3 jaar ervaring, specialiseer ik me in end-to-end ontwikkeling, van ontwerp en prototyping van interfaces tot het bouwen van schaalbare applicaties. Mijn focus ligt op het leveren van foutloze gebruikerservaringen, met nadruk op prestaties, toegankelijkheid en onderhoudbaarheid.</p><p>Ik heb gewerkt aan verschillende projecten, waaronder e-commerceplatforms, bedrijfsblogs, interne systemen en mobiele apps. Ik maak ook op maat gemaakte ontwerp systemen en herbruikbare componentbibliotheken om schaalbaarheid en consistentie te verbeteren.</p><p>Mijn technologie-stack omvat React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi en SEO-optimalisatie. Momenteel woon ik in Brussel, België, en ben altijd op zoek naar kansen om digitale ervaringen van hoge kwaliteit te creëren die zowel voldoen aan de zakelijke behoeften als de beste praktijken van de industrie.</p><p>Als je op zoek bent naar een ontwikkelaar die creativiteit, technische expertise en robleemoplossend vermogen combineert, laten we dan verbinding maken!</p>"
       },
       "SERVICES": {
         "TITLE": "Mijn Diensten",
         "SOFTWARE_DEVELOPMENT": {
           "TITLE": "Softwareontwikkeling",
-          "CONTENT": "Ik schrijf niet alleen code; ik ontwerp snelle en schaalbare applicaties..."
+          "CONTENT": "Ik schrijf niet alleen code; ik architectuur applicaties die snel en schaalbaar zijn. Met React, Next.js en React Native in mijn toolkit, lever ik veerkrachtige oplossingen die de tand des tijds doorstaan. Prestaties en schaalbaarheid staan altijd centraal, zodat elk project dat ik bouw gemakkelijk kan groeien. In al mijn projecten houd ik een scherpe focus op de gebruikerservaring, waarbij ik een op de gebruiker gerichte methodologie toepas om intuïtieve en foutloze oplossingen te creëren."
         },
         "UI_DESIGN": {
           "TITLE": "UI Ontwerp",
-          "CONTENT": "Ik ben geen professionele ontwerper, maar ik heb een goed begrip van ontwerpprincipes..."
+          "CONTENT": "Ik ben geen fulltime ontwerper, maar ik heb een goed begrip van ontwerpprincipes. Ik maak schone en functionele lay-outs en wireframes in Figma, en ik ben ook in staat om ontwerpen te vectoriseren en met andere ontwerptools te werken. Hoewel mijn focus ligt op het bouwen van gebruiksvriendelijke interfaces, breng ik praktische ontwerpkennis in om zowel bruikbaarheid als stijl te waarborgen."
         }
       },
       "EXPERTISES": {

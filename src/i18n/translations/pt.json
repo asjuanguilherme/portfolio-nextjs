@@ -34,17 +34,17 @@
       },
       "ABOUT": {
         "TITLE": "Sobre mim",
-        "CONTENT": "<p>Olá! Sou um desenvolvedor frontend apaixonado por criar interfaces elegantes, de alto desempenho e amigáveis ao usuário...</p>"
+        "CONTENT": "<p>Olá! Sou um desenvolvedor frontend apaixonado por criar interfaces elegantes, de alto desempenho e amigáveis ao usuário. Com mais de 3 anos de experiência, me especializo no desenvolvimento de ponta a ponta, desde o design e prototipagem de interfaces até a construção de aplicações escaláveis. Meu foco é entregar experiências de usuário sem falhas, com ênfase em desempenho, acessibilidade e manutenibilidade.</p><p>Trabalhei em diversos projetos, incluindo plataformas de e-commerce, blogs corporativos, sistemas internos e aplicativos móveis. Também crio sistemas de design personalizados e bibliotecas de componentes reutilizáveis para melhorar a escalabilidade e a consistência.</p><p>Meu stack tecnológico inclui React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi e otimização de SEO. Atualmente baseado em Bruxelas, na Bélgica, estou sempre em busca de oportunidades para criar experiências digitais de alta qualidade que atendam às necessidades de negócios e às melhores práticas do setor.</p><p>Se você está procurando um desenvolvedor que combine criatividade, expertise técnica e resolução de problemas, vamos nos conectar!</p>"
       },
       "SERVICES": {
         "TITLE": "Meus Serviços",
         "SOFTWARE_DEVELOPMENT": {
           "TITLE": "Desenvolvimento de Software",
-          "CONTENT": "Não estou apenas escrevendo código; estou arquitetando aplicações rápidas e escaláveis..."
+          "CONTENT": "Não estou apenas escrevendo código; estou arquitetando aplicações rápidas e escaláveis. Com React, Next.js e React Native no meu kit de ferramentas, entrego soluções resilientes que resistem ao teste do tempo. O desempenho e a escalabilidade estão sempre em mente, garantindo que cada projeto que construo possa crescer com facilidade. Em todos os meus projetos, mantenho um foco aguçado na experiência do usuário, adotando uma metodologia centrada no usuário para criar soluções intuitivas e sem falhas."
         },
         "UI_DESIGN": {
           "TITLE": "Design de UI",
-          "CONTENT": "Não sou um designer dedicado por profissão, mas tenho uma compreensão sólida dos princípios de design..."
+          "CONTENT": "Não sou um designer dedicado por profissão, mas tenho uma compreensão sólida dos princípios de design. Crio layouts e wireframes limpos e funcionais no Figma, e também sou capaz de vetorização de designs e de trabalhar com outras ferramentas de design. Embora meu foco seja na construção de interfaces amigáveis ao usuário, trago conhecimentos práticos de design para garantir tanto a usabilidade quanto o estilo."
         }
       },
       "EXPERTISES": {
