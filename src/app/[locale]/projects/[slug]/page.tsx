@@ -10,17 +10,17 @@ import { Link } from '@/i18n/navigation'
 import ImagesCarousel from '@/components/shared/ImagesCarousel'
 import { SkillsGroupedByCategory } from '@/components/shared/SkillsGroupedByCategory'
 import { Locale } from '@/i18n/locales'
+import { ExternalLinkIcon } from 'lucide-react'
 
 export default async function ProjectDetailsPage({
   params
 }: {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }) {
-  const projectData = projects.filter(
-    project => project.slug === params.slug
-  )[0]
+  const { slug } = await params
+  const projectData = projects.filter(project => project.slug === slug)[0]
   const translations = await getTranslations()
   const locale = (await getLocale()) as Locale
 
@@ -28,27 +28,28 @@ export default async function ProjectDetailsPage({
 
   return (
     <>
-      <PageHeader title={projectData.title} returnHref="/" />
+      <PageHeader
+        title={projectData.translations[locale].title}
+        returnHref="/"
+      />
       <section className={css({ py: '2xl', lg: { py: '2xl' } })}>
         <div className={container({ mb: '2xl' })}>
           <SectionTitle className={css({ mb: '2xl' })}>
             {translations('PROJECT_DETAILS.SECTIONS.ABOUT_THE_PROJECT.TITLE')}
           </SectionTitle>
           <div
-            className={css({
-              '& p': { marginBottom: 'md' },
-              marginBottom: 'md'
-            })}
-          >
-            {projectData.content}
-          </div>
+            className={'prose prose-lg'}
+            dangerouslySetInnerHTML={{
+              __html: projectData.translations[locale].content
+            }}
+          ></div>
           {projectData.href && (
             <Link
               href={projectData.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button>
+              <Button icon={<ExternalLinkIcon />} color="secondary">
                 {translations('ACTION_BUTTONS.VIEW_PUBLISHED_PROJECT')}
               </Button>
             </Link>

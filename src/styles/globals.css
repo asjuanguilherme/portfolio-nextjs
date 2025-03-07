@@ -28,9 +28,7 @@ svg.lucide {
   outline: 2px solid var(--panda-colors-primary-400);
   box-shadow: 0px 0px 0px 4px var(--panda-colors-secondary-500);
   border-radius: 4px;
-  transition:
-    outline 0.2s,
-    box-shadow 0.2s;
+  transition: outline 0.2s, box-shadow 0.2s;
 }
 
 :root {
@@ -39,6 +37,8 @@ svg.lucide {
     --panda-colors-primary-500
   ) !important;
   --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-width: 16px;
+  --swiper-pagination-bullet-height: 16px;
 }
 
 .swiper-pagination-bullets {
@@ -49,13 +49,15 @@ svg.lucide {
 
 .swiper-pagination-bullet {
   border-radius: 0 !important;
-  transform: rotate(45deg);
   transition-duration: var(--panda-durations-fast);
   box-shadow: 0 0 0 1px var(--panda-colors-secondary-500);
+  height: 16px;
+  width: 16px;
 }
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
   background: white;
+  transform: rotate(45deg) scale(.6);
 }
 
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover {
@@ -63,7 +65,4 @@ svg.lucide {
 }
 
 .swiper-pagination-bullet-active {
-  transform: initial;
-  width: 16px !important;
-  height: 16px !important;
 }

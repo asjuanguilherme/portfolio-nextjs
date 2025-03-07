@@ -143,13 +143,7 @@ export const pandaThemeConfig: Config['theme'] = {
   semanticTokens: {
     colors: {
       primary: tokensColors.amber,
-      secondary: tokensColors.armadillo,
-      backgroundLight: {
-        value: tokensColors.amber[50]
-      },
-      backgroundDark: {
-        value: tokensColors.armadillo[500]
-      }
+      secondary: tokensColors.armadillo
     }
   }
 }

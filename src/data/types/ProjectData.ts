@@ -1,14 +1,19 @@
-import { JSX } from 'react'
 import { SkillData } from './SkillData'
+import { Locale } from '@/i18n/locales'
 
 export type ProjectData = {
   id: number
-  category: string
   slug: string
-  title: string
+  year: number
   cardImage: string
   images: { src: string; alt?: string }[]
-  content: JSX.Element
   skills: SkillData[]
   href?: string
+  translations: Record<
+    Locale,
+    {
+      title: string
+      content: string
+    }
+  >
 }

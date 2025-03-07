@@ -15,9 +15,12 @@ import ReactQueryColoredIcon from '@/components/icons/ReactQueryColored'
 import ReduxColoredIcon from '@/components/icons/ReduxColored'
 import PandaCSSColoredIcon from '@/components/icons/PandaCSSColored'
 import { SkillCategoriesEnum } from './skillCategories'
-import { SkillData } from './types/SkillData'
+import AntdColoredIcon from '@/components/icons/AntdColored'
+import WordpressColoredIcon from '@/components/icons/WordPressColored'
+import StrapiColoredIcon from '@/components/icons/StrapiColored'
+import GraphQLColoredIcon from '@/components/icons/GraphQLColored'
 
-export const skills: Record<string, SkillData> = {
+export const skills = {
   react: {
     name: 'react',
     category: SkillCategoriesEnum.frontend,
@@ -60,6 +63,12 @@ export const skills: Record<string, SkillData> = {
     title: 'React Query',
     icon: ReactQueryColoredIcon
   },
+  antDesign: {
+    name: 'ant-design',
+    category: SkillCategoriesEnum.frontend,
+    title: 'Ant Design',
+    icon: AntdColoredIcon
+  },
   pandaCSS: {
     name: 'pandacss',
     category: SkillCategoriesEnum.frontend,
@@ -96,11 +105,29 @@ export const skills: Record<string, SkillData> = {
     title: 'Postgres',
     icon: PostgresColoredIcon
   },
+  graphql: {
+    name: 'graphql',
+    category: SkillCategoriesEnum.backend,
+    title: 'GraphQL',
+    icon: GraphQLColoredIcon
+  },
   prisma: {
     name: 'prisma',
     category: SkillCategoriesEnum.backend,
     title: 'Prisma ORM',
     icon: PrismaColoredIcon
+  },
+  wordpress: {
+    name: 'wordpress',
+    category: SkillCategoriesEnum.backend,
+    title: 'Wordpress',
+    icon: WordpressColoredIcon
+  },
+  strapi: {
+    name: 'strapi',
+    category: SkillCategoriesEnum.backend,
+    title: 'Strapi',
+    icon: StrapiColoredIcon
   },
   git: {
     name: 'git',
@@ -120,6 +147,6 @@ export const skills: Record<string, SkillData> = {
     title: 'Figma',
     icon: FigmaColoredIcon
   }
-}
+} as const
 
 export const skillsList = Object.values(skills)

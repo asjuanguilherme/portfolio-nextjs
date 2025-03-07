@@ -1,12 +1,14 @@
 'use client'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { Navigation } from 'swiper/modules'
+import 'swiper/css/pagination'
+import { Navigation, Pagination } from 'swiper/modules'
 import { css, cx } from '@styled-system/css'
 import { spacing } from '@/styles/theme.config'
 import Image from 'next/image'
+import { useRef, useState } from 'react'
 
 export type ImagesCarouselProps = {
   data: { key: string; src: string; alt?: string }[]
@@ -14,10 +16,15 @@ export type ImagesCarouselProps = {
 }
 
 export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
+  const paginationRef = useRef<HTMLDivElement>(null)
+  const [, setSwiper] = useState<SwiperClass>()
+
   return (
     <Swiper
-      modules={[Navigation]}
+      onSwiper={setSwiper}
+      modules={[Navigation, Pagination]}
       navigation
+      pagination={{ el: paginationRef.current, enabled: true }}
       className={cx(
         className,
         css({
@@ -54,7 +61,7 @@ export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
         },
         768: {
           centeredSlides: true,
-          slidesPerView: 1.6
+          slidesPerView: 1.2
         }
       }}
     >
@@ -62,7 +69,7 @@ export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
         <SwiperSlide key={item.key}>
           <div
             className={css({
-              backgroundColor: 'white',
+              bg: 'gray.100',
               paddingTop: '65%',
               width: '100%',
               position: 'relative'
@@ -83,6 +90,7 @@ export const ImagesCarousel = ({ data, className }: ImagesCarouselProps) => {
               })}
             ></Image>
           </div>
+          <div ref={paginationRef}></div>
         </SwiperSlide>
       ))}
     </Swiper>

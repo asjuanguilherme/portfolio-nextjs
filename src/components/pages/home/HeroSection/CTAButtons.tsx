@@ -9,7 +9,7 @@ export const CTAButtons = () => {
   return (
     <div className={css({ display: 'flex', gap: 'sm' })}>
       <a href="/assets/docs/cv-en.pdf" download>
-        <Button as="a" color="secondary">
+        <Button as="span" color="secondary">
           {translations('DOWNLOAD_CV')}
         </Button>
       </a>
