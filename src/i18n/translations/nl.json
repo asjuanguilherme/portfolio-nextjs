@@ -8,19 +8,19 @@
   },
   "UI": {
     "SIDEBAR": {
-      "CONTACT_ME": "Contacteer Mij",
+      "CONTACT_ME": "Neem Contact Op",
       "NAVIGATION": {
         "START": "Start",
         "ABOUT": "Over Mij",
-        "EXPERIENCES": "Ervaringen",
-        "EXPERTISES": "Vaardigheden",
-        "PROJECTS": "Projecten",
+        "EXPERIENCES": "Werkervaring",
+        "EXPERTISES": "Vaardigheden & Kennis",
+        "PROJECTS": "Uitgelichte Projecten",
         "TESTIMONIALS": "Getuigenissen"
       }
     },
     "FOOTER": {
       "HAVE_A_PROJECT_IN_MIND": "Heb je een project in gedachten?",
-      "LETS_CONNECT": "Laten we verbinden",
+      "LETS_CONNECT": "Neem Contact Op",
       "COPYRIGHT_TEXT": "Alle rechten voorbehouden."
     },
     "LANGUAGES": {
@@ -38,13 +38,13 @@
       },
       "ABOUT": {
         "TITLE": "Over mij",
-        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar die gepassioneerd is over het creëren van elegante, snelle en gebruiksvriendelijke interfaces. Met meer dan 3 jaar ervaring, specialiseer ik me in end-to-end ontwikkeling, van ontwerp en prototyping van interfaces tot het bouwen van schaalbare applicaties. Mijn focus ligt op het leveren van foutloze gebruikerservaringen, met nadruk op prestaties, toegankelijkheid en onderhoudbaarheid.</p><p>Ik heb gewerkt aan verschillende projecten, waaronder e-commerceplatforms, bedrijfsblogs, interne systemen en mobiele apps. Ik maak ook op maat gemaakte ontwerp systemen en herbruikbare componentbibliotheken om schaalbaarheid en consistentie te verbeteren.</p><p>Mijn technologie-stack omvat React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi en SEO-optimalisatie. Momenteel woon ik in Brussel, België, en ben altijd op zoek naar kansen om digitale ervaringen van hoge kwaliteit te creëren die zowel voldoen aan de zakelijke behoeften als de beste praktijken van de industrie.</p><p>Als je op zoek bent naar een ontwikkelaar die creativiteit, technische expertise en robleemoplossend vermogen combineert, laten we dan verbinding maken!</p>"
+        "CONTENT": "<p>Hallo! Ik ben een frontend ontwikkelaar die gepassioneerd is over het creëren van elegante, snelle en gebruiksvriendelijke interfaces. Met meer dan 3 jaar ervaring, specialiseer ik me in end-to-end ontwikkeling, van ontwerp en prototyping van interfaces tot het bouwen van schaalbare applicaties. Mijn focus ligt op het leveren van foutloze gebruikerservaringen, met nadruk op prestaties, toegankelijkheid en onderhoudbaarheid.</p><p>Ik heb gewerkt aan verschillende projecten, waaronder e-commerceplatforms, bedrijfsblogs, interne systemen en mobiele apps. Ik maak ook op maat gemaakte ontwerp systemen en herbruikbare componentbibliotheken om schaalbaarheid en consistentie te verbeteren.</p><p>Mijn technologie-stack omvat React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi en SEO-optimalisatie. Momenteel woon ik in Brussel, België, en ben altijd op zoek naar kansen om digitale ervaringen van hoge kwaliteit te creëren die zowel voldoen aan de zakelijke behoeften als de beste praktijken van de industrie.</p><p>Als je op zoek bent naar een ontwikkelaar die creativiteit, technische expertise en probleemoplossend vermogen combineert, laten we dan in contact komen!</p>"
       },
       "SERVICES": {
         "TITLE": "Mijn Diensten",
         "SOFTWARE_DEVELOPMENT": {
           "TITLE": "Softwareontwikkeling",
-          "CONTENT": "Ik schrijf niet alleen code; ik architectuur applicaties die snel en schaalbaar zijn. Met React, Next.js en React Native in mijn toolkit, lever ik veerkrachtige oplossingen die de tand des tijds doorstaan. Prestaties en schaalbaarheid staan altijd centraal, zodat elk project dat ik bouw gemakkelijk kan groeien. In al mijn projecten houd ik een scherpe focus op de gebruikerservaring, waarbij ik een op de gebruiker gerichte methodologie toepas om intuïtieve en foutloze oplossingen te creëren."
+          "CONTENT": "Ik schrijf niet alleen code; ik ontwerp applicaties die snel en schaalbaar zijn. Met React, Next.js en React Native in mijn toolkit, lever ik robuuste oplossingen die de tand des tijds doorstaan. Prestaties en schaalbaarheid staan altijd centraal, zodat elk project dat ik bouw gemakkelijk kan groeien. In al mijn projecten houd ik een scherpe focus op de gebruikerservaring, waarbij ik een op de gebruiker gerichte methodologie toepas om intuïtieve en foutloze oplossingen te creëren."
         },
         "UI_DESIGN": {
           "TITLE": "UI Ontwerp",
@@ -55,10 +55,10 @@
         "TITLE": "Mijn Expertise"
       },
       "EXPERIENCES": {
-        "TITLE": "Mijn Professionele Ervaringen"
+        "TITLE": "Werkervaring"
       },
       "PROJECTS": {
-        "TITLE": "Geselecteerde Projecten"
+        "TITLE": "Uitgelichte Projecten"
       },
       "TESTIMONIALS": {
         "TITLE": "Wat Mensen Over Mij Zeggen"
@@ -80,7 +80,7 @@
     "VIEW_PUBLISHED_PROJECT": "Bekijk Gepubliceerd Project",
     "SEE_PROJECT_DETAILS": "Bekijk Projectdetails",
     "RETURN": "Terug",
-    "DOWNLOAD_CV": "CV Downloaden",
+    "DOWNLOAD_CV": "Download Mijn CV",
     "SEE_MY_WORK": "Bekijk Mijn Werk"
   }
 }
