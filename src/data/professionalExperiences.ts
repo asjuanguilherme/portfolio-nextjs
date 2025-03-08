@@ -26,7 +26,7 @@ export const professionalExperiences: ProfessionalExperienceData[] = [
     id: 1,
     company: 'Mix Internet',
     location: 'Natal, Brazil',
-    startDate: '01/02/2001',
+    startDate: '01/02/2021',
     endDate: '01/05/2022',
     translations: {
       pt: {
