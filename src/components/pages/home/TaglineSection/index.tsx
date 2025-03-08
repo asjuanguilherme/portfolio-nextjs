@@ -1,43 +1,30 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { css } from '@styled-system/css'
 import { taglines } from '@/data/taglines'
 import { useLocale } from 'next-intl'
 import { Locale } from '@/i18n/locales'
-import { container } from '@styled-system/patterns'
+import useTypingEffect from '@/hooks/useTypingEffect'
+import { TextWithBlinkingCursor } from '@/components/shared/TextWithBlinkingCursor'
 
 export const TaglineSection = () => {
   const locale = useLocale() as Locale
   const [taglineIndex, setTaglineIndex] = useState<number>(0)
-  const [characterIndex, setCharacterIndex] = useState(0)
-  const currentTagline = taglines[taglineIndex].translations[locale]
+  const currentTaglineText = taglines[taglineIndex].translations[locale]
 
-  useEffect(() => {
-    const delayBeforeItems = 3000
-    const typingDelay = 50
+  const textWithTypingEffect = useTypingEffect({
+    text: currentTaglineText,
+    onFinish: () => {
+      const delayBeforeTextChanges = 3000
 
-    if (characterIndex === currentTagline.length) {
-      const timeoutBeforeNext = setTimeout(() => {
-        setCharacterIndex(0)
+      setTimeout(() => {
         setTaglineIndex(prevIndex =>
-          taglineIndex < taglines.length - 1 ? prevIndex + 1 : 0
+          prevIndex + 1 === taglines.length ? 0 : prevIndex + 1
         )
-      }, delayBeforeItems)
-
-      return () => {
-        clearTimeout(timeoutBeforeNext)
-      }
-    } else {
-      const interval = setInterval(() => {
-        setCharacterIndex(state => state + 1)
-      }, typingDelay)
-
-      return () => {
-        clearInterval(interval)
-      }
+      }, delayBeforeTextChanges)
     }
-  }, [characterIndex, currentTagline.length, taglineIndex])
+  })
 
   return (
     <section
@@ -61,18 +48,9 @@ export const TaglineSection = () => {
         }
       })}
     >
-      <div
-        className={container({
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center'
-        })}
-      >
-        <span>
-          {currentTagline.slice(0, characterIndex)}
-          <span className={css({ animation: 'blink 1s infinite' })}>|</span>
-        </span>
-      </div>
+      <TextWithBlinkingCursor>
+        {textWithTypingEffect.text}
+      </TextWithBlinkingCursor>
     </section>
   )
 }
