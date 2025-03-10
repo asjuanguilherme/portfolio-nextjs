@@ -75,19 +75,25 @@ export const Button = ({
   fill,
   ...props
 }: ButtonProps<React.ElementType>) => {
+  const getWidthStyle = () => {
+    if (fill)
+      return css({
+        width: '100%'
+      })
+
+    if (!children && icon) return css({ width: '40px', px: '0px' })
+
+    return css({
+      width: 'max-content',
+      px: '16px'
+    })
+  }
+
   return (
     <Wrapper
       className={cx(
         buttonStyleByColor[color][variant],
-        fill
-          ? css({
-              width: '100%'
-            })
-          : !children && icon
-            ? css({ width: '40px', px: '0px' })
-            : css({
-                width: 'max-content'
-              }),
+        getWidthStyle(),
         css({
           fontSize: '14px',
           fontWeight: 'medium',
@@ -95,7 +101,6 @@ export const Button = ({
           transitionDuration: 'normal',
           height: '40px',
           gap: '8px',
-          px: '16px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
