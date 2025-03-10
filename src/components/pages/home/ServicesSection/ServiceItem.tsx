@@ -6,16 +6,19 @@ export type ServiceItemProps = {
   children: ReactNode
   color: 'primary' | 'secondary'
   icon?: ReactNode
+  className?: string
 }
 
 const styleByColor = {
   primary: {
     title: css({ color: 'secondary.500' }),
-    content: css({ color: 'secondary.500' })
+    content: css({ color: 'secondary.500' }),
+    wrapper: css({ bg: 'primary.500' })
   },
   secondary: {
     title: css({ color: 'primary.500' }),
-    content: css({ color: 'white' })
+    content: css({ color: 'white' }),
+    wrapper: css({ bg: 'secondary.500' })
   }
 } as const
 
@@ -23,21 +26,24 @@ export const ServiceItem = ({
   title,
   children,
   color,
-  icon
+  icon,
+  className
 }: ServiceItemProps) => {
   return (
     <div
-      className={css({
-        display: 'flex',
-        flexDir: 'column',
-        gap: 'sm',
-        py: 'xl',
+      className={cx(
+        className,
+        styleByColor[color].wrapper,
+        css({
+          display: 'flex',
+          flexDir: 'column',
+          gap: 'sm',
 
-        lg: {
-          py: '2xl',
-          pr: '4xl'
-        }
-      })}
+          lg: {
+            height: '100%'
+          }
+        })
+      )}
     >
       <h3
         className={cx(
@@ -47,7 +53,7 @@ export const ServiceItem = ({
             alignItems: 'center',
             gap: 'sm',
             fontSize: '2xl',
-            lg: { fontSize: '4xl' }
+            lg: { fontSize: '3xl' }
           })
         )}
       >

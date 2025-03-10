@@ -10,58 +10,63 @@ export const ServicesSection = async () => {
   return (
     <section
       className={css({
-        position: 'relative'
-      })}
-    >
-      <div
-        className={css({
-          bg: 'secondary.500',
+        position: 'relative',
 
-          '& > *': {
-            zIndex: 1
+        lg: {
+          _before: {
+            content: "''",
+            bg: 'secondary.500',
+            width: '50%',
+            height: '100%',
+            left: 0,
+            top: 0,
+            position: 'absolute',
+            zIndex: 0
           },
-
           _after: {
             content: "''",
-            position: 'absolute',
-            width: '100%',
-            height: '50%',
-            right: 0,
-            bottom: 0,
             bg: 'primary.500',
-            zIndex: 0,
-
-            lg: {
-              right: 0,
-              top: 0,
-              width: '50%',
-              height: '100%'
-            }
+            width: '50%',
+            height: '100%',
+            right: 0,
+            top: 0,
+            position: 'absolute',
+            zIndex: 0
           }
-        })}
-      >
-        <div className={container()}>
-          <ul className={css({ lg: { display: 'flex' } })}>
-            <li>
-              <ServiceItem
-                icon={<SquareTerminal />}
-                title={translations('SOFTWARE_DEVELOPMENT.TITLE')}
-                color="secondary"
-              >
-                {translations('SOFTWARE_DEVELOPMENT.CONTENT')}
-              </ServiceItem>
-            </li>
-            <li>
-              <ServiceItem
-                icon={<PenTool />}
-                title={translations('UI_DESIGN.TITLE')}
-                color="primary"
-              >
-                {translations('UI_DESIGN.CONTENT')}
-              </ServiceItem>
-            </li>
-          </ul>
-        </div>
+        }
+      })}
+    >
+      <div className={container({ px: 0 })}>
+        <ul
+          className={css({
+            lg: { display: 'flex', zIndex: 1, position: 'relative' }
+          })}
+        >
+          <li>
+            <ServiceItem
+              className={css({
+                width: '100%',
+                p: 'xl',
+                lg: { pr: '2xl' }
+              })}
+              icon={<SquareTerminal />}
+              title={translations('SOFTWARE_DEVELOPMENT.TITLE')}
+              color="secondary"
+            >
+              {translations('SOFTWARE_DEVELOPMENT.CONTENT')}
+            </ServiceItem>
+          </li>
+          <li>
+            <ServiceItem
+              className={css({ width: '100%', p: 'xl', lg: { pl: '2xl' } })}
+              icon={<PenTool />}
+              title={translations('UI_DESIGN.TITLE')}
+              color="primary"
+            >
+              {translations('UI_DESIGN.CONTENT')}
+            </ServiceItem>
+          </li>
+        </ul>
       </div>
     </section>
   )
