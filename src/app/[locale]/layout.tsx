@@ -6,6 +6,8 @@ import Layout from '@/components/layout/Layout'
 import { Locale } from '@/i18n/locales'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
+import NextTopLoader from 'nextjs-toploader'
+import { colors } from '@/styles/theme.config'
 
 export type RootLayoutParams = { locale: Locale }
 
@@ -68,6 +70,14 @@ export default async function RootLayout({
         )}
       >
         <NextIntlClientProvider messages={translations}>
+          <NextTopLoader
+            color={colors.amber[500]}
+            initialPosition={0.2}
+            height={3}
+            easing="ease"
+            showSpinner={false}
+            shadow={`0 0 10px ${colors.armadillo[400]},0 0 5px ${colors.armadillo[400]}`}
+          />
           <Layout>{children}</Layout>
         </NextIntlClientProvider>
       </body>
