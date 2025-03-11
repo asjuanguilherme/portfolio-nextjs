@@ -7,13 +7,15 @@ import Button from '@/components/shared/Button'
 import { Link } from '@/i18n/navigation'
 import TextWithTypingEffect from '@/components/shared/TextWithTypingEffect'
 
-type OnboardingPageParams = { locale: Locale }
+type LanguageSelectorPageParams = { locale: Locale }
 
-type OnboardingPageProps = {
-  params: Promise<OnboardingPageParams>
+type LanguageSelectorPageProps = {
+  params: Promise<LanguageSelectorPageParams>
 }
 
-export default async function OnboardingPage({ params }: OnboardingPageProps) {
+export default async function LanguageSelectorPage({
+  params
+}: LanguageSelectorPageProps) {
   const locale = (await params).locale
   const translations = await getTranslations('ONBOARDING.LANGUAGE_SELECTOR')
 

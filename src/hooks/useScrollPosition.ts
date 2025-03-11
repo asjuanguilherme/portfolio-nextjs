@@ -1,24 +1,20 @@
 import { mainElementID } from '@/components/layout/layout-menu'
+import { usePathname } from '@/i18n/navigation'
 import { useEffect, useState } from 'react'
 
 const getScrollPosition = () => {
   const main = document.getElementById(mainElementID)
 
-  if (!main)
-    throw new Error(
-      'Main element was not found. Did you remove it or its class?'
-    )
+  if (!main) return 0
 
-  return main.scrollTop
+  return main?.scrollTop
 }
 
 export const useScrollPosition = () => {
+  const pathname = usePathname()
+
   const [scrollPosition, setScrollPosition] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return getScrollPosition()
-    } else {
-      return 0
-    }
+    return getScrollPosition()
   })
 
   useEffect(() => {
@@ -31,7 +27,7 @@ export const useScrollPosition = () => {
     main?.addEventListener('scroll', handleScroll)
 
     return () => main?.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [pathname])
 
   return scrollPosition
 }

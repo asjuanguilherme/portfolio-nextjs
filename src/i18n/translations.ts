@@ -32,6 +32,9 @@ export interface Translations {
       TITLE: string
       CONTINUE_BUTTON: string
     }
+    WELCOME: {
+      GREETINGS: string
+    }
   }
   HOME: {
     SECTIONS: {
