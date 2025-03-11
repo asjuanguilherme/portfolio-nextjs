@@ -41,9 +41,8 @@ export const SocialItems = ({
               title={item.label}
               aria-label={item.label}
               rel="noopener noreferrer"
-              legacyBehavior
             >
-              <Button icon={<item.icon />} as="a" color={buttonColor}>
+              <Button icon={<item.icon />} as="span" color={buttonColor}>
                 {!onlyIcon && item.username}
               </Button>
             </Link>

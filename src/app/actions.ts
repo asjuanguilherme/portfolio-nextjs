@@ -10,7 +10,7 @@ export const finishOnboarding = async () => {
   cookiesList.set(ONBOARDING_COOKIE_KEY, 'true')
 }
 
-export const isOnboardingFinished = async () => {
+export const isOnboardingFinished = async (): Promise<boolean> => {
   const cookiesList = await cookies()
 
   return cookiesList.get(ONBOARDING_COOKIE_KEY)?.value == 'true' ? true : false

@@ -1,9 +1,13 @@
+'use client'
+
 import { mainElementID } from '@/components/layout/layout-menu'
 import { usePathname } from '@/i18n/navigation'
 import { useEffect, useState } from 'react'
 
 const getScrollPosition = () => {
-  const main = document.getElementById(mainElementID)
+  if (typeof document == 'undefined') return 0
+
+  const main = document?.getElementById(mainElementID)
 
   if (!main) return 0
 
@@ -18,7 +22,7 @@ export const useScrollPosition = () => {
   })
 
   useEffect(() => {
-    const main = document.getElementById(mainElementID)
+    const main = document?.getElementById(mainElementID)
 
     const handleScroll = () => {
       setScrollPosition(getScrollPosition())
