@@ -35,7 +35,7 @@ export const useTypingEffect = ({
 
     const interval = setInterval(() => {
       setCharacterIndex(prevState => {
-        if (prevState == text.length - 1) return prevState
+        if (prevState == text.length) return prevState
 
         return prevState + 1
       })
