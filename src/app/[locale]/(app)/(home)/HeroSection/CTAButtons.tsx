@@ -13,8 +13,8 @@ export const CTAButtons = () => {
           {translations('DOWNLOAD_CV')}
         </Button>
       </a>
-      <Link href="/#experiences" legacyBehavior>
-        <Button as="a" color="secondary" variant="outlined">
+      <Link href="/#experiences">
+        <Button as="span" color="secondary" variant="outlined">
           {translations('SEE_MY_WORK')}
         </Button>
       </Link>

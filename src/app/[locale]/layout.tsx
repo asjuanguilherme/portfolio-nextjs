@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Playfair, Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { css, cx } from '@styled-system/css'
-import Layout from '@/components/layout/Layout'
 import { Locale } from '@/i18n/locales'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
@@ -78,7 +77,7 @@ export default async function RootLayout({
             showSpinner={false}
             shadow={`0 0 10px ${colors.armadillo[400]},0 0 5px ${colors.armadillo[400]}`}
           />
-          <Layout>{children}</Layout>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

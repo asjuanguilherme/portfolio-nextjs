@@ -105,28 +105,20 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
             href={data.href}
             target="_blank"
             rel="noopener noreferrer"
-            legacyBehavior
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
           >
-            <Button
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-              as="a"
-              color="primary"
-              icon={<ExternalLinkIcon />}
-              fill
-            >
+            <Button as="span" color="primary" icon={<ExternalLinkIcon />} fill>
               {translations('VIEW_PUBLISHED_PROJECT')}
             </Button>
           </Link>
         )}
-        <Link href={`/projects/${data.slug}`} legacyBehavior>
-          <Button
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
-            as="a"
-            color="secondary"
-            fill
-          >
+        <Link
+          href={`/projects/${data.slug}`}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+        >
+          <Button as="span" color="secondary" fill>
             {translations('SEE_PROJECT_DETAILS')}
           </Button>
         </Link>

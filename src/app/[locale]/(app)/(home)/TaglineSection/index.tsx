@@ -18,10 +18,12 @@ export const TaglineSection = () => {
     onFinish: () => {
       const delayBeforeTextChanges = 3000
 
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         setTaglineIndex(prevIndex =>
           prevIndex + 1 === taglines.length ? 0 : prevIndex + 1
         )
+
+        return () => clearTimeout(timeout)
       }, delayBeforeTextChanges)
     }
   })

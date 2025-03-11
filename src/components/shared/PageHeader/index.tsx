@@ -23,9 +23,9 @@ export const PageHeader = async ({ title, returnHref }: PageHeaderProps) => {
     >
       <div className={container()}>
         {returnHref && (
-          <Link href={returnHref} legacyBehavior>
+          <Link href={returnHref}>
             <Button
-              as="a"
+              as="span"
               icon={<ArrowLeftIcon />}
               color="primary"
               variant="inline"

@@ -29,6 +29,15 @@
       "nl": "Nederlands"
     }
   },
+  "ONBOARDING": {
+    "LANGUAGE_SELECTOR": {
+      "TITLE": "Selecteer je taal.",
+      "CONTINUE_BUTTON": "Doorgaan"
+    },
+    "WELCOME": {
+      "GREETINGS": "Hallo daar! Ik ben"
+    }
+  },
   "HOME": {
     "SECTIONS": {
       "HERO": {

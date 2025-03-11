@@ -33,6 +33,12 @@ export const generateMetadata = async ({
   }
 }
 
+export async function generateStaticParams() {
+  return projects.map(project => ({
+    slug: project.slug
+  }))
+}
+
 export default async function ProjectDetailsPage({
   params
 }: {
@@ -85,12 +91,11 @@ export default async function ProjectDetailsPage({
           ></div>
           {projectData.href && (
             <Link
-              legacyBehavior
               href={projectData.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button as="a" icon={<ExternalLinkIcon />} color="secondary">
+              <Button as="span" icon={<ExternalLinkIcon />} color="secondary">
                 {translations('ACTION_BUTTONS.VIEW_PUBLISHED_PROJECT')}
               </Button>
             </Link>

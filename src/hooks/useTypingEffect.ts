@@ -26,7 +26,7 @@ export const useTypingEffect = ({
       'Text must be inserted and it must have at least 1 character.'
     )
 
-  const finished = text.length - 1 === characterIndex
+  const finished = text.length === characterIndex
 
   const resetState = () => setCharacterIndex(0)
 
