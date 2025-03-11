@@ -33,6 +33,12 @@ export const generateMetadata = async ({
   }
 }
 
+export async function generateStaticParams() {
+  return projects.map(project => ({
+    slug: project.slug
+  }))
+}
+
 export default async function ProjectDetailsPage({
   params
 }: {
