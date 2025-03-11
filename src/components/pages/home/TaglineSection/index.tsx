@@ -35,7 +35,7 @@ export const TaglineSection = () => {
         fontWeight: 'semibold',
         letterSpacing: '-0.04em',
         lineHeight: '1em',
-        height: '160px',
+        height: '185px',
         fontSize: '5xl',
 
         md: {
