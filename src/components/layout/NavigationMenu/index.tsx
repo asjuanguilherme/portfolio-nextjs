@@ -152,6 +152,7 @@ export const NavigationMenu = () => {
       }
     }
   }
+
   return (
     <div role="navigation">
       <ul

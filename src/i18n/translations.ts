@@ -27,6 +27,12 @@ export interface Translations {
     }
     LANGUAGES: Record<Locale, string>
   }
+  ONBOARDING: {
+    LANGUAGE_SELECTOR: {
+      TITLE: string
+      CONTINUE_BUTTON: string
+    }
+  }
   HOME: {
     SECTIONS: {
       HERO: {

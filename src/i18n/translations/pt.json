@@ -29,6 +29,12 @@
       "nl": "Neerlandês"
     }
   },
+  "ONBOARDING": {
+    "LANGUAGE_SELECTOR": {
+      "TITLE": "Selecione seu idioma.",
+      "CONTINUE_BUTTON": "Continuar"
+    }
+  },
   "HOME": {
     "SECTIONS": {
       "HERO": {

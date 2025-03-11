@@ -1,45 +1,35 @@
+'use client'
+
 import { Locale } from '@/i18n/locales'
-import { css } from '@styled-system/css'
+import { css, cx } from '@styled-system/css'
 import { useTranslations } from 'use-intl'
+import LanguageIcon from '../LanguageIcon'
 
 export type LanguageOptionItemProps = {
   locale: Locale
-  showLabel: boolean
+  showLabel?: boolean
+  className?: string
 }
 
 export const LanguageOptionItem = ({
   locale,
-  showLabel
+  showLabel,
+  className
 }: LanguageOptionItemProps) => {
   const translations = useTranslations('UI.LANGUAGES')
-  const flagByLanguage: Record<Locale, string> = {
-    en: '/assets/flags/uk.png',
-    nl: '/assets/flags/nl.png',
-    pt: '/assets/flags/pt.png'
-  }
 
   return (
     <span
-      className={css({
-        display: 'flex',
-        alignItems: 'center'
-      })}
+      className={cx(
+        className,
+        css({
+          display: 'flex',
+          alignItems: 'center',
+          gap: '4px'
+        })
+      )}
     >
-      <span
-        style={{
-          backgroundImage: `url(${flagByLanguage[locale]})`,
-          backgroundSize: 'cover'
-        }}
-        className={css({
-          width: '18px',
-          height: '18px',
-          display: 'block',
-          borderRadius: 'circle',
-          border: '1px solid white',
-          overflow: 'hidden',
-          mr: '4px'
-        })}
-      ></span>
+      <LanguageIcon locale={locale} />
       {showLabel && <span>{translations(locale)}</span>}
     </span>
   )
