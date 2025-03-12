@@ -23,21 +23,24 @@ export const generateMetadata = async ({
 }: {
   params: Promise<ProjectDetailsPageParams>
 }): Promise<Metadata> => {
-  const translations = await getTranslations({ locale: (await params).locale })
+  const { locale } = await params
+  const translations = await getTranslations({ locale })
   const projectData = projects.filter(project => project.slug)[0]
 
   return {
     title: translations('PROJECT_DETAILS.PAGE_TITLE', {
-      title: projectData.translations[(await params).locale].title
+      title: projectData.translations[locale].title
     })
   }
 }
-
-export async function generateStaticParams() {
-  return projects.map(project => ({
-    slug: project.slug
-  }))
-}
+// ** ALERT **
+// Disabled until fix production error
+//
+// export async function generateStaticParams() {
+//   return projects.map(project => ({
+//     slug: project.slug
+//   }))
+// }
 
 export default async function ProjectDetailsPage({
   params
