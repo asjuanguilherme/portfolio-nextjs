@@ -15,8 +15,9 @@ export default async function AppLayout({
 }>) {
   const { locale } = await params
 
-  if (!(await isOnboardingFinished()))
-    return redirect({ href: '/language-selector', locale })
+  if (await isOnboardingFinished()) {
+    return <Layout>{children}</Layout>
+  }
 
-  return <Layout>{children}</Layout>
+  return redirect({ href: '/welcome', locale })
 }
