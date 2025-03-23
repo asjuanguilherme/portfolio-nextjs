@@ -4,7 +4,7 @@
     "DESCRIPTION": "Personal portfolio of Juan Guilherme"
   },
   "COMMON": {
-    "DEVELOPER_TITLE": "Frontend Developer"
+    "DEVELOPER_TITLE": "Software Engineer"
   },
   "UI": {
     "SIDEBAR": {
@@ -37,13 +37,13 @@
   "HOME": {
     "SECTIONS": {
       "HERO": {
-        "SUBTITLE": "Frontend Developer",
+        "SUBTITLE": "Software Engineer",
         "COMPLETED_PROJECTS": "Completed Projects",
         "YEARS_OF_EXPERIENCE": "Years of Experience"
       },
       "ABOUT": {
         "TITLE": "About Me",
-        "CONTENT": "<p>Hello! I'm a frontend developer passionate about creating sleek, high-performance, and user-friendly interfaces. With over 3 years of experience, I specialize in end-to-end development, from design and prototyping interfaces to building scalable applications. My focus is on delivering flawless user experiences with a strong emphasis on performance, accessibility, and maintainability.</p><p>I've worked on various projects, including e-commerce platforms, corporate blogs, internal systems, and mobile apps. I also create custom design systems and reusable component libraries to enhance scalability and consistency.</p><p>My tech stack includes React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi, and SEO optimization. Currently based in Brussels, Belgium, I'm always seeking opportunities to create high-quality digital experiences that meet business needs and industry best practices.</p><p>If you're looking for a developer who blends creativity, technical expertise, and problem-solving skills, let's connect!</p>"
+        "CONTENT": "<p>Hello! I'm a Software Engineer passionate about creating sleek, high-performance, and user-friendly interfaces. With over 3 years of experience, I specialize in end-to-end development, from design and prototyping interfaces to building scalable applications. My focus is on delivering flawless user experiences with a strong emphasis on performance, accessibility, and maintainability.</p><p>I've worked on various projects, including e-commerce platforms, corporate blogs, internal systems, and mobile apps. I also create custom design systems and reusable component libraries to enhance scalability and consistency.</p><p>My tech stack includes React, Next.js, TypeScript, TailwindCSS, React Native, WordPress, Strapi, and SEO optimization. Currently based in Brussels, Belgium, I'm always seeking opportunities to create high-quality digital experiences that meet business needs and industry best practices.</p><p>If you're looking for a developer who blends creativity, technical expertise, and problem-solving skills, let's connect!</p>"
       },
       "SERVICES": {
         "TITLE": "My Services",
